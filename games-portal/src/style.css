@@ -1,0 +1,46 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+
+* {
+  font-family: Roboto, Arial, Helvetica, sans-serif;
+  font-size: 12pt;
+}
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+@media screen and (max-width: 1760px) {
+  *{
+    font-size: 11pt;
+  }
+}
+@media screen and (max-width: 1600px) {
+  *{
+    font-size: 10pt;
+  }
+}
+@media screen and (max-width: 1440px) {
+  *{
+    font-size: 9pt;
+  }
+}
+@media screen and (max-width: 1366px) {
+  *{
+    font-size: 8.5pt;
+  }
+}
+@media screen and (max-width: 1280px) {
+  *{
+    font-size: 8pt;
+  }
+}
+@media screen and (max-width: 1120px) {
+  *{
+    font-size: 7pt;
+  }
+}
+@media screen and (max-width: 1024x) {
+  *{
+    font-size: 6.5pt;
+  }
+}
