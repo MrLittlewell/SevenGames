@@ -29688,7 +29688,7 @@ function index(origin) {
 
 var _default = index;
 exports.default = _default;
-},{"is-what":"../node_modules/is-what/dist/index.esm.js"}],"../../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/process/browser.js":[function(require,module,exports) {
+},{"is-what":"../node_modules/is-what/dist/index.esm.js"}],"../../../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/process/browser.js":[function(require,module,exports) {
 
 // shim for using process in browser
 var process = module.exports = {}; // cached from whatever global is present so that test runners that stub it
@@ -32294,7 +32294,7 @@ if ("development" !== 'production' && "development" !== 'test' && typeof window 
 
 var _default = styled;
 exports.default = _default;
-},{"stylis/stylis.min":"../node_modules/stylis/stylis.min.js","stylis-rule-sheet":"../node_modules/stylis-rule-sheet/index.js","react":"../node_modules/react/index.js","@emotion/unitless":"../node_modules/@emotion/unitless/dist/unitless.browser.esm.js","react-is":"../node_modules/react-is/index.js","memoize-one":"../node_modules/memoize-one/dist/memoize-one.esm.js","prop-types":"../node_modules/prop-types/index.js","@emotion/is-prop-valid":"../node_modules/@emotion/is-prop-valid/dist/is-prop-valid.browser.esm.js","merge-anything":"../node_modules/merge-anything/dist/index.esm.js","process":"../../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/process/browser.js"}],"containers/Home/styled.js":[function(require,module,exports) {
+},{"stylis/stylis.min":"../node_modules/stylis/stylis.min.js","stylis-rule-sheet":"../node_modules/stylis-rule-sheet/index.js","react":"../node_modules/react/index.js","@emotion/unitless":"../node_modules/@emotion/unitless/dist/unitless.browser.esm.js","react-is":"../node_modules/react-is/index.js","memoize-one":"../node_modules/memoize-one/dist/memoize-one.esm.js","prop-types":"../node_modules/prop-types/index.js","@emotion/is-prop-valid":"../node_modules/@emotion/is-prop-valid/dist/is-prop-valid.browser.esm.js","merge-anything":"../node_modules/merge-anything/dist/index.esm.js","process":"../../../../../../../usr/local/lib/node_modules/parcel-bundler/node_modules/process/browser.js"}],"containers/Home/styled.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -32321,139 +32321,7 @@ function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(
 var AppWraper = _styledComponents.default.div(_templateObject());
 
 exports.AppWraper = AppWraper;
-},{"styled-components":"../node_modules/styled-components/dist/styled-components.browser.esm.js"}],"containers/Games/GameOne/index.js":[function(require,module,exports) {
-"use strict";
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.default = void 0;
-
-var _react = _interopRequireWildcard(require("react"));
-
-var _propTypes = _interopRequireDefault(require("prop-types"));
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = Object.defineProperty && Object.getOwnPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : {}; if (desc.get || desc.set) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } } newObj.default = obj; return newObj; } }
-
-function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
-
-function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
-
-function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
-
-function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
-
-function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
-
-function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
-
-var Game1 =
-/*#__PURE__*/
-function (_Component) {
-  _inherits(Game1, _Component);
-
-  function Game1(props) {
-    var _this;
-
-    _classCallCheck(this, Game1);
-
-    _this = _possibleConstructorReturn(this, _getPrototypeOf(Game1).call(this, props));
-    _this.state = {
-      gameId: 1,
-      isStarted: false,
-      isUserPlay: false,
-      values: undefined,
-      secretCards: undefined,
-      randomCards: undefined,
-      points: 0,
-      try: 3,
-      cardStatus: [true, true, true, true, true, true, true, true, true],
-      timerOn: false,
-      timeLeft: 10
-    };
-    return _this;
-  }
-
-  _createClass(Game1, [{
-    key: "render",
-    value: function render() {
-      return _react.default.createElement("div", null, "1");
-    }
-  }]);
-
-  return Game1;
-}(_react.Component);
-
-Game1.propTypes = {};
-var _default = Game1;
-exports.default = _default;
-},{"react":"../node_modules/react/index.js","prop-types":"../node_modules/prop-types/index.js"}],"containers/Games/GameTwo/index.js":[function(require,module,exports) {
-"use strict";
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.default = void 0;
-
-var _react = _interopRequireWildcard(require("react"));
-
-var _propTypes = _interopRequireDefault(require("prop-types"));
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = Object.defineProperty && Object.getOwnPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : {}; if (desc.get || desc.set) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } } newObj.default = obj; return newObj; } }
-
-function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
-
-function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
-
-function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
-
-function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
-
-function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
-
-function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
-
-var Game2 =
-/*#__PURE__*/
-function (_Component) {
-  _inherits(Game2, _Component);
-
-  function Game2() {
-    _classCallCheck(this, Game2);
-
-    return _possibleConstructorReturn(this, _getPrototypeOf(Game2).apply(this, arguments));
-  }
-
-  _createClass(Game2, [{
-    key: "render",
-    value: function render() {
-      return _react.default.createElement("div", null, "2");
-    }
-  }]);
-
-  return Game2;
-}(_react.Component);
-
-Game2.propTypes = {};
-var _default = Game2;
-exports.default = _default;
-},{"react":"../node_modules/react/index.js","prop-types":"../node_modules/prop-types/index.js"}],"audio/correct.mp3":[function(require,module,exports) {
+},{"styled-components":"../node_modules/styled-components/dist/styled-components.browser.esm.js"}],"audio/correct.mp3":[function(require,module,exports) {
 module.exports = "/correct.79bff92a.mp3";
 },{}],"../node_modules/@babel/runtime/helpers/inheritsLoose.js":[function(require,module,exports) {
 function _inheritsLoose(subClass, superClass) {
@@ -35253,7 +35121,840 @@ if ("development" !== "production") {
 }
 },{"@babel/runtime/helpers/esm/inheritsLoose":"../node_modules/@babel/runtime/helpers/esm/inheritsLoose.js","react":"../node_modules/react/index.js","react-router":"../node_modules/react-router/esm/react-router.js","history":"../node_modules/history/esm/history.js","prop-types":"../node_modules/prop-types/index.js","tiny-warning":"../node_modules/tiny-warning/dist/tiny-warning.esm.js","@babel/runtime/helpers/esm/extends":"../node_modules/@babel/runtime/helpers/esm/extends.js","@babel/runtime/helpers/esm/objectWithoutPropertiesLoose":"../node_modules/@babel/runtime/helpers/esm/objectWithoutPropertiesLoose.js","tiny-invariant":"../node_modules/tiny-invariant/dist/tiny-invariant.esm.js"}],"img/card_bg/card_front.jpg":[function(require,module,exports) {
 module.exports = "/card_front.8c64343b.jpg";
-},{}],"containers/Games/GameThree/contentStyled.js":[function(require,module,exports) {
+},{}],"containers/Games/GameOne/contentStyled.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.RulesItem = exports.MobuleSubTitle = exports.CompleteGame = exports.CardInputWrapper = exports.CardInput = exports.ModalOverButton = exports.TimerLeft = exports.ModalOverGameLabel = exports.ModalOverGameTitle = exports.ModalOverGameBlock = exports.ModalOverGame = exports.Timer = exports.ModuleButtonRun = exports.ModuleCardBack = exports.ModuleCardFront = exports.ModuleCardSelect = exports.ModuleCard3 = exports.ModuleCard2 = exports.ModuleCard1 = exports.ModuleCardNumber = exports.ModuleCard = exports.CenterWrapper = exports.ModuleCardsSelect = exports.ModuleCards = exports.ModuleTitle = exports.Module = exports.PageTitle = exports.PageWrapper = void 0;
+
+var _styledComponents = _interopRequireWildcard(require("styled-components"));
+
+var _reactRouterDom = require("react-router-dom");
+
+var _card_front = _interopRequireDefault(require("../../../img/card_bg/card_front.jpg"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = Object.defineProperty && Object.getOwnPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : {}; if (desc.get || desc.set) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } } newObj.default = obj; return newObj; } }
+
+function _templateObject35() {
+  var data = _taggedTemplateLiteral(["\n  font-size: 1em;\n  line-height: 1.5em;\n  margin-left: 1em;\n  color: #3e3e3e;\n"]);
+
+  _templateObject35 = function _templateObject35() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject34() {
+  var data = _taggedTemplateLiteral(["\n  font-size: 1.2em;\n  margin-top: 1em;\n  margin-bottom: 0.3em;\n  color: #3e3e3e;\n"]);
+
+  _templateObject34 = function _templateObject34() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject33() {
+  var data = _taggedTemplateLiteral(["\n  display: block;\n  font-size: 1em;\n  color: white;\n  background-color: #589500;\n  width: 8em;\n  height: 1em;\n  padding: 0.5em 0;\n  margin: 0.5em auto 0;\n  text-align: center;\n  border-radius: 10em;\n  cursor: pointer;\n  text-decoration: none;\n  transition: all 0.2s ease-in-out;\n  box-shadow: 0 0.1em 0.15em rgba(0,0,0,0.19), 0 0.2em 0.2em rgba(0,0,0,0.23);\n  &:hover {\n    box-shadow: 0 0.2em 0.25em rgba(0,0,0,0.19), 0 0.3em 0.3em rgba(0,0,0,0.23);\n  }\n"]);
+
+  _templateObject33 = function _templateObject33() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject32() {
+  var data = _taggedTemplateLiteral(["\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  width: 12em;\n  height: 4em;\n  border-radius: 4px;\n  margin: 0.5em 0.5em;\n  box-shadow: 0 0.1em 0.15em rgba(0,0,0,0.19), 0 0.2em 0.2em rgba(0,0,0,0.23);\n  animation: ", " 0.4s ease-out forwards;\n"]);
+
+  _templateObject32 = function _templateObject32() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject31() {
+  var data = _taggedTemplateLiteral(["\n  height: 100%;\n  width: 100%;\n  line-height: 4em;\n  text-align: center;\n  border: none;\n  outline: none;\n  box-shadow: 0 0.1em 0.15em ", ", 0 0.2em 0.2em ", ";\n"]);
+
+  _templateObject31 = function _templateObject31() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject30() {
+  var data = _taggedTemplateLiteral(["\n  margin: 0 auto;\n  text-decoration: none;\n  color: white;\n"]);
+
+  _templateObject30 = function _templateObject30() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject29() {
+  var data = _taggedTemplateLiteral(["\n  animation-duration: 20s;\n"]);
+
+  _templateObject29 = function _templateObject29() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject28() {
+  var data = _taggedTemplateLiteral(["\n  display: block;\n  font-size: 1.15em;\n  line-height: 1.5em;\n"]);
+
+  _templateObject28 = function _templateObject28() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject27() {
+  var data = _taggedTemplateLiteral(["\n  display: block;\n  margin-bottom: 1em;\n  text-align: center;\n  font-size: 1.5em;\n  font-weight: bold;\n"]);
+
+  _templateObject27 = function _templateObject27() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject26() {
+  var data = _taggedTemplateLiteral(["\n  background-color: white;\n  border-radius: 4px;\n  width: 20em;\n  height: 20em;\n  padding: 1em;\n  box-sizing: border-box;\n"]);
+
+  _templateObject26 = function _templateObject26() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject25() {
+  var data = _taggedTemplateLiteral(["\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  position: absolute;\n  top: 0;\n  left: 0;\n  width: 100%;\n  height: 100vh;\n  animation: ", " 1s linear forwards;\n"]);
+
+  _templateObject25 = function _templateObject25() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject24() {
+  var data = _taggedTemplateLiteral(["\n  height: 0.5em;\n  margin: 0 auto;\n  animation: ", " 11s linear;\n"]);
+
+  _templateObject24 = function _templateObject24() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject23() {
+  var data = _taggedTemplateLiteral(["\n  display: block;\n  font-size: 1em;\n  line-height: 1em;\n  color: white;\n  background-color: #589500;\n  width: 8em;\n  height: 1em;\n  padding: 0.5em 0;\n  margin-top: 0.5em;\n  text-align: center;\n  border-radius: 10em;\n  cursor: pointer;\n  text-decoration: none;\n  transition: all 0.2s ease-in-out;\n  box-shadow: 0 0.1em 0.15em rgba(0,0,0,0.19), 0 0.2em 0.2em rgba(0,0,0,0.23);\n  &:hover {\n    box-shadow: 0 0.2em 0.25em rgba(0,0,0,0.19), 0 0.3em 0.3em rgba(0,0,0,0.23);\n  }\n"]);
+
+  _templateObject23 = function _templateObject23() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject22() {
+  var data = _taggedTemplateLiteral(["\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  font-weight: bold;\n  position: absolute;\n  width: 100%;\n  height: 100%;\n  border-radius: 4px;\n  backface-visibility: hidden;\n  transform: rotateY(180deg);\n  background-color: #fafafa;\n  text-transform: uppercase;\n  box-shadow: 0 0.1em 0.15em rgba(0,0,0,0.19), 0 0.2em 0.2em rgba(0,0,0,0.23);\n"]);
+
+  _templateObject22 = function _templateObject22() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject21() {
+  var data = _taggedTemplateLiteral(["\n  position: absolute;\n  width: 100%;\n  height: 100%;\n  border-radius: 4px;\n  backface-visibility: hidden;\n  background-image: url(", ");\n  background-size: cover;\n  background-position: center;\n  box-shadow: 0 0.1em 0.15em rgba(0,0,0,0.19), 0 0.2em 0.2em rgba(0,0,0,0.23);\n"]);
+
+  _templateObject21 = function _templateObject21() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject20() {
+  var data = _taggedTemplateLiteral(["\n  animation: ", " 0.4s ease-in-out forwards;\n  cursor: pointer;\n"]);
+
+  _templateObject20 = function _templateObject20() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject19() {
+  var data = _taggedTemplateLiteral(["\n  animation-delay: 9s;\n"]);
+
+  _templateObject19 = function _templateObject19() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject18() {
+  var data = _taggedTemplateLiteral(["\n  animation-delay: 5s;\n"]);
+
+  _templateObject18 = function _templateObject18() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject17() {
+  var data = _taggedTemplateLiteral(["\n  animation-delay: 1s;\n"]);
+
+  _templateObject17 = function _templateObject17() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject16() {
+  var data = _taggedTemplateLiteral(["\n  animation: ", " 11s ease-in-out;\n"]);
+
+  _templateObject16 = function _templateObject16() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject15() {
+  var data = _taggedTemplateLiteral(["\n  position: relative;\n  top: 0;\n  left: 0;\n  width: 12em;\n  height: 12em;\n  border-radius: 4px;\n  margin: 0.5em 0.5em;\n  transform-style: preserve-3d;\n  perspective: 500px;\n  animation: ", " 4s ease-in-out;\n  box-shadow: 0 0.1em 0.15em rgba(0,0,0,0.19), 0 0.2em 0.2em rgba(0,0,0,0.23);\n"]);
+
+  _templateObject15 = function _templateObject15() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject14() {
+  var data = _taggedTemplateLiteral(["\n  width: 100%;\n  margin: 0 auto;\n  display: flex;\n  justify-content: center;\n  flex-wrap: wrap;\n  margin-top: 1em;\n"]);
+
+  _templateObject14 = function _templateObject14() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject13() {
+  var data = _taggedTemplateLiteral(["\n  animation: none;\n"]);
+
+  _templateObject13 = function _templateObject13() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject12() {
+  var data = _taggedTemplateLiteral(["\n  width: 40em;\n  height: auto;\n  margin: 0 auto;\n  display: flex;\n  justify-content: center;\n  flex-wrap: wrap;\n  margin-top: 1em;\n  overflow: hidden;\n  animation: ", " 12s ease-in-out forwards;\n"]);
+
+  _templateObject12 = function _templateObject12() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject11() {
+  var data = _taggedTemplateLiteral(["\n  font-size: 1.5em;\n  color: #3e3e3e;\n"]);
+
+  _templateObject11 = function _templateObject11() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject10() {
+  var data = _taggedTemplateLiteral(["\n  padding: 1.5em;\n"]);
+
+  _templateObject10 = function _templateObject10() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject9() {
+  var data = _taggedTemplateLiteral(["\n  font-size: 2em;\n  color: #3e3e3e;\n"]);
+
+  _templateObject9 = function _templateObject9() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject8() {
+  var data = _taggedTemplateLiteral(["\n  display: flex;\n  flex-direction: column;\n  padding: 2em;\n  box-sizing: border-box;\n  position: relative;\n"]);
+
+  _templateObject8 = function _templateObject8() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject7() {
+  var data = _taggedTemplateLiteral(["\n  0% {\n    transform: translateY(1em);\n    opacity: 0;\n  }\n\n  100% {\n    transform: translateY(0);\n    opacity: 1;\n  }\n"]);
+
+  _templateObject7 = function _templateObject7() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject6() {
+  var data = _taggedTemplateLiteral(["\n  0% {\n    background-color: rgba(255, 255, 255, 0);\n  }\n  \n  100% {\n    background-color: rgba(0, 0, 0, 0.15);\n  }\n"]);
+
+  _templateObject6 = function _templateObject6() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject5() {
+  var data = _taggedTemplateLiteral(["\n  0% {\n    width: 70%;\n    background-color: #50af50;\n  }\n\n  100% {\n    width: 0%;\n    background-color: #e22828;\n  }\n"]);
+
+  _templateObject5 = function _templateObject5() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject4() {
+  var data = _taggedTemplateLiteral(["\n  0% {\n    opacity: 1;\n  }\n\n  95% {\n    opacity: 1;\n  }\n\n  100% {\n    opacity: 0;\n  }\n"]);
+
+  _templateObject4 = function _templateObject4() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject3() {
+  var data = _taggedTemplateLiteral(["\n  0% {\n    transform: rotateY(0);\n  }\n\n  100% {\n    transform: rotateY(180deg);\n  }\n"]);
+
+  _templateObject3 = function _templateObject3() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject2() {
+  var data = _taggedTemplateLiteral(["\n  0% {\n    transform: rotateY(0);\n  }\n\n  5% {\n    transform: rotateY(180deg);\n  }\n\n  95% {\n    transform: rotateY(180deg);\n  }\n\n  100% {\n    transform: rotateY(0);\n  }\n"]);
+
+  _templateObject2 = function _templateObject2() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject() {
+  var data = _taggedTemplateLiteral(["\n  0% {\n    transform: rotateY(0);\n  }\n\n  20% {\n    transform: rotateY(180deg);\n  }\n\n  80% {\n    transform: rotateY(180deg);\n  }\n\n  100% {\n    transform: rotateY(0);\n  }\n"]);
+
+  _templateObject = function _templateObject() {
+    return data;
+  };
+
+  return data;
+}
+
+function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(0); } return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
+
+var flip = (0, _styledComponents.keyframes)(_templateObject());
+var flipNumbers = (0, _styledComponents.keyframes)(_templateObject2());
+var flipConst = (0, _styledComponents.keyframes)(_templateObject3());
+var skip = (0, _styledComponents.keyframes)(_templateObject4());
+var timerKeyframes = (0, _styledComponents.keyframes)(_templateObject5());
+var showModalKeyframes = (0, _styledComponents.keyframes)(_templateObject6());
+var CardInputKeyframes = (0, _styledComponents.keyframes)(_templateObject7());
+
+var PageWrapper = _styledComponents.default.div(_templateObject8());
+
+exports.PageWrapper = PageWrapper;
+
+var PageTitle = _styledComponents.default.span(_templateObject9());
+
+exports.PageTitle = PageTitle;
+
+var Module = _styledComponents.default.div(_templateObject10());
+
+exports.Module = Module;
+
+var ModuleTitle = _styledComponents.default.div(_templateObject11());
+
+exports.ModuleTitle = ModuleTitle;
+
+var ModuleCards = _styledComponents.default.div(_templateObject12(), skip);
+
+exports.ModuleCards = ModuleCards;
+var ModuleCardsSelect = (0, _styledComponents.default)(ModuleCards)(_templateObject13());
+exports.ModuleCardsSelect = ModuleCardsSelect;
+
+var CenterWrapper = _styledComponents.default.div(_templateObject14());
+
+exports.CenterWrapper = CenterWrapper;
+
+var ModuleCard = _styledComponents.default.div(_templateObject15(), flip);
+
+exports.ModuleCard = ModuleCard;
+var ModuleCardNumber = (0, _styledComponents.default)(ModuleCard)(_templateObject16(), flipNumbers);
+exports.ModuleCardNumber = ModuleCardNumber;
+var ModuleCard1 = (0, _styledComponents.default)(ModuleCard)(_templateObject17());
+exports.ModuleCard1 = ModuleCard1;
+var ModuleCard2 = (0, _styledComponents.default)(ModuleCard)(_templateObject18());
+exports.ModuleCard2 = ModuleCard2;
+var ModuleCard3 = (0, _styledComponents.default)(ModuleCard)(_templateObject19());
+exports.ModuleCard3 = ModuleCard3;
+var ModuleCardSelect = (0, _styledComponents.default)(ModuleCard)(_templateObject20(), flipConst);
+exports.ModuleCardSelect = ModuleCardSelect;
+
+var ModuleCardFront = _styledComponents.default.div(_templateObject21(), _card_front.default);
+
+exports.ModuleCardFront = ModuleCardFront;
+
+var ModuleCardBack = _styledComponents.default.div(_templateObject22());
+
+exports.ModuleCardBack = ModuleCardBack;
+
+var ModuleButtonRun = _styledComponents.default.span(_templateObject23());
+
+exports.ModuleButtonRun = ModuleButtonRun;
+
+var Timer = _styledComponents.default.div(_templateObject24(), timerKeyframes);
+
+exports.Timer = Timer;
+
+var ModalOverGame = _styledComponents.default.div(_templateObject25(), showModalKeyframes);
+
+exports.ModalOverGame = ModalOverGame;
+
+var ModalOverGameBlock = _styledComponents.default.div(_templateObject26());
+
+exports.ModalOverGameBlock = ModalOverGameBlock;
+
+var ModalOverGameTitle = _styledComponents.default.span(_templateObject27());
+
+exports.ModalOverGameTitle = ModalOverGameTitle;
+
+var ModalOverGameLabel = _styledComponents.default.span(_templateObject28());
+
+exports.ModalOverGameLabel = ModalOverGameLabel;
+var TimerLeft = (0, _styledComponents.default)(Timer)(_templateObject29());
+exports.TimerLeft = TimerLeft;
+var ModalOverButton = (0, _styledComponents.default)(ModuleButtonRun)(_templateObject30());
+exports.ModalOverButton = ModalOverButton;
+
+var CardInput = _styledComponents.default.input(_templateObject31(), function (props) {
+  return props.cardState;
+}, function (props) {
+  return props.cardState;
+});
+
+exports.CardInput = CardInput;
+
+var CardInputWrapper = _styledComponents.default.div(_templateObject32(), CardInputKeyframes);
+
+exports.CardInputWrapper = CardInputWrapper;
+
+var CompleteGame = _styledComponents.default.div(_templateObject33());
+
+exports.CompleteGame = CompleteGame;
+
+var MobuleSubTitle = _styledComponents.default.div(_templateObject34());
+
+exports.MobuleSubTitle = MobuleSubTitle;
+
+var RulesItem = _styledComponents.default.div(_templateObject35());
+
+exports.RulesItem = RulesItem;
+},{"styled-components":"../node_modules/styled-components/dist/styled-components.browser.esm.js","react-router-dom":"../node_modules/react-router-dom/esm/react-router-dom.js","../../../img/card_bg/card_front.jpg":"img/card_bg/card_front.jpg"}],"containers/Games/GameOne/index.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+
+var _react = _interopRequireWildcard(require("react"));
+
+var _reactRedux = require("react-redux");
+
+var _correct = _interopRequireDefault(require("../../../audio/correct.mp3"));
+
+var _contentStyled = require("./contentStyled.js");
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = Object.defineProperty && Object.getOwnPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : {}; if (desc.get || desc.set) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } } newObj.default = obj; return newObj; } }
+
+function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+function _toConsumableArray(arr) { return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _nonIterableSpread(); }
+
+function _nonIterableSpread() { throw new TypeError("Invalid attempt to spread non-iterable instance"); }
+
+function _iterableToArray(iter) { if (Symbol.iterator in Object(iter) || Object.prototype.toString.call(iter) === "[object Arguments]") return Array.from(iter); }
+
+function _arrayWithoutHoles(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = new Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
+
+function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
+var Game1 =
+/*#__PURE__*/
+function (_Component) {
+  _inherits(Game1, _Component);
+
+  function Game1(props) {
+    var _this;
+
+    _classCallCheck(this, Game1);
+
+    _this = _possibleConstructorReturn(this, _getPrototypeOf(Game1).call(this, props));
+    _this.state = {
+      gameId: 1,
+      isStarted: false,
+      isUserPlay: false,
+      secretCards: [_this.randomNumber(), _this.randomNumber(), _this.randomNumber()],
+      inputsValue: ['', '', ''],
+      points: 0,
+      isOver: false,
+      cardStatus: [false, false, false],
+      timerOn: false,
+      timeLeft: 20
+    };
+    return _this;
+  }
+
+  _createClass(Game1, [{
+    key: "componentWillMount",
+    value: function componentWillMount() {
+      var _this2 = this;
+
+      var Timer = function Timer() {
+        _this2.state.timerOn ? _this2.setState({
+          timeLeft: _this2.state.timeLeft - 1
+        }) : null;
+      };
+
+      setInterval(Timer, 1000);
+    }
+  }, {
+    key: "randomNumber",
+    value: function randomNumber() {
+      return Math.floor(Math.random(99) * 99);
+    }
+  }, {
+    key: "startGame",
+    value: function startGame() {
+      this.setState({
+        isStarted: true
+      });
+    }
+  }, {
+    key: "updateInputValueCards",
+    value: function updateInputValueCards(e, indexInput) {
+      var inputsValue = this.state.inputsValue;
+      var valueToUpdate = e.target.value;
+
+      if (Number(valueToUpdate) === this.state.secretCards[indexInput]) {
+        var audio = new Audio(_correct.default);
+        audio.play();
+      }
+
+      inputsValue[indexInput] = Number(valueToUpdate);
+      this.setState({
+        inputsValue: inputsValue
+      });
+    }
+  }, {
+    key: "checkInputValues",
+    value: function checkInputValues() {
+      var inputsValue = this.state.inputsValue;
+
+      var secretCardsCopy = _toConsumableArray(this.state.secretCards);
+
+      var secretCards = _toConsumableArray(this.state.secretCards);
+
+      var points = 0;
+      var cardsTrue = 0;
+      var inLine = false;
+      var secretToDelete = null;
+
+      if (inputsValue[0] === secretCards[0] && inputsValue[1] === secretCards[1] && inputsValue[2] === secretCards[2] && inputsValue[3] === secretCards[3] && inputsValue[4] === secretCards[4] && inputsValue[5] === secretCards[5]) {
+        points = 3;
+        inLine = true;
+      } else {
+        inputsValue.map(function (inputItem) {
+          var secretToDelete = null;
+          console.log(secretCards);
+          secretCards.map(function (secretItem, secretIndex) {
+            if (inputItem === secretItem) {
+              console.log(inputItem, secretItem);
+              cardsTrue++;
+              secretToDelete = secretIndex;
+            }
+          });
+
+          if (secretToDelete !== null) {
+            secretCardsCopy.splice(secretToDelete, 1);
+          }
+
+          console.log(secretCardsCopy);
+        });
+
+        if (cardsTrue === 5 || cardsTrue === 6) {
+          points = 2;
+        } else if (cardsTrue === 4) {
+          cardsTrue = 0;
+          console.log(secretCardsCopy);
+
+          for (var i = 0; i < 6; i++) {
+            if (inputsValue[i] === secretCards[i]) {
+              cardsTrue++;
+            }
+          }
+
+          if (cardsTrue === 4) {
+            points = 2;
+          } else {
+            points = 1;
+          }
+        } else if (cardsTrue < 4 && cardsTrue > 0) {
+          points = 1;
+        } else {
+          points = 0;
+        }
+      }
+
+      this.setState({
+        isOver: true,
+        points: points
+      });
+    }
+  }, {
+    key: "renderCard",
+    value: function renderCard() {
+      var _this3 = this;
+
+      return this.state.secretCards.map(function (item, index) {
+        return _react.default.createElement(_contentStyled.CardInputWrapper, {
+          key: index
+        }, _react.default.createElement(_contentStyled.CardInput, {
+          placeholder: "\u0412\u0432\u0435\u0434\u0438\u0442\u0435 \u0441\u043B\u043E\u0432\u043E",
+          onChange: function onChange(e) {
+            _this3.updateInputValueCards(e, index);
+          },
+          cardState: function cardState() {
+            if (_this3.state.secretCards[index] === _this3.state.inputsValue[index]) {
+              return "#589500";
+            } else {
+              return "#dc4c4c";
+            }
+          }
+        }));
+      });
+    }
+  }, {
+    key: "isOver",
+    value: function isOver() {
+      var _this4 = this;
+
+      if (this.state.isOver) {
+        this.state.timerOn ? this.setState({
+          timerOn: false
+        }) : null;
+        return _react.default.createElement(_contentStyled.ModalOverGame, null, _react.default.createElement(_contentStyled.ModalOverGameBlock, null, _react.default.createElement(_contentStyled.ModalOverGameTitle, null, "\u0412\u0440\u0435\u043C\u044F \u0437\u0430\u043A\u043E\u043D\u0447\u0438\u043B\u043E\u0441\u044C"), _react.default.createElement(_contentStyled.ModalOverGameLabel, null, "\u0412\u0440\u0435\u043C\u044F: ", this.state.timeLeft), _react.default.createElement(_contentStyled.ModalOverGameLabel, null, "\u0421\u0447\u0451\u0442: ", this.state.points), this.props.data.auth === false ? _react.default.createElement(_contentStyled.ModalOverButton, {
+          to: "/games"
+        }, "\u041D\u0430 \u0433\u043B\u0430\u0432\u043D\u0443\u044E") : _react.default.createElement(_contentStyled.ModalOverButton, {
+          to: "/stats",
+          onClick: function onClick() {
+            _this4.SaveResult();
+          }
+        }, "\u0421\u043E\u0445\u0440\u0430\u043D\u0438\u0442\u044C")));
+      }
+    }
+  }, {
+    key: "SaveResult",
+    value: function SaveResult() {
+      var data = {
+        userId: this.props.data.userId,
+        gameId: this.state.gameId,
+        points: this.state.points
+      };
+      SaveResultApi(data).then(function (response) {
+        console.log(response.data);
+      });
+    }
+  }, {
+    key: "isPlay",
+    value: function isPlay() {
+      var _this5 = this;
+
+      if (this.state.isUserPlay) {
+        this.state.timerOn ? setTimeout(function () {
+          !_this5.state.isOver ? _this5.setState({
+            timerOn: false,
+            isOver: true
+          }) : null;
+        }, 40000) : null;
+        console.log('Игра началась');
+        return _react.default.createElement("div", null, _react.default.createElement(_contentStyled.ModuleCardsSelect, null, this.renderCard()), _react.default.createElement("div", null, "\u0412\u0430\u0448 \u0441\u0447\u0451\u0442: ", this.state.points), _react.default.createElement("div", null, "\u0412\u0440\u0435\u043C\u044F: ", this.state.timeLeft), _react.default.createElement(_contentStyled.TimerLeft, null), _react.default.createElement(_contentStyled.CompleteGame, {
+          onClick: function onClick() {
+            return _this5.checkInputValues();
+          }
+        }, "\u0417\u0430\u0432\u0435\u0440\u0448\u0438\u0442\u044C"));
+      }
+    }
+  }, {
+    key: "renderSecretCards",
+    value: function renderSecretCards() {
+      var secretCards = this.state.secretCards;
+      return secretCards.map(function (item, index) {
+        return _react.default.createElement(_contentStyled.ModuleCardNumber, {
+          key: index
+        }, _react.default.createElement(_contentStyled.ModuleCardFront, null), _react.default.createElement(_contentStyled.ModuleCardBack, null, item));
+      });
+    }
+  }, {
+    key: "isStarted",
+    value: function isStarted() {
+      var _this6 = this;
+
+      if (this.state.isUserPlay === false) {
+        if (this.state.isStarted) {
+          setTimeout(function () {
+            _this6.setState({
+              isUserPlay: true,
+              timerOn: true
+            });
+          }, 12000);
+          return _react.default.createElement("div", null, _react.default.createElement(_contentStyled.ModuleCards, null, this.renderSecretCards()), _react.default.createElement(_contentStyled.Timer, null));
+        } else {
+          return _react.default.createElement(_contentStyled.Module, null, _react.default.createElement(_contentStyled.MobuleSubTitle, null, "\u041E\u043F\u0438\u0441\u0430\u043D\u0438\u0435:"), _react.default.createElement(_contentStyled.RulesItem, null, "\u041D\u0443\u0436\u043D\u043E \u0437\u0430\u043F\u043E\u043C\u043D\u0438\u0442\u044C \u0441\u043B\u043E\u0432\u0430 \u043D\u0430 \u0442\u0440\u0451\u0445 \u043A\u0430\u0440\u0442\u043E\u0447\u043A\u0430\u0445."), _react.default.createElement(_contentStyled.RulesItem, null, "\u041D\u0430 \u0437\u0430\u043F\u043E\u043C\u0438\u043D\u0430\u043D\u0438\u0435 \u0441\u043B\u043E\u0432\u0430 \u0434\u0430\u0451\u0442\u0441\u044F 3 \u0441\u0435\u043A\u0443\u043D\u0434\u044B."), _react.default.createElement(_contentStyled.RulesItem, null, "\u041F\u043E\u0442\u043E\u043C \u043D\u0443\u0436\u043D\u043E \u0432\u044B\u0431\u0440\u0430\u0442\u044C \u043F\u0440\u0430\u0432\u0438\u043B\u044C\u043D\u044B\u0435 \u0441\u043B\u043E\u0432\u0430 \u0441\u0440\u0435\u0434\u0438 \u043F\u043E\u044F\u0432\u0438\u0432\u0448\u0438\u0445\u0441\u044F \u0434\u0435\u0432\u044F\u0442\u0438 \u043A\u0430\u0440\u0442\u043E\u0447\u0435\u043A."), _react.default.createElement(_contentStyled.CenterWrapper, null, _react.default.createElement(_contentStyled.ModuleButtonRun, {
+            to: "#",
+            onClick: function onClick() {
+              return _this6.startGame();
+            }
+          }, "\u0421\u0442\u0430\u0440\u0442")));
+        }
+      }
+    }
+  }, {
+    key: "render",
+    value: function render() {
+      console.log(this.state.secretCards, 'рендер');
+      return _react.default.createElement(_contentStyled.PageWrapper, null, _react.default.createElement(_contentStyled.PageTitle, null, "\u0418\u0433\u0440\u044B"), _react.default.createElement(_contentStyled.Module, null, _react.default.createElement(_contentStyled.ModuleTitle, null, "\u0422\u0440\u0438 \u0441\u043B\u043E\u0432\u043E"), this.isStarted(), this.isPlay(), this.isOver()));
+    }
+  }]);
+
+  return Game1;
+}(_react.Component);
+
+exports.default = Game1;
+},{"react":"../node_modules/react/index.js","react-redux":"../node_modules/react-redux/es/index.js","../../../audio/correct.mp3":"audio/correct.mp3","./contentStyled.js":"containers/Games/GameOne/contentStyled.js"}],"containers/Games/GameTwo/index.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+
+var _react = _interopRequireWildcard(require("react"));
+
+var _propTypes = _interopRequireDefault(require("prop-types"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = Object.defineProperty && Object.getOwnPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : {}; if (desc.get || desc.set) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } } newObj.default = obj; return newObj; } }
+
+function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
+
+function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
+var Game2 =
+/*#__PURE__*/
+function (_Component) {
+  _inherits(Game2, _Component);
+
+  function Game2() {
+    _classCallCheck(this, Game2);
+
+    return _possibleConstructorReturn(this, _getPrototypeOf(Game2).apply(this, arguments));
+  }
+
+  _createClass(Game2, [{
+    key: "render",
+    value: function render() {
+      return _react.default.createElement("div", null, "2");
+    }
+  }]);
+
+  return Game2;
+}(_react.Component);
+
+Game2.propTypes = {};
+var _default = Game2;
+exports.default = _default;
+},{"react":"../node_modules/react/index.js","prop-types":"../node_modules/prop-types/index.js"}],"containers/Games/GameThree/contentStyled.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -37533,7 +38234,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 _reactDom.default.render(_react.default.createElement(_reactRedux.Provider, {
   store: _store.default
 }, _react.default.createElement(_Home.default, null)), document.getElementById('root'));
-},{"react":"../node_modules/react/index.js","react-dom":"../node_modules/react-dom/index.js","react-redux":"../node_modules/react-redux/es/index.js","./redux/store":"redux/store.js","./containers/Home":"containers/Home/index.js"}],"../../../../../../usr/local/lib/node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
+},{"react":"../node_modules/react/index.js","react-dom":"../node_modules/react-dom/index.js","react-redux":"../node_modules/react-redux/es/index.js","./redux/store":"redux/store.js","./containers/Home":"containers/Home/index.js"}],"../../../../../../../usr/local/lib/node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 var OldModule = module.bundle.Module;
@@ -37561,7 +38262,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "36553" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "33873" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
@@ -37736,5 +38437,5 @@ function hmrAcceptRun(bundle, id) {
     return true;
   }
 }
-},{}]},{},["../../../../../../usr/local/lib/node_modules/parcel-bundler/src/builtins/hmr-runtime.js","App.js"], null)
+},{}]},{},["../../../../../../../usr/local/lib/node_modules/parcel-bundler/src/builtins/hmr-runtime.js","App.js"], null)
 //# sourceMappingURL=/App.d36a57b6.js.map
