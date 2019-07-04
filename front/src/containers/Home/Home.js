@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import PropTypes from 'prop-types';
-import Tabs from '../Games';
-import { 
+import {
+  GameArea, 
   AppWraper,
   Module,
   ModuleCard,
@@ -19,21 +19,13 @@ import Game4 from '../Games/GameFour';
 import Game5 from '../Games/GameFive';
 import Game6 from '../Games/GameSix';
 import Game7 from '../Games/GameSeven';
+import Games from '../Games';
 
 class Home extends Component {
   render() {
     return (
       <AppWraper>
-        <main>
-        <Tabs>
-          <ModuleCard1 />
-          <Game1 />
-          <ModuleCard2 />
-          <Game2 />
-          <ModuleCard3 />
-          <Game3 />
-        </Tabs>
-      </main>
+        <Games />
       </AppWraper>
     );
   }
