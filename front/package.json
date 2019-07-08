@@ -25,10 +25,12 @@
     "components": "^0.1.0",
     "cssnano": "^4.1.10",
     "moment": "^2.24.0",
+    "prop-types": "^15.7.2",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
     "react-redux": "^7.0.3",
     "react-router-dom": "^5.0.0",
+    "react-sortable-hoc": "^1.9.1",
     "reducers": "^3.0.0-alpha",
     "redux": "^4.0.1",
     "styled-components": "^4.2.0"

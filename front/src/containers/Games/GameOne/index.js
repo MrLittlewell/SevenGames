@@ -1,7 +1,9 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
+import { Link } from 'react-router-dom'
 
 import sound from '../../../audio/correct.mp3'
+import { data } from './data'
 
 import {
   PageWrapper,
@@ -26,10 +28,6 @@ import {
   ModalOverGameTitle,
   ModalOverGameLabel,
   ModalOverButton,
-  ModuleCardNumber,
-  CardInputWrapper,
-  CardInput,
-  CompleteGame,
   MobuleSubTitle,
   RulesItem
 } from './contentStyled.js'
@@ -37,27 +35,24 @@ import {
 
 export default class Game1 extends Component {
   constructor(props) {
-    super(props)
+    super(props) 
 
     this.state = {
       gameId: 1,
       isStarted: false,
       isUserPlay: false,
-      secretCards: [
-        this.randomNumber(),
-        this.randomNumber(),
-        this.randomNumber()
-      ],
-      inputsValue: [ '', '', '' ],
+      values: undefined,
+      secretCards: undefined,
+      randomCards: undefined,
       points: 0,
-      isOver: false,
-      cardStatus: [false, false, false],
+      try: 3,
+      cardStatus: [true, true, true, true, true, true, true, true, true,],
       timerOn: false,
-      timeLeft: 20,
+      timeLeft: 10,
     }
   }
 
-  componentWillMount() {
+  componentDidMount() {
     const Timer = () => {
       (this.state.timerOn) ? (
         this.setState({
@@ -67,11 +62,54 @@ export default class Game1 extends Component {
     }
 
     setInterval(Timer, 1000)
+    
+    const secretCards = [
+      // data.card1[this.randomNumber(data.card1.length)],
+      // data.card2[this.randomNumber(data.card2.length)],
+      // data.card3[this.randomNumber(data.card3.length)],
+    ]
+
+    console.log(data, secretCards)
+    if (this.state.randomCards === undefined) {
+      const randomCards = () => {
+        const sortRandom = (a, b) => {
+          return Math.random() - 0.5;
+        }
+        var nineCards = [...secretCards]
+        var allCards = []
+  
+        allCards = allCards.concat(data.card1).concat(data.card2).concat(data.card3)
+  
+        nineCards.map((item) => {
+          for (let i = 0; i <= allCards.length; i++) {
+            if (allCards[i] === item) {
+              allCards.splice(i, 1)
+            }
+          }
+        })
+  
+        for (let i = 0; i < 6; i++) {
+          let random = Math.floor(Math.random(allCards.length) * allCards.length)
+          nineCards.push(allCards[random])
+        }
+  
+        nineCards.sort(sortRandom)
+  
+        return nineCards
+      }
+  
+      this.setState({
+        randomCards: randomCards(),
+        secretCards: secretCards,
+        values: data
+      })
+    }
+        
   }
 
-  randomNumber() {
+  randomNumber(number) {
     return (
-      Math.floor(Math.random(99) * 99)
+      Math.floor(Math.random(number) * number)
     )
   }
 
@@ -81,111 +119,54 @@ export default class Game1 extends Component {
     })
   }
 
-  updateInputValueCards(e, indexInput) {
-    const inputsValue = this.state.inputsValue
-    const valueToUpdate = e.target.value
+  checkCard(item, key) {
+    const cardStatus = [...this.state.cardStatus]
 
-    if (Number(valueToUpdate) === this.state.secretCards[indexInput]) {
+    cardStatus[key] = false
+
+    if ((item === this.state.secretCards[0]) || (item === this.state.secretCards[1]) || (item === this.state.secretCards[2])) {
+      console.log('Правильно!')
       var audio = new Audio(sound)
       
       audio.play()
-    }
-
-    inputsValue[indexInput] = Number(valueToUpdate)
-    this.setState({ inputsValue: inputsValue })
-  }
-
-  checkInputValues() {
-    const inputsValue = this.state.inputsValue
-    const secretCardsCopy = [...this.state.secretCards]
-    const secretCards = [...this.state.secretCards]
-    var points = 0
-    var cardsTrue = 0
-    var inLine = false
-    var secretToDelete = null
-
-    if (
-      inputsValue[0] === secretCards[0] &&
-      inputsValue[1] === secretCards[1] &&
-      inputsValue[2] === secretCards[2] &&
-      inputsValue[3] === secretCards[3] &&
-      inputsValue[4] === secretCards[4] &&
-      inputsValue[5] === secretCards[5]
-    ) {
-      points = 3
-      inLine = true
-    } else {
-      inputsValue.map((inputItem) => {
-        var secretToDelete = null
-        console.log(secretCards)
-
-        secretCards.map((secretItem, secretIndex) => {
-          if (inputItem === secretItem) {
-            console.log(inputItem, secretItem)
-            cardsTrue++
-            secretToDelete = secretIndex
-          }
-        })
-        if (secretToDelete !== null) { secretCardsCopy.splice(secretToDelete, 1) }
-        console.log(secretCardsCopy)
+      
+      this.setState({
+        points: this.state.points + 1,
+        try: this.state.try - 1,
+        cardStatus: cardStatus
       })
-
-      if (cardsTrue === 5 || cardsTrue === 6) {
-        points = 2
-      } else if (cardsTrue === 4) {
-        cardsTrue = 0
-        console.log(secretCardsCopy)
-        for (let i = 0; i < 6; i++) {
-          if (inputsValue[i] === secretCards[i]) { cardsTrue++ }
-        }
-        if (cardsTrue === 4) {
-          points = 2
-        } else {
-          points = 1
-        }
-      } else if (cardsTrue < 4 && cardsTrue > 0) {
-        points = 1
-      } else {
-        points = 0
-      }
+    } else {
+      this.setState({
+        cardStatus: cardStatus,
+        try: this.state.try - 1,
+      })
     }
-
-    this.setState({
-      isOver: true,
-      points: points
-    })
   }
 
   renderCard() {
-    return (
-      this.state.secretCards.map((item, index) => {
-        return (
-          <CardInputWrapper key = { index }>
-            <CardInput
-              placeholder = 'Введите слово'
-              onChange = { (e) => { this.updateInputValueCards(e, index) } }
-              cardState = { () => {
-                if (this.state.secretCards[index] === this.state.inputsValue[index]) {
-                  return `#589500`
-                } else {
-                  return `#dc4c4c`
-                }
-              }}
-            ></CardInput>
-          </CardInputWrapper>
-        )
-      })
-    )
+    return this.state.randomCards.map((item, key) => {
+      // console.log(item)
+      return (
+        <ModuleCardSelect
+          key = { key }
+          style = { (this.state.cardStatus[key]) ? null : { opacity: '0.5' } }
+          onClick = { () => {  (this.state.cardStatus[key]) ? (this.checkCard(item, key)) : null } }
+        >
+          <ModuleCardFront></ModuleCardFront>
+          <ModuleCardBack>{ item }</ModuleCardBack>
+        </ModuleCardSelect>
+      )
+    })
   }
   
   isOver() {
-    if (this.state.isOver) {
+    if (this.state.try === 0) {
       (this.state.timerOn) ? ( this.setState({ timerOn: false }) ) : null
 
       return (
         <ModalOverGame>
           <ModalOverGameBlock>
-            <ModalOverGameTitle>Время закончилось</ModalOverGameTitle>
+            <ModalOverGameTitle>Попытки закончились</ModalOverGameTitle>
             <ModalOverGameLabel>Время: { this.state.timeLeft }</ModalOverGameLabel>
             <ModalOverGameLabel>Счёт: { this.state.points }</ModalOverGameLabel>
             { this.props.data.auth === false ? (
@@ -199,61 +180,56 @@ export default class Game1 extends Component {
     }
   }
 
-  SaveResult() {
-    let data = {
-      userId: this.props.data.userId,
-      gameId: this.state.gameId,
-      points: this.state.points,
-    }
+  // SaveResult() {
+  //   let data = {
+  //     userId: this.props.data.userId,
+  //     gameId: this.state.gameId,
+  //     points: this.state.points,
+  //   }
 
-    SaveResultApi(data)
-      .then((response) => {
-        console.log(response.data)
-      })
-  }
+  //   SaveResultApi(data)
+  //     .then((response) => {
+  //       console.log(response.data)
+  //     })
+  // }
 
   isPlay() {
     if (this.state.isUserPlay) {
-      (this.state.timerOn) ? (setTimeout(() => {
-        (!this.state.isOver) ? ( this.setState({ timerOn: false, isOver: true }) ) : null
-      }, 40000)) : null
-
+      // (this.state.timerOn) ? (setTimeout(() => { this.setState({ timerOn: false }) }, 10000)) : null
       console.log('Игра началась')
       return (
         <div>
           <ModuleCardsSelect>
             { this.renderCard() }
           </ModuleCardsSelect>
+          <div>Попыток: { this.state.try }</div>
           <div>Ваш счёт: { this.state.points }</div>
           <div>Время: { this.state.timeLeft }</div>
           <TimerLeft />
-          <CompleteGame onClick = { () => this.checkInputValues() } >Завершить</CompleteGame>
         </div>
       )
     }
   }
 
-  renderSecretCards() {
-    const secretCards = this.state.secretCards
-
-    return secretCards.map((item, index) => {
-      return (
-        <ModuleCardNumber key = { index }>
-          <ModuleCardFront></ModuleCardFront>
-          <ModuleCardBack>{ item }</ModuleCardBack>
-        </ModuleCardNumber>
-      )
-    })
-  }
-
   isStarted() {
     if (this.state.isUserPlay === false) {
       if (this.state.isStarted) {
-        setTimeout(() => {this.setState({ isUserPlay: true, timerOn: true })}, 12000)
+        setTimeout(() => {this.setState({ isUserPlay: true, timerOn: true })}, 15000)
         return (
           <div>
             <ModuleCards>
-              { this.renderSecretCards() }
+              <ModuleCard1>
+                <ModuleCardFront></ModuleCardFront>
+                <ModuleCardBack>{ this.state.secretCards[0] }</ModuleCardBack>
+              </ModuleCard1>
+              <ModuleCard2>
+                <ModuleCardFront></ModuleCardFront>
+                <ModuleCardBack>{ this.state.secretCards[1] }</ModuleCardBack>
+              </ModuleCard2>
+              <ModuleCard3>
+                <ModuleCardFront></ModuleCardFront>
+                <ModuleCardBack>{ this.state.secretCards[2] }</ModuleCardBack>
+              </ModuleCard3>
             </ModuleCards>
             <Timer />
           </div>
@@ -275,12 +251,12 @@ export default class Game1 extends Component {
   }
 
   render() {
-    console.log(this.state.secretCards, 'рендер')
+    // console.log(this.props.data.userId, 'рендер')
     return (
       <PageWrapper>
         <PageTitle>Игры</PageTitle>
         <Module>
-          <ModuleTitle>Три слово</ModuleTitle>
+          <ModuleTitle>Три слова</ModuleTitle>
           { this.isStarted() }
           { this.isPlay() }
           { this.isOver() }

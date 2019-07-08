@@ -32321,9 +32321,7 @@ function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(
 var AppWraper = _styledComponents.default.div(_templateObject());
 
 exports.AppWraper = AppWraper;
-},{"styled-components":"../node_modules/styled-components/dist/styled-components.browser.esm.js"}],"audio/correct.mp3":[function(require,module,exports) {
-module.exports = "/correct.79bff92a.mp3";
-},{}],"../node_modules/@babel/runtime/helpers/inheritsLoose.js":[function(require,module,exports) {
+},{"styled-components":"../node_modules/styled-components/dist/styled-components.browser.esm.js"}],"../node_modules/@babel/runtime/helpers/inheritsLoose.js":[function(require,module,exports) {
 function _inheritsLoose(subClass, superClass) {
   subClass.prototype = Object.create(superClass.prototype);
   subClass.prototype.constructor = subClass;
@@ -35119,7 +35117,26 @@ if ("development" !== "production") {
     style: _propTypes.default.object
   });
 }
-},{"@babel/runtime/helpers/esm/inheritsLoose":"../node_modules/@babel/runtime/helpers/esm/inheritsLoose.js","react":"../node_modules/react/index.js","react-router":"../node_modules/react-router/esm/react-router.js","history":"../node_modules/history/esm/history.js","prop-types":"../node_modules/prop-types/index.js","tiny-warning":"../node_modules/tiny-warning/dist/tiny-warning.esm.js","@babel/runtime/helpers/esm/extends":"../node_modules/@babel/runtime/helpers/esm/extends.js","@babel/runtime/helpers/esm/objectWithoutPropertiesLoose":"../node_modules/@babel/runtime/helpers/esm/objectWithoutPropertiesLoose.js","tiny-invariant":"../node_modules/tiny-invariant/dist/tiny-invariant.esm.js"}],"img/card_bg/card_front.jpg":[function(require,module,exports) {
+},{"@babel/runtime/helpers/esm/inheritsLoose":"../node_modules/@babel/runtime/helpers/esm/inheritsLoose.js","react":"../node_modules/react/index.js","react-router":"../node_modules/react-router/esm/react-router.js","history":"../node_modules/history/esm/history.js","prop-types":"../node_modules/prop-types/index.js","tiny-warning":"../node_modules/tiny-warning/dist/tiny-warning.esm.js","@babel/runtime/helpers/esm/extends":"../node_modules/@babel/runtime/helpers/esm/extends.js","@babel/runtime/helpers/esm/objectWithoutPropertiesLoose":"../node_modules/@babel/runtime/helpers/esm/objectWithoutPropertiesLoose.js","tiny-invariant":"../node_modules/tiny-invariant/dist/tiny-invariant.esm.js"}],"audio/correct.mp3":[function(require,module,exports) {
+module.exports = "/correct.79bff92a.mp3";
+},{}],"containers/Games/GameOne/data.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.data = void 0;
+var data = [{
+  card1: ['яблоко', 'станция', 'портфель', 'книга', 'шарф']
+}, {
+  card2: ['яблоко', 'станция', 'портфель', 'книга', 'шарф']
+}, {
+  card3: ['яблоко', 'станция', 'портфель', 'книга', 'шарф']
+}, {
+  card4: ['яблоко', 'станция', 'портфель', 'книга', 'шарф']
+}];
+exports.data = data;
+},{}],"img/card_bg/card_front.jpg":[function(require,module,exports) {
 module.exports = "/card_front.8c64343b.jpg";
 },{}],"containers/Games/GameOne/contentStyled.js":[function(require,module,exports) {
 "use strict";
@@ -35610,7 +35627,11 @@ var _react = _interopRequireWildcard(require("react"));
 
 var _reactRedux = require("react-redux");
 
+var _reactRouterDom = require("react-router-dom");
+
 var _correct = _interopRequireDefault(require("../../../audio/correct.mp3"));
+
+var _data = require("./data");
 
 var _contentStyled = require("./contentStyled.js");
 
@@ -35659,20 +35680,21 @@ function (_Component) {
       gameId: 1,
       isStarted: false,
       isUserPlay: false,
-      secretCards: [_this.randomNumber(), _this.randomNumber(), _this.randomNumber()],
-      inputsValue: ['', '', ''],
+      values: undefined,
+      secretCards: undefined,
+      randomCards: undefined,
       points: 0,
-      isOver: false,
-      cardStatus: [false, false, false],
+      try: 3,
+      cardStatus: [true, true, true, true, true, true, true, true, true],
       timerOn: false,
-      timeLeft: 20
+      timeLeft: 10
     };
     return _this;
   }
 
   _createClass(Game1, [{
-    key: "componentWillMount",
-    value: function componentWillMount() {
+    key: "componentDidMount",
+    value: function componentDidMount() {
       var _this2 = this;
 
       var Timer = function Timer() {
@@ -35682,11 +35704,49 @@ function (_Component) {
       };
 
       setInterval(Timer, 1000);
+      var secretCards = [// data.card1[this.randomNumber(data.card1.length)],
+        // data.card2[this.randomNumber(data.card2.length)],
+        // data.card3[this.randomNumber(data.card3.length)],
+      ];
+      console.log(_data.data, secretCards);
+
+      if (this.state.randomCards === undefined) {
+        var randomCards = function randomCards() {
+          var sortRandom = function sortRandom(a, b) {
+            return Math.random() - 0.5;
+          };
+
+          var nineCards = [].concat(secretCards);
+          var allCards = [];
+          allCards = allCards.concat(_data.data.card1).concat(_data.data.card2).concat(_data.data.card3);
+          nineCards.map(function (item) {
+            for (var i = 0; i <= allCards.length; i++) {
+              if (allCards[i] === item) {
+                allCards.splice(i, 1);
+              }
+            }
+          });
+
+          for (var i = 0; i < 6; i++) {
+            var random = Math.floor(Math.random(allCards.length) * allCards.length);
+            nineCards.push(allCards[random]);
+          }
+
+          nineCards.sort(sortRandom);
+          return nineCards;
+        };
+
+        this.setState({
+          randomCards: randomCards(),
+          secretCards: secretCards,
+          values: _data.data
+        });
+      }
     }
   }, {
     key: "randomNumber",
-    value: function randomNumber() {
-      return Math.floor(Math.random(99) * 99);
+    value: function randomNumber(number) {
+      return Math.floor(Math.random(number) * number);
     }
   }, {
     key: "startGame",
@@ -35696,107 +35756,44 @@ function (_Component) {
       });
     }
   }, {
-    key: "updateInputValueCards",
-    value: function updateInputValueCards(e, indexInput) {
-      var inputsValue = this.state.inputsValue;
-      var valueToUpdate = e.target.value;
+    key: "checkCard",
+    value: function checkCard(item, key) {
+      var cardStatus = _toConsumableArray(this.state.cardStatus);
 
-      if (Number(valueToUpdate) === this.state.secretCards[indexInput]) {
+      cardStatus[key] = false;
+
+      if (item === this.state.secretCards[0] || item === this.state.secretCards[1] || item === this.state.secretCards[2]) {
+        console.log('Правильно!');
         var audio = new Audio(_correct.default);
         audio.play();
-      }
-
-      inputsValue[indexInput] = Number(valueToUpdate);
-      this.setState({
-        inputsValue: inputsValue
-      });
-    }
-  }, {
-    key: "checkInputValues",
-    value: function checkInputValues() {
-      var inputsValue = this.state.inputsValue;
-
-      var secretCardsCopy = _toConsumableArray(this.state.secretCards);
-
-      var secretCards = _toConsumableArray(this.state.secretCards);
-
-      var points = 0;
-      var cardsTrue = 0;
-      var inLine = false;
-      var secretToDelete = null;
-
-      if (inputsValue[0] === secretCards[0] && inputsValue[1] === secretCards[1] && inputsValue[2] === secretCards[2] && inputsValue[3] === secretCards[3] && inputsValue[4] === secretCards[4] && inputsValue[5] === secretCards[5]) {
-        points = 3;
-        inLine = true;
-      } else {
-        inputsValue.map(function (inputItem) {
-          var secretToDelete = null;
-          console.log(secretCards);
-          secretCards.map(function (secretItem, secretIndex) {
-            if (inputItem === secretItem) {
-              console.log(inputItem, secretItem);
-              cardsTrue++;
-              secretToDelete = secretIndex;
-            }
-          });
-
-          if (secretToDelete !== null) {
-            secretCardsCopy.splice(secretToDelete, 1);
-          }
-
-          console.log(secretCardsCopy);
+        this.setState({
+          points: this.state.points + 1,
+          try: this.state.try - 1,
+          cardStatus: cardStatus
         });
-
-        if (cardsTrue === 5 || cardsTrue === 6) {
-          points = 2;
-        } else if (cardsTrue === 4) {
-          cardsTrue = 0;
-          console.log(secretCardsCopy);
-
-          for (var i = 0; i < 6; i++) {
-            if (inputsValue[i] === secretCards[i]) {
-              cardsTrue++;
-            }
-          }
-
-          if (cardsTrue === 4) {
-            points = 2;
-          } else {
-            points = 1;
-          }
-        } else if (cardsTrue < 4 && cardsTrue > 0) {
-          points = 1;
-        } else {
-          points = 0;
-        }
+      } else {
+        this.setState({
+          cardStatus: cardStatus,
+          try: this.state.try - 1
+        });
       }
-
-      this.setState({
-        isOver: true,
-        points: points
-      });
     }
   }, {
     key: "renderCard",
     value: function renderCard() {
       var _this3 = this;
 
-      return this.state.secretCards.map(function (item, index) {
-        return _react.default.createElement(_contentStyled.CardInputWrapper, {
-          key: index
-        }, _react.default.createElement(_contentStyled.CardInput, {
-          placeholder: "\u0412\u0432\u0435\u0434\u0438\u0442\u0435 \u0441\u043B\u043E\u0432\u043E",
-          onChange: function onChange(e) {
-            _this3.updateInputValueCards(e, index);
+      return this.state.randomCards.map(function (item, key) {
+        // console.log(item)
+        return _react.default.createElement(_contentStyled.ModuleCardSelect, {
+          key: key,
+          style: _this3.state.cardStatus[key] ? null : {
+            opacity: '0.5'
           },
-          cardState: function cardState() {
-            if (_this3.state.secretCards[index] === _this3.state.inputsValue[index]) {
-              return "#589500";
-            } else {
-              return "#dc4c4c";
-            }
+          onClick: function onClick() {
+            _this3.state.cardStatus[key] ? _this3.checkCard(item, key) : null;
           }
-        }));
+        }, _react.default.createElement(_contentStyled.ModuleCardFront, null), _react.default.createElement(_contentStyled.ModuleCardBack, null, item));
       });
     }
   }, {
@@ -35804,11 +35801,11 @@ function (_Component) {
     value: function isOver() {
       var _this4 = this;
 
-      if (this.state.isOver) {
+      if (this.state.try === 0) {
         this.state.timerOn ? this.setState({
           timerOn: false
         }) : null;
-        return _react.default.createElement(_contentStyled.ModalOverGame, null, _react.default.createElement(_contentStyled.ModalOverGameBlock, null, _react.default.createElement(_contentStyled.ModalOverGameTitle, null, "\u0412\u0440\u0435\u043C\u044F \u0437\u0430\u043A\u043E\u043D\u0447\u0438\u043B\u043E\u0441\u044C"), _react.default.createElement(_contentStyled.ModalOverGameLabel, null, "\u0412\u0440\u0435\u043C\u044F: ", this.state.timeLeft), _react.default.createElement(_contentStyled.ModalOverGameLabel, null, "\u0421\u0447\u0451\u0442: ", this.state.points), this.props.data.auth === false ? _react.default.createElement(_contentStyled.ModalOverButton, {
+        return _react.default.createElement(_contentStyled.ModalOverGame, null, _react.default.createElement(_contentStyled.ModalOverGameBlock, null, _react.default.createElement(_contentStyled.ModalOverGameTitle, null, "\u041F\u043E\u043F\u044B\u0442\u043A\u0438 \u0437\u0430\u043A\u043E\u043D\u0447\u0438\u043B\u0438\u0441\u044C"), _react.default.createElement(_contentStyled.ModalOverGameLabel, null, "\u0412\u0440\u0435\u043C\u044F: ", this.state.timeLeft), _react.default.createElement(_contentStyled.ModalOverGameLabel, null, "\u0421\u0447\u0451\u0442: ", this.state.points), this.props.data.auth === false ? _react.default.createElement(_contentStyled.ModalOverButton, {
           to: "/games"
         }, "\u041D\u0430 \u0433\u043B\u0430\u0432\u043D\u0443\u044E") : _react.default.createElement(_contentStyled.ModalOverButton, {
           to: "/stats",
@@ -35817,68 +35814,46 @@ function (_Component) {
           }
         }, "\u0421\u043E\u0445\u0440\u0430\u043D\u0438\u0442\u044C")));
       }
-    }
-  }, {
-    key: "SaveResult",
-    value: function SaveResult() {
-      var data = {
-        userId: this.props.data.userId,
-        gameId: this.state.gameId,
-        points: this.state.points
-      };
-      SaveResultApi(data).then(function (response) {
-        console.log(response.data);
-      });
-    }
+    } // SaveResult() {
+    //   let data = {
+    //     userId: this.props.data.userId,
+    //     gameId: this.state.gameId,
+    //     points: this.state.points,
+    //   }
+    //   SaveResultApi(data)
+    //     .then((response) => {
+    //       console.log(response.data)
+    //     })
+    // }
+
   }, {
     key: "isPlay",
     value: function isPlay() {
-      var _this5 = this;
-
       if (this.state.isUserPlay) {
-        this.state.timerOn ? setTimeout(function () {
-          !_this5.state.isOver ? _this5.setState({
-            timerOn: false,
-            isOver: true
-          }) : null;
-        }, 40000) : null;
+        // (this.state.timerOn) ? (setTimeout(() => { this.setState({ timerOn: false }) }, 10000)) : null
         console.log('Игра началась');
-        return _react.default.createElement("div", null, _react.default.createElement(_contentStyled.ModuleCardsSelect, null, this.renderCard()), _react.default.createElement("div", null, "\u0412\u0430\u0448 \u0441\u0447\u0451\u0442: ", this.state.points), _react.default.createElement("div", null, "\u0412\u0440\u0435\u043C\u044F: ", this.state.timeLeft), _react.default.createElement(_contentStyled.TimerLeft, null), _react.default.createElement(_contentStyled.CompleteGame, {
-          onClick: function onClick() {
-            return _this5.checkInputValues();
-          }
-        }, "\u0417\u0430\u0432\u0435\u0440\u0448\u0438\u0442\u044C"));
+        return _react.default.createElement("div", null, _react.default.createElement(_contentStyled.ModuleCardsSelect, null, this.renderCard()), _react.default.createElement("div", null, "\u041F\u043E\u043F\u044B\u0442\u043E\u043A: ", this.state.try), _react.default.createElement("div", null, "\u0412\u0430\u0448 \u0441\u0447\u0451\u0442: ", this.state.points), _react.default.createElement("div", null, "\u0412\u0440\u0435\u043C\u044F: ", this.state.timeLeft), _react.default.createElement(_contentStyled.TimerLeft, null));
       }
-    }
-  }, {
-    key: "renderSecretCards",
-    value: function renderSecretCards() {
-      var secretCards = this.state.secretCards;
-      return secretCards.map(function (item, index) {
-        return _react.default.createElement(_contentStyled.ModuleCardNumber, {
-          key: index
-        }, _react.default.createElement(_contentStyled.ModuleCardFront, null), _react.default.createElement(_contentStyled.ModuleCardBack, null, item));
-      });
     }
   }, {
     key: "isStarted",
     value: function isStarted() {
-      var _this6 = this;
+      var _this5 = this;
 
       if (this.state.isUserPlay === false) {
         if (this.state.isStarted) {
           setTimeout(function () {
-            _this6.setState({
+            _this5.setState({
               isUserPlay: true,
               timerOn: true
             });
-          }, 12000);
-          return _react.default.createElement("div", null, _react.default.createElement(_contentStyled.ModuleCards, null, this.renderSecretCards()), _react.default.createElement(_contentStyled.Timer, null));
+          }, 15000);
+          return _react.default.createElement("div", null, _react.default.createElement(_contentStyled.ModuleCards, null, _react.default.createElement(_contentStyled.ModuleCard1, null, _react.default.createElement(_contentStyled.ModuleCardFront, null), _react.default.createElement(_contentStyled.ModuleCardBack, null, this.state.secretCards[0])), _react.default.createElement(_contentStyled.ModuleCard2, null, _react.default.createElement(_contentStyled.ModuleCardFront, null), _react.default.createElement(_contentStyled.ModuleCardBack, null, this.state.secretCards[1])), _react.default.createElement(_contentStyled.ModuleCard3, null, _react.default.createElement(_contentStyled.ModuleCardFront, null), _react.default.createElement(_contentStyled.ModuleCardBack, null, this.state.secretCards[2]))), _react.default.createElement(_contentStyled.Timer, null));
         } else {
           return _react.default.createElement(_contentStyled.Module, null, _react.default.createElement(_contentStyled.MobuleSubTitle, null, "\u041E\u043F\u0438\u0441\u0430\u043D\u0438\u0435:"), _react.default.createElement(_contentStyled.RulesItem, null, "\u041D\u0443\u0436\u043D\u043E \u0437\u0430\u043F\u043E\u043C\u043D\u0438\u0442\u044C \u0441\u043B\u043E\u0432\u0430 \u043D\u0430 \u0442\u0440\u0451\u0445 \u043A\u0430\u0440\u0442\u043E\u0447\u043A\u0430\u0445."), _react.default.createElement(_contentStyled.RulesItem, null, "\u041D\u0430 \u0437\u0430\u043F\u043E\u043C\u0438\u043D\u0430\u043D\u0438\u0435 \u0441\u043B\u043E\u0432\u0430 \u0434\u0430\u0451\u0442\u0441\u044F 3 \u0441\u0435\u043A\u0443\u043D\u0434\u044B."), _react.default.createElement(_contentStyled.RulesItem, null, "\u041F\u043E\u0442\u043E\u043C \u043D\u0443\u0436\u043D\u043E \u0432\u044B\u0431\u0440\u0430\u0442\u044C \u043F\u0440\u0430\u0432\u0438\u043B\u044C\u043D\u044B\u0435 \u0441\u043B\u043E\u0432\u0430 \u0441\u0440\u0435\u0434\u0438 \u043F\u043E\u044F\u0432\u0438\u0432\u0448\u0438\u0445\u0441\u044F \u0434\u0435\u0432\u044F\u0442\u0438 \u043A\u0430\u0440\u0442\u043E\u0447\u0435\u043A."), _react.default.createElement(_contentStyled.CenterWrapper, null, _react.default.createElement(_contentStyled.ModuleButtonRun, {
             to: "#",
             onClick: function onClick() {
-              return _this6.startGame();
+              return _this5.startGame();
             }
           }, "\u0421\u0442\u0430\u0440\u0442")));
         }
@@ -35887,8 +35862,8 @@ function (_Component) {
   }, {
     key: "render",
     value: function render() {
-      console.log(this.state.secretCards, 'рендер');
-      return _react.default.createElement(_contentStyled.PageWrapper, null, _react.default.createElement(_contentStyled.PageTitle, null, "\u0418\u0433\u0440\u044B"), _react.default.createElement(_contentStyled.Module, null, _react.default.createElement(_contentStyled.ModuleTitle, null, "\u0422\u0440\u0438 \u0441\u043B\u043E\u0432\u043E"), this.isStarted(), this.isPlay(), this.isOver()));
+      // console.log(this.props.data.userId, 'рендер')
+      return _react.default.createElement(_contentStyled.PageWrapper, null, _react.default.createElement(_contentStyled.PageTitle, null, "\u0418\u0433\u0440\u044B"), _react.default.createElement(_contentStyled.Module, null, _react.default.createElement(_contentStyled.ModuleTitle, null, "\u0422\u0440\u0438 \u0441\u043B\u043E\u0432\u0430"), this.isStarted(), this.isPlay(), this.isOver()));
     }
   }]);
 
@@ -35896,7 +35871,7 @@ function (_Component) {
 }(_react.Component);
 
 exports.default = Game1;
-},{"react":"../node_modules/react/index.js","react-redux":"../node_modules/react-redux/es/index.js","../../../audio/correct.mp3":"audio/correct.mp3","./contentStyled.js":"containers/Games/GameOne/contentStyled.js"}],"containers/Games/GameTwo/index.js":[function(require,module,exports) {
+},{"react":"../node_modules/react/index.js","react-redux":"../node_modules/react-redux/es/index.js","react-router-dom":"../node_modules/react-router-dom/esm/react-router-dom.js","../../../audio/correct.mp3":"audio/correct.mp3","./data":"containers/Games/GameOne/data.js","./contentStyled.js":"containers/Games/GameOne/contentStyled.js"}],"containers/Games/GameTwo/index.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -37395,7 +37370,2401 @@ function (_Component) {
 }(_react.Component);
 
 exports.default = Game4;
-},{"react":"../node_modules/react/index.js","react-redux":"../node_modules/react-redux/es/index.js","../../../audio/drum.mp3":"audio/drum.mp3","./contentStyled.js":"containers/Games/GameFour/contentStyled.js"}],"containers/Games/GameFive/index.js":[function(require,module,exports) {
+},{"react":"../node_modules/react/index.js","react-redux":"../node_modules/react-redux/es/index.js","../../../audio/drum.mp3":"audio/drum.mp3","./contentStyled.js":"containers/Games/GameFour/contentStyled.js"}],"../node_modules/react-sortable-hoc/dist/react-sortable-hoc.umd.js":[function(require,module,exports) {
+var define;
+var global = arguments[3];
+(function (global, factory) {
+	typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports, require('react'), require('prop-types'), require('react-dom')) :
+	typeof define === 'function' && define.amd ? define(['exports', 'react', 'prop-types', 'react-dom'], factory) :
+	(global = global || self, factory(global.SortableHOC = {}, global.React, global.PropTypes, global.ReactDOM));
+}(this, function (exports, React, PropTypes, reactDom) { 'use strict';
+
+	PropTypes = PropTypes && PropTypes.hasOwnProperty('default') ? PropTypes['default'] : PropTypes;
+
+	function createCommonjsModule(fn, module) {
+		return module = { exports: {} }, fn(module, module.exports), module.exports;
+	}
+
+	var _extends_1 = createCommonjsModule(function (module) {
+	function _extends() {
+	  module.exports = _extends = Object.assign || function (target) {
+	    for (var i = 1; i < arguments.length; i++) {
+	      var source = arguments[i];
+
+	      for (var key in source) {
+	        if (Object.prototype.hasOwnProperty.call(source, key)) {
+	          target[key] = source[key];
+	        }
+	      }
+	    }
+
+	    return target;
+	  };
+
+	  return _extends.apply(this, arguments);
+	}
+
+	module.exports = _extends;
+	});
+
+	function _arrayWithHoles(arr) {
+	  if (Array.isArray(arr)) return arr;
+	}
+
+	var arrayWithHoles = _arrayWithHoles;
+
+	function _iterableToArrayLimit(arr, i) {
+	  var _arr = [];
+	  var _n = true;
+	  var _d = false;
+	  var _e = undefined;
+
+	  try {
+	    for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) {
+	      _arr.push(_s.value);
+
+	      if (i && _arr.length === i) break;
+	    }
+	  } catch (err) {
+	    _d = true;
+	    _e = err;
+	  } finally {
+	    try {
+	      if (!_n && _i["return"] != null) _i["return"]();
+	    } finally {
+	      if (_d) throw _e;
+	    }
+	  }
+
+	  return _arr;
+	}
+
+	var iterableToArrayLimit = _iterableToArrayLimit;
+
+	function _nonIterableRest() {
+	  throw new TypeError("Invalid attempt to destructure non-iterable instance");
+	}
+
+	var nonIterableRest = _nonIterableRest;
+
+	function _slicedToArray(arr, i) {
+	  return arrayWithHoles(arr) || iterableToArrayLimit(arr, i) || nonIterableRest();
+	}
+
+	var slicedToArray = _slicedToArray;
+
+	function _defineProperty(obj, key, value) {
+	  if (key in obj) {
+	    Object.defineProperty(obj, key, {
+	      value: value,
+	      enumerable: true,
+	      configurable: true,
+	      writable: true
+	    });
+	  } else {
+	    obj[key] = value;
+	  }
+
+	  return obj;
+	}
+
+	var defineProperty = _defineProperty;
+
+	function _objectSpread(target) {
+	  for (var i = 1; i < arguments.length; i++) {
+	    var source = arguments[i] != null ? arguments[i] : {};
+	    var ownKeys = Object.keys(source);
+
+	    if (typeof Object.getOwnPropertySymbols === 'function') {
+	      ownKeys = ownKeys.concat(Object.getOwnPropertySymbols(source).filter(function (sym) {
+	        return Object.getOwnPropertyDescriptor(source, sym).enumerable;
+	      }));
+	    }
+
+	    ownKeys.forEach(function (key) {
+	      defineProperty(target, key, source[key]);
+	    });
+	  }
+
+	  return target;
+	}
+
+	var objectSpread = _objectSpread;
+
+	function _classCallCheck(instance, Constructor) {
+	  if (!(instance instanceof Constructor)) {
+	    throw new TypeError("Cannot call a class as a function");
+	  }
+	}
+
+	var classCallCheck = _classCallCheck;
+
+	function _defineProperties(target, props) {
+	  for (var i = 0; i < props.length; i++) {
+	    var descriptor = props[i];
+	    descriptor.enumerable = descriptor.enumerable || false;
+	    descriptor.configurable = true;
+	    if ("value" in descriptor) descriptor.writable = true;
+	    Object.defineProperty(target, descriptor.key, descriptor);
+	  }
+	}
+
+	function _createClass(Constructor, protoProps, staticProps) {
+	  if (protoProps) _defineProperties(Constructor.prototype, protoProps);
+	  if (staticProps) _defineProperties(Constructor, staticProps);
+	  return Constructor;
+	}
+
+	var createClass = _createClass;
+
+	var _typeof_1 = createCommonjsModule(function (module) {
+	function _typeof2(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof2 = function _typeof2(obj) { return typeof obj; }; } else { _typeof2 = function _typeof2(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof2(obj); }
+
+	function _typeof(obj) {
+	  if (typeof Symbol === "function" && _typeof2(Symbol.iterator) === "symbol") {
+	    module.exports = _typeof = function _typeof(obj) {
+	      return _typeof2(obj);
+	    };
+	  } else {
+	    module.exports = _typeof = function _typeof(obj) {
+	      return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : _typeof2(obj);
+	    };
+	  }
+
+	  return _typeof(obj);
+	}
+
+	module.exports = _typeof;
+	});
+
+	function _assertThisInitialized(self) {
+	  if (self === void 0) {
+	    throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
+	  }
+
+	  return self;
+	}
+
+	var assertThisInitialized = _assertThisInitialized;
+
+	function _possibleConstructorReturn(self, call) {
+	  if (call && (_typeof_1(call) === "object" || typeof call === "function")) {
+	    return call;
+	  }
+
+	  return assertThisInitialized(self);
+	}
+
+	var possibleConstructorReturn = _possibleConstructorReturn;
+
+	var getPrototypeOf = createCommonjsModule(function (module) {
+	function _getPrototypeOf(o) {
+	  module.exports = _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) {
+	    return o.__proto__ || Object.getPrototypeOf(o);
+	  };
+	  return _getPrototypeOf(o);
+	}
+
+	module.exports = _getPrototypeOf;
+	});
+
+	var setPrototypeOf = createCommonjsModule(function (module) {
+	function _setPrototypeOf(o, p) {
+	  module.exports = _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) {
+	    o.__proto__ = p;
+	    return o;
+	  };
+
+	  return _setPrototypeOf(o, p);
+	}
+
+	module.exports = _setPrototypeOf;
+	});
+
+	function _inherits(subClass, superClass) {
+	  if (typeof superClass !== "function" && superClass !== null) {
+	    throw new TypeError("Super expression must either be null or a function");
+	  }
+
+	  subClass.prototype = Object.create(superClass && superClass.prototype, {
+	    constructor: {
+	      value: subClass,
+	      writable: true,
+	      configurable: true
+	    }
+	  });
+	  if (superClass) setPrototypeOf(subClass, superClass);
+	}
+
+	var inherits = _inherits;
+
+	/**
+	 * Copyright (c) 2013-present, Facebook, Inc.
+	 *
+	 * This source code is licensed under the MIT license found in the
+	 * LICENSE file in the root directory of this source tree.
+	 */
+
+	var invariant = function(condition, format, a, b, c, d, e, f) {
+	  {
+	    if (format === undefined) {
+	      throw new Error('invariant requires an error message argument');
+	    }
+	  }
+
+	  if (!condition) {
+	    var error;
+	    if (format === undefined) {
+	      error = new Error(
+	        'Minified exception occurred; use the non-minified dev environment ' +
+	        'for the full error message and additional helpful warnings.'
+	      );
+	    } else {
+	      var args = [a, b, c, d, e, f];
+	      var argIndex = 0;
+	      error = new Error(
+	        format.replace(/%s/g, function() { return args[argIndex++]; })
+	      );
+	      error.name = 'Invariant Violation';
+	    }
+
+	    error.framesToPop = 1; // we don't care about invariant's own frame
+	    throw error;
+	  }
+	};
+
+	var invariant_1 = invariant;
+
+	var Manager = function () {
+	  function Manager() {
+	    classCallCheck(this, Manager);
+
+	    defineProperty(this, "refs", {});
+	  }
+
+	  createClass(Manager, [{
+	    key: "add",
+	    value: function add(collection, ref) {
+	      if (!this.refs[collection]) {
+	        this.refs[collection] = [];
+	      }
+
+	      this.refs[collection].push(ref);
+	    }
+	  }, {
+	    key: "remove",
+	    value: function remove(collection, ref) {
+	      var index = this.getIndex(collection, ref);
+
+	      if (index !== -1) {
+	        this.refs[collection].splice(index, 1);
+	      }
+	    }
+	  }, {
+	    key: "isActive",
+	    value: function isActive() {
+	      return this.active;
+	    }
+	  }, {
+	    key: "getActive",
+	    value: function getActive() {
+	      var _this = this;
+
+	      return this.refs[this.active.collection].find(function (_ref) {
+	        var node = _ref.node;
+	        return node.sortableInfo.index == _this.active.index;
+	      });
+	    }
+	  }, {
+	    key: "getIndex",
+	    value: function getIndex(collection, ref) {
+	      return this.refs[collection].indexOf(ref);
+	    }
+	  }, {
+	    key: "getOrderedRefs",
+	    value: function getOrderedRefs() {
+	      var collection = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : this.active.collection;
+	      return this.refs[collection].sort(sortByIndex);
+	    }
+	  }]);
+
+	  return Manager;
+	}();
+
+	function sortByIndex(_ref2, _ref3) {
+	  var index1 = _ref2.node.sortableInfo.index;
+	  var index2 = _ref3.node.sortableInfo.index;
+	  return index1 - index2;
+	}
+
+	function _arrayWithoutHoles(arr) {
+	  if (Array.isArray(arr)) {
+	    for (var i = 0, arr2 = new Array(arr.length); i < arr.length; i++) {
+	      arr2[i] = arr[i];
+	    }
+
+	    return arr2;
+	  }
+	}
+
+	var arrayWithoutHoles = _arrayWithoutHoles;
+
+	function _iterableToArray(iter) {
+	  if (Symbol.iterator in Object(iter) || Object.prototype.toString.call(iter) === "[object Arguments]") return Array.from(iter);
+	}
+
+	var iterableToArray = _iterableToArray;
+
+	function _nonIterableSpread() {
+	  throw new TypeError("Invalid attempt to spread non-iterable instance");
+	}
+
+	var nonIterableSpread = _nonIterableSpread;
+
+	function _toConsumableArray(arr) {
+	  return arrayWithoutHoles(arr) || iterableToArray(arr) || nonIterableSpread();
+	}
+
+	var toConsumableArray = _toConsumableArray;
+
+	function arrayMove(array, from, to) {
+	  {
+	    if (typeof console !== 'undefined') {
+	      console.warn("Deprecation warning: arrayMove will no longer be exported by 'react-sortable-hoc' in the next major release. Please install the `array-move` package locally instead. https://www.npmjs.com/package/array-move");
+	    }
+	  }
+
+	  array = array.slice();
+	  array.splice(to < 0 ? array.length + to : to, 0, array.splice(from, 1)[0]);
+	  return array;
+	}
+	function omit(obj) {
+	  for (var _len = arguments.length, keysToOmit = new Array(_len > 1 ? _len - 1 : 0), _key = 1; _key < _len; _key++) {
+	    keysToOmit[_key - 1] = arguments[_key];
+	  }
+
+	  return Object.keys(obj).reduce(function (acc, key) {
+	    if (keysToOmit.indexOf(key) === -1) {
+	      acc[key] = obj[key];
+	    }
+
+	    return acc;
+	  }, {});
+	}
+	var events = {
+	  end: ['touchend', 'touchcancel', 'mouseup'],
+	  move: ['touchmove', 'mousemove'],
+	  start: ['touchstart', 'mousedown']
+	};
+	var vendorPrefix = function () {
+	  if (typeof window === 'undefined' || typeof document === 'undefined') {
+	    return '';
+	  }
+
+	  var styles = window.getComputedStyle(document.documentElement, '') || ['-moz-hidden-iframe'];
+	  var pre = (Array.prototype.slice.call(styles).join('').match(/-(moz|webkit|ms)-/) || styles.OLink === '' && ['', 'o'])[1];
+
+	  switch (pre) {
+	    case 'ms':
+	      return 'ms';
+
+	    default:
+	      return pre && pre.length ? pre[0].toUpperCase() + pre.substr(1) : '';
+	  }
+	}();
+	function setInlineStyles(node, styles) {
+	  Object.keys(styles).forEach(function (key) {
+	    node.style[key] = styles[key];
+	  });
+	}
+	function setTranslate3d(node, translate) {
+	  node.style["".concat(vendorPrefix, "Transform")] = translate == null ? '' : "translate3d(".concat(translate.x, "px,").concat(translate.y, "px,0)");
+	}
+	function setTransitionDuration(node, duration) {
+	  node.style["".concat(vendorPrefix, "TransitionDuration")] = duration == null ? '' : "".concat(duration, "ms");
+	}
+	function closest(el, fn) {
+	  while (el) {
+	    if (fn(el)) {
+	      return el;
+	    }
+
+	    el = el.parentNode;
+	  }
+
+	  return null;
+	}
+	function limit(min, max, value) {
+	  return Math.max(min, Math.min(value, max));
+	}
+
+	function getPixelValue(stringValue) {
+	  if (stringValue.substr(-2) === 'px') {
+	    return parseFloat(stringValue);
+	  }
+
+	  return 0;
+	}
+
+	function getElementMargin(element) {
+	  var style = window.getComputedStyle(element);
+	  return {
+	    bottom: getPixelValue(style.marginBottom),
+	    left: getPixelValue(style.marginLeft),
+	    right: getPixelValue(style.marginRight),
+	    top: getPixelValue(style.marginTop)
+	  };
+	}
+	function provideDisplayName(prefix, Component) {
+	  var componentName = Component.displayName || Component.name;
+	  return componentName ? "".concat(prefix, "(").concat(componentName, ")") : prefix;
+	}
+	function getScrollAdjustedBoundingClientRect(node, scrollDelta) {
+	  var boundingClientRect = node.getBoundingClientRect();
+	  return {
+	    top: boundingClientRect.top + scrollDelta.top,
+	    left: boundingClientRect.left + scrollDelta.left
+	  };
+	}
+	function getPosition(event) {
+	  if (event.touches && event.touches.length) {
+	    return {
+	      x: event.touches[0].pageX,
+	      y: event.touches[0].pageY
+	    };
+	  } else if (event.changedTouches && event.changedTouches.length) {
+	    return {
+	      x: event.changedTouches[0].pageX,
+	      y: event.changedTouches[0].pageY
+	    };
+	  } else {
+	    return {
+	      x: event.pageX,
+	      y: event.pageY
+	    };
+	  }
+	}
+	function isTouchEvent(event) {
+	  return event.touches && event.touches.length || event.changedTouches && event.changedTouches.length;
+	}
+	function getEdgeOffset(node, parent) {
+	  var offset = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : {
+	    left: 0,
+	    top: 0
+	  };
+
+	  if (!node) {
+	    return undefined;
+	  }
+
+	  var nodeOffset = {
+	    left: offset.left + node.offsetLeft,
+	    top: offset.top + node.offsetTop
+	  };
+
+	  if (node.parentNode === parent) {
+	    return nodeOffset;
+	  }
+
+	  return getEdgeOffset(node.parentNode, parent, nodeOffset);
+	}
+	function getTargetIndex(newIndex, prevIndex, oldIndex) {
+	  if (newIndex < oldIndex && newIndex > prevIndex) {
+	    return newIndex - 1;
+	  } else if (newIndex > oldIndex && newIndex < prevIndex) {
+	    return newIndex + 1;
+	  } else {
+	    return newIndex;
+	  }
+	}
+	function getLockPixelOffset(_ref) {
+	  var lockOffset = _ref.lockOffset,
+	      width = _ref.width,
+	      height = _ref.height;
+	  var offsetX = lockOffset;
+	  var offsetY = lockOffset;
+	  var unit = 'px';
+
+	  if (typeof lockOffset === 'string') {
+	    var match = /^[+-]?\d*(?:\.\d*)?(px|%)$/.exec(lockOffset);
+	    invariant_1(match !== null, 'lockOffset value should be a number or a string of a ' + 'number followed by "px" or "%". Given %s', lockOffset);
+	    offsetX = parseFloat(lockOffset);
+	    offsetY = parseFloat(lockOffset);
+	    unit = match[1];
+	  }
+
+	  invariant_1(isFinite(offsetX) && isFinite(offsetY), 'lockOffset value should be a finite. Given %s', lockOffset);
+
+	  if (unit === '%') {
+	    offsetX = offsetX * width / 100;
+	    offsetY = offsetY * height / 100;
+	  }
+
+	  return {
+	    x: offsetX,
+	    y: offsetY
+	  };
+	}
+	function getLockPixelOffsets(_ref2) {
+	  var height = _ref2.height,
+	      width = _ref2.width,
+	      lockOffset = _ref2.lockOffset;
+	  var offsets = Array.isArray(lockOffset) ? lockOffset : [lockOffset, lockOffset];
+	  invariant_1(offsets.length === 2, 'lockOffset prop of SortableContainer should be a single ' + 'value or an array of exactly two values. Given %s', lockOffset);
+
+	  var _offsets = slicedToArray(offsets, 2),
+	      minLockOffset = _offsets[0],
+	      maxLockOffset = _offsets[1];
+
+	  return [getLockPixelOffset({
+	    height: height,
+	    lockOffset: minLockOffset,
+	    width: width
+	  }), getLockPixelOffset({
+	    height: height,
+	    lockOffset: maxLockOffset,
+	    width: width
+	  })];
+	}
+
+	function isScrollable(el) {
+	  var computedStyle = window.getComputedStyle(el);
+	  var overflowRegex = /(auto|scroll)/;
+	  var properties = ['overflow', 'overflowX', 'overflowY'];
+	  return properties.find(function (property) {
+	    return overflowRegex.test(computedStyle[property]);
+	  });
+	}
+
+	function getScrollingParent(el) {
+	  if (!(el instanceof HTMLElement)) {
+	    return null;
+	  } else if (isScrollable(el)) {
+	    return el;
+	  } else {
+	    return getScrollingParent(el.parentNode);
+	  }
+	}
+	var KEYCODE = {
+	  TAB: 9,
+	  ESC: 27,
+	  SPACE: 32,
+	  LEFT: 37,
+	  UP: 38,
+	  RIGHT: 39,
+	  DOWN: 40
+	};
+	var NodeType = {
+	  Anchor: 'A',
+	  Button: 'BUTTON',
+	  Canvas: 'CANVAS',
+	  Input: 'INPUT',
+	  Option: 'OPTION',
+	  Textarea: 'TEXTAREA',
+	  Select: 'SELECT'
+	};
+	function cloneNode(node) {
+	  var selector = 'input, textarea, select, canvas, [contenteditable]';
+	  var fields = node.querySelectorAll(selector);
+	  var clonedNode = node.cloneNode(true);
+
+	  var clonedFields = toConsumableArray(clonedNode.querySelectorAll(selector));
+
+	  clonedFields.forEach(function (field, i) {
+	    if (field.type !== 'file') {
+	      field.value = fields[i].value;
+	    }
+
+	    if (field.type === 'radio' && field.name) {
+	      field.name = "__sortableClone__".concat(field.name);
+	    }
+
+	    if (field.tagName === NodeType.Canvas && fields[i].width > 0 && fields[i].height > 0) {
+	      var destCtx = field.getContext('2d');
+	      destCtx.drawImage(fields[i], 0, 0);
+	    }
+	  });
+	  return clonedNode;
+	}
+
+	function sortableHandle(WrappedComponent) {
+	  var _class, _temp;
+
+	  var config = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {
+	    withRef: false
+	  };
+	  return _temp = _class = function (_React$Component) {
+	    inherits(WithSortableHandle, _React$Component);
+
+	    function WithSortableHandle() {
+	      classCallCheck(this, WithSortableHandle);
+
+	      return possibleConstructorReturn(this, getPrototypeOf(WithSortableHandle).apply(this, arguments));
+	    }
+
+	    createClass(WithSortableHandle, [{
+	      key: "componentDidMount",
+	      value: function componentDidMount() {
+	        var node = reactDom.findDOMNode(this);
+	        node.sortableHandle = true;
+	      }
+	    }, {
+	      key: "getWrappedInstance",
+	      value: function getWrappedInstance() {
+	        invariant_1(config.withRef, 'To access the wrapped instance, you need to pass in {withRef: true} as the second argument of the SortableHandle() call');
+	        return this.refs.wrappedInstance;
+	      }
+	    }, {
+	      key: "render",
+	      value: function render() {
+	        var ref = config.withRef ? 'wrappedInstance' : null;
+	        return React.createElement(WrappedComponent, _extends_1({
+	          ref: ref
+	        }, this.props));
+	      }
+	    }]);
+
+	    return WithSortableHandle;
+	  }(React.Component), defineProperty(_class, "displayName", provideDisplayName('sortableHandle', WrappedComponent)), _temp;
+	}
+	function isSortableHandle(node) {
+	  return node.sortableHandle != null;
+	}
+
+	var AutoScroller = function () {
+	  function AutoScroller(container, onScrollCallback) {
+	    classCallCheck(this, AutoScroller);
+
+	    this.container = container;
+	    this.onScrollCallback = onScrollCallback;
+	  }
+
+	  createClass(AutoScroller, [{
+	    key: "clear",
+	    value: function clear() {
+	      clearInterval(this.interval);
+	      this.interval = null;
+	    }
+	  }, {
+	    key: "update",
+	    value: function update(_ref) {
+	      var _this = this;
+
+	      var translate = _ref.translate,
+	          minTranslate = _ref.minTranslate,
+	          maxTranslate = _ref.maxTranslate,
+	          width = _ref.width,
+	          height = _ref.height;
+	      var direction = {
+	        x: 0,
+	        y: 0
+	      };
+	      var speed = {
+	        x: 1,
+	        y: 1
+	      };
+	      var acceleration = {
+	        x: 10,
+	        y: 10
+	      };
+	      var _this$container = this.container,
+	          scrollTop = _this$container.scrollTop,
+	          scrollLeft = _this$container.scrollLeft,
+	          scrollHeight = _this$container.scrollHeight,
+	          scrollWidth = _this$container.scrollWidth,
+	          clientHeight = _this$container.clientHeight,
+	          clientWidth = _this$container.clientWidth;
+	      var isTop = scrollTop === 0;
+	      var isBottom = scrollHeight - scrollTop - clientHeight === 0;
+	      var isLeft = scrollLeft === 0;
+	      var isRight = scrollWidth - scrollLeft - clientWidth === 0;
+
+	      if (translate.y >= maxTranslate.y - height / 2 && !isBottom) {
+	        direction.y = 1;
+	        speed.y = acceleration.y * Math.abs((maxTranslate.y - height / 2 - translate.y) / height);
+	      } else if (translate.x >= maxTranslate.x - width / 2 && !isRight) {
+	        direction.x = 1;
+	        speed.x = acceleration.x * Math.abs((maxTranslate.x - width / 2 - translate.x) / width);
+	      } else if (translate.y <= minTranslate.y + height / 2 && !isTop) {
+	        direction.y = -1;
+	        speed.y = acceleration.y * Math.abs((translate.y - height / 2 - minTranslate.y) / height);
+	      } else if (translate.x <= minTranslate.x + width / 2 && !isLeft) {
+	        direction.x = -1;
+	        speed.x = acceleration.x * Math.abs((translate.x - width / 2 - minTranslate.x) / width);
+	      }
+
+	      if (this.interval) {
+	        this.clear();
+	        this.isAutoScrolling = false;
+	      }
+
+	      if (direction.x !== 0 || direction.y !== 0) {
+	        this.interval = setInterval(function () {
+	          _this.isAutoScrolling = true;
+	          var offset = {
+	            left: speed.x * direction.x,
+	            top: speed.y * direction.y
+	          };
+	          _this.container.scrollTop += offset.top;
+	          _this.container.scrollLeft += offset.left;
+
+	          _this.onScrollCallback(offset);
+	        }, 5);
+	      }
+	    }
+	  }]);
+
+	  return AutoScroller;
+	}();
+
+	function defaultGetHelperDimensions(_ref) {
+	  var node = _ref.node;
+	  return {
+	    height: node.offsetHeight,
+	    width: node.offsetWidth
+	  };
+	}
+
+	function defaultShouldCancelStart(event) {
+	  var interactiveElements = [NodeType.Input, NodeType.Textarea, NodeType.Select, NodeType.Option, NodeType.Button];
+
+	  if (interactiveElements.indexOf(event.target.tagName) !== -1) {
+	    return true;
+	  }
+
+	  if (closest(event.target, function (el) {
+	    return el.contentEditable === 'true';
+	  })) {
+	    return true;
+	  }
+
+	  return false;
+	}
+
+	var propTypes = {
+	  axis: PropTypes.oneOf(['x', 'y', 'xy']),
+	  contentWindow: PropTypes.any,
+	  disableAutoscroll: PropTypes.bool,
+	  distance: PropTypes.number,
+	  getContainer: PropTypes.func,
+	  getHelperDimensions: PropTypes.func,
+	  helperClass: PropTypes.string,
+	  helperContainer: PropTypes.oneOfType([PropTypes.func, typeof HTMLElement === 'undefined' ? PropTypes.any : PropTypes.instanceOf(HTMLElement)]),
+	  hideSortableGhost: PropTypes.bool,
+	  keyboardSortingTransitionDuration: PropTypes.number,
+	  lockAxis: PropTypes.string,
+	  lockOffset: PropTypes.oneOfType([PropTypes.number, PropTypes.string, PropTypes.arrayOf(PropTypes.oneOfType([PropTypes.number, PropTypes.string]))]),
+	  lockToContainerEdges: PropTypes.bool,
+	  onSortEnd: PropTypes.func,
+	  onSortMove: PropTypes.func,
+	  onSortOver: PropTypes.func,
+	  onSortStart: PropTypes.func,
+	  pressDelay: PropTypes.number,
+	  pressThreshold: PropTypes.number,
+	  shouldCancelStart: PropTypes.func,
+	  transitionDuration: PropTypes.number,
+	  updateBeforeSortStart: PropTypes.func,
+	  useDragHandle: PropTypes.bool,
+	  useWindowAsScrollContainer: PropTypes.bool
+	};
+	var defaultProps = {
+	  axis: 'y',
+	  disableAutoscroll: false,
+	  distance: 0,
+	  getHelperDimensions: defaultGetHelperDimensions,
+	  hideSortableGhost: true,
+	  lockOffset: '50%',
+	  lockToContainerEdges: false,
+	  pressDelay: 0,
+	  pressThreshold: 5,
+	  shouldCancelStart: defaultShouldCancelStart,
+	  transitionDuration: 300,
+	  useWindowAsScrollContainer: false
+	};
+	var omittedProps = Object.keys(propTypes);
+	function validateProps(props) {
+	  invariant_1(!(props.distance && props.pressDelay), 'Attempted to set both `pressDelay` and `distance` on SortableContainer, you may only use one or the other, not both at the same time.');
+	}
+
+	function _finallyRethrows(body, finalizer) {
+	  try {
+	    var result = body();
+	  } catch (e) {
+	    return finalizer(true, e);
+	  }
+
+	  if (result && result.then) {
+	    return result.then(finalizer.bind(null, false), finalizer.bind(null, true));
+	  }
+
+	  return finalizer(false, value);
+	}
+	function sortableContainer(WrappedComponent) {
+	  var _class, _temp;
+
+	  var config = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {
+	    withRef: false
+	  };
+	  return _temp = _class = function (_React$Component) {
+	    inherits(WithSortableContainer, _React$Component);
+
+	    function WithSortableContainer(props) {
+	      var _this;
+
+	      classCallCheck(this, WithSortableContainer);
+
+	      _this = possibleConstructorReturn(this, getPrototypeOf(WithSortableContainer).call(this, props));
+
+	      defineProperty(assertThisInitialized(assertThisInitialized(_this)), "handleStart", function (event) {
+	        var _this$props = _this.props,
+	            distance = _this$props.distance,
+	            shouldCancelStart = _this$props.shouldCancelStart;
+
+	        if (event.button === 2 || shouldCancelStart(event)) {
+	          return;
+	        }
+
+	        _this.touched = true;
+	        _this.position = getPosition(event);
+	        var node = closest(event.target, function (el) {
+	          return el.sortableInfo != null;
+	        });
+
+	        if (node && node.sortableInfo && _this.nodeIsChild(node) && !_this.state.sorting) {
+	          var useDragHandle = _this.props.useDragHandle;
+	          var _node$sortableInfo = node.sortableInfo,
+	              index = _node$sortableInfo.index,
+	              collection = _node$sortableInfo.collection,
+	              disabled = _node$sortableInfo.disabled;
+
+	          if (disabled) {
+	            return;
+	          }
+
+	          if (useDragHandle && !closest(event.target, isSortableHandle)) {
+	            return;
+	          }
+
+	          _this.manager.active = {
+	            collection: collection,
+	            index: index
+	          };
+
+	          if (!isTouchEvent(event) && event.target.tagName === NodeType.Anchor) {
+	            event.preventDefault();
+	          }
+
+	          if (!distance) {
+	            if (_this.props.pressDelay === 0) {
+	              _this.handlePress(event);
+	            } else {
+	              _this.pressTimer = setTimeout(function () {
+	                return _this.handlePress(event);
+	              }, _this.props.pressDelay);
+	            }
+	          }
+	        }
+	      });
+
+	      defineProperty(assertThisInitialized(assertThisInitialized(_this)), "nodeIsChild", function (node) {
+	        return node.sortableInfo.manager === _this.manager;
+	      });
+
+	      defineProperty(assertThisInitialized(assertThisInitialized(_this)), "handleMove", function (event) {
+	        var _this$props2 = _this.props,
+	            distance = _this$props2.distance,
+	            pressThreshold = _this$props2.pressThreshold;
+
+	        if (!_this.state.sorting && _this.touched && !_this._awaitingUpdateBeforeSortStart) {
+	          var position = getPosition(event);
+	          var delta = {
+	            x: _this.position.x - position.x,
+	            y: _this.position.y - position.y
+	          };
+	          var combinedDelta = Math.abs(delta.x) + Math.abs(delta.y);
+	          _this.delta = delta;
+
+	          if (!distance && (!pressThreshold || combinedDelta >= pressThreshold)) {
+	            clearTimeout(_this.cancelTimer);
+	            _this.cancelTimer = setTimeout(_this.cancel, 0);
+	          } else if (distance && combinedDelta >= distance && _this.manager.isActive()) {
+	            _this.handlePress(event);
+	          }
+	        }
+	      });
+
+	      defineProperty(assertThisInitialized(assertThisInitialized(_this)), "handleEnd", function () {
+	        _this.touched = false;
+
+	        _this.cancel();
+	      });
+
+	      defineProperty(assertThisInitialized(assertThisInitialized(_this)), "cancel", function () {
+	        var distance = _this.props.distance;
+	        var sorting = _this.state.sorting;
+
+	        if (!sorting) {
+	          if (!distance) {
+	            clearTimeout(_this.pressTimer);
+	          }
+
+	          _this.manager.active = null;
+	        }
+	      });
+
+	      defineProperty(assertThisInitialized(assertThisInitialized(_this)), "handlePress", function (event) {
+	        try {
+	          var active = _this.manager.getActive();
+
+	          var _temp6 = function () {
+	            if (active) {
+	              var _temp7 = function _temp7() {
+	                var index = _node.sortableInfo.index;
+	                var margin = getElementMargin(_node);
+
+	                var containerBoundingRect = _this.scrollContainer.getBoundingClientRect();
+
+	                var dimensions = _getHelperDimensions({
+	                  collection: _collection,
+	                  index: index,
+	                  node: _node
+	                });
+
+	                _this.node = _node;
+	                _this.margin = margin;
+	                _this.width = dimensions.width;
+	                _this.height = dimensions.height;
+	                _this.marginOffset = {
+	                  x: _this.margin.left + _this.margin.right,
+	                  y: Math.max(_this.margin.top, _this.margin.bottom)
+	                };
+	                _this.boundingClientRect = _node.getBoundingClientRect();
+	                _this.containerBoundingRect = containerBoundingRect;
+	                _this.index = index;
+	                _this.newIndex = index;
+	                _this.axis = {
+	                  x: _axis.indexOf('x') >= 0,
+	                  y: _axis.indexOf('y') >= 0
+	                };
+	                _this.offsetEdge = getEdgeOffset(_node, _this.container);
+
+	                if (_isKeySorting) {
+	                  _this.initialOffset = getPosition(objectSpread({}, event, {
+	                    pageX: _this.boundingClientRect.left,
+	                    pageY: _this.boundingClientRect.top
+	                  }));
+	                } else {
+	                  _this.initialOffset = getPosition(event);
+	                }
+
+	                _this.initialScroll = {
+	                  left: _this.scrollContainer.scrollLeft,
+	                  top: _this.scrollContainer.scrollTop
+	                };
+	                _this.initialWindowScroll = {
+	                  left: window.pageXOffset,
+	                  top: window.pageYOffset
+	                };
+	                _this.helper = _this.helperContainer.appendChild(cloneNode(_node));
+	                setInlineStyles(_this.helper, {
+	                  boxSizing: 'border-box',
+	                  height: "".concat(_this.height, "px"),
+	                  left: "".concat(_this.boundingClientRect.left - margin.left, "px"),
+	                  pointerEvents: 'none',
+	                  position: 'fixed',
+	                  top: "".concat(_this.boundingClientRect.top - margin.top, "px"),
+	                  width: "".concat(_this.width, "px")
+	                });
+
+	                if (_isKeySorting) {
+	                  _this.helper.focus();
+	                }
+
+	                if (_hideSortableGhost) {
+	                  _this.sortableGhost = _node;
+	                  setInlineStyles(_node, {
+	                    opacity: 0,
+	                    visibility: 'hidden'
+	                  });
+	                }
+
+	                _this.minTranslate = {};
+	                _this.maxTranslate = {};
+
+	                if (_isKeySorting) {
+	                  var _ref = _useWindowAsScrollContainer ? {
+	                    top: 0,
+	                    left: 0,
+	                    width: _this.contentWindow.innerWidth,
+	                    height: _this.contentWindow.innerHeight
+	                  } : _this.containerBoundingRect,
+	                      containerTop = _ref.top,
+	                      containerLeft = _ref.left,
+	                      containerWidth = _ref.width,
+	                      containerHeight = _ref.height;
+
+	                  var containerBottom = containerTop + containerHeight;
+	                  var containerRight = containerLeft + containerWidth;
+
+	                  if (_this.axis.x) {
+	                    _this.minTranslate.x = containerLeft - _this.boundingClientRect.left;
+	                    _this.maxTranslate.x = containerRight - (_this.boundingClientRect.left + _this.width);
+	                  }
+
+	                  if (_this.axis.y) {
+	                    _this.minTranslate.y = containerTop - _this.boundingClientRect.top;
+	                    _this.maxTranslate.y = containerBottom - (_this.boundingClientRect.top + _this.height);
+	                  }
+	                } else {
+	                  if (_this.axis.x) {
+	                    _this.minTranslate.x = (_useWindowAsScrollContainer ? 0 : containerBoundingRect.left) - _this.boundingClientRect.left - _this.width / 2;
+	                    _this.maxTranslate.x = (_useWindowAsScrollContainer ? _this.contentWindow.innerWidth : containerBoundingRect.left + containerBoundingRect.width) - _this.boundingClientRect.left - _this.width / 2;
+	                  }
+
+	                  if (_this.axis.y) {
+	                    _this.minTranslate.y = (_useWindowAsScrollContainer ? 0 : containerBoundingRect.top) - _this.boundingClientRect.top - _this.height / 2;
+	                    _this.maxTranslate.y = (_useWindowAsScrollContainer ? _this.contentWindow.innerHeight : containerBoundingRect.top + containerBoundingRect.height) - _this.boundingClientRect.top - _this.height / 2;
+	                  }
+	                }
+
+	                if (_helperClass) {
+	                  _helperClass.split(' ').forEach(function (className) {
+	                    return _this.helper.classList.add(className);
+	                  });
+	                }
+
+	                _this.listenerNode = event.touches ? _node : _this.contentWindow;
+
+	                if (_isKeySorting) {
+	                  _this.listenerNode.addEventListener('wheel', _this.handleKeyEnd, true);
+
+	                  _this.listenerNode.addEventListener('mousedown', _this.handleKeyEnd, true);
+
+	                  _this.listenerNode.addEventListener('keydown', _this.handleKeyDown);
+	                } else {
+	                  events.move.forEach(function (eventName) {
+	                    return _this.listenerNode.addEventListener(eventName, _this.handleSortMove, false);
+	                  });
+	                  events.end.forEach(function (eventName) {
+	                    return _this.listenerNode.addEventListener(eventName, _this.handleSortEnd, false);
+	                  });
+	                }
+
+	                _this.setState({
+	                  sorting: true,
+	                  sortingIndex: index
+	                });
+
+	                if (_onSortStart) {
+	                  _onSortStart({
+	                    node: _node,
+	                    index: index,
+	                    collection: _collection,
+	                    isKeySorting: _isKeySorting
+	                  }, event);
+	                }
+
+	                if (_isKeySorting) {
+	                  _this.keyMove(0);
+	                }
+	              };
+
+	              var _this$props3 = _this.props,
+	                  _axis = _this$props3.axis,
+	                  _getHelperDimensions = _this$props3.getHelperDimensions,
+	                  _helperClass = _this$props3.helperClass,
+	                  _hideSortableGhost = _this$props3.hideSortableGhost,
+	                  updateBeforeSortStart = _this$props3.updateBeforeSortStart,
+	                  _onSortStart = _this$props3.onSortStart,
+	                  _useWindowAsScrollContainer = _this$props3.useWindowAsScrollContainer;
+	              var _node = active.node,
+	                  _collection = active.collection;
+	              var _isKeySorting = _this.manager.isKeySorting;
+
+	              var _temp8 = function () {
+	                if (typeof updateBeforeSortStart === 'function') {
+	                  _this._awaitingUpdateBeforeSortStart = true;
+
+	                  var _temp9 = _finallyRethrows(function () {
+	                    var index = _node.sortableInfo.index;
+	                    return Promise.resolve(updateBeforeSortStart({
+	                      collection: _collection,
+	                      index: index,
+	                      node: _node,
+	                      isKeySorting: _isKeySorting
+	                    }, event)).then(function () {});
+	                  }, function (_wasThrown, _result) {
+	                    _this._awaitingUpdateBeforeSortStart = false;
+	                    if (_wasThrown) throw _result;
+	                    return _result;
+	                  });
+
+	                  if (_temp9 && _temp9.then) return _temp9.then(function () {});
+	                }
+	              }();
+
+	              return _temp8 && _temp8.then ? _temp8.then(_temp7) : _temp7(_temp8);
+	            }
+	          }();
+
+	          return Promise.resolve(_temp6 && _temp6.then ? _temp6.then(function () {}) : void 0);
+	        } catch (e) {
+	          return Promise.reject(e);
+	        }
+	      });
+
+	      defineProperty(assertThisInitialized(assertThisInitialized(_this)), "handleSortMove", function (event) {
+	        var onSortMove = _this.props.onSortMove;
+
+	        if (typeof event.preventDefault === 'function') {
+	          event.preventDefault();
+	        }
+
+	        _this.updateHelperPosition(event);
+
+	        _this.animateNodes();
+
+	        _this.autoscroll();
+
+	        if (onSortMove) {
+	          onSortMove(event);
+	        }
+	      });
+
+	      defineProperty(assertThisInitialized(assertThisInitialized(_this)), "handleSortEnd", function (event) {
+	        var _this$props4 = _this.props,
+	            hideSortableGhost = _this$props4.hideSortableGhost,
+	            onSortEnd = _this$props4.onSortEnd;
+	        var _this$manager = _this.manager,
+	            collection = _this$manager.active.collection,
+	            isKeySorting = _this$manager.isKeySorting;
+	        var nodes = _this.manager.refs[collection];
+
+	        if (_this.listenerNode) {
+	          if (isKeySorting) {
+	            _this.listenerNode.removeEventListener('wheel', _this.handleKeyEnd, true);
+
+	            _this.listenerNode.removeEventListener('mousedown', _this.handleKeyEnd, true);
+
+	            _this.listenerNode.removeEventListener('keydown', _this.handleKeyDown);
+	          } else {
+	            events.move.forEach(function (eventName) {
+	              return _this.listenerNode.removeEventListener(eventName, _this.handleSortMove);
+	            });
+	            events.end.forEach(function (eventName) {
+	              return _this.listenerNode.removeEventListener(eventName, _this.handleSortEnd);
+	            });
+	          }
+	        }
+
+	        _this.helper.parentNode.removeChild(_this.helper);
+
+	        if (hideSortableGhost && _this.sortableGhost) {
+	          setInlineStyles(_this.sortableGhost, {
+	            opacity: '',
+	            visibility: ''
+	          });
+	        }
+
+	        for (var i = 0, len = nodes.length; i < len; i++) {
+	          var _node2 = nodes[i];
+	          var el = _node2.node;
+	          _node2.edgeOffset = null;
+	          _node2.boundingClientRect = null;
+	          setTranslate3d(el, null);
+	          setTransitionDuration(el, null);
+	          _node2.translate = null;
+	        }
+
+	        _this.autoScroller.clear();
+
+	        _this.manager.active = null;
+	        _this.manager.isKeySorting = false;
+
+	        _this.setState({
+	          sorting: false,
+	          sortingIndex: null
+	        });
+
+	        if (typeof onSortEnd === 'function') {
+	          onSortEnd({
+	            collection: collection,
+	            newIndex: _this.newIndex,
+	            oldIndex: _this.index,
+	            isKeySorting: isKeySorting
+	          }, event);
+	        }
+
+	        _this.touched = false;
+	      });
+
+	      defineProperty(assertThisInitialized(assertThisInitialized(_this)), "autoscroll", function () {
+	        var disableAutoscroll = _this.props.disableAutoscroll;
+	        var isKeySorting = _this.manager.isKeySorting;
+
+	        if (disableAutoscroll) {
+	          return;
+	        }
+
+	        if (isKeySorting) {
+	          var translate = objectSpread({}, _this.translate);
+
+	          var scrollX = 0;
+	          var scrollY = 0;
+
+	          if (_this.axis.x) {
+	            translate.x = Math.min(_this.maxTranslate.x, Math.max(_this.minTranslate.x, _this.translate.x));
+	            scrollX = _this.translate.x - translate.x;
+	          }
+
+	          if (_this.axis.y) {
+	            translate.y = Math.min(_this.maxTranslate.y, Math.max(_this.minTranslate.y, _this.translate.y));
+	            scrollY = _this.translate.y - translate.y;
+	          }
+
+	          _this.translate = translate;
+	          setTranslate3d(_this.helper, _this.translate);
+	          _this.scrollContainer.scrollLeft += scrollX;
+	          _this.scrollContainer.scrollTop += scrollY;
+	          return;
+	        }
+
+	        _this.autoScroller.update({
+	          height: _this.height,
+	          maxTranslate: _this.maxTranslate,
+	          minTranslate: _this.minTranslate,
+	          translate: _this.translate,
+	          width: _this.width
+	        });
+	      });
+
+	      defineProperty(assertThisInitialized(assertThisInitialized(_this)), "onAutoScroll", function (offset) {
+	        _this.translate.x += offset.left;
+	        _this.translate.y += offset.top;
+
+	        _this.animateNodes();
+	      });
+
+	      defineProperty(assertThisInitialized(assertThisInitialized(_this)), "handleKeyDown", function (event) {
+	        var keyCode = event.keyCode;
+	        var shouldCancelStart = _this.props.shouldCancelStart;
+
+	        if (_this.manager.active && !_this.manager.isKeySorting || !_this.manager.active && (keyCode !== KEYCODE.SPACE || shouldCancelStart(event) || !_this.isValidSortingTarget(event))) {
+	          return;
+	        }
+
+	        event.stopPropagation();
+	        event.preventDefault();
+
+	        switch (keyCode) {
+	          case KEYCODE.SPACE:
+	            if (_this.manager.active) {
+	              _this.keyDrop(event);
+	            } else {
+	              _this.keyLift(event);
+	            }
+
+	            break;
+
+	          case KEYCODE.DOWN:
+	          case KEYCODE.RIGHT:
+	            _this.keyMove(1);
+
+	            break;
+
+	          case KEYCODE.UP:
+	          case KEYCODE.LEFT:
+	            _this.keyMove(-1);
+
+	            break;
+
+	          case KEYCODE.ESC:
+	            _this.newIndex = _this.manager.active.index;
+
+	            _this.keyDrop(event);
+
+	        }
+	      });
+
+	      defineProperty(assertThisInitialized(assertThisInitialized(_this)), "keyLift", function (event) {
+	        var target = event.target;
+	        var node = closest(target, function (el) {
+	          return el.sortableInfo != null;
+	        });
+	        var _node$sortableInfo2 = node.sortableInfo,
+	            index = _node$sortableInfo2.index,
+	            collection = _node$sortableInfo2.collection;
+	        _this.initialFocusedNode = target;
+	        _this.manager.isKeySorting = true;
+	        _this.manager.active = {
+	          index: index,
+	          collection: collection
+	        };
+
+	        _this.handlePress(event);
+	      });
+
+	      defineProperty(assertThisInitialized(assertThisInitialized(_this)), "keyMove", function (shift) {
+	        var nodes = _this.manager.getOrderedRefs();
+
+	        var lastIndex = nodes[nodes.length - 1].node.sortableInfo.index;
+	        var newIndex = _this.newIndex + shift;
+	        var prevIndex = _this.newIndex;
+
+	        if (newIndex < 0 || newIndex > lastIndex) {
+	          return;
+	        }
+
+	        _this.prevIndex = prevIndex;
+	        _this.newIndex = newIndex;
+	        var targetIndex = getTargetIndex(_this.newIndex, _this.prevIndex, _this.index);
+	        var target = nodes.find(function (_ref2) {
+	          var node = _ref2.node;
+	          return node.sortableInfo.index === targetIndex;
+	        });
+	        var targetNode = target.node;
+	        var scrollDelta = _this.containerScrollDelta;
+	        var targetBoundingClientRect = target.boundingClientRect || getScrollAdjustedBoundingClientRect(targetNode, scrollDelta);
+	        var targetTranslate = target.translate || {
+	          x: 0,
+	          y: 0
+	        };
+	        var targetPosition = {
+	          top: targetBoundingClientRect.top + targetTranslate.y - scrollDelta.top,
+	          left: targetBoundingClientRect.left + targetTranslate.x - scrollDelta.left
+	        };
+	        var shouldAdjustForSize = prevIndex < newIndex;
+	        var sizeAdjustment = {
+	          x: shouldAdjustForSize && _this.axis.x ? targetNode.offsetWidth - _this.width : 0,
+	          y: shouldAdjustForSize && _this.axis.y ? targetNode.offsetHeight - _this.height : 0
+	        };
+
+	        _this.handleSortMove({
+	          pageX: targetPosition.left + sizeAdjustment.x,
+	          pageY: targetPosition.top + sizeAdjustment.y,
+	          ignoreTransition: shift === 0
+	        });
+	      });
+
+	      defineProperty(assertThisInitialized(assertThisInitialized(_this)), "keyDrop", function (event) {
+	        _this.handleSortEnd(event);
+
+	        if (_this.initialFocusedNode) {
+	          _this.initialFocusedNode.focus();
+	        }
+	      });
+
+	      defineProperty(assertThisInitialized(assertThisInitialized(_this)), "handleKeyEnd", function (event) {
+	        if (_this.manager.active) {
+	          _this.keyDrop(event);
+	        }
+	      });
+
+	      defineProperty(assertThisInitialized(assertThisInitialized(_this)), "isValidSortingTarget", function (event) {
+	        var useDragHandle = _this.props.useDragHandle;
+	        var target = event.target;
+	        var node = closest(target, function (el) {
+	          return el.sortableInfo != null;
+	        });
+	        return node && node.sortableInfo && !node.sortableInfo.disabled && (useDragHandle ? isSortableHandle(target) : target.sortableInfo);
+	      });
+
+	      validateProps(props);
+	      _this.state = {};
+	      _this.manager = new Manager();
+	      _this.events = {
+	        end: _this.handleEnd,
+	        move: _this.handleMove,
+	        start: _this.handleStart
+	      };
+	      return _this;
+	    }
+
+	    createClass(WithSortableContainer, [{
+	      key: "getChildContext",
+	      value: function getChildContext() {
+	        return {
+	          manager: this.manager
+	        };
+	      }
+	    }, {
+	      key: "componentDidMount",
+	      value: function componentDidMount() {
+	        var _this2 = this;
+
+	        var useWindowAsScrollContainer = this.props.useWindowAsScrollContainer;
+	        var container = this.getContainer();
+	        Promise.resolve(container).then(function (containerNode) {
+	          _this2.container = containerNode;
+	          _this2.document = _this2.container.ownerDocument || document;
+	          var contentWindow = _this2.props.contentWindow || _this2.document.defaultView || window;
+	          _this2.contentWindow = typeof contentWindow === 'function' ? contentWindow() : contentWindow;
+	          _this2.scrollContainer = useWindowAsScrollContainer ? _this2.document.scrollingElement || _this2.document.documentElement : getScrollingParent(_this2.container) || _this2.container;
+	          _this2.autoScroller = new AutoScroller(_this2.scrollContainer, _this2.onAutoScroll);
+	          Object.keys(_this2.events).forEach(function (key) {
+	            return events[key].forEach(function (eventName) {
+	              return _this2.container.addEventListener(eventName, _this2.events[key], false);
+	            });
+	          });
+
+	          _this2.container.addEventListener('keydown', _this2.handleKeyDown);
+	        });
+	      }
+	    }, {
+	      key: "componentWillUnmount",
+	      value: function componentWillUnmount() {
+	        var _this3 = this;
+
+	        if (this.helper && this.helper.parentNode) {
+	          this.helper.parentNode.removeChild(this.helper);
+	        }
+
+	        if (!this.container) {
+	          return;
+	        }
+
+	        Object.keys(this.events).forEach(function (key) {
+	          return events[key].forEach(function (eventName) {
+	            return _this3.container.removeEventListener(eventName, _this3.events[key]);
+	          });
+	        });
+	        this.container.removeEventListener('keydown', this.handleKeyDown);
+	      }
+	    }, {
+	      key: "updateHelperPosition",
+	      value: function updateHelperPosition(event) {
+	        var _this$props5 = this.props,
+	            lockAxis = _this$props5.lockAxis,
+	            lockOffset = _this$props5.lockOffset,
+	            lockToContainerEdges = _this$props5.lockToContainerEdges,
+	            transitionDuration = _this$props5.transitionDuration,
+	            _this$props5$keyboard = _this$props5.keyboardSortingTransitionDuration,
+	            keyboardSortingTransitionDuration = _this$props5$keyboard === void 0 ? transitionDuration : _this$props5$keyboard;
+	        var isKeySorting = this.manager.isKeySorting;
+	        var ignoreTransition = event.ignoreTransition;
+	        var offset = getPosition(event);
+	        var translate = {
+	          x: offset.x - this.initialOffset.x,
+	          y: offset.y - this.initialOffset.y
+	        };
+	        translate.y -= window.pageYOffset - this.initialWindowScroll.top;
+	        translate.x -= window.pageXOffset - this.initialWindowScroll.left;
+	        this.translate = translate;
+
+	        if (lockToContainerEdges) {
+	          var _getLockPixelOffsets = getLockPixelOffsets({
+	            height: this.height,
+	            lockOffset: lockOffset,
+	            width: this.width
+	          }),
+	              _getLockPixelOffsets2 = slicedToArray(_getLockPixelOffsets, 2),
+	              minLockOffset = _getLockPixelOffsets2[0],
+	              maxLockOffset = _getLockPixelOffsets2[1];
+
+	          var minOffset = {
+	            x: this.width / 2 - minLockOffset.x,
+	            y: this.height / 2 - minLockOffset.y
+	          };
+	          var maxOffset = {
+	            x: this.width / 2 - maxLockOffset.x,
+	            y: this.height / 2 - maxLockOffset.y
+	          };
+	          translate.x = limit(this.minTranslate.x + minOffset.x, this.maxTranslate.x - maxOffset.x, translate.x);
+	          translate.y = limit(this.minTranslate.y + minOffset.y, this.maxTranslate.y - maxOffset.y, translate.y);
+	        }
+
+	        if (lockAxis === 'x') {
+	          translate.y = 0;
+	        } else if (lockAxis === 'y') {
+	          translate.x = 0;
+	        }
+
+	        if (isKeySorting && keyboardSortingTransitionDuration && !ignoreTransition) {
+	          setTransitionDuration(this.helper, keyboardSortingTransitionDuration);
+	        }
+
+	        setTranslate3d(this.helper, translate);
+	      }
+	    }, {
+	      key: "animateNodes",
+	      value: function animateNodes() {
+	        var _this$props6 = this.props,
+	            transitionDuration = _this$props6.transitionDuration,
+	            hideSortableGhost = _this$props6.hideSortableGhost,
+	            onSortOver = _this$props6.onSortOver;
+	        var containerScrollDelta = this.containerScrollDelta,
+	            windowScrollDelta = this.windowScrollDelta;
+	        var nodes = this.manager.getOrderedRefs();
+	        var sortingOffset = {
+	          left: this.offsetEdge.left + this.translate.x + containerScrollDelta.left,
+	          top: this.offsetEdge.top + this.translate.y + containerScrollDelta.top
+	        };
+	        var isKeySorting = this.manager.isKeySorting;
+	        var prevIndex = this.newIndex;
+	        this.newIndex = null;
+
+	        for (var i = 0, len = nodes.length; i < len; i++) {
+	          var _node3 = nodes[i].node;
+	          var index = _node3.sortableInfo.index;
+	          var width = _node3.offsetWidth;
+	          var height = _node3.offsetHeight;
+	          var offset = {
+	            height: this.height > height ? height / 2 : this.height / 2,
+	            width: this.width > width ? width / 2 : this.width / 2
+	          };
+	          var mustShiftBackward = isKeySorting && index > this.index && index <= prevIndex;
+	          var mustShiftForward = isKeySorting && index < this.index && index >= prevIndex;
+	          var translate = {
+	            x: 0,
+	            y: 0
+	          };
+	          var edgeOffset = nodes[i].edgeOffset;
+
+	          if (!edgeOffset) {
+	            edgeOffset = getEdgeOffset(_node3, this.container);
+	            nodes[i].edgeOffset = edgeOffset;
+
+	            if (isKeySorting) {
+	              nodes[i].boundingClientRect = getScrollAdjustedBoundingClientRect(_node3, containerScrollDelta);
+	            }
+	          }
+
+	          var nextNode = i < nodes.length - 1 && nodes[i + 1];
+	          var prevNode = i > 0 && nodes[i - 1];
+
+	          if (nextNode && !nextNode.edgeOffset) {
+	            nextNode.edgeOffset = getEdgeOffset(nextNode.node, this.container);
+
+	            if (isKeySorting) {
+	              nextNode.boundingClientRect = getScrollAdjustedBoundingClientRect(nextNode.node, containerScrollDelta);
+	            }
+	          }
+
+	          if (index === this.index) {
+	            if (hideSortableGhost) {
+	              this.sortableGhost = _node3;
+	              setInlineStyles(_node3, {
+	                opacity: 0,
+	                visibility: 'hidden'
+	              });
+	            }
+
+	            continue;
+	          }
+
+	          if (transitionDuration) {
+	            setTransitionDuration(_node3, transitionDuration);
+	          }
+
+	          if (this.axis.x) {
+	            if (this.axis.y) {
+	              if (mustShiftForward || index < this.index && (sortingOffset.left + windowScrollDelta.left - offset.width <= edgeOffset.left && sortingOffset.top + windowScrollDelta.top <= edgeOffset.top + offset.height || sortingOffset.top + windowScrollDelta.top + offset.height <= edgeOffset.top)) {
+	                translate.x = this.width + this.marginOffset.x;
+
+	                if (edgeOffset.left + translate.x > this.containerBoundingRect.width - offset.width) {
+	                  if (nextNode) {
+	                    translate.x = nextNode.edgeOffset.left - edgeOffset.left;
+	                    translate.y = nextNode.edgeOffset.top - edgeOffset.top;
+	                  }
+	                }
+
+	                if (this.newIndex === null) {
+	                  this.newIndex = index;
+	                }
+	              } else if (mustShiftBackward || index > this.index && (sortingOffset.left + windowScrollDelta.left + offset.width >= edgeOffset.left && sortingOffset.top + windowScrollDelta.top + offset.height >= edgeOffset.top || sortingOffset.top + windowScrollDelta.top + offset.height >= edgeOffset.top + height)) {
+	                translate.x = -(this.width + this.marginOffset.x);
+
+	                if (edgeOffset.left + translate.x < this.containerBoundingRect.left + offset.width) {
+	                  if (prevNode) {
+	                    translate.x = prevNode.edgeOffset.left - edgeOffset.left;
+	                    translate.y = prevNode.edgeOffset.top - edgeOffset.top;
+	                  }
+	                }
+
+	                this.newIndex = index;
+	              }
+	            } else {
+	              if (mustShiftBackward || index > this.index && sortingOffset.left + windowScrollDelta.left + offset.width >= edgeOffset.left) {
+	                translate.x = -(this.width + this.marginOffset.x);
+	                this.newIndex = index;
+	              } else if (mustShiftForward || index < this.index && sortingOffset.left + windowScrollDelta.left <= edgeOffset.left + offset.width) {
+	                translate.x = this.width + this.marginOffset.x;
+
+	                if (this.newIndex == null) {
+	                  this.newIndex = index;
+	                }
+	              }
+	            }
+	          } else if (this.axis.y) {
+	            if (mustShiftBackward || index > this.index && sortingOffset.top + windowScrollDelta.top + offset.height >= edgeOffset.top) {
+	              translate.y = -(this.height + this.marginOffset.y);
+	              this.newIndex = index;
+	            } else if (mustShiftForward || index < this.index && sortingOffset.top + windowScrollDelta.top <= edgeOffset.top + offset.height) {
+	              translate.y = this.height + this.marginOffset.y;
+
+	              if (this.newIndex == null) {
+	                this.newIndex = index;
+	              }
+	            }
+	          }
+
+	          setTranslate3d(_node3, translate);
+	          nodes[i].translate = translate;
+	        }
+
+	        if (this.newIndex == null) {
+	          this.newIndex = this.index;
+	        }
+
+	        if (isKeySorting) {
+	          this.newIndex = prevIndex;
+	        }
+
+	        var oldIndex = isKeySorting ? this.prevIndex : prevIndex;
+
+	        if (onSortOver && this.newIndex !== oldIndex) {
+	          onSortOver({
+	            collection: this.manager.active.collection,
+	            index: this.index,
+	            newIndex: this.newIndex,
+	            oldIndex: oldIndex,
+	            isKeySorting: isKeySorting
+	          });
+	        }
+	      }
+	    }, {
+	      key: "getWrappedInstance",
+	      value: function getWrappedInstance() {
+	        invariant_1(config.withRef, 'To access the wrapped instance, you need to pass in {withRef: true} as the second argument of the SortableContainer() call');
+	        return this.refs.wrappedInstance;
+	      }
+	    }, {
+	      key: "getContainer",
+	      value: function getContainer() {
+	        var getContainer = this.props.getContainer;
+
+	        if (typeof getContainer !== 'function') {
+	          return reactDom.findDOMNode(this);
+	        }
+
+	        return getContainer(config.withRef ? this.getWrappedInstance() : undefined);
+	      }
+	    }, {
+	      key: "render",
+	      value: function render() {
+	        var ref = config.withRef ? 'wrappedInstance' : null;
+	        return React.createElement(WrappedComponent, _extends_1({
+	          ref: ref
+	        }, omit(this.props, omittedProps)));
+	      }
+	    }, {
+	      key: "helperContainer",
+	      get: function get() {
+	        var helperContainer = this.props.helperContainer;
+
+	        if (typeof helperContainer === 'function') {
+	          return helperContainer();
+	        }
+
+	        return this.props.helperContainer || this.document.body;
+	      }
+	    }, {
+	      key: "containerScrollDelta",
+	      get: function get() {
+	        var useWindowAsScrollContainer = this.props.useWindowAsScrollContainer;
+
+	        if (useWindowAsScrollContainer) {
+	          return {
+	            left: 0,
+	            top: 0
+	          };
+	        }
+
+	        return {
+	          left: this.scrollContainer.scrollLeft - this.initialScroll.left,
+	          top: this.scrollContainer.scrollTop - this.initialScroll.top
+	        };
+	      }
+	    }, {
+	      key: "windowScrollDelta",
+	      get: function get() {
+	        return {
+	          left: this.contentWindow.pageXOffset - this.initialWindowScroll.left,
+	          top: this.contentWindow.pageYOffset - this.initialWindowScroll.top
+	        };
+	      }
+	    }]);
+
+	    return WithSortableContainer;
+	  }(React.Component), defineProperty(_class, "displayName", provideDisplayName('sortableList', WrappedComponent)), defineProperty(_class, "defaultProps", defaultProps), defineProperty(_class, "propTypes", propTypes), defineProperty(_class, "childContextTypes", {
+	    manager: PropTypes.object.isRequired
+	  }), _temp;
+	}
+
+	var propTypes$1 = {
+	  index: PropTypes.number.isRequired,
+	  collection: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
+	  disabled: PropTypes.bool
+	};
+	var omittedProps$1 = Object.keys(propTypes$1);
+	function sortableElement(WrappedComponent) {
+	  var _class, _temp;
+
+	  var config = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {
+	    withRef: false
+	  };
+	  return _temp = _class = function (_React$Component) {
+	    inherits(WithSortableElement, _React$Component);
+
+	    function WithSortableElement() {
+	      classCallCheck(this, WithSortableElement);
+
+	      return possibleConstructorReturn(this, getPrototypeOf(WithSortableElement).apply(this, arguments));
+	    }
+
+	    createClass(WithSortableElement, [{
+	      key: "componentDidMount",
+	      value: function componentDidMount() {
+	        this.register();
+	      }
+	    }, {
+	      key: "componentDidUpdate",
+	      value: function componentDidUpdate(prevProps) {
+	        if (this.node) {
+	          if (prevProps.index !== this.props.index) {
+	            this.node.sortableInfo.index = this.props.index;
+	          }
+
+	          if (prevProps.disabled !== this.props.disabled) {
+	            this.node.sortableInfo.disabled = this.props.disabled;
+	          }
+	        }
+
+	        if (prevProps.collection !== this.props.collection) {
+	          this.unregister(prevProps.collection);
+	          this.register();
+	        }
+	      }
+	    }, {
+	      key: "componentWillUnmount",
+	      value: function componentWillUnmount() {
+	        this.unregister();
+	      }
+	    }, {
+	      key: "register",
+	      value: function register() {
+	        var _this$props = this.props,
+	            collection = _this$props.collection,
+	            disabled = _this$props.disabled,
+	            index = _this$props.index;
+	        var node = reactDom.findDOMNode(this);
+	        node.sortableInfo = {
+	          collection: collection,
+	          disabled: disabled,
+	          index: index,
+	          manager: this.context.manager
+	        };
+	        this.node = node;
+	        this.ref = {
+	          node: node
+	        };
+	        this.context.manager.add(collection, this.ref);
+	      }
+	    }, {
+	      key: "unregister",
+	      value: function unregister() {
+	        var collection = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : this.props.collection;
+	        this.context.manager.remove(collection, this.ref);
+	      }
+	    }, {
+	      key: "getWrappedInstance",
+	      value: function getWrappedInstance() {
+	        invariant_1(config.withRef, 'To access the wrapped instance, you need to pass in {withRef: true} as the second argument of the SortableElement() call');
+	        return this.refs.wrappedInstance;
+	      }
+	    }, {
+	      key: "render",
+	      value: function render() {
+	        var ref = config.withRef ? 'wrappedInstance' : null;
+	        return React.createElement(WrappedComponent, _extends_1({
+	          ref: ref
+	        }, omit(this.props, omittedProps$1)));
+	      }
+	    }]);
+
+	    return WithSortableElement;
+	  }(React.Component), defineProperty(_class, "displayName", provideDisplayName('sortableElement', WrappedComponent)), defineProperty(_class, "contextTypes", {
+	    manager: PropTypes.object.isRequired
+	  }), defineProperty(_class, "propTypes", propTypes$1), defineProperty(_class, "defaultProps", {
+	    collection: 0
+	  }), _temp;
+	}
+
+	exports.SortableContainer = sortableContainer;
+	exports.sortableContainer = sortableContainer;
+	exports.SortableElement = sortableElement;
+	exports.sortableElement = sortableElement;
+	exports.SortableHandle = sortableHandle;
+	exports.sortableHandle = sortableHandle;
+	exports.arrayMove = arrayMove;
+
+	Object.defineProperty(exports, '__esModule', { value: true });
+
+}));
+
+},{"react":"../node_modules/react/index.js","prop-types":"../node_modules/prop-types/index.js","react-dom":"../node_modules/react-dom/index.js"}],"img/game5_img/butterfly.png":[function(require,module,exports) {
+module.exports = "/butterfly.a7f33765.png";
+},{}],"img/game5_img/crab.png":[function(require,module,exports) {
+module.exports = "/crab.82520dd6.png";
+},{}],"img/game5_img/elephant.png":[function(require,module,exports) {
+module.exports = "/elephant.e85e8406.png";
+},{}],"img/game5_img/fish.png":[function(require,module,exports) {
+module.exports = "/fish.098b7560.png";
+},{}],"img/game5_img/hen.png":[function(require,module,exports) {
+module.exports = "/hen.aba507d5.png";
+},{}],"img/game5_img/snail.png":[function(require,module,exports) {
+module.exports = "/snail.15986e65.png";
+},{}],"img/game5_img/zebra.png":[function(require,module,exports) {
+module.exports = "/zebra.c9397382.png";
+},{}],"containers/Games/GameFive/data.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.data = void 0;
+
+var _butterfly = _interopRequireDefault(require("../../../img/game5_img/butterfly.png"));
+
+var _crab = _interopRequireDefault(require("../../../img/game5_img/crab.png"));
+
+var _elephant = _interopRequireDefault(require("../../../img/game5_img/elephant.png"));
+
+var _fish = _interopRequireDefault(require("../../../img/game5_img/fish.png"));
+
+var _hen = _interopRequireDefault(require("../../../img/game5_img/hen.png"));
+
+var _snail = _interopRequireDefault(require("../../../img/game5_img/snail.png"));
+
+var _zebra = _interopRequireDefault(require("../../../img/game5_img/zebra.png"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var data = [{
+  src: _butterfly.default,
+  name: 'бабочка'
+}, {
+  src: _crab.default,
+  name: 'краб'
+}, {
+  src: _elephant.default,
+  name: 'слон'
+}, {
+  src: _fish.default,
+  name: 'рыба'
+}, {
+  src: _hen.default,
+  name: 'курица'
+}, {
+  src: _snail.default,
+  name: 'улитка'
+}, {
+  src: _zebra.default,
+  name: 'зебра'
+}]; // export const data = {
+//   butterfly: {
+//     src: butterfly,
+//     name: 'бабочка'
+//   },
+//   crab: {
+//     src: crab,
+//     name: 'краб'
+//   },
+//   elephant: {
+//     src: elephant,
+//     name: 'слон'
+//   },
+//   fish: {
+//     src: fish,
+//     name: 'рыба'
+//   },
+//   hen: {
+//     src: hen,
+//     name: 'курица'
+//   },
+//   snail: {
+//     src: snail,
+//     name: 'улитка'
+//   },
+//   zebra: {
+//     src: zebra,
+//     name: 'зебра'
+//   }
+// }
+
+exports.data = data;
+},{"../../../img/game5_img/butterfly.png":"img/game5_img/butterfly.png","../../../img/game5_img/crab.png":"img/game5_img/crab.png","../../../img/game5_img/elephant.png":"img/game5_img/elephant.png","../../../img/game5_img/fish.png":"img/game5_img/fish.png","../../../img/game5_img/hen.png":"img/game5_img/hen.png","../../../img/game5_img/snail.png":"img/game5_img/snail.png","../../../img/game5_img/zebra.png":"img/game5_img/zebra.png"}],"containers/Games/GameFive/contentStyled.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.RulesItem = exports.MobuleSubTitle = exports.ShowPoints = exports.ModalOverButton = exports.TimerLeft = exports.ModalOverGameLabel = exports.ModalOverGameTitle = exports.ModalOverGameBlock = exports.ModalOverGame = exports.Timer = exports.ModuleButtonRun = exports.ModuleCardBack = exports.ModuleCardFront = exports.ModuleCardDNDInner = exports.ModuleCardDND = exports.ModuleCardSelect = exports.ModuleCard3 = exports.ModuleCard2 = exports.ModuleCard1 = exports.ModuleCard = exports.CenterWrapper = exports.ModuleCardsSelect = exports.ModuleCardsSkip = exports.ModuleCards = exports.ModuleTitle = exports.Module = exports.PageTitle = exports.PageWrapper = void 0;
+
+var _styledComponents = _interopRequireWildcard(require("styled-components"));
+
+var _card_front = _interopRequireDefault(require("../../../img/card_bg/card_front.jpg"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = Object.defineProperty && Object.getOwnPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : {}; if (desc.get || desc.set) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } } newObj.default = obj; return newObj; } }
+
+function _templateObject33() {
+  var data = _taggedTemplateLiteral(["\n  font-size: 1em;\n  line-height: 1.5em;\n  margin-left: 1em;\n  color: #3e3e3e;\n"]);
+
+  _templateObject33 = function _templateObject33() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject32() {
+  var data = _taggedTemplateLiteral(["\n  font-size: 1.2em;\n  margin-top: 1em;\n  margin-bottom: 0.3em;\n  color: #3e3e3e;\n"]);
+
+  _templateObject32 = function _templateObject32() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject31() {
+  var data = _taggedTemplateLiteral(["\n  width: 100%;\n  text-align: center;\n  margin-top: 1em;\n  font-size: 1.5em;\n  font-weight: bold;\n  color: #3e3e3e;\n"]);
+
+  _templateObject31 = function _templateObject31() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject30() {
+  var data = _taggedTemplateLiteral(["\n  margin: 0.5em auto;\n  text-decoration: none;\n  color: white;\n"]);
+
+  _templateObject30 = function _templateObject30() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject29() {
+  var data = _taggedTemplateLiteral(["\n  animation-duration: 10s;\n"]);
+
+  _templateObject29 = function _templateObject29() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject28() {
+  var data = _taggedTemplateLiteral(["\n  display: block;\n  font-size: 1.15em;\n  line-height: 1.5em;\n"]);
+
+  _templateObject28 = function _templateObject28() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject27() {
+  var data = _taggedTemplateLiteral(["\n  display: block;\n  margin-bottom: 1em;\n  text-align: center;\n  font-size: 1.5em;\n  font-weight: bold;\n"]);
+
+  _templateObject27 = function _templateObject27() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject26() {
+  var data = _taggedTemplateLiteral(["\n  background-color: white;\n  border-radius: 4px;\n  width: 20em;\n  height: 20em;\n  padding: 1em;\n  box-sizing: border-box;\n"]);
+
+  _templateObject26 = function _templateObject26() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject25() {
+  var data = _taggedTemplateLiteral(["\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  position: absolute;\n  top: 0;\n  left: 0;\n  width: 100%;\n  height: 100vh;\n  animation: ", " 1s linear forwards;\n"]);
+
+  _templateObject25 = function _templateObject25() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject24() {
+  var data = _taggedTemplateLiteral(["\n  height: 0.5em;\n  margin: 0 auto;\n  animation: ", " 11s linear;\n"]);
+
+  _templateObject24 = function _templateObject24() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject23() {
+  var data = _taggedTemplateLiteral(["\n  display: block;\n  font-size: 1em;\n  line-height: 1em;\n  color: white;\n  background-color: #589500;\n  width: 8em;\n  height: 1em;\n  padding: 0.5em 0;\n  margin: 0.5em 0;\n  text-align: center;\n  border-radius: 10em;\n  cursor: pointer;\n  text-decoration: none;\n  transition: all 0.2s ease-in-out;\n  box-shadow: 0 0.1em 0.15em rgba(0,0,0,0.19), 0 0.2em 0.2em rgba(0,0,0,0.23);\n  &:hover {\n    box-shadow: 0 0.2em 0.25em rgba(0,0,0,0.19), 0 0.3em 0.3em rgba(0,0,0,0.23);\n  }\n"]);
+
+  _templateObject23 = function _templateObject23() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject22() {
+  var data = _taggedTemplateLiteral(["\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  font-weight: bold;\n  position: absolute;\n  width: 100%;\n  height: 100%;\n  border-radius: 4px;\n  backface-visibility: hidden;\n  background-color: #fafafa;\n  text-transform: uppercase;\n  box-shadow: 0 0.1em 0.15em rgba(0,0,0,0.19), 0 0.2em 0.2em rgba(0,0,0,0.23);\n  background-image: url(", ");\n  background-repeat: no-repeat;\n  background-size: contain;\n  background-position: center;\n  transform-origin: center;\n  transform: rotateY(180deg) ", ";\n"]);
+
+  _templateObject22 = function _templateObject22() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject21() {
+  var data = _taggedTemplateLiteral(["\n  position: absolute;\n  width: 100%;\n  height: 100%;\n  border-radius: 4px;\n  backface-visibility: hidden;\n  background-image: url(", ");\n  background-size: cover;\n  background-position: center;\n  box-shadow: 0 0.1em 0.15em rgba(0,0,0,0.19), 0 0.2em 0.2em rgba(0,0,0,0.23);\n"]);
+
+  _templateObject21 = function _templateObject21() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject20() {
+  var data = _taggedTemplateLiteral(["\n  width: 100%;\n  height: 100%;\n  background-image: url(", ");\n  background-repeat: no-repeat;\n  background-size: contain;\n  background-position: center;\n  transform-origin: center;\n  box-shadow: 0 0.1em 0.15em ", ", 0 0.2em 0.2em ", ";\n  transform: rotateY(0deg) ", ";\n"]);
+
+  _templateObject20 = function _templateObject20() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject19() {
+  var data = _taggedTemplateLiteral(["\n  border-radius: 4px;\n  backface-visibility: hidden;\n  background-color: #fafafa;\n  text-transform: uppercase;\n  transform: rotateY(0deg);\n  animation: inherit;\n"]);
+
+  _templateObject19 = function _templateObject19() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject18() {
+  var data = _taggedTemplateLiteral(["\n  animation: ", " 0.4s ease-in-out forwards;\n  cursor: pointer;\n"]);
+
+  _templateObject18 = function _templateObject18() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject17() {
+  var data = _taggedTemplateLiteral(["\n  animation-delay: 9s;\n"]);
+
+  _templateObject17 = function _templateObject17() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject16() {
+  var data = _taggedTemplateLiteral(["\n  animation-delay: 5s;\n"]);
+
+  _templateObject16 = function _templateObject16() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject15() {
+  var data = _taggedTemplateLiteral(["\n  animation-delay: 1s;\n"]);
+
+  _templateObject15 = function _templateObject15() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject14() {
+  var data = _taggedTemplateLiteral(["\n  position: relative;\n  top: 0;\n  left: 0;\n  width: 12em;\n  height: 12em;\n  border-radius: 4px;\n  margin: 0.5em 0.5em;\n  transform-style: preserve-3d;\n  perspective: 500px;\n  animation: ", " 11s ease-in-out;\n  box-shadow: 0 0.1em 0.15em rgba(0,0,0,0.19), 0 0.2em 0.2em rgba(0,0,0,0.23);\n"]);
+
+  _templateObject14 = function _templateObject14() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject13() {
+  var data = _taggedTemplateLiteral(["\n  width: 100%;\n  margin: 0 auto;\n  display: flex;\n  justify-content: center;\n  flex-wrap: wrap;\n  margin-top: 1em;\n"]);
+
+  _templateObject13 = function _templateObject13() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject12() {
+  var data = _taggedTemplateLiteral(["\n  animation: none;\n"]);
+
+  _templateObject12 = function _templateObject12() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject11() {
+  var data = _taggedTemplateLiteral(["\n  animation: inherit;\n  // ", "\n"]);
+
+  _templateObject11 = function _templateObject11() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject10() {
+  var data = _taggedTemplateLiteral(["\n  width: 40em;\n  height: auto;\n  margin: 0 auto;\n  display: flex;\n  justify-content: center;\n  flex-wrap: wrap;\n  margin-top: 1em;\n  overflow: hidden;\n  animation: ", " 11s ease-in-out forwards;\n"]);
+
+  _templateObject10 = function _templateObject10() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject9() {
+  var data = _taggedTemplateLiteral(["\n  font-size: 1.5em;\n  color: #3e3e3e;\n"]);
+
+  _templateObject9 = function _templateObject9() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject8() {
+  var data = _taggedTemplateLiteral(["\n  padding: 1.5em;\n"]);
+
+  _templateObject8 = function _templateObject8() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject7() {
+  var data = _taggedTemplateLiteral(["\n  font-size: 2em;\n  color: #3e3e3e;\n"]);
+
+  _templateObject7 = function _templateObject7() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject6() {
+  var data = _taggedTemplateLiteral(["\n  display: flex;\n  flex-direction: column;\n  padding: 2em;\n  box-sizing: border-box;\n  position: relative;\n"]);
+
+  _templateObject6 = function _templateObject6() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject5() {
+  var data = _taggedTemplateLiteral(["\n  0% {\n    background-color: rgba(255, 255, 255, 0);\n  }\n  \n  100% {\n    background-color: rgba(0, 0, 0, 0.15);\n  }\n"]);
+
+  _templateObject5 = function _templateObject5() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject4() {
+  var data = _taggedTemplateLiteral(["\n  0% {\n    width: 70%;\n    background-color: #50af50;\n  }\n\n  100% {\n    width: 0%;\n    background-color: #e22828;\n  }\n"]);
+
+  _templateObject4 = function _templateObject4() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject3() {
+  var data = _taggedTemplateLiteral(["\n  0% {\n    opacity: 0;\n  }\n  \n  5% {\n    opacity: 1;\n  }\n\n  95% {\n    opacity: 1;\n  }\n\n  100% {\n    opacity: 0;\n  }\n"]);
+
+  _templateObject3 = function _templateObject3() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject2() {
+  var data = _taggedTemplateLiteral(["\n  0% {\n    transform: rotateY(180deg);\n  }\n\n  100% {\n    transform: rotateY(0);\n  }\n"]);
+
+  _templateObject2 = function _templateObject2() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject() {
+  var data = _taggedTemplateLiteral(["\n  0% {\n    transform: rotateY(0);\n  }\n\n  5% {\n    transform: rotateY(180deg);\n  }\n\n  95% {\n    transform: rotateY(180deg);\n  }\n\n  100% {\n    transform: rotateY(0);\n  }\n"]);
+
+  _templateObject = function _templateObject() {
+    return data;
+  };
+
+  return data;
+}
+
+function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(0); } return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
+
+var flip = (0, _styledComponents.keyframes)(_templateObject());
+var flipConst = (0, _styledComponents.keyframes)(_templateObject2());
+var skip = (0, _styledComponents.keyframes)(_templateObject3());
+var timerKeyframes = (0, _styledComponents.keyframes)(_templateObject4());
+var showModalKeyframes = (0, _styledComponents.keyframes)(_templateObject5());
+
+var PageWrapper = _styledComponents.default.div(_templateObject6());
+
+exports.PageWrapper = PageWrapper;
+
+var PageTitle = _styledComponents.default.span(_templateObject7());
+
+exports.PageTitle = PageTitle;
+
+var Module = _styledComponents.default.div(_templateObject8());
+
+exports.Module = Module;
+
+var ModuleTitle = _styledComponents.default.div(_templateObject9());
+
+exports.ModuleTitle = ModuleTitle;
+
+var ModuleCards = _styledComponents.default.div(_templateObject10(), skip);
+
+exports.ModuleCards = ModuleCards;
+var ModuleCardsSkip = (0, _styledComponents.default)(ModuleCards)(_templateObject11(), function (props) {
+  return props.isShow;
+});
+exports.ModuleCardsSkip = ModuleCardsSkip;
+var ModuleCardsSelect = (0, _styledComponents.default)(ModuleCards)(_templateObject12());
+exports.ModuleCardsSelect = ModuleCardsSelect;
+
+var CenterWrapper = _styledComponents.default.div(_templateObject13());
+
+exports.CenterWrapper = CenterWrapper;
+
+var ModuleCard = _styledComponents.default.div(_templateObject14(), flip);
+
+exports.ModuleCard = ModuleCard;
+var ModuleCard1 = (0, _styledComponents.default)(ModuleCard)(_templateObject15());
+exports.ModuleCard1 = ModuleCard1;
+var ModuleCard2 = (0, _styledComponents.default)(ModuleCard)(_templateObject16());
+exports.ModuleCard2 = ModuleCard2;
+var ModuleCard3 = (0, _styledComponents.default)(ModuleCard)(_templateObject17());
+exports.ModuleCard3 = ModuleCard3;
+var ModuleCardSelect = (0, _styledComponents.default)(ModuleCard)(_templateObject18(), flipConst);
+exports.ModuleCardSelect = ModuleCardSelect;
+var ModuleCardDND = (0, _styledComponents.default)(ModuleCard)(_templateObject19());
+exports.ModuleCardDND = ModuleCardDND;
+
+var ModuleCardDNDInner = _styledComponents.default.div(_templateObject20(), function (props) {
+  return props.src;
+}, function (props) {
+  return props.isState;
+}, function (props) {
+  return props.isState;
+}, function (props) {
+  return props.state;
+});
+
+exports.ModuleCardDNDInner = ModuleCardDNDInner;
+
+var ModuleCardFront = _styledComponents.default.div(_templateObject21(), _card_front.default);
+
+exports.ModuleCardFront = ModuleCardFront;
+
+var ModuleCardBack = _styledComponents.default.div(_templateObject22(), function (props) {
+  return props.src;
+}, function (props) {
+  return props.state;
+});
+
+exports.ModuleCardBack = ModuleCardBack;
+
+var ModuleButtonRun = _styledComponents.default.span(_templateObject23());
+
+exports.ModuleButtonRun = ModuleButtonRun;
+
+var Timer = _styledComponents.default.div(_templateObject24(), timerKeyframes);
+
+exports.Timer = Timer;
+
+var ModalOverGame = _styledComponents.default.div(_templateObject25(), showModalKeyframes);
+
+exports.ModalOverGame = ModalOverGame;
+
+var ModalOverGameBlock = _styledComponents.default.div(_templateObject26());
+
+exports.ModalOverGameBlock = ModalOverGameBlock;
+
+var ModalOverGameTitle = _styledComponents.default.span(_templateObject27());
+
+exports.ModalOverGameTitle = ModalOverGameTitle;
+
+var ModalOverGameLabel = _styledComponents.default.span(_templateObject28());
+
+exports.ModalOverGameLabel = ModalOverGameLabel;
+var TimerLeft = (0, _styledComponents.default)(Timer)(_templateObject29());
+exports.TimerLeft = TimerLeft;
+var ModalOverButton = (0, _styledComponents.default)(ModuleButtonRun)(_templateObject30());
+exports.ModalOverButton = ModalOverButton;
+
+var ShowPoints = _styledComponents.default.div(_templateObject31());
+
+exports.ShowPoints = ShowPoints;
+
+var MobuleSubTitle = _styledComponents.default.div(_templateObject32());
+
+exports.MobuleSubTitle = MobuleSubTitle;
+
+var RulesItem = _styledComponents.default.div(_templateObject33());
+
+exports.RulesItem = RulesItem;
+},{"styled-components":"../node_modules/styled-components/dist/styled-components.browser.esm.js","../../../img/card_bg/card_front.jpg":"img/card_bg/card_front.jpg"}],"containers/Games/GameFive/index.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -37405,13 +39774,27 @@ exports.default = void 0;
 
 var _react = _interopRequireWildcard(require("react"));
 
-var _propTypes = _interopRequireDefault(require("prop-types"));
+var _reactRedux = require("react-redux");
 
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+var _reactRouterDom = require("react-router-dom");
+
+var _reactSortableHoc = require("react-sortable-hoc");
+
+var _data2 = require("./data");
+
+var _contentStyled = require("./contentStyled.js");
 
 function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = Object.defineProperty && Object.getOwnPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : {}; if (desc.get || desc.set) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } } newObj.default = obj; return newObj; } }
 
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+function _toConsumableArray(arr) { return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _nonIterableSpread(); }
+
+function _nonIterableSpread() { throw new TypeError("Invalid attempt to spread non-iterable instance"); }
+
+function _iterableToArray(iter) { if (Symbol.iterator in Object(iter) || Object.prototype.toString.call(iter) === "[object Arguments]") return Array.from(iter); }
+
+function _arrayWithoutHoles(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = new Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
@@ -37434,26 +39817,372 @@ var Game5 =
 function (_Component) {
   _inherits(Game5, _Component);
 
-  function Game5() {
+  function Game5(props) {
+    var _this;
+
     _classCallCheck(this, Game5);
 
-    return _possibleConstructorReturn(this, _getPrototypeOf(Game5).apply(this, arguments));
+    _this = _possibleConstructorReturn(this, _getPrototypeOf(Game5).call(this, props));
+    _this.state = {
+      gameId: 5,
+      data: _toConsumableArray(_data2.data),
+      isStarted: false,
+      isUserPlay: false,
+      secretCards: [],
+      sortSecretCards: [],
+      points: 0,
+      cardStatus: [false, false, false, false, false, false],
+      timerOn: false,
+      isShow: false,
+      isOver: false
+    };
+    return _this;
   }
 
   _createClass(Game5, [{
+    key: "componentDidMount",
+    value: function componentDidMount() {
+      var _this2 = this;
+
+      GetGameData(this.state.gameId).then(function (response) {
+        console.log(response.data[0].data);
+        var data = JSON.parse(response.data[0].data);
+        if (!_this2.state.secretCards === undefined) return;
+        var sortSecretCards = []; // const data = [...this.state.data]
+
+        var secretCards = [];
+
+        var compareRandom = function compareRandom(a, b) {
+          return Math.random() - 0.5;
+        };
+
+        for (var i = 0; i < 6; i++) {
+          var randomCardNumber = _this2.randomNumber(data.length); // data.length - i = bug; See later
+
+
+          secretCards[i] = _toConsumableArray(data)[randomCardNumber]; // console.log(randomCardNumber, 'Original log', data.length, i)
+
+          secretCards[i].state = _this2.randomNumber(4);
+          data.splice(randomCardNumber, 1);
+        }
+
+        sortSecretCards = JSON.parse(JSON.stringify(secretCards)); // Сортировка по алфавиту
+
+        sortSecretCards.sort(function (a, b) {
+          if (a.name < b.name) {
+            return -1;
+          }
+
+          if (a.name > b.name) {
+            return 1;
+          }
+
+          return 0;
+        });
+
+        for (var _i = 0; _i < 6; _i++) {
+          secretCards[_i].state = 0;
+          secretCards[_i].state = _this2.randomNumber(4);
+          sortSecretCards[_i].trueState = _this2.randomNumber(4);
+          console.log(sortSecretCards[_i], 'истинный', secretCards[_i]);
+        }
+
+        console.log(secretCards, 'secretCards');
+        console.log(sortSecretCards, 'sortSecretCards');
+
+        _this2.setState({
+          secretCards: [].concat(secretCards),
+          sortSecretCards: _toConsumableArray(sortSecretCards)
+        });
+      });
+    }
+  }, {
+    key: "randomNumber",
+    value: function randomNumber(number) {
+      return Math.floor(Math.random(number) * number);
+    }
+  }, {
+    key: "getRandomInt",
+    value: function getRandomInt(min, max) {
+      return Math.floor(Math.random() * (max - min + 1)) + min;
+    }
+  }, {
+    key: "startGame",
+    value: function startGame() {
+      this.setState({
+        isStarted: true
+      });
+    }
+  }, {
+    key: "createLinkImg",
+    value: function createLinkImg(nameImg) {
+      var link = srcImg + '/img/game5_img/' + nameImg + '.png';
+      return link;
+    }
+  }, {
+    key: "checkCard",
+    value: function checkCard() {
+      var secretCards = _toConsumableArray(this.state.secretCards);
+
+      var sortSecretCards = _toConsumableArray(this.state.sortSecretCards);
+
+      var points = 0;
+      console.log(secretCards, sortSecretCards);
+      var trueAnswers = 0;
+
+      for (var i = 0; i < 6; i++) {
+        if (secretCards[i].name === sortSecretCards[i].name) {
+          console.log(secretCards, sortSecretCards, i);
+
+          if (secretCards[i].state === sortSecretCards[i].state) {
+            console.log('Состояние совпадает');
+            trueAnswers++;
+          }
+        }
+      }
+
+      console.log(trueAnswers);
+
+      switch (trueAnswers) {
+        case 6:
+          points = 3;
+          break;
+
+        case 5:
+          points = 3;
+          break;
+
+        case 4:
+          points = 2;
+          break;
+
+        case 3:
+          points = 2;
+          break;
+
+        case 2:
+          points = 1;
+          break;
+
+        case 1:
+          points = 1;
+          break;
+
+        case 0:
+          points = 0;
+          break;
+      }
+
+      console.log(trueAnswers);
+      this.setState({
+        isOver: true,
+        points: points
+      });
+    }
+  }, {
+    key: "renderCard",
+    value: function renderCard(item, index) {
+      var _this3 = this;
+
+      var SortableItem = (0, _reactSortableHoc.SortableElement)(function (_ref) {
+        var item = _ref.item,
+            index = _ref.index,
+            indexCopy = _ref.indexCopy;
+        return _react.default.createElement(_contentStyled.ModuleCardDND, null, _react.default.createElement(_contentStyled.ModuleCardDNDInner, {
+          src: _this3.createLinkImg(item.src),
+          isState: function isState() {
+            if (_this3.state.sortSecretCards[indexCopy].name === item.name && _this3.state.sortSecretCards[indexCopy].state === item.state) {
+              return "#589500";
+            } else {
+              return "#dc4c4c";
+            }
+          },
+          state: function state() {
+            if (item.state === 0) {
+              return "scale(1, 1) rotate(0deg)";
+            } else if (item.state === 1) {
+              return "scale(1, 1) rotate(90deg)";
+            } else if (item.state === 2) {
+              return "scale(-1, 1) rotate(0deg)";
+            } else if (item.state === 3) {
+              return "scale(1, 1) rotate(-90deg)";
+            }
+          }
+        }));
+      });
+      return _react.default.createElement(SortableItem, {
+        key: "item-".concat(index),
+        index: index,
+        item: item,
+        indexCopy: index
+      });
+    }
+  }, {
+    key: "isOver",
+    value: function isOver() {
+      var _this4 = this;
+
+      if (this.state.try === 0) {
+        this.state.timerOn ? this.setState({
+          timerOn: false
+        }) : null;
+        return _react.default.createElement(_contentStyled.ModalOverGame, null, _react.default.createElement(_contentStyled.ModalOverGameBlock, null, _react.default.createElement(_contentStyled.ModalOverGameTitle, null, "\u041F\u043E\u043F\u044B\u0442\u043A\u0438 \u0437\u0430\u043A\u043E\u043D\u0447\u0438\u043B\u0438\u0441\u044C"), _react.default.createElement(_contentStyled.ModalOverGameLabel, null, "\u0412\u0440\u0435\u043C\u044F: ", this.state.timeLeft), _react.default.createElement(_contentStyled.ModalOverGameLabel, null, "\u0421\u0447\u0451\u0442: ", this.state.points), _react.default.createElement(_contentStyled.ModalOverButton, {
+          to: "/stats",
+          onClick: function onClick() {
+            _this4.SaveResult();
+          }
+        }, "\u0421\u043E\u0445\u0440\u0430\u043D\u0438\u0442\u044C")));
+      }
+    }
+  }, {
+    key: "SaveResult",
+    value: function SaveResult() {
+      var data = {
+        userId: this.props.data.userId,
+        gameId: this.state.gameId,
+        points: this.state.points
+      };
+      SaveResultApi(data).then(function (response) {
+        console.log(response.data);
+      });
+    }
+  }, {
+    key: "isPlay",
+    value: function isPlay() {
+      var _this5 = this;
+
+      if (this.state.isUserPlay) {
+        this.state.timerOn ? setTimeout(function () {
+          _this5.setState({
+            timerOn: false
+          });
+        }, 10000) : null;
+
+        var overButtons = function overButtons() {
+          if (!_this5.state.isOver) {
+            return _react.default.createElement(_contentStyled.ModuleButtonRun, {
+              to: "#",
+              onClick: function onClick() {
+                return _this5.checkCard();
+              }
+            }, "\u0413\u043E\u0442\u043E\u0432\u043E!");
+          } else if (_this5.props.data.auth === false) {
+            return _react.default.createElement(_contentStyled.ModalOverButton, {
+              to: "/games"
+            }, "\u041D\u0430 \u0433\u043B\u0430\u0432\u043D\u0443\u044E");
+          } else {
+            return _react.default.createElement(_contentStyled.ModalOverButton, {
+              to: "/stats",
+              onClick: function onClick() {
+                _this5.SaveResult();
+              }
+            }, "\u0421\u043E\u0445\u0440\u0430\u043D\u0438\u0442\u044C");
+          }
+        };
+
+        var SortableList = (0, _reactSortableHoc.SortableContainer)(function (_ref2) {
+          var items = _ref2.items;
+          return _react.default.createElement(_contentStyled.ModuleCardsSkip, {
+            isShow: _this5.state.isShow ? 'animation: inherit' : 'animation: ${skip} 11s ease-in-out forwards;'
+          }, items.map(function (value, index) {
+            return _this5.renderCard(value, index);
+          }), overButtons());
+        });
+
+        var onSortEnd = function onSortEnd(_ref3) {
+          var oldIndex = _ref3.oldIndex,
+              newIndex = _ref3.newIndex;
+
+          var secretCards = _toConsumableArray(_this5.state.secretCards);
+
+          if (_this5.state.isOver) return;
+
+          if (oldIndex === newIndex) {
+            if (secretCards[oldIndex].state === 3) {
+              secretCards[oldIndex].state = 0;
+            } else {
+              secretCards[oldIndex].state = secretCards[oldIndex].state + 1;
+            }
+          }
+
+          _this5.setState(function () {
+            return {
+              secretCards: (0, _reactSortableHoc.arrayMove)(secretCards, oldIndex, newIndex),
+              isShow: true
+            };
+          });
+        };
+
+        return _react.default.createElement("div", null, _react.default.createElement(SortableList, {
+          items: this.state.secretCards,
+          onSortEnd: onSortEnd,
+          axis: "xy"
+        }), this.state.isOver ? _react.default.createElement(_contentStyled.ShowPoints, null, this.state.points) : null);
+      }
+    }
+  }, {
+    key: "renderSecretCards",
+    value: function renderSecretCards() {
+      var _this6 = this;
+
+      var sortSecretCards = _toConsumableArray(this.state.sortSecretCards);
+
+      return sortSecretCards.map(function (item, index) {
+        return _react.default.createElement(_contentStyled.ModuleCard, {
+          key: index
+        }, _react.default.createElement(_contentStyled.ModuleCardFront, null), _react.default.createElement(_contentStyled.ModuleCardBack, {
+          state: function state() {
+            if (item.state === 0) {
+              return "scale(1, 1) rotate(0deg)";
+            } else if (item.state === 1) {
+              return "scale(1, 1) rotate(90deg)";
+            } else if (item.state === 2) {
+              return "scale(-1, 1) rotate(0deg)";
+            } else if (item.state === 3) {
+              return "scale(1, 1) rotate(-90deg)";
+            }
+          },
+          src: _this6.createLinkImg(item.src)
+        }));
+      });
+    }
+  }, {
+    key: "isStarted",
+    value: function isStarted() {
+      var _this7 = this;
+
+      if (this.state.isUserPlay === false) {
+        if (this.state.isStarted) {
+          var _data = this.state.secretCards;
+          setTimeout(function () {
+            _this7.setState({
+              isUserPlay: true,
+              timerOn: true
+            });
+          }, 11000);
+          return _react.default.createElement("div", null, _react.default.createElement(_contentStyled.ModuleCards, null, this.renderSecretCards()), _react.default.createElement(_contentStyled.Timer, null));
+        } else {
+          return _react.default.createElement(_contentStyled.Module, null, _react.default.createElement(_contentStyled.MobuleSubTitle, null, "\u041E\u043F\u0438\u0441\u0430\u043D\u0438\u0435:"), _react.default.createElement(_contentStyled.RulesItem, null, "\u0417\u0430\u043F\u043E\u043C\u043D\u0438\u0442\u044C \u043F\u043E\u0440\u044F\u0434\u043E\u043A \u043A\u0430\u0440\u0442\u0438\u043D\u043E\u043A \u0438 \u0432 \u043A\u0430\u043A\u043E\u043C \u043D\u0430\u043F\u0440\u0430\u0432\u043B\u0435\u043D\u0438\u0438 \u0441\u043C\u043E\u0442\u0440\u0438\u0442 \u0441\u0443\u0449\u0435\u0441\u0442\u0432\u043E."), _react.default.createElement(_contentStyled.RulesItem, null, "\u041D\u0430 \u0437\u0430\u043F\u043E\u043C\u0438\u043D\u0430\u043D\u0438\u0435 \u043A\u0430\u0440\u0442\u0438\u043D\u043E\u043A \u0434\u0430\u0451\u0442\u0441\u044F 10 \u0441\u0435\u043A\u0443\u043D\u0434."), _react.default.createElement(_contentStyled.RulesItem, null, "\u0414\u0430\u043B\u0435\u0435 \u043D\u0443\u0436\u043D\u043E \u0440\u0430\u0441\u0441\u0442\u0430\u0432\u0438\u0442\u044C \u043A\u0430\u0440\u0442\u0438\u043D\u043A\u0438 \u0432 \u043F\u0440\u0430\u0432\u0438\u043B\u044C\u043D\u043E\u043C \u043F\u043E\u0440\u044F\u0434\u043A\u0435(\u043F\u043E\u0434\u0441\u043A\u0430\u0437\u043A\u0430 - \u0432 \u0430\u043B\u0444\u0430\u0432\u0438\u0442\u043D\u043E\u043C \u043F\u043E\u0440\u044F\u0434\u043A\u0435) \u0438 \u0443\u043A\u0430\u0437\u0430\u0442\u044C \u043F\u0440\u0430\u0432\u0438\u043B\u044C\u043D\u043E\u0435 \u043D\u0430\u043F\u0440\u0430\u0432\u043B\u0435\u043D\u0438\u0435 \u0433\u043E\u043B\u043E\u0432\u044B \u0441\u0443\u0449\u0435\u0441\u0442\u0432\u0430."), _react.default.createElement(_contentStyled.RulesItem, null, "\u0427\u0442\u043E\u0431\u044B \u043F\u043E\u0432\u0435\u0440\u043D\u0443\u0442\u044C \u043A\u0430\u0440\u0442\u0438\u043D\u043A\u0443 - \u043A\u043B\u0438\u043A\u043D\u0438\u0442\u0435 \u043F\u043E \u043D\u0435\u0439. \u0427\u0442\u043E\u0431\u044B \u043F\u0435\u0440\u0435\u043C\u0435\u0441\u0442\u0438\u0442\u044C - \u043F\u0435\u0440\u0435\u043D\u0435\u0441\u0438\u0442\u0435 \u043C\u044B\u0448\u043A\u043E\u0439."), _react.default.createElement(_contentStyled.RulesItem, null, "\u041E\u0433\u0440\u0430\u043D\u0438\u0447\u0435\u043D\u0438\u044F \u043F\u043E \u0432\u0440\u0435\u043C\u0435\u043D\u0438 \u043D\u0435\u0442\u0443."), _react.default.createElement(_contentStyled.CenterWrapper, null, _react.default.createElement(_contentStyled.ModuleButtonRun, {
+            to: "#",
+            onClick: function onClick() {
+              return _this7.startGame();
+            }
+          }, "\u0421\u0442\u0430\u0440\u0442")));
+        }
+      }
+    }
+  }, {
     key: "render",
     value: function render() {
-      return _react.default.createElement("div", null, "5");
+      return _react.default.createElement(_contentStyled.PageWrapper, null, _react.default.createElement(_contentStyled.PageTitle, null, "\u0418\u0433\u0440\u044B"), _react.default.createElement(_contentStyled.Module, null, _react.default.createElement(_contentStyled.ModuleTitle, null, "\u0417\u0430\u043F\u043E\u043C\u043D\u0438\u0442\u044C \u0438 \u0432\u043E\u0441\u043F\u0440\u043E\u0438\u0437\u0432\u0435\u0441\u0442\u0438"), this.isStarted(), this.isPlay(), this.isOver()));
     }
   }]);
 
   return Game5;
 }(_react.Component);
 
-Game5.propTypes = {};
-var _default = Game5;
-exports.default = _default;
-},{"react":"../node_modules/react/index.js","prop-types":"../node_modules/prop-types/index.js"}],"containers/Games/GameSix/index.js":[function(require,module,exports) {
+exports.default = Game5;
+},{"react":"../node_modules/react/index.js","react-redux":"../node_modules/react-redux/es/index.js","react-router-dom":"../node_modules/react-router-dom/esm/react-router-dom.js","react-sortable-hoc":"../node_modules/react-sortable-hoc/dist/react-sortable-hoc.umd.js","./data":"containers/Games/GameFive/data.js","./contentStyled.js":"containers/Games/GameFive/contentStyled.js"}],"containers/Games/GameSix/index.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -37845,7 +40574,7 @@ function _templateObject3() {
 }
 
 function _templateObject2() {
-  var data = _taggedTemplateLiteral(["\n    width: 85%;\n    height: 100%;\n    border: 0.2em solid gray;\n    border-radius: 10px;\n    margin-right: 30px;\n    @media (max-width: 768px) {\n      width: 100%;\n    }\n"]);
+  var data = _taggedTemplateLiteral(["\n    width: 85%;\n    height: 100%;\n    border: 0.2em solid gray;\n    border-radius: 10px;\n    margin-right: 30px;\n    background-color: #b8c6db;\nbackground-image: linear-gradient(315deg, #b8c6db 0%, #f5f7fa 74%);\n    @media (max-width: 768px) {\n      width: 100%;\n    }\n"]);
 
   _templateObject2 = function _templateObject2() {
     return data;
@@ -38262,7 +40991,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "44945" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "32969" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
