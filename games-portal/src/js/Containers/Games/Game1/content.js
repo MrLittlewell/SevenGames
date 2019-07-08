@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 
 import sound from '../../../../audio/correct.mp3'
 
-import { SaveResultApi, GetGameData } from '../../../../api'
+import { data } from './data'
 import {
   PageWrapper,
   PageTitle,
@@ -41,9 +41,9 @@ export default class Content extends Component {
       gameId: 1,
       isStarted: false,
       isUserPlay: false,
-      values: undefined,
-      secretCards: undefined,
-      randomCards: undefined,
+      values: true,
+      secretCards: true,
+      randomCards: false,
       points: 0,
       try: 3,
       cardStatus: [true, true, true, true, true, true, true, true, true,],
@@ -65,8 +65,8 @@ export default class Content extends Component {
     
     GetGameData(this.state.gameId)
       .then((response) => {
-        console.log(response.data[0].data)
-        const data = JSON.parse(response.data[0].data)
+        // console.log(response.data[0].data)
+        const data = data
         const secretCards = [
           data.card1[this.randomNumber(data.card1.length)],
           data.card2[this.randomNumber(data.card2.length)],
@@ -74,7 +74,7 @@ export default class Content extends Component {
         ]
 
         console.log(data, secretCards)
-        if (this.state.randomCards === undefined) {
+        if (this.state.randomCards === false) {
           const randomCards = () => {
             const sortRandom = (a, b) => {
               return Math.random() - 0.5;
@@ -184,18 +184,18 @@ export default class Content extends Component {
     }
   }
 
-  SaveResult() {
-    let data = {
-      userId: this.props.data.userId,
-      gameId: this.state.gameId,
-      points: this.state.points,
-    }
+  // SaveResult() {
+  //   let data = {
+  //     userId: this.props.data.userId,
+  //     gameId: this.state.gameId,
+  //     points: this.state.points,
+  //   }
 
-    SaveResultApi(data)
-      .then((response) => {
-        console.log(response.data)
-      })
-  }
+  //   SaveResultApi(data)
+  //     .then((response) => {
+  //       console.log(response.data)
+  //     })
+  // }
 
   isPlay() {
     if (this.state.isUserPlay) {
@@ -241,10 +241,10 @@ export default class Content extends Component {
       } else {
         return (
           <Module>
-            {/* <MobuleSubTitle>Описание:</MobuleSubTitle>
+            <MobuleSubTitle>Описание:</MobuleSubTitle>
             <RulesItem>Нужно запомнить слова на трёх карточках.</RulesItem>
             <RulesItem>На запоминание слова даётся 3 секунды.</RulesItem>
-            <RulesItem>Потом нужно выбрать правильные слова среди появившихся девяти карточек.</RulesItem> */}
+            <RulesItem>Потом нужно выбрать правильные слова среди появившихся девяти карточек.</RulesItem>
             <CenterWrapper>
               <ModuleButtonRun to = '#' onClick = { () => this.startGame() } >Старт</ModuleButtonRun>
             </CenterWrapper>

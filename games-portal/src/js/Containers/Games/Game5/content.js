@@ -8,7 +8,7 @@ import {
   arrayMove,
 } from 'react-sortable-hoc'
 
-// import { data } from './data'
+import { data } from './data'
 import { SaveResultApi, GetGameData } from '../../../../api'
 import {
   PageWrapper,
@@ -50,7 +50,7 @@ export default class Content extends Component {
 
     this.state = {
       gameId: 5,
-      // data: [...data],
+      data: [...data],
       isStarted: false,
       isUserPlay: false,
       secretCards: [ ],
@@ -93,9 +93,9 @@ export default class Content extends Component {
         })
         for (let i = 0; i < 6; i++) {
           secretCards[i].state = 0
-          // secretCards[i].state = this.randomNumber(4)
-          // sortSecretCards[i].trueState = this.randomNumber(4)
-          // console.log(sortSecretCards[i], 'истинный', secretCards[i])
+          secretCards[i].state = this.randomNumber(4)
+          sortSecretCards[i].trueState = this.randomNumber(4)
+          console.log(sortSecretCards[i], 'истинный', secretCards[i])
         }
         console.log(secretCards, 'secretCards')
         console.log(sortSecretCards, 'sortSecretCards')
@@ -223,7 +223,7 @@ export default class Content extends Component {
 
   isPlay() {
     if (this.state.isUserPlay) {
-      // (this.state.timerOn) ? (setTimeout(() => { this.setState({ timerOn: false }) }, 10000)) : null
+      (this.state.timerOn) ? (setTimeout(() => { this.setState({ timerOn: false }) }, 10000)) : null
       const overButtons = () => {
         if (!this.state.isOver) {
           return <ModuleButtonRun to = '#' onClick = { () => this.checkCard() } >Готово!</ModuleButtonRun>

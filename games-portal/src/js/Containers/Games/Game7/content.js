@@ -3,7 +3,7 @@ import { connect } from 'react-redux'
 import { Link } from 'react-router-dom'
 
 import sound from '../../../../audio/correct.mp3'
-// import { data } from './data'
+import { data } from './data'
 
 import { SaveResultApi, GetGameData } from '../../../../api'
 import {
@@ -47,7 +47,7 @@ export default class Content extends Component {
       gameId: 7,
       isStarted: false,
       isUserPlay: false,
-      // data: data,
+      data: data,
       secretCards: undefined,
       selectedCards: [],
       activeSign: [ [true, true, true, true, true], [true, true, true, true, true] ],
@@ -230,7 +230,7 @@ export default class Content extends Component {
         return (
           <KitListElement
             key = { subIndex }
-            // style = { this.state.activeSign[index][subIndex] ? null : { color: '#3e3e3e' } }
+            style = { this.state.activeSign[index][subIndex] ? null : { color: '#3e3e3e' } }
             state = { () => {
               if (this.state.activeSign[index][subIndex] === false) {
                 let stateSign = false

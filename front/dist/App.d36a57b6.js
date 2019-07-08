@@ -35390,7 +35390,7 @@ function _templateObject11() {
 }
 
 function _templateObject10() {
-  var data = _taggedTemplateLiteral(["\n  padding: 1.5em;\n"]);
+  var data = _taggedTemplateLiteral(["\n  padding: 1.5em;\n  @media (max-width: 768px) {\n    padding: 0;\n    font-size: 11px;\n  }\n"]);
 
   _templateObject10 = function _templateObject10() {
     return data;
@@ -35400,7 +35400,7 @@ function _templateObject10() {
 }
 
 function _templateObject9() {
-  var data = _taggedTemplateLiteral(["\n  font-size: 2em;\n  color: #3e3e3e;\n"]);
+  var data = _taggedTemplateLiteral(["\n  font-size: 2em;\n  color: #3e3e3e;\n  @media (max-width: 768px) {\n    padding: 1em;\n  }\n"]);
 
   _templateObject9 = function _templateObject9() {
     return data;
@@ -35410,7 +35410,7 @@ function _templateObject9() {
 }
 
 function _templateObject8() {
-  var data = _taggedTemplateLiteral(["\n  display: flex;\n  flex-direction: column;\n  padding: 2em;\n  box-sizing: border-box;\n  position: relative;\n"]);
+  var data = _taggedTemplateLiteral(["\n  display: flex;\n  flex-direction: column;\n  padding: 2em;\n  box-sizing: border-box;\n  position: relative;\n  @media (max-width: 768px) {\n    padding: 1em;\n  }\n"]);
 
   _templateObject8 = function _templateObject8() {
     return data;
@@ -36960,7 +36960,7 @@ function _templateObject10() {
 }
 
 function _templateObject9() {
-  var data = _taggedTemplateLiteral(["\n  padding: 1.5em;\n"]);
+  var data = _taggedTemplateLiteral(["\n  padding: 1.5em;\n  @media (max-width: 768px) {\n    padding: 0;\n    font-size: 11px;\n  }\n"]);
 
   _templateObject9 = function _templateObject9() {
     return data;
@@ -36970,7 +36970,7 @@ function _templateObject9() {
 }
 
 function _templateObject8() {
-  var data = _taggedTemplateLiteral(["\n  font-size: 2em;\n  color: #3e3e3e;\n"]);
+  var data = _taggedTemplateLiteral(["\n  font-size: 2em;\n  color: #3e3e3e;\n  @media (max-width: 768px) {\n    padding: 1em;\n  }\n"]);
 
   _templateObject8 = function _templateObject8() {
     return data;
@@ -36980,7 +36980,7 @@ function _templateObject8() {
 }
 
 function _templateObject7() {
-  var data = _taggedTemplateLiteral(["\n  display: flex;\n  flex-direction: column;\n  padding: 2em;\n  box-sizing: border-box;\n  position: relative;\n"]);
+  var data = _taggedTemplateLiteral(["\n  display: flex;\n  flex-direction: column;\n  padding: 2em;\n  box-sizing: border-box;\n  position: relative;\n  @media (max-width: 768px) {\n    padding: 1em;\n  }\n"]);
 
   _templateObject7 = function _templateObject7() {
     return data;
@@ -37835,7 +37835,7 @@ function _templateObject4() {
 }
 
 function _templateObject3() {
-  var data = _taggedTemplateLiteral(["\n    width: 15%;\n    height: 100%;\n    display: flex;\n    align-items: center;\n    flex-direction: column;\n    justify-content: space-between;\n"]);
+  var data = _taggedTemplateLiteral(["\n    width: 15%;\n    height: 100%;\n    display: flex;\n    align-items: center;\n    flex-direction: column;\n    justify-content: space-between;\n    @media (max-width: 768px) {\n      width: 100%;\n    }\n"]);
 
   _templateObject3 = function _templateObject3() {
     return data;
@@ -37845,7 +37845,7 @@ function _templateObject3() {
 }
 
 function _templateObject2() {
-  var data = _taggedTemplateLiteral(["\n    width: 85%;\n    height: 100%;\n    border: 0.2em solid gray;\n    border-radius: 10px;\n    margin-right: 30px;\n"]);
+  var data = _taggedTemplateLiteral(["\n    width: 85%;\n    height: 100%;\n    border: 0.2em solid gray;\n    border-radius: 10px;\n    margin-right: 30px;\n    @media (max-width: 768px) {\n      width: 100%;\n    }\n"]);
 
   _templateObject2 = function _templateObject2() {
     return data;
@@ -37855,7 +37855,7 @@ function _templateObject2() {
 }
 
 function _templateObject() {
-  var data = _taggedTemplateLiteral(["\n    width: 100%;\n    height: 100%;\n    display: flex;\n    justify-content: space-between;\n    padding: 30px;\n    box-sizing: border-box;\n"]);
+  var data = _taggedTemplateLiteral(["\n    width: 100%;\n    height: 100%;\n    display: flex;\n    justify-content: space-between;\n    padding: 30px;\n    box-sizing: border-box;\n    @media (max-width: 768px) {\n      flex-direction: column;\n    }\n"]);
 
   _templateObject = function _templateObject() {
     return data;
@@ -38262,7 +38262,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "33873" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "44945" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

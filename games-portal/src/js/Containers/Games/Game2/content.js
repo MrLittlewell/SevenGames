@@ -64,8 +64,8 @@ export default class Content extends Component {
       gameId: 2,
       isStarted: false,
       isUserPlay: false,
-      secretCards: undefined,
-      randomCards: undefined,
+      secretCards: false,
+      randomCards: true,
       points: 0,
       try: 3,
       cardStatus: [true, true, true, true, true, true, true, true, true,],
@@ -95,7 +95,7 @@ export default class Content extends Component {
           data.card3[this.randomNumber(data.card3.length)]
         ]
 
-        if (this.state.randomCards === undefined) {
+        if (this.state.randomCards === true) {
           const randomCards = () => {
             const sortRandom = (a, b) => {
               return Math.random() - 0.5;

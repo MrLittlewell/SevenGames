@@ -1,11 +1,9 @@
 import React, { Component } from 'react'
-import { connect } from 'react-redux'
-import { Link } from 'react-router-dom'
 
-import sound from '../../../../audio/correct.mp3'
-// import { data } from './data'
+import sound from '../../../../audio/correct.mp3';
+import { data } from './data';
 
-import { SaveResultApi, GetGameData } from '../../../../api'
+import { SaveResultApi, GetGameData } from '../../../../api';
 import {
   PageWrapper,
   PageTitle,
@@ -43,8 +41,8 @@ export default class Content extends Component {
       gameId: 6,
       isStarted: false,
       isUserPlay: false,
-      // data: data,
-      secretCards: undefined,
+      data: data,
+      secretCards: false,
       selectedCards: [],
       activeLine: [ true, true, true, true, true ],
       activeRow: [[ true, true, true, true, true ], [ true, true, true, true, true ], [ true, true, true, true, true ], [ true, true, true, true, true ], [ true, true, true, true, true ]],
@@ -65,10 +63,9 @@ export default class Content extends Component {
         const secretCards = []
         const randomNumber = (length) => {
           return (
-            Math.floor(Math.random(length) * length)
+            Math.floor(Math.random(length) * length)  
           )
         }
-
         if (!this.state.secretCards === undefined) return null
         for (let i = 0; i < 4; i++) {
           let index = randomNumber(data.length)
@@ -112,20 +109,20 @@ export default class Content extends Component {
       item.true === selectedCards[key] ? cardPoints++ : null
     })
     switch(cardPoints) {
-      case 4: points = 3
-        break
-      case 3, 2: points = 2
-        break
-      case 1: points = 1
-        break
-      case 0: points = 0
-        break
+      case 4: points = 3;
+        break;
+      case 3, 2: points = 2;
+        break;
+      case 1: points = 1;
+        break;
+      case 0: points = 0;
+        break;
     }
 
     return (
       <ModalOverGame>
         <ModalOverGameBlock>
-          <ModalOverGameTitle>Попытки закончились</ModalOverGameTitle>
+        <ModalOverGameTitle>Попытки закончились</ModalOverGameTitle>
           <ModalOverGameLabel>Счёт: { points }</ModalOverGameLabel>
           { this.props.data.auth === false ? (
             <ModalOverButton to = '/games'>На главную</ModalOverButton>

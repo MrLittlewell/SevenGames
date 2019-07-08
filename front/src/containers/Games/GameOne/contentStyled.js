@@ -99,13 +99,23 @@ export const PageWrapper = styled.div`
   padding: 2em;
   box-sizing: border-box;
   position: relative;
+  @media (max-width: 768px) {
+    padding: 1em;
+  }
 `
 export const PageTitle = styled.span`
   font-size: 2em;
   color: #3e3e3e;
+  @media (max-width: 768px) {
+    padding: 1em;
+  }
 `
 export const Module = styled.div`
   padding: 1.5em;
+  @media (max-width: 768px) {
+    padding: 0;
+    font-size: 11px;
+  }
 `
 export const ModuleTitle = styled.div`
   font-size: 1.5em;

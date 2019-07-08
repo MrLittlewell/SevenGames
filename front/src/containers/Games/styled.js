@@ -7,6 +7,9 @@ export const Wrapper = styled.div`
     justify-content: space-between;
     padding: 30px;
     box-sizing: border-box;
+    @media (max-width: 768px) {
+      flex-direction: column;
+    }
 `
 export const GameArea = styled.div`
     width: 85%;
@@ -14,6 +17,9 @@ export const GameArea = styled.div`
     border: 0.2em solid gray;
     border-radius: 10px;
     margin-right: 30px;
+    @media (max-width: 768px) {
+      width: 100%;
+    }
 `
 export const SelectGames = styled.div`
     width: 15%;
@@ -22,6 +28,9 @@ export const SelectGames = styled.div`
     align-items: center;
     flex-direction: column;
     justify-content: space-between;
+    @media (max-width: 768px) {
+      width: 100%;
+    }
 `
 import card_1 from '../../img/card_bg/card_1.png'
 import card_2 from '../../img/card_bg/card_2.png'
