@@ -1,7 +1,7 @@
 import styled, { keyframes } from 'styled-components'
 import { Link } from 'react-router-dom'
 
-import cardWrapperImg from '../../../img/card_bg/card_front.jpg'
+import cardWrapperImg from '../../../img/card_bg/card_front2.png'
 
 
 

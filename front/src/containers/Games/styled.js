@@ -18,7 +18,7 @@ export const GameArea = styled.div`
     border-radius: 10px;
     margin-right: 30px;
     background-color: #b8c6db;
-background-image: linear-gradient(315deg, #b8c6db 0%, #f5f7fa 74%);
+    background-image: linear-gradient(315deg, #b8c6db 0%, #f5f7fa 74%);
     @media (max-width: 768px) {
       width: 100%;
     }

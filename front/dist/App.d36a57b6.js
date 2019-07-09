@@ -35126,98 +35126,30 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 exports.data = void 0;
-var data = [{
-  card1: ['яблоко', 'станция', 'портфель', 'книга', 'шарф']
-}, {
-  card2: ['яблоко', 'станция', 'портфель', 'книга', 'шарф']
-}, {
-  card3: ['яблоко', 'станция', 'портфель', 'книга', 'шарф']
-}, {
-  card4: ['яблоко', 'станция', 'портфель', 'книга', 'шарф']
-}];
+var data = ['яблоко', 'станция', 'портфель', 'книга', 'шарф', 'стол', 'постель', 'вагон', 'чашка', 'картина', 'человек', 'ручка', 'подушка', 'самовар', 'поезд'];
 exports.data = data;
-},{}],"img/card_bg/card_front.jpg":[function(require,module,exports) {
-module.exports = "/card_front.8c64343b.jpg";
+},{}],"img/card_bg/card_front2.png":[function(require,module,exports) {
+module.exports = "/card_front2.f3775314.png";
 },{}],"containers/Games/GameOne/contentStyled.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.RulesItem = exports.MobuleSubTitle = exports.CompleteGame = exports.CardInputWrapper = exports.CardInput = exports.ModalOverButton = exports.TimerLeft = exports.ModalOverGameLabel = exports.ModalOverGameTitle = exports.ModalOverGameBlock = exports.ModalOverGame = exports.Timer = exports.ModuleButtonRun = exports.ModuleCardBack = exports.ModuleCardFront = exports.ModuleCardSelect = exports.ModuleCard3 = exports.ModuleCard2 = exports.ModuleCard1 = exports.ModuleCardNumber = exports.ModuleCard = exports.CenterWrapper = exports.ModuleCardsSelect = exports.ModuleCards = exports.ModuleTitle = exports.Module = exports.PageTitle = exports.PageWrapper = void 0;
+exports.RulesItem = exports.MobuleSubTitle = exports.ModalOverButton = exports.TimerLeft = exports.ModalOverGameLabel = exports.ModalOverGameTitle = exports.ModalOverGameBlock = exports.ModalOverGame = exports.Timer = exports.ModuleButtonRun = exports.ModuleCardBack = exports.ModuleCardFront = exports.ModuleCardSelect = exports.ModuleCard3 = exports.ModuleCard2 = exports.ModuleCard1 = exports.ModuleCard = exports.CenterWrapper = exports.ModuleCardsSelect = exports.ModuleCards = exports.ModuleTitle = exports.Module = exports.PageTitle = exports.PageWrapper = void 0;
 
 var _styledComponents = _interopRequireWildcard(require("styled-components"));
 
 var _reactRouterDom = require("react-router-dom");
 
-var _card_front = _interopRequireDefault(require("../../../img/card_bg/card_front.jpg"));
+var _card_front = _interopRequireDefault(require("../../../img/card_bg/card_front2.png"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = Object.defineProperty && Object.getOwnPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : {}; if (desc.get || desc.set) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } } newObj.default = obj; return newObj; } }
 
-function _templateObject35() {
-  var data = _taggedTemplateLiteral(["\n  font-size: 1em;\n  line-height: 1.5em;\n  margin-left: 1em;\n  color: #3e3e3e;\n"]);
-
-  _templateObject35 = function _templateObject35() {
-    return data;
-  };
-
-  return data;
-}
-
-function _templateObject34() {
-  var data = _taggedTemplateLiteral(["\n  font-size: 1.2em;\n  margin-top: 1em;\n  margin-bottom: 0.3em;\n  color: #3e3e3e;\n"]);
-
-  _templateObject34 = function _templateObject34() {
-    return data;
-  };
-
-  return data;
-}
-
-function _templateObject33() {
-  var data = _taggedTemplateLiteral(["\n  display: block;\n  font-size: 1em;\n  color: white;\n  background-color: #589500;\n  width: 8em;\n  height: 1em;\n  padding: 0.5em 0;\n  margin: 0.5em auto 0;\n  text-align: center;\n  border-radius: 10em;\n  cursor: pointer;\n  text-decoration: none;\n  transition: all 0.2s ease-in-out;\n  box-shadow: 0 0.1em 0.15em rgba(0,0,0,0.19), 0 0.2em 0.2em rgba(0,0,0,0.23);\n  &:hover {\n    box-shadow: 0 0.2em 0.25em rgba(0,0,0,0.19), 0 0.3em 0.3em rgba(0,0,0,0.23);\n  }\n"]);
-
-  _templateObject33 = function _templateObject33() {
-    return data;
-  };
-
-  return data;
-}
-
-function _templateObject32() {
-  var data = _taggedTemplateLiteral(["\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  width: 12em;\n  height: 4em;\n  border-radius: 4px;\n  margin: 0.5em 0.5em;\n  box-shadow: 0 0.1em 0.15em rgba(0,0,0,0.19), 0 0.2em 0.2em rgba(0,0,0,0.23);\n  animation: ", " 0.4s ease-out forwards;\n"]);
-
-  _templateObject32 = function _templateObject32() {
-    return data;
-  };
-
-  return data;
-}
-
-function _templateObject31() {
-  var data = _taggedTemplateLiteral(["\n  height: 100%;\n  width: 100%;\n  line-height: 4em;\n  text-align: center;\n  border: none;\n  outline: none;\n  box-shadow: 0 0.1em 0.15em ", ", 0 0.2em 0.2em ", ";\n"]);
-
-  _templateObject31 = function _templateObject31() {
-    return data;
-  };
-
-  return data;
-}
-
-function _templateObject30() {
-  var data = _taggedTemplateLiteral(["\n  margin: 0 auto;\n  text-decoration: none;\n  color: white;\n"]);
-
-  _templateObject30 = function _templateObject30() {
-    return data;
-  };
-
-  return data;
-}
-
 function _templateObject29() {
-  var data = _taggedTemplateLiteral(["\n  animation-duration: 20s;\n"]);
+  var data = _taggedTemplateLiteral(["\n  font-size: 1em;\n  line-height: 1.5em;\n  margin-left: 1em;\n  color: #3e3e3e;\n"]);
 
   _templateObject29 = function _templateObject29() {
     return data;
@@ -35227,7 +35159,7 @@ function _templateObject29() {
 }
 
 function _templateObject28() {
-  var data = _taggedTemplateLiteral(["\n  display: block;\n  font-size: 1.15em;\n  line-height: 1.5em;\n"]);
+  var data = _taggedTemplateLiteral(["\n  font-size: 1.2em;\n  margin-top: 1em;\n  margin-bottom: 0.3em;\n  color: #3e3e3e;\n"]);
 
   _templateObject28 = function _templateObject28() {
     return data;
@@ -35237,7 +35169,7 @@ function _templateObject28() {
 }
 
 function _templateObject27() {
-  var data = _taggedTemplateLiteral(["\n  display: block;\n  margin-bottom: 1em;\n  text-align: center;\n  font-size: 1.5em;\n  font-weight: bold;\n"]);
+  var data = _taggedTemplateLiteral(["\n  margin: 0 auto;\n  text-decoration: none;\n  color: white;\n"]);
 
   _templateObject27 = function _templateObject27() {
     return data;
@@ -35247,7 +35179,7 @@ function _templateObject27() {
 }
 
 function _templateObject26() {
-  var data = _taggedTemplateLiteral(["\n  background-color: white;\n  border-radius: 4px;\n  width: 20em;\n  height: 20em;\n  padding: 1em;\n  box-sizing: border-box;\n"]);
+  var data = _taggedTemplateLiteral(["\n  animation-duration: 10s;\n"]);
 
   _templateObject26 = function _templateObject26() {
     return data;
@@ -35257,7 +35189,7 @@ function _templateObject26() {
 }
 
 function _templateObject25() {
-  var data = _taggedTemplateLiteral(["\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  position: absolute;\n  top: 0;\n  left: 0;\n  width: 100%;\n  height: 100vh;\n  animation: ", " 1s linear forwards;\n"]);
+  var data = _taggedTemplateLiteral(["\n  display: block;\n  font-size: 1.15em;\n  line-height: 1.5em;\n"]);
 
   _templateObject25 = function _templateObject25() {
     return data;
@@ -35267,7 +35199,7 @@ function _templateObject25() {
 }
 
 function _templateObject24() {
-  var data = _taggedTemplateLiteral(["\n  height: 0.5em;\n  margin: 0 auto;\n  animation: ", " 11s linear;\n"]);
+  var data = _taggedTemplateLiteral(["\n  display: block;\n  margin-bottom: 1em;\n  text-align: center;\n  font-size: 1.5em;\n  font-weight: bold;\n"]);
 
   _templateObject24 = function _templateObject24() {
     return data;
@@ -35277,7 +35209,7 @@ function _templateObject24() {
 }
 
 function _templateObject23() {
-  var data = _taggedTemplateLiteral(["\n  display: block;\n  font-size: 1em;\n  line-height: 1em;\n  color: white;\n  background-color: #589500;\n  width: 8em;\n  height: 1em;\n  padding: 0.5em 0;\n  margin-top: 0.5em;\n  text-align: center;\n  border-radius: 10em;\n  cursor: pointer;\n  text-decoration: none;\n  transition: all 0.2s ease-in-out;\n  box-shadow: 0 0.1em 0.15em rgba(0,0,0,0.19), 0 0.2em 0.2em rgba(0,0,0,0.23);\n  &:hover {\n    box-shadow: 0 0.2em 0.25em rgba(0,0,0,0.19), 0 0.3em 0.3em rgba(0,0,0,0.23);\n  }\n"]);
+  var data = _taggedTemplateLiteral(["\n  background-color: white;\n  border-radius: 4px;\n  width: 20em;\n  height: 20em;\n  padding: 1em;\n  box-sizing: border-box;\n"]);
 
   _templateObject23 = function _templateObject23() {
     return data;
@@ -35287,7 +35219,7 @@ function _templateObject23() {
 }
 
 function _templateObject22() {
-  var data = _taggedTemplateLiteral(["\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  font-weight: bold;\n  position: absolute;\n  width: 100%;\n  height: 100%;\n  border-radius: 4px;\n  backface-visibility: hidden;\n  transform: rotateY(180deg);\n  background-color: #fafafa;\n  text-transform: uppercase;\n  box-shadow: 0 0.1em 0.15em rgba(0,0,0,0.19), 0 0.2em 0.2em rgba(0,0,0,0.23);\n"]);
+  var data = _taggedTemplateLiteral(["\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  position: absolute;\n  top: 0;\n  left: 0;\n  width: 100%;\n  height: 100vh;\n  animation: ", " 1s linear forwards;\n"]);
 
   _templateObject22 = function _templateObject22() {
     return data;
@@ -35297,7 +35229,7 @@ function _templateObject22() {
 }
 
 function _templateObject21() {
-  var data = _taggedTemplateLiteral(["\n  position: absolute;\n  width: 100%;\n  height: 100%;\n  border-radius: 4px;\n  backface-visibility: hidden;\n  background-image: url(", ");\n  background-size: cover;\n  background-position: center;\n  box-shadow: 0 0.1em 0.15em rgba(0,0,0,0.19), 0 0.2em 0.2em rgba(0,0,0,0.23);\n"]);
+  var data = _taggedTemplateLiteral(["\n  height: 0.5em;\n  margin: 0 auto;\n  animation: ", " 14s linear;\n"]);
 
   _templateObject21 = function _templateObject21() {
     return data;
@@ -35307,7 +35239,7 @@ function _templateObject21() {
 }
 
 function _templateObject20() {
-  var data = _taggedTemplateLiteral(["\n  animation: ", " 0.4s ease-in-out forwards;\n  cursor: pointer;\n"]);
+  var data = _taggedTemplateLiteral(["\n  display: block;\n  font-size: 1em;\n  line-height: 1em;\n  color: white;\n  background-color: #589500;\n  width: 8em;\n  height: 1em;\n  padding: 0.5em 0;\n  margin-top: 0.5em;\n  text-align: center;\n  border-radius: 10em;\n  cursor: pointer;\n  text-decoration: none;\n  transition: all 0.2s ease-in-out;\n  box-shadow: 0 0.1em 0.15em rgba(0,0,0,0.19), 0 0.2em 0.2em rgba(0,0,0,0.23);\n  &:hover {\n    box-shadow: 0 0.2em 0.25em rgba(0,0,0,0.19), 0 0.3em 0.3em rgba(0,0,0,0.23);\n  }\n"]);
 
   _templateObject20 = function _templateObject20() {
     return data;
@@ -35317,7 +35249,7 @@ function _templateObject20() {
 }
 
 function _templateObject19() {
-  var data = _taggedTemplateLiteral(["\n  animation-delay: 9s;\n"]);
+  var data = _taggedTemplateLiteral(["\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  font-weight: bold;\n  position: absolute;\n  width: 100%;\n  height: 100%;\n  border-radius: 4px;\n  backface-visibility: hidden;\n  transform: rotateY(180deg);\n  background-color: #fafafa;\n  text-transform: uppercase;\n  box-shadow: 0 0.1em 0.15em rgba(0,0,0,0.19), 0 0.2em 0.2em rgba(0,0,0,0.23);\n  background-image: url(", ");\n  background-repeat: no-repeat;\n  background-size: contain;\n  background-position: center;\n"]);
 
   _templateObject19 = function _templateObject19() {
     return data;
@@ -35327,7 +35259,7 @@ function _templateObject19() {
 }
 
 function _templateObject18() {
-  var data = _taggedTemplateLiteral(["\n  animation-delay: 5s;\n"]);
+  var data = _taggedTemplateLiteral(["\n  position: absolute;\n  width: 100%;\n  height: 100%;\n  border-radius: 4px;\n  backface-visibility: hidden;\n  background-image: url(", ");\n  background-size: cover;\n  background-position: center;\n  box-shadow: 0 0.1em 0.15em rgba(0,0,0,0.19), 0 0.2em 0.2em rgba(0,0,0,0.23);\n"]);
 
   _templateObject18 = function _templateObject18() {
     return data;
@@ -35337,7 +35269,7 @@ function _templateObject18() {
 }
 
 function _templateObject17() {
-  var data = _taggedTemplateLiteral(["\n  animation-delay: 1s;\n"]);
+  var data = _taggedTemplateLiteral(["\n  animation: ", " 0.4s ease-in-out forwards;\n  cursor: pointer;\n"]);
 
   _templateObject17 = function _templateObject17() {
     return data;
@@ -35347,7 +35279,7 @@ function _templateObject17() {
 }
 
 function _templateObject16() {
-  var data = _taggedTemplateLiteral(["\n  animation: ", " 11s ease-in-out;\n"]);
+  var data = _taggedTemplateLiteral(["\n  animation-delay: 9s;\n"]);
 
   _templateObject16 = function _templateObject16() {
     return data;
@@ -35357,7 +35289,7 @@ function _templateObject16() {
 }
 
 function _templateObject15() {
-  var data = _taggedTemplateLiteral(["\n  position: relative;\n  top: 0;\n  left: 0;\n  width: 12em;\n  height: 12em;\n  border-radius: 4px;\n  margin: 0.5em 0.5em;\n  transform-style: preserve-3d;\n  perspective: 500px;\n  animation: ", " 4s ease-in-out;\n  box-shadow: 0 0.1em 0.15em rgba(0,0,0,0.19), 0 0.2em 0.2em rgba(0,0,0,0.23);\n"]);
+  var data = _taggedTemplateLiteral(["\n  animation-delay: 5s;\n"]);
 
   _templateObject15 = function _templateObject15() {
     return data;
@@ -35367,7 +35299,7 @@ function _templateObject15() {
 }
 
 function _templateObject14() {
-  var data = _taggedTemplateLiteral(["\n  width: 100%;\n  margin: 0 auto;\n  display: flex;\n  justify-content: center;\n  flex-wrap: wrap;\n  margin-top: 1em;\n"]);
+  var data = _taggedTemplateLiteral(["\n  animation-delay: 1s;\n"]);
 
   _templateObject14 = function _templateObject14() {
     return data;
@@ -35377,7 +35309,7 @@ function _templateObject14() {
 }
 
 function _templateObject13() {
-  var data = _taggedTemplateLiteral(["\n  animation: none;\n"]);
+  var data = _taggedTemplateLiteral(["\n  position: relative;\n  top: 0;\n  left: 0;\n  width: 12em;\n  height: 12em;\n  border-radius: 4px;\n  margin: 0.5em 0.5em;\n  transform-style: preserve-3d;\n  perspective: 500px;\n  animation: ", " 4s ease-in-out;\n  box-shadow: 0 0.1em 0.15em rgba(0,0,0,0.19), 0 0.2em 0.2em rgba(0,0,0,0.23);\n"]);
 
   _templateObject13 = function _templateObject13() {
     return data;
@@ -35387,7 +35319,7 @@ function _templateObject13() {
 }
 
 function _templateObject12() {
-  var data = _taggedTemplateLiteral(["\n  width: 40em;\n  height: auto;\n  margin: 0 auto;\n  display: flex;\n  justify-content: center;\n  flex-wrap: wrap;\n  margin-top: 1em;\n  overflow: hidden;\n  animation: ", " 12s ease-in-out forwards;\n"]);
+  var data = _taggedTemplateLiteral(["\n  width: 100%;\n  margin: 0 auto;\n  display: flex;\n  justify-content: center;\n  flex-wrap: wrap;\n  margin-top: 1em;\n"]);
 
   _templateObject12 = function _templateObject12() {
     return data;
@@ -35397,7 +35329,7 @@ function _templateObject12() {
 }
 
 function _templateObject11() {
-  var data = _taggedTemplateLiteral(["\n  font-size: 1.5em;\n  color: #3e3e3e;\n"]);
+  var data = _taggedTemplateLiteral(["\n  animation: none;\n"]);
 
   _templateObject11 = function _templateObject11() {
     return data;
@@ -35407,7 +35339,7 @@ function _templateObject11() {
 }
 
 function _templateObject10() {
-  var data = _taggedTemplateLiteral(["\n  padding: 1.5em;\n  @media (max-width: 768px) {\n    padding: 0;\n    font-size: 11px;\n  }\n"]);
+  var data = _taggedTemplateLiteral(["\n  width: 40em;\n  height: auto;\n  margin: 0 auto;\n  display: flex;\n  justify-content: center;\n  flex-wrap: wrap;\n  margin-top: 1em;\n  overflow: hidden;\n  animation: ", " 14s ease-in-out forwards;\n"]);
 
   _templateObject10 = function _templateObject10() {
     return data;
@@ -35417,7 +35349,7 @@ function _templateObject10() {
 }
 
 function _templateObject9() {
-  var data = _taggedTemplateLiteral(["\n  font-size: 2em;\n  color: #3e3e3e;\n  @media (max-width: 768px) {\n    padding: 1em;\n  }\n"]);
+  var data = _taggedTemplateLiteral(["\n  font-size: 1.5em;\n  color: #3e3e3e;\n"]);
 
   _templateObject9 = function _templateObject9() {
     return data;
@@ -35427,7 +35359,7 @@ function _templateObject9() {
 }
 
 function _templateObject8() {
-  var data = _taggedTemplateLiteral(["\n  display: flex;\n  flex-direction: column;\n  padding: 2em;\n  box-sizing: border-box;\n  position: relative;\n  @media (max-width: 768px) {\n    padding: 1em;\n  }\n"]);
+  var data = _taggedTemplateLiteral(["\n  padding: 1.5em;\n"]);
 
   _templateObject8 = function _templateObject8() {
     return data;
@@ -35437,7 +35369,7 @@ function _templateObject8() {
 }
 
 function _templateObject7() {
-  var data = _taggedTemplateLiteral(["\n  0% {\n    transform: translateY(1em);\n    opacity: 0;\n  }\n\n  100% {\n    transform: translateY(0);\n    opacity: 1;\n  }\n"]);
+  var data = _taggedTemplateLiteral(["\n  font-size: 2em;\n  color: #3e3e3e;\n"]);
 
   _templateObject7 = function _templateObject7() {
     return data;
@@ -35447,7 +35379,7 @@ function _templateObject7() {
 }
 
 function _templateObject6() {
-  var data = _taggedTemplateLiteral(["\n  0% {\n    background-color: rgba(255, 255, 255, 0);\n  }\n  \n  100% {\n    background-color: rgba(0, 0, 0, 0.15);\n  }\n"]);
+  var data = _taggedTemplateLiteral(["\n  display: flex;\n  flex-direction: column;\n  padding: 2em;\n  box-sizing: border-box;\n  position: relative;\n"]);
 
   _templateObject6 = function _templateObject6() {
     return data;
@@ -35457,7 +35389,7 @@ function _templateObject6() {
 }
 
 function _templateObject5() {
-  var data = _taggedTemplateLiteral(["\n  0% {\n    width: 70%;\n    background-color: #50af50;\n  }\n\n  100% {\n    width: 0%;\n    background-color: #e22828;\n  }\n"]);
+  var data = _taggedTemplateLiteral(["\n  0% {\n    background-color: rgba(255, 255, 255, 0);\n  }\n  \n  100% {\n    background-color: rgba(0, 0, 0, 0.15);\n  }\n"]);
 
   _templateObject5 = function _templateObject5() {
     return data;
@@ -35467,7 +35399,7 @@ function _templateObject5() {
 }
 
 function _templateObject4() {
-  var data = _taggedTemplateLiteral(["\n  0% {\n    opacity: 1;\n  }\n\n  95% {\n    opacity: 1;\n  }\n\n  100% {\n    opacity: 0;\n  }\n"]);
+  var data = _taggedTemplateLiteral(["\n  0% {\n    width: 70%;\n    background-color: #50af50;\n  }\n\n  100% {\n    width: 0%;\n    background-color: #e22828;\n  }\n"]);
 
   _templateObject4 = function _templateObject4() {
     return data;
@@ -35477,7 +35409,7 @@ function _templateObject4() {
 }
 
 function _templateObject3() {
-  var data = _taggedTemplateLiteral(["\n  0% {\n    transform: rotateY(0);\n  }\n\n  100% {\n    transform: rotateY(180deg);\n  }\n"]);
+  var data = _taggedTemplateLiteral(["\n  0% {\n    opacity: 1;\n  }\n\n  95% {\n    opacity: 1;\n  }\n\n  100% {\n    opacity: 0;\n  }\n"]);
 
   _templateObject3 = function _templateObject3() {
     return data;
@@ -35487,7 +35419,7 @@ function _templateObject3() {
 }
 
 function _templateObject2() {
-  var data = _taggedTemplateLiteral(["\n  0% {\n    transform: rotateY(0);\n  }\n\n  5% {\n    transform: rotateY(180deg);\n  }\n\n  95% {\n    transform: rotateY(180deg);\n  }\n\n  100% {\n    transform: rotateY(0);\n  }\n"]);
+  var data = _taggedTemplateLiteral(["\n  0% {\n    transform: rotateY(0);\n  }\n\n  100% {\n    transform: rotateY(180deg);\n  }\n"]);
 
   _templateObject2 = function _templateObject2() {
     return data;
@@ -35509,113 +35441,95 @@ function _templateObject() {
 function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(0); } return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
 
 var flip = (0, _styledComponents.keyframes)(_templateObject());
-var flipNumbers = (0, _styledComponents.keyframes)(_templateObject2());
-var flipConst = (0, _styledComponents.keyframes)(_templateObject3());
-var skip = (0, _styledComponents.keyframes)(_templateObject4());
-var timerKeyframes = (0, _styledComponents.keyframes)(_templateObject5());
-var showModalKeyframes = (0, _styledComponents.keyframes)(_templateObject6());
-var CardInputKeyframes = (0, _styledComponents.keyframes)(_templateObject7());
+var flipConst = (0, _styledComponents.keyframes)(_templateObject2());
+var skip = (0, _styledComponents.keyframes)(_templateObject3());
+var timerKeyframes = (0, _styledComponents.keyframes)(_templateObject4());
+var showModalKeyframes = (0, _styledComponents.keyframes)(_templateObject5());
 
-var PageWrapper = _styledComponents.default.div(_templateObject8());
+var PageWrapper = _styledComponents.default.div(_templateObject6());
 
 exports.PageWrapper = PageWrapper;
 
-var PageTitle = _styledComponents.default.span(_templateObject9());
+var PageTitle = _styledComponents.default.span(_templateObject7());
 
 exports.PageTitle = PageTitle;
 
-var Module = _styledComponents.default.div(_templateObject10());
+var Module = _styledComponents.default.div(_templateObject8());
 
 exports.Module = Module;
 
-var ModuleTitle = _styledComponents.default.div(_templateObject11());
+var ModuleTitle = _styledComponents.default.div(_templateObject9());
 
 exports.ModuleTitle = ModuleTitle;
 
-var ModuleCards = _styledComponents.default.div(_templateObject12(), skip);
+var ModuleCards = _styledComponents.default.div(_templateObject10(), skip);
 
 exports.ModuleCards = ModuleCards;
-var ModuleCardsSelect = (0, _styledComponents.default)(ModuleCards)(_templateObject13());
+var ModuleCardsSelect = (0, _styledComponents.default)(ModuleCards)(_templateObject11());
 exports.ModuleCardsSelect = ModuleCardsSelect;
 
-var CenterWrapper = _styledComponents.default.div(_templateObject14());
+var CenterWrapper = _styledComponents.default.div(_templateObject12());
 
 exports.CenterWrapper = CenterWrapper;
 
-var ModuleCard = _styledComponents.default.div(_templateObject15(), flip);
+var ModuleCard = _styledComponents.default.div(_templateObject13(), flip);
 
 exports.ModuleCard = ModuleCard;
-var ModuleCardNumber = (0, _styledComponents.default)(ModuleCard)(_templateObject16(), flipNumbers);
-exports.ModuleCardNumber = ModuleCardNumber;
-var ModuleCard1 = (0, _styledComponents.default)(ModuleCard)(_templateObject17());
+var ModuleCard1 = (0, _styledComponents.default)(ModuleCard)(_templateObject14());
 exports.ModuleCard1 = ModuleCard1;
-var ModuleCard2 = (0, _styledComponents.default)(ModuleCard)(_templateObject18());
+var ModuleCard2 = (0, _styledComponents.default)(ModuleCard)(_templateObject15());
 exports.ModuleCard2 = ModuleCard2;
-var ModuleCard3 = (0, _styledComponents.default)(ModuleCard)(_templateObject19());
+var ModuleCard3 = (0, _styledComponents.default)(ModuleCard)(_templateObject16());
 exports.ModuleCard3 = ModuleCard3;
-var ModuleCardSelect = (0, _styledComponents.default)(ModuleCard)(_templateObject20(), flipConst);
+var ModuleCardSelect = (0, _styledComponents.default)(ModuleCard)(_templateObject17(), flipConst);
 exports.ModuleCardSelect = ModuleCardSelect;
 
-var ModuleCardFront = _styledComponents.default.div(_templateObject21(), _card_front.default);
+var ModuleCardFront = _styledComponents.default.div(_templateObject18(), _card_front.default);
 
 exports.ModuleCardFront = ModuleCardFront;
 
-var ModuleCardBack = _styledComponents.default.div(_templateObject22());
+var ModuleCardBack = _styledComponents.default.div(_templateObject19(), function (props) {
+  return props.src;
+});
 
 exports.ModuleCardBack = ModuleCardBack;
 
-var ModuleButtonRun = _styledComponents.default.span(_templateObject23());
+var ModuleButtonRun = _styledComponents.default.span(_templateObject20());
 
 exports.ModuleButtonRun = ModuleButtonRun;
 
-var Timer = _styledComponents.default.div(_templateObject24(), timerKeyframes);
+var Timer = _styledComponents.default.div(_templateObject21(), timerKeyframes);
 
 exports.Timer = Timer;
 
-var ModalOverGame = _styledComponents.default.div(_templateObject25(), showModalKeyframes);
+var ModalOverGame = _styledComponents.default.div(_templateObject22(), showModalKeyframes);
 
 exports.ModalOverGame = ModalOverGame;
 
-var ModalOverGameBlock = _styledComponents.default.div(_templateObject26());
+var ModalOverGameBlock = _styledComponents.default.div(_templateObject23());
 
 exports.ModalOverGameBlock = ModalOverGameBlock;
 
-var ModalOverGameTitle = _styledComponents.default.span(_templateObject27());
+var ModalOverGameTitle = _styledComponents.default.span(_templateObject24());
 
 exports.ModalOverGameTitle = ModalOverGameTitle;
 
-var ModalOverGameLabel = _styledComponents.default.span(_templateObject28());
+var ModalOverGameLabel = _styledComponents.default.span(_templateObject25());
 
 exports.ModalOverGameLabel = ModalOverGameLabel;
-var TimerLeft = (0, _styledComponents.default)(Timer)(_templateObject29());
+var TimerLeft = (0, _styledComponents.default)(Timer)(_templateObject26());
 exports.TimerLeft = TimerLeft;
-var ModalOverButton = (0, _styledComponents.default)(ModuleButtonRun)(_templateObject30());
+var ModalOverButton = (0, _styledComponents.default)(ModuleButtonRun)(_templateObject27());
 exports.ModalOverButton = ModalOverButton;
 
-var CardInput = _styledComponents.default.input(_templateObject31(), function (props) {
-  return props.cardState;
-}, function (props) {
-  return props.cardState;
-});
-
-exports.CardInput = CardInput;
-
-var CardInputWrapper = _styledComponents.default.div(_templateObject32(), CardInputKeyframes);
-
-exports.CardInputWrapper = CardInputWrapper;
-
-var CompleteGame = _styledComponents.default.div(_templateObject33());
-
-exports.CompleteGame = CompleteGame;
-
-var MobuleSubTitle = _styledComponents.default.div(_templateObject34());
+var MobuleSubTitle = _styledComponents.default.div(_templateObject28());
 
 exports.MobuleSubTitle = MobuleSubTitle;
 
-var RulesItem = _styledComponents.default.div(_templateObject35());
+var RulesItem = _styledComponents.default.div(_templateObject29());
 
 exports.RulesItem = RulesItem;
-},{"styled-components":"../node_modules/styled-components/dist/styled-components.browser.esm.js","react-router-dom":"../node_modules/react-router-dom/esm/react-router-dom.js","../../../img/card_bg/card_front.jpg":"img/card_bg/card_front.jpg"}],"containers/Games/GameOne/index.js":[function(require,module,exports) {
+},{"styled-components":"../node_modules/styled-components/dist/styled-components.browser.esm.js","react-router-dom":"../node_modules/react-router-dom/esm/react-router-dom.js","../../../img/card_bg/card_front2.png":"img/card_bg/card_front2.png"}],"containers/Games/GameOne/index.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -35665,6 +35579,10 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 
 function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
 
+var mapping = _data.data.map(function (item) {
+  return item;
+});
+
 var Game1 =
 /*#__PURE__*/
 function (_Component) {
@@ -35682,7 +35600,7 @@ function (_Component) {
       isUserPlay: false,
       values: undefined,
       secretCards: undefined,
-      randomCards: undefined,
+      randomCards: true,
       points: 0,
       try: 3,
       cardStatus: [true, true, true, true, true, true, true, true, true],
@@ -35704,33 +35622,28 @@ function (_Component) {
       };
 
       setInterval(Timer, 1000);
-      var secretCards = [// data.card1[this.randomNumber(data.card1.length)],
-        // data.card2[this.randomNumber(data.card2.length)],
-        // data.card3[this.randomNumber(data.card3.length)],
-      ];
+      var secretCards = [_data.data[this.randomNumber(_data.data.length)], _data.data[this.randomNumber(_data.data.length)], _data.data[this.randomNumber(_data.data.length)], _data.data[this.randomNumber(_data.data.length)], _data.data[this.randomNumber(_data.data.length)], _data.data[this.randomNumber(_data.data.length)], _data.data[this.randomNumber(_data.data.length)], _data.data[this.randomNumber(_data.data.length)], _data.data[this.randomNumber(_data.data.length)]];
       console.log(_data.data, secretCards);
 
-      if (this.state.randomCards === undefined) {
+      if (this.state.randomCards === true) {
         var randomCards = function randomCards() {
           var sortRandom = function sortRandom(a, b) {
             return Math.random() - 0.5;
           };
 
           var nineCards = [].concat(secretCards);
-          var allCards = [];
-          allCards = allCards.concat(_data.data.card1).concat(_data.data.card2).concat(_data.data.card3);
+          var allCards = []; // allCards = allCards.concat(data.card1).concat(data.card2).concat(data.card3)
+
           nineCards.map(function (item) {
             for (var i = 0; i <= allCards.length; i++) {
               if (allCards[i] === item) {
                 allCards.splice(i, 1);
               }
             }
-          });
-
-          for (var i = 0; i < 6; i++) {
-            var random = Math.floor(Math.random(allCards.length) * allCards.length);
-            nineCards.push(allCards[random]);
-          }
+          }); // for (let i = 0; i < 6; i++) {
+          //   let random = Math.floor(Math.random(allCards.length) * allCards.length)
+          //   nineCards.push(allCards[random])
+          // }
 
           nineCards.sort(sortRandom);
           return nineCards;
@@ -35746,7 +35659,9 @@ function (_Component) {
   }, {
     key: "randomNumber",
     value: function randomNumber(number) {
-      return Math.floor(Math.random(number) * number);
+      return (// Math.floor(Math.random(number) * number)
+        Math.floor(Math.random() * _data.data.length)
+      );
     }
   }, {
     key: "startGame",
@@ -35871,7 +35786,466 @@ function (_Component) {
 }(_react.Component);
 
 exports.default = Game1;
-},{"react":"../node_modules/react/index.js","react-redux":"../node_modules/react-redux/es/index.js","react-router-dom":"../node_modules/react-router-dom/esm/react-router-dom.js","../../../audio/correct.mp3":"audio/correct.mp3","./data":"containers/Games/GameOne/data.js","./contentStyled.js":"containers/Games/GameOne/contentStyled.js"}],"containers/Games/GameTwo/index.js":[function(require,module,exports) {
+},{"react":"../node_modules/react/index.js","react-redux":"../node_modules/react-redux/es/index.js","react-router-dom":"../node_modules/react-router-dom/esm/react-router-dom.js","../../../audio/correct.mp3":"audio/correct.mp3","./data":"containers/Games/GameOne/data.js","./contentStyled.js":"containers/Games/GameOne/contentStyled.js"}],"img/game2_img/backpack.png":[function(require,module,exports) {
+module.exports = "/backpack.a35740e7.png";
+},{}],"img/game2_img/book.png":[function(require,module,exports) {
+module.exports = "/book.3ac5dac8.png";
+},{}],"img/game2_img/table.png":[function(require,module,exports) {
+module.exports = "/table.30389a51.png";
+},{}],"img/game2_img/train.png":[function(require,module,exports) {
+module.exports = "/train.3eb52d75.png";
+},{}],"img/game2_img/cat.png":[function(require,module,exports) {
+module.exports = "/cat.542cdce2.png";
+},{}],"img/game2_img/dog.png":[function(require,module,exports) {
+module.exports = "/dog.0d999a2d.png";
+},{}],"img/game2_img/elephant.png":[function(require,module,exports) {
+module.exports = "/elephant.dc46e3e5.png";
+},{}],"img/game2_img/bird.png":[function(require,module,exports) {
+module.exports = "/bird.f8b437b7.png";
+},{}],"img/game2_img/box.png":[function(require,module,exports) {
+module.exports = "/box.16a9e876.png";
+},{}],"img/game2_img/apple.png":[function(require,module,exports) {
+module.exports = "/apple.260233d7.png";
+},{}],"img/game2_img/printer.png":[function(require,module,exports) {
+module.exports = "/printer.77575ac9.png";
+},{}],"img/game2_img/cup.png":[function(require,module,exports) {
+module.exports = "/cup.25c45492.png";
+},{}],"containers/Games/GameTwo/imgs_bg.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.imgs_bg = void 0;
+
+var _backpack = _interopRequireDefault(require("../../../img/game2_img/backpack.png"));
+
+var _book = _interopRequireDefault(require("../../../img/game2_img/book.png"));
+
+var _table = _interopRequireDefault(require("../../../img/game2_img/table.png"));
+
+var _train = _interopRequireDefault(require("../../../img/game2_img/train.png"));
+
+var _cat = _interopRequireDefault(require("../../../img/game2_img/cat.png"));
+
+var _dog = _interopRequireDefault(require("../../../img/game2_img/dog.png"));
+
+var _elephant = _interopRequireDefault(require("../../../img/game2_img/elephant.png"));
+
+var _bird = _interopRequireDefault(require("../../../img/game2_img/bird.png"));
+
+var _box = _interopRequireDefault(require("../../../img/game2_img/box.png"));
+
+var _apple = _interopRequireDefault(require("../../../img/game2_img/apple.png"));
+
+var _printer = _interopRequireDefault(require("../../../img/game2_img/printer.png"));
+
+var _cup = _interopRequireDefault(require("../../../img/game2_img/cup.png"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var imgs_bg = [_backpack.default, _book.default, _table.default, _train.default, _cat.default, _dog.default, _elephant.default, _bird.default, _box.default, _apple.default, _printer.default, _cup.default];
+exports.imgs_bg = imgs_bg;
+},{"../../../img/game2_img/backpack.png":"img/game2_img/backpack.png","../../../img/game2_img/book.png":"img/game2_img/book.png","../../../img/game2_img/table.png":"img/game2_img/table.png","../../../img/game2_img/train.png":"img/game2_img/train.png","../../../img/game2_img/cat.png":"img/game2_img/cat.png","../../../img/game2_img/dog.png":"img/game2_img/dog.png","../../../img/game2_img/elephant.png":"img/game2_img/elephant.png","../../../img/game2_img/bird.png":"img/game2_img/bird.png","../../../img/game2_img/box.png":"img/game2_img/box.png","../../../img/game2_img/apple.png":"img/game2_img/apple.png","../../../img/game2_img/printer.png":"img/game2_img/printer.png","../../../img/game2_img/cup.png":"img/game2_img/cup.png"}],"containers/Games/GameTwo/contentStyled.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.RulesItem = exports.MobuleSubTitle = exports.ModalOverButton = exports.TimerLeft = exports.ModalOverGameLabel = exports.ModalOverGameTitle = exports.ModalOverGameBlock = exports.ModalOverGame = exports.Timer = exports.ModuleButtonRun = exports.ModuleCardBack = exports.ModuleCardFront = exports.ModuleCardSelect = exports.ModuleCard3 = exports.ModuleCard2 = exports.ModuleCard1 = exports.ModuleCard = exports.CenterWrapper = exports.ModuleCardsSelect = exports.ModuleCards = exports.ModuleTitle = exports.Module = exports.PageTitle = exports.PageWrapper = void 0;
+
+var _styledComponents = _interopRequireWildcard(require("styled-components"));
+
+var _reactRouterDom = require("react-router-dom");
+
+var _card_front = _interopRequireDefault(require("../../../img/card_bg/card_front2.png"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = Object.defineProperty && Object.getOwnPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : {}; if (desc.get || desc.set) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } } newObj.default = obj; return newObj; } }
+
+function _templateObject29() {
+  var data = _taggedTemplateLiteral(["\n  font-size: 1em;\n  line-height: 1.5em;\n  margin-left: 1em;\n  color: #3e3e3e;\n"]);
+
+  _templateObject29 = function _templateObject29() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject28() {
+  var data = _taggedTemplateLiteral(["\n  font-size: 1.2em;\n  margin-top: 1em;\n  margin-bottom: 0.3em;\n  color: #3e3e3e;\n"]);
+
+  _templateObject28 = function _templateObject28() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject27() {
+  var data = _taggedTemplateLiteral(["\n  margin: 0 auto;\n  text-decoration: none;\n  color: white;\n"]);
+
+  _templateObject27 = function _templateObject27() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject26() {
+  var data = _taggedTemplateLiteral(["\n  animation-duration: 10s;\n"]);
+
+  _templateObject26 = function _templateObject26() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject25() {
+  var data = _taggedTemplateLiteral(["\n  display: block;\n  font-size: 1.15em;\n  line-height: 1.5em;\n"]);
+
+  _templateObject25 = function _templateObject25() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject24() {
+  var data = _taggedTemplateLiteral(["\n  display: block;\n  margin-bottom: 1em;\n  text-align: center;\n  font-size: 1.5em;\n  font-weight: bold;\n"]);
+
+  _templateObject24 = function _templateObject24() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject23() {
+  var data = _taggedTemplateLiteral(["\n  background-color: white;\n  border-radius: 4px;\n  width: 20em;\n  height: 20em;\n  padding: 1em;\n  box-sizing: border-box;\n"]);
+
+  _templateObject23 = function _templateObject23() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject22() {
+  var data = _taggedTemplateLiteral(["\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  position: absolute;\n  top: 0;\n  left: 0;\n  width: 100%;\n  height: 100vh;\n  animation: ", " 1s linear forwards;\n"]);
+
+  _templateObject22 = function _templateObject22() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject21() {
+  var data = _taggedTemplateLiteral(["\n  height: 0.5em;\n  margin: 0 auto;\n  animation: ", " 14s linear;\n"]);
+
+  _templateObject21 = function _templateObject21() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject20() {
+  var data = _taggedTemplateLiteral(["\n  display: block;\n  font-size: 1em;\n  line-height: 1em;\n  color: white;\n  background-color: #589500;\n  width: 8em;\n  height: 1em;\n  padding: 0.5em 0;\n  margin-top: 0.5em;\n  text-align: center;\n  border-radius: 10em;\n  cursor: pointer;\n  text-decoration: none;\n  transition: all 0.2s ease-in-out;\n  box-shadow: 0 0.1em 0.15em rgba(0,0,0,0.19), 0 0.2em 0.2em rgba(0,0,0,0.23);\n  &:hover {\n    box-shadow: 0 0.2em 0.25em rgba(0,0,0,0.19), 0 0.3em 0.3em rgba(0,0,0,0.23);\n  }\n"]);
+
+  _templateObject20 = function _templateObject20() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject19() {
+  var data = _taggedTemplateLiteral(["\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  font-weight: bold;\n  position: absolute;\n  width: 100%;\n  height: 100%;\n  border-radius: 4px;\n  backface-visibility: hidden;\n  transform: rotateY(180deg);\n  background-color: #fafafa;\n  text-transform: uppercase;\n  box-shadow: 0 0.1em 0.15em rgba(0,0,0,0.19), 0 0.2em 0.2em rgba(0,0,0,0.23);\n  background-image: url(", ");\n  background-repeat: no-repeat;\n  background-size: contain;\n  background-position: center;\n"]);
+
+  _templateObject19 = function _templateObject19() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject18() {
+  var data = _taggedTemplateLiteral(["\n  position: absolute;\n  width: 100%;\n  height: 100%;\n  border-radius: 4px;\n  backface-visibility: hidden;\n  background-image: url(", ");\n  background-size: cover;\n  background-position: center;\n  box-shadow: 0 0.1em 0.15em rgba(0,0,0,0.19), 0 0.2em 0.2em rgba(0,0,0,0.23);\n"]);
+
+  _templateObject18 = function _templateObject18() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject17() {
+  var data = _taggedTemplateLiteral(["\n  animation: ", " 0.4s ease-in-out forwards;\n  cursor: pointer;\n"]);
+
+  _templateObject17 = function _templateObject17() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject16() {
+  var data = _taggedTemplateLiteral(["\n  animation-delay: 9s;\n"]);
+
+  _templateObject16 = function _templateObject16() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject15() {
+  var data = _taggedTemplateLiteral(["\n  animation-delay: 5s;\n"]);
+
+  _templateObject15 = function _templateObject15() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject14() {
+  var data = _taggedTemplateLiteral(["\n  animation-delay: 1s;\n"]);
+
+  _templateObject14 = function _templateObject14() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject13() {
+  var data = _taggedTemplateLiteral(["\n  position: relative;\n  top: 0;\n  left: 0;\n  width: 12em;\n  height: 12em;\n  border-radius: 4px;\n  margin: 0.5em 0.5em;\n  transform-style: preserve-3d;\n  perspective: 500px;\n  animation: ", " 4s ease-in-out;\n  box-shadow: 0 0.1em 0.15em rgba(0,0,0,0.19), 0 0.2em 0.2em rgba(0,0,0,0.23);\n"]);
+
+  _templateObject13 = function _templateObject13() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject12() {
+  var data = _taggedTemplateLiteral(["\n  width: 100%;\n  margin: 0 auto;\n  display: flex;\n  justify-content: center;\n  flex-wrap: wrap;\n  margin-top: 1em;\n"]);
+
+  _templateObject12 = function _templateObject12() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject11() {
+  var data = _taggedTemplateLiteral(["\n  animation: none;\n"]);
+
+  _templateObject11 = function _templateObject11() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject10() {
+  var data = _taggedTemplateLiteral(["\n  width: 40em;\n  height: auto;\n  margin: 0 auto;\n  display: flex;\n  justify-content: center;\n  flex-wrap: wrap;\n  margin-top: 1em;\n  overflow: hidden;\n  animation: ", " 14s ease-in-out forwards;\n"]);
+
+  _templateObject10 = function _templateObject10() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject9() {
+  var data = _taggedTemplateLiteral(["\n  font-size: 1.5em;\n  color: #3e3e3e;\n"]);
+
+  _templateObject9 = function _templateObject9() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject8() {
+  var data = _taggedTemplateLiteral(["\n  padding: 1.5em;\n"]);
+
+  _templateObject8 = function _templateObject8() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject7() {
+  var data = _taggedTemplateLiteral(["\n  font-size: 2em;\n  color: #3e3e3e;\n"]);
+
+  _templateObject7 = function _templateObject7() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject6() {
+  var data = _taggedTemplateLiteral(["\n  display: flex;\n  flex-direction: column;\n  padding: 2em;\n  box-sizing: border-box;\n  position: relative;\n"]);
+
+  _templateObject6 = function _templateObject6() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject5() {
+  var data = _taggedTemplateLiteral(["\n  0% {\n    background-color: rgba(255, 255, 255, 0);\n  }\n  \n  100% {\n    background-color: rgba(0, 0, 0, 0.15);\n  }\n"]);
+
+  _templateObject5 = function _templateObject5() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject4() {
+  var data = _taggedTemplateLiteral(["\n  0% {\n    width: 70%;\n    background-color: #50af50;\n  }\n\n  100% {\n    width: 0%;\n    background-color: #e22828;\n  }\n"]);
+
+  _templateObject4 = function _templateObject4() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject3() {
+  var data = _taggedTemplateLiteral(["\n  0% {\n    opacity: 1;\n  }\n\n  95% {\n    opacity: 1;\n  }\n\n  100% {\n    opacity: 0;\n  }\n"]);
+
+  _templateObject3 = function _templateObject3() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject2() {
+  var data = _taggedTemplateLiteral(["\n  0% {\n    transform: rotateY(0);\n  }\n\n  100% {\n    transform: rotateY(180deg);\n  }\n"]);
+
+  _templateObject2 = function _templateObject2() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject() {
+  var data = _taggedTemplateLiteral(["\n  0% {\n    transform: rotateY(0);\n  }\n\n  20% {\n    transform: rotateY(180deg);\n  }\n\n  80% {\n    transform: rotateY(180deg);\n  }\n\n  100% {\n    transform: rotateY(0);\n  }\n"]);
+
+  _templateObject = function _templateObject() {
+    return data;
+  };
+
+  return data;
+}
+
+function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(0); } return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
+
+var flip = (0, _styledComponents.keyframes)(_templateObject());
+var flipConst = (0, _styledComponents.keyframes)(_templateObject2());
+var skip = (0, _styledComponents.keyframes)(_templateObject3());
+var timerKeyframes = (0, _styledComponents.keyframes)(_templateObject4());
+var showModalKeyframes = (0, _styledComponents.keyframes)(_templateObject5());
+
+var PageWrapper = _styledComponents.default.div(_templateObject6());
+
+exports.PageWrapper = PageWrapper;
+
+var PageTitle = _styledComponents.default.span(_templateObject7());
+
+exports.PageTitle = PageTitle;
+
+var Module = _styledComponents.default.div(_templateObject8());
+
+exports.Module = Module;
+
+var ModuleTitle = _styledComponents.default.div(_templateObject9());
+
+exports.ModuleTitle = ModuleTitle;
+
+var ModuleCards = _styledComponents.default.div(_templateObject10(), skip);
+
+exports.ModuleCards = ModuleCards;
+var ModuleCardsSelect = (0, _styledComponents.default)(ModuleCards)(_templateObject11());
+exports.ModuleCardsSelect = ModuleCardsSelect;
+
+var CenterWrapper = _styledComponents.default.div(_templateObject12());
+
+exports.CenterWrapper = CenterWrapper;
+
+var ModuleCard = _styledComponents.default.div(_templateObject13(), flip);
+
+exports.ModuleCard = ModuleCard;
+var ModuleCard1 = (0, _styledComponents.default)(ModuleCard)(_templateObject14());
+exports.ModuleCard1 = ModuleCard1;
+var ModuleCard2 = (0, _styledComponents.default)(ModuleCard)(_templateObject15());
+exports.ModuleCard2 = ModuleCard2;
+var ModuleCard3 = (0, _styledComponents.default)(ModuleCard)(_templateObject16());
+exports.ModuleCard3 = ModuleCard3;
+var ModuleCardSelect = (0, _styledComponents.default)(ModuleCard)(_templateObject17(), flipConst);
+exports.ModuleCardSelect = ModuleCardSelect;
+
+var ModuleCardFront = _styledComponents.default.div(_templateObject18(), _card_front.default);
+
+exports.ModuleCardFront = ModuleCardFront;
+
+var ModuleCardBack = _styledComponents.default.div(_templateObject19(), function (props) {
+  return props.src;
+});
+
+exports.ModuleCardBack = ModuleCardBack;
+
+var ModuleButtonRun = _styledComponents.default.span(_templateObject20());
+
+exports.ModuleButtonRun = ModuleButtonRun;
+
+var Timer = _styledComponents.default.div(_templateObject21(), timerKeyframes);
+
+exports.Timer = Timer;
+
+var ModalOverGame = _styledComponents.default.div(_templateObject22(), showModalKeyframes);
+
+exports.ModalOverGame = ModalOverGame;
+
+var ModalOverGameBlock = _styledComponents.default.div(_templateObject23());
+
+exports.ModalOverGameBlock = ModalOverGameBlock;
+
+var ModalOverGameTitle = _styledComponents.default.span(_templateObject24());
+
+exports.ModalOverGameTitle = ModalOverGameTitle;
+
+var ModalOverGameLabel = _styledComponents.default.span(_templateObject25());
+
+exports.ModalOverGameLabel = ModalOverGameLabel;
+var TimerLeft = (0, _styledComponents.default)(Timer)(_templateObject26());
+exports.TimerLeft = TimerLeft;
+var ModalOverButton = (0, _styledComponents.default)(ModuleButtonRun)(_templateObject27());
+exports.ModalOverButton = ModalOverButton;
+
+var MobuleSubTitle = _styledComponents.default.div(_templateObject28());
+
+exports.MobuleSubTitle = MobuleSubTitle;
+
+var RulesItem = _styledComponents.default.div(_templateObject29());
+
+exports.RulesItem = RulesItem;
+},{"styled-components":"../node_modules/styled-components/dist/styled-components.browser.esm.js","react-router-dom":"../node_modules/react-router-dom/esm/react-router-dom.js","../../../img/card_bg/card_front2.png":"img/card_bg/card_front2.png"}],"containers/Games/GameTwo/index.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -35881,13 +36255,25 @@ exports.default = void 0;
 
 var _react = _interopRequireWildcard(require("react"));
 
-var _propTypes = _interopRequireDefault(require("prop-types"));
+var _imgs_bg = require("./imgs_bg");
+
+var _correct = _interopRequireDefault(require("../../../audio/correct.mp3"));
+
+var _contentStyled = require("./contentStyled.js");
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = Object.defineProperty && Object.getOwnPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : {}; if (desc.get || desc.set) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } } newObj.default = obj; return newObj; } }
 
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+function _toConsumableArray(arr) { return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _nonIterableSpread(); }
+
+function _nonIterableSpread() { throw new TypeError("Invalid attempt to spread non-iterable instance"); }
+
+function _iterableToArray(iter) { if (Symbol.iterator in Object(iter) || Object.prototype.toString.call(iter) === "[object Arguments]") return Array.from(iter); }
+
+function _arrayWithoutHoles(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = new Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
@@ -35905,31 +36291,242 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 
 function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
 
+// const cardValues = {
+//   card1: [
+//     'backpack',
+//     'book',
+//     'table',
+//     'train'
+//   ],
+//   card2: [
+//     'cat',
+//     'dog',
+//     'elephant',
+//     'bird'
+//   ],
+//   card3: [
+//     'box',
+//     'apple',
+//     'printer',
+//     'cup'
+//   ]
+// }
+var data = _imgs_bg.imgs_bg;
+
 var Game2 =
 /*#__PURE__*/
 function (_Component) {
   _inherits(Game2, _Component);
 
-  function Game2() {
+  function Game2(props) {
+    var _this;
+
     _classCallCheck(this, Game2);
 
-    return _possibleConstructorReturn(this, _getPrototypeOf(Game2).apply(this, arguments));
+    _this = _possibleConstructorReturn(this, _getPrototypeOf(Game2).call(this, props));
+    _this.state = {
+      gameId: 2,
+      isStarted: false,
+      isUserPlay: false,
+      secretCards: false,
+      randomCards: true,
+      points: 0,
+      try: 3,
+      cardStatus: [true, true, true, true, true, true, true, true, true],
+      timerOn: false,
+      timeLeft: 10,
+      cardsImg: []
+    };
+    return _this;
   }
 
   _createClass(Game2, [{
+    key: "componentDidMount",
+    value: function componentDidMount() {
+      var _this2 = this;
+
+      var Timer = function Timer() {
+        _this2.state.timerOn ? _this2.setState({
+          timeLeft: _this2.state.timeLeft - 1
+        }) : null;
+      };
+
+      setInterval(Timer, 1000);
+      var secretCards = [data[this.randomNumber(data.length)], data[this.randomNumber(data.length)], data[this.randomNumber(data.length)], data[this.randomNumber(data.length)], data[this.randomNumber(data.length)], data[this.randomNumber(data.length)], data[this.randomNumber(data.length)], data[this.randomNumber(data.length)], data[this.randomNumber(data.length)]];
+
+      if (this.state.randomCards === true) {
+        var randomCards = function randomCards() {
+          var sortRandom = function sortRandom(a, b) {
+            return Math.random() - 0.5;
+          };
+
+          var nineCards = [].concat(secretCards);
+          var allCards = []; // allCards = allCards.concat(data.card1).concat(data.card2).concat(data.card3)
+
+          secretCards.map(function (item) {
+            for (var i = 0; i <= allCards.length; i++) {
+              if (allCards[i] === item) {
+                allCards.splice(i, 1);
+              }
+            }
+          }); // for (let i = 0; i < 6; i++) {
+          //   let random = Math.floor(Math.random(allCards.length) * allCards.length)
+          //   nineCards.push(allCards[random])
+          // }
+
+          nineCards.sort(sortRandom);
+          return nineCards;
+        };
+
+        this.setState({
+          randomCards: randomCards(),
+          secretCards: secretCards
+        });
+      }
+    }
+  }, {
+    key: "randomNumber",
+    value: function randomNumber(number) {
+      return Math.floor(Math.random(number) * number);
+    }
+  }, {
+    key: "startGame",
+    value: function startGame() {
+      this.setState({
+        isStarted: true
+      });
+    }
+  }, {
+    key: "createLinkImg",
+    value: function createLinkImg(nameImg) {
+      var link = srcImg + '/img/game2_img/' + nameImg + '.png';
+      return link;
+    }
+  }, {
+    key: "checkCard",
+    value: function checkCard(item, key) {
+      var cardStatus = _toConsumableArray(this.state.cardStatus);
+
+      cardStatus[key] = false;
+
+      if (item === this.state.secretCards[0] || item === this.state.secretCards[1] || item === this.state.secretCards[2]) {
+        console.log('Правильно!');
+        var audio = new Audio(_correct.default);
+        audio.play();
+        this.setState({
+          points: this.state.points + 1,
+          try: this.state.try - 1,
+          cardStatus: cardStatus
+        });
+      } else {
+        this.setState({
+          cardStatus: cardStatus,
+          try: this.state.try - 1
+        });
+      }
+    }
+  }, {
+    key: "renderCard",
+    value: function renderCard() {
+      var _this3 = this;
+
+      return this.state.randomCards.map(function (item, key) {
+        // console.log(item)
+        return _react.default.createElement(_contentStyled.ModuleCardSelect, {
+          key: key,
+          style: _this3.state.cardStatus[key] ? null : {
+            opacity: '0.5'
+          },
+          onClick: function onClick() {
+            _this3.state.cardStatus[key] ? _this3.checkCard(item, key) : null;
+          }
+        }, _react.default.createElement(_contentStyled.ModuleCardFront, null), _react.default.createElement(_contentStyled.ModuleCardBack, {
+          src: _this3.state.randomCards[key]
+        }));
+      });
+    }
+  }, {
+    key: "isOver",
+    value: function isOver() {
+      var _this4 = this;
+
+      if (this.state.try === 0) {
+        this.state.timerOn ? this.setState({
+          timerOn: false
+        }) : null;
+        return _react.default.createElement(_contentStyled.ModalOverGame, null, _react.default.createElement(_contentStyled.ModalOverGameBlock, null, _react.default.createElement(_contentStyled.ModalOverGameTitle, null, "\u041F\u043E\u043F\u044B\u0442\u043A\u0438 \u0437\u0430\u043A\u043E\u043D\u0447\u0438\u043B\u0438\u0441\u044C"), _react.default.createElement(_contentStyled.ModalOverGameLabel, null, "\u0412\u0440\u0435\u043C\u044F: ", this.state.timeLeft), _react.default.createElement(_contentStyled.ModalOverGameLabel, null, "\u0421\u0447\u0451\u0442: ", this.state.points), this.props.data.auth === false ? _react.default.createElement(_contentStyled.ModalOverButton, {
+          to: "/games"
+        }, "\u041D\u0430 \u0433\u043B\u0430\u0432\u043D\u0443\u044E") : _react.default.createElement(_contentStyled.ModalOverButton, {
+          to: "/stats",
+          onClick: function onClick() {
+            _this4.SaveResult();
+          }
+        }, "\u0421\u043E\u0445\u0440\u0430\u043D\u0438\u0442\u044C")));
+      }
+    } // SaveResult() {
+    //   let data = {
+    //     userId: this.props.data.userId,
+    //     gameId: this.state.gameId,
+    //     points: this.state.points,
+    //   }
+    //   SaveResultApi(data)
+    //     .then((response) => {
+    //       console.log(response.data)
+    //     })
+    // }
+
+  }, {
+    key: "isPlay",
+    value: function isPlay() {
+      if (this.state.isUserPlay) {
+        // (this.state.timerOn) ? (setTimeout(() => { this.setState({ timerOn: false }) }, 10000)) : null
+        console.log('Игра началась');
+        return _react.default.createElement("div", null, _react.default.createElement(_contentStyled.ModuleCardsSelect, null, this.renderCard()), _react.default.createElement("div", null, "\u041F\u043E\u043F\u044B\u0442\u043E\u043A: ", this.state.try), _react.default.createElement("div", null, "\u0412\u0430\u0448 \u0441\u0447\u0451\u0442: ", this.state.points), _react.default.createElement("div", null, "\u0412\u0440\u0435\u043C\u044F: ", this.state.timeLeft), _react.default.createElement(_contentStyled.TimerLeft, null));
+      }
+    }
+  }, {
+    key: "isStarted",
+    value: function isStarted() {
+      var _this5 = this;
+
+      if (this.state.isUserPlay === false) {
+        if (this.state.isStarted) {
+          setTimeout(function () {
+            _this5.setState({
+              isUserPlay: true,
+              timerOn: true
+            });
+          }, 15000);
+          return _react.default.createElement("div", null, _react.default.createElement(_contentStyled.ModuleCards, null, _react.default.createElement(_contentStyled.ModuleCard1, null, _react.default.createElement(_contentStyled.ModuleCardFront, null), _react.default.createElement(_contentStyled.ModuleCardBack, {
+            src: this.state.secretCards[0]
+          })), _react.default.createElement(_contentStyled.ModuleCard2, null, _react.default.createElement(_contentStyled.ModuleCardFront, null), _react.default.createElement(_contentStyled.ModuleCardBack, {
+            src: this.state.secretCards[1]
+          })), _react.default.createElement(_contentStyled.ModuleCard3, null, _react.default.createElement(_contentStyled.ModuleCardFront, null), _react.default.createElement(_contentStyled.ModuleCardBack, {
+            src: this.state.secretCards[2]
+          }))), _react.default.createElement(_contentStyled.Timer, null));
+        } else {
+          return _react.default.createElement(_contentStyled.Module, null, _react.default.createElement(_contentStyled.MobuleSubTitle, null, "\u041E\u043F\u0438\u0441\u0430\u043D\u0438\u0435:"), _react.default.createElement(_contentStyled.RulesItem, null, "\u041D\u0443\u0436\u043D\u043E \u0437\u0430\u043F\u043E\u043C\u043D\u0438\u0442\u044C \u043A\u0430\u0440\u0442\u0438\u043D\u043A\u0438 \u043D\u0430 \u0442\u0440\u0451\u0445 \u043A\u0430\u0440\u0442\u043E\u0447\u043A\u0430\u0445."), _react.default.createElement(_contentStyled.RulesItem, null, "\u041D\u0430 \u0437\u0430\u043F\u043E\u043C\u0438\u043D\u0430\u043D\u0438\u0435 \u043A\u0430\u0440\u0442\u0438\u043D\u043A\u0438 \u0434\u0430\u0451\u0442\u0441\u044F 3 \u0441\u0435\u043A\u0443\u043D\u0434\u044B."), _react.default.createElement(_contentStyled.RulesItem, null, "\u041F\u043E\u0442\u043E\u043C \u043D\u0443\u0436\u043D\u043E \u0432\u044B\u0431\u0440\u0430\u0442\u044C \u043F\u0440\u0430\u0432\u0438\u043B\u044C\u043D\u044B\u0435 \u043A\u0430\u0440\u0442\u0438\u043D\u043A\u0438 \u0441\u0440\u0435\u0434\u0438 \u043F\u043E\u044F\u0432\u0438\u0432\u0448\u0438\u0445\u0441\u044F \u0434\u0435\u0432\u044F\u0442\u0438 \u043A\u0430\u0440\u0442\u043E\u0447\u0435\u043A."), _react.default.createElement(_contentStyled.CenterWrapper, null, _react.default.createElement(_contentStyled.ModuleButtonRun, {
+            to: "#",
+            onClick: function onClick() {
+              return _this5.startGame();
+            }
+          }, "\u0421\u0442\u0430\u0440\u0442")));
+        }
+      }
+    }
+  }, {
     key: "render",
     value: function render() {
-      return _react.default.createElement("div", null, "2");
+      console.log(this.state.randomCards);
+      return _react.default.createElement(_contentStyled.PageWrapper, null, _react.default.createElement(_contentStyled.PageTitle, null, "\u0418\u0433\u0440\u044B"), _react.default.createElement(_contentStyled.Module, null, _react.default.createElement(_contentStyled.ModuleTitle, null, "\u0422\u0440\u0438 \u043E\u0431\u0440\u0430\u0437\u0430"), this.isStarted(), this.isPlay(), this.isOver()));
     }
   }]);
 
   return Game2;
 }(_react.Component);
 
-Game2.propTypes = {};
-var _default = Game2;
-exports.default = _default;
-},{"react":"../node_modules/react/index.js","prop-types":"../node_modules/prop-types/index.js"}],"containers/Games/GameThree/contentStyled.js":[function(require,module,exports) {
+exports.default = Game2;
+},{"react":"../node_modules/react/index.js","./imgs_bg":"containers/Games/GameTwo/imgs_bg.js","../../../audio/correct.mp3":"audio/correct.mp3","./contentStyled.js":"containers/Games/GameTwo/contentStyled.js"}],"containers/Games/GameThree/contentStyled.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -35941,7 +36538,7 @@ var _styledComponents = _interopRequireWildcard(require("styled-components"));
 
 var _reactRouterDom = require("react-router-dom");
 
-var _card_front = _interopRequireDefault(require("../../../img/card_bg/card_front.jpg"));
+var _card_front = _interopRequireDefault(require("../../../img/card_bg/card_front2.png"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -36406,7 +37003,7 @@ exports.MobuleSubTitle = MobuleSubTitle;
 var RulesItem = _styledComponents.default.div(_templateObject35());
 
 exports.RulesItem = RulesItem;
-},{"styled-components":"../node_modules/styled-components/dist/styled-components.browser.esm.js","react-router-dom":"../node_modules/react-router-dom/esm/react-router-dom.js","../../../img/card_bg/card_front.jpg":"img/card_bg/card_front.jpg"}],"containers/Games/GameThree/index.js":[function(require,module,exports) {
+},{"styled-components":"../node_modules/styled-components/dist/styled-components.browser.esm.js","react-router-dom":"../node_modules/react-router-dom/esm/react-router-dom.js","../../../img/card_bg/card_front2.png":"img/card_bg/card_front2.png"}],"containers/Games/GameThree/index.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -39313,7 +39910,7 @@ exports.RulesItem = exports.MobuleSubTitle = exports.ShowPoints = exports.ModalO
 
 var _styledComponents = _interopRequireWildcard(require("styled-components"));
 
-var _card_front = _interopRequireDefault(require("../../../img/card_bg/card_front.jpg"));
+var _card_front = _interopRequireDefault(require("../../../img/card_bg/card_front2.png"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -39764,7 +40361,7 @@ exports.MobuleSubTitle = MobuleSubTitle;
 var RulesItem = _styledComponents.default.div(_templateObject33());
 
 exports.RulesItem = RulesItem;
-},{"styled-components":"../node_modules/styled-components/dist/styled-components.browser.esm.js","../../../img/card_bg/card_front.jpg":"img/card_bg/card_front.jpg"}],"containers/Games/GameFive/index.js":[function(require,module,exports) {
+},{"styled-components":"../node_modules/styled-components/dist/styled-components.browser.esm.js","../../../img/card_bg/card_front2.png":"img/card_bg/card_front2.png"}],"containers/Games/GameFive/index.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -40574,7 +41171,7 @@ function _templateObject3() {
 }
 
 function _templateObject2() {
-  var data = _taggedTemplateLiteral(["\n    width: 85%;\n    height: 100%;\n    border: 0.2em solid gray;\n    border-radius: 10px;\n    margin-right: 30px;\n    background-color: #b8c6db;\nbackground-image: linear-gradient(315deg, #b8c6db 0%, #f5f7fa 74%);\n    @media (max-width: 768px) {\n      width: 100%;\n    }\n"]);
+  var data = _taggedTemplateLiteral(["\n    width: 85%;\n    height: 100%;\n    border: 0.2em solid gray;\n    border-radius: 10px;\n    margin-right: 30px;\n    background-color: #b8c6db;\n    background-image: linear-gradient(315deg, #b8c6db 0%, #f5f7fa 74%);\n    @media (max-width: 768px) {\n      width: 100%;\n    }\n"]);
 
   _templateObject2 = function _templateObject2() {
     return data;
@@ -40991,7 +41588,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "32969" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "39455" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

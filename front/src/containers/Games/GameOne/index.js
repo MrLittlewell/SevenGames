@@ -32,6 +32,7 @@ import {
   RulesItem
 } from './contentStyled.js'
 
+const mapping = data.map(item => item)
 
 export default class Game1 extends Component {
   constructor(props) {
@@ -43,7 +44,7 @@ export default class Game1 extends Component {
       isUserPlay: false,
       values: undefined,
       secretCards: undefined,
-      randomCards: undefined,
+      randomCards: true,
       points: 0,
       try: 3,
       cardStatus: [true, true, true, true, true, true, true, true, true,],
@@ -64,13 +65,19 @@ export default class Game1 extends Component {
     setInterval(Timer, 1000)
     
     const secretCards = [
-      // data.card1[this.randomNumber(data.card1.length)],
-      // data.card2[this.randomNumber(data.card2.length)],
-      // data.card3[this.randomNumber(data.card3.length)],
+      data[this.randomNumber(data.length)],
+      data[this.randomNumber(data.length)],
+      data[this.randomNumber(data.length)],
+      data[this.randomNumber(data.length)],
+      data[this.randomNumber(data.length)],
+      data[this.randomNumber(data.length)],
+      data[this.randomNumber(data.length)],
+      data[this.randomNumber(data.length)],
+      data[this.randomNumber(data.length)],
     ]
 
     console.log(data, secretCards)
-    if (this.state.randomCards === undefined) {
+    if (this.state.randomCards === true) {
       const randomCards = () => {
         const sortRandom = (a, b) => {
           return Math.random() - 0.5;
@@ -78,7 +85,7 @@ export default class Game1 extends Component {
         var nineCards = [...secretCards]
         var allCards = []
   
-        allCards = allCards.concat(data.card1).concat(data.card2).concat(data.card3)
+        // allCards = allCards.concat(data.card1).concat(data.card2).concat(data.card3)
   
         nineCards.map((item) => {
           for (let i = 0; i <= allCards.length; i++) {
@@ -88,10 +95,10 @@ export default class Game1 extends Component {
           }
         })
   
-        for (let i = 0; i < 6; i++) {
-          let random = Math.floor(Math.random(allCards.length) * allCards.length)
-          nineCards.push(allCards[random])
-        }
+        // for (let i = 0; i < 6; i++) {
+        //   let random = Math.floor(Math.random(allCards.length) * allCards.length)
+        //   nineCards.push(allCards[random])
+        // }
   
         nineCards.sort(sortRandom)
   
@@ -109,7 +116,8 @@ export default class Game1 extends Component {
 
   randomNumber(number) {
     return (
-      Math.floor(Math.random(number) * number)
+      // Math.floor(Math.random(number) * number)
+      Math.floor(Math.random() * data.length)
     )
   }
 

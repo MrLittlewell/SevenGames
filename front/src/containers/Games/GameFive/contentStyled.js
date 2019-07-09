@@ -1,6 +1,6 @@
 import styled, { keyframes } from 'styled-components'
 
-import cardWrapperImg from '../../../img/card_bg/card_front.jpg'
+import cardWrapperImg from '../../../img/card_bg/card_front2.png'
 
 
 const flip = keyframes`
