@@ -1,14 +1,15 @@
-import React, { Component } from 'react';
-import PropTypes from 'prop-types';
-import { ModuleCard, ModuleCards } from './styled';
-class Select extends Component {
+import React, { Component } from 'react'
+import select from '../../img/logo.gif'
+import { MainWrapper } from './styled'
+
+export default class SelectGame extends Component {
 
   render() {
-
     return (
-      <div>1</div>
-    );
+      <MainWrapper>
+        <img src={select} alt="logo" />
+        <h1>Выбери игру</h1>
+      </MainWrapper>
+    )
   }
 }
-
-export default Select;

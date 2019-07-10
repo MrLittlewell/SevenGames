@@ -1,13 +1,11 @@
 import React, { Component } from 'react'
-import { connect } from 'react-redux'
-import { Link } from 'react-router-dom'
+// const arrayMove = require('array-move')
 
 import {
   SortableContainer,
   SortableElement,
-  arrayMove,
 } from 'react-sortable-hoc'
-
+import arrayMove from 'array-move'
 import { data } from './data'
 import {
   PageWrapper,
@@ -40,19 +38,20 @@ import {
   RulesItem
 } from './contentStyled.js'
 
+
 export default class Game5 extends Component {
   constructor(props) {
     super(props)
 
     this.state = {
       gameId: 5,
-      data: [...data],
+      data: [ ...data ],
       isStarted: false,
       isUserPlay: false,
       secretCards: [ ],
       sortSecretCards: [ ],
       points: 0,
-      cardStatus: [false, false, false, false, false, false],
+      cardStatus: [ false, false, false, false, false, false ],
       timerOn: false,
       isShow: false,
       isOver: false,
@@ -60,45 +59,40 @@ export default class Game5 extends Component {
   }
 
   componentDidMount() {
-    GetGameData(this.state.gameId)
-      .then((response) => {
-        console.log(response.data[0].data)
-        const data = JSON.parse(response.data[0].data)
 
-        if (!this.state.secretCards === undefined) return
+    if (!this.state.secretCards === undefined) {return}
 
-        var sortSecretCards = []
-        // const data = [...this.state.data]
-        const secretCards = []
-        const compareRandom = (a, b) => { return Math.random() - 0.5 }
+    let sortSecretCards = []
+    // const data = [...this.state.data]
+    const secretCards = []
+    const compareRandom = (a, b) => { return Math.random() - 0.5 }
 
-        for (let i = 0; i < 6; i++) {
-          let randomCardNumber = this.randomNumber(data.length) // data.length - i = bug; See later
+    for (let i = 0; i < 6; i++) {
+      let randomCardNumber = this.randomNumber(data.length) // data.length - i = bug; See later
 
-          secretCards[i] = [...data][randomCardNumber]
-          // console.log(randomCardNumber, 'Original log', data.length, i)
-          secretCards[i].state = this.randomNumber(4)
-          data.splice(randomCardNumber, 1)
-        }
-        sortSecretCards = JSON.parse(JSON.stringify(secretCards))
-        // Сортировка по алфавиту
-        sortSecretCards.sort(function(a, b) {
-          if(a.name < b.name) { return -1; }
-          if(a.name > b.name) { return 1; }
-          return 0;
-        })
-        for (let i = 0; i < 6; i++) {
-          secretCards[i].state = 0
-          secretCards[i].state = this.randomNumber(4)
-          sortSecretCards[i].trueState = this.randomNumber(4)
-          console.log(sortSecretCards[i], 'истинный', secretCards[i])
-        }
-        console.log(secretCards, 'secretCards')
-        console.log(sortSecretCards, 'sortSecretCards')
-        this.setState({
-          secretCards: [...secretCards],
-          sortSecretCards: [...sortSecretCards]
-        })
+      secretCards[i] = [ ...data ][randomCardNumber]
+      // console.log(randomCardNumber, 'Original log', data.length, i)
+      secretCards[i].state = this.randomNumber(4)
+      data.splice(randomCardNumber, 1)
+    }
+    sortSecretCards = JSON.parse(JSON.stringify(secretCards))
+    // Сортировка по алфавиту
+    sortSecretCards.sort(function(a, b) {
+      if(a.name < b.name) { return -1 }
+      if(a.name > b.name) { return 1 }
+      return 0
+    })
+    for (let i = 0; i < 6; i++) {
+      secretCards[i].state = 0
+      secretCards[i].state = this.randomNumber(4)
+      sortSecretCards[i].trueState = this.randomNumber(4)
+      console.log(sortSecretCards[i], 'истинный', secretCards[i])
+    }
+    console.log(secretCards, 'secretCards')
+    console.log(sortSecretCards, 'sortSecretCards')
+    this.setState({
+      secretCards: [ ...secretCards ],
+      sortSecretCards: [ ...sortSecretCards ]
     })
   }
 
@@ -116,18 +110,18 @@ export default class Game5 extends Component {
     })
   }
 
-  createLinkImg(nameImg) {
-    const link = srcImg + '/img/game5_img/' + nameImg + '.png'
+  // createLinkImg(nameImg) {
+  //   const link = srcImg + '/img/game5_img/' + nameImg + '.png'
 
-    return link
-  }
+  //   return link
+  // }
 
   checkCard() {
-    const secretCards = [...this.state.secretCards]
-    const sortSecretCards = [...this.state.sortSecretCards]
+    const secretCards = [ ...this.state.secretCards ]
+    const sortSecretCards = [ ...this.state.sortSecretCards ]
     var points = 0
     console.log(secretCards, sortSecretCards)
-    var trueAnswers = 0
+    let trueAnswers = 0
 
     for (let i = 0; i < 6; i++) {
       if (secretCards[i].name === sortSecretCards[i].name) {
@@ -140,13 +134,13 @@ export default class Game5 extends Component {
     }
     console.log(trueAnswers)
     switch(trueAnswers) {
-      case 6: points = 3; break;
-      case 5: points = 3; break;
-      case 4: points = 2; break;
-      case 3: points = 2; break;
-      case 2: points = 1; break;
-      case 1: points = 1; break;
-      case 0: points = 0; break;
+    case 6: points = 3; break
+    case 5: points = 3; break
+    case 4: points = 2; break
+    case 3: points = 2; break
+    case 2: points = 1; break
+    case 1: points = 1; break
+    case 0: points = 0; break
     }
     console.log(trueAnswers)
     this.setState({
@@ -156,40 +150,40 @@ export default class Game5 extends Component {
   }
 
   renderCard(item, index) {
-    const SortableItem = SortableElement(({item, index, indexCopy}) => (
-        <ModuleCardDND>
-          <ModuleCardDNDInner
-            src = { this.createLinkImg(item.src) }
-            isState = { () => {
-              if ((this.state.sortSecretCards[indexCopy].name === item.name) && (this.state.sortSecretCards[indexCopy].state === item.state)) {
-                return `#589500`
-              } else {
-                return `#dc4c4c`
-              }
-            } }
-            state = { () => {
-              if (item.state === 0) {
-                return `scale(1, 1) rotate(0deg)`
-              } else if (item.state === 1) {
-                return `scale(1, 1) rotate(90deg)`
-              } else if (item.state === 2) {
-                return `scale(-1, 1) rotate(0deg)`
-              } else if (item.state === 3) {
-                return `scale(1, 1) rotate(-90deg)`
-              }
-            } }
-          >
+    const SortableItem = SortableElement(({ item, index, indexCopy }) => 
+      <ModuleCardDND>
+        <ModuleCardDNDInner
+          src = { item.src }
+          isState = { () => {
+            if (this.state.sortSecretCards[indexCopy].name === item.name && this.state.sortSecretCards[indexCopy].state === item.state) {
+              return `#589500`
+            } else {
+              return `#dc4c4c`
+            }
+          } }
+          state = { () => {
+            if (item.state === 0) {
+              return `scale(1, 1) rotate(0deg)`
+            } else if (item.state === 1) {
+              return `scale(1, 1) rotate(90deg)`
+            } else if (item.state === 2) {
+              return `scale(-1, 1) rotate(0deg)`
+            } else if (item.state === 3) {
+              return `scale(1, 1) rotate(-90deg)`
+            }
+          } }
+        >
 
-          </ModuleCardDNDInner>
-        </ModuleCardDND>
-      )
+        </ModuleCardDNDInner>
+      </ModuleCardDND>
+      
     )
     return <SortableItem key = { `item-${index}` } index = { index } item = { item } indexCopy = { index } />
   }
   
   isOver() {
     if (this.state.try === 0) {
-      (this.state.timerOn) ? ( this.setState({ timerOn: false }) ) : null
+      this.state.timerOn ? this.setState({ timerOn: false }) : null
 
       return (
         <ModalOverGame>
@@ -197,7 +191,7 @@ export default class Game5 extends Component {
             <ModalOverGameTitle>Попытки закончились</ModalOverGameTitle>
             <ModalOverGameLabel>Время: { this.state.timeLeft }</ModalOverGameLabel>
             <ModalOverGameLabel>Счёт: { this.state.points }</ModalOverGameLabel>
-            <ModalOverButton to = '/stats' onClick = { () => { this.SaveResult() } }>Сохранить</ModalOverButton>
+            <ModalOverButton to = "/stats" onClick = { () => { this.SaveResult() } }>Сохранить</ModalOverButton>
           </ModalOverGameBlock>
         </ModalOverGame>
       )
@@ -211,32 +205,32 @@ export default class Game5 extends Component {
       points: this.state.points,
     }
 
-    SaveResultApi(data)
-      .then((response) => {
-        console.log(response.data)
-      })
+    // SaveResultApi(data)
+    //   .then((response) => {
+    //     console.log(response.data)
+    //   })
   }
 
   isPlay() {
     if (this.state.isUserPlay) {
-      (this.state.timerOn) ? (setTimeout(() => { this.setState({ timerOn: false }) }, 10000)) : null
+      this.state.timerOn ? setTimeout(() => { this.setState({ timerOn: false }) }, 10000) : null
       const overButtons = () => {
         if (!this.state.isOver) {
-          return <ModuleButtonRun to = '#' onClick = { () => this.checkCard() } >Готово!</ModuleButtonRun>
+          return <ModuleButtonRun to = "#" onClick = { () => this.checkCard() } >Готово!</ModuleButtonRun>
         } else if (this.props.data.auth === false) {
-          return <ModalOverButton to = '/games'>На главную</ModalOverButton>
+          return <ModalOverButton to = "/games">На главную</ModalOverButton>
         } else {
-          return <ModalOverButton to = '/stats' onClick = { () => { this.SaveResult() } }>Сохранить</ModalOverButton>
+          return <ModalOverButton to = "/stats" onClick = { () => { this.SaveResult() } }>Сохранить</ModalOverButton>
         }
       }
-      const SortableList = SortableContainer(({items}) => {
+      const SortableList = SortableContainer(({ items }) => {
         return (
           <ModuleCardsSkip
             isShow = { this.state.isShow ? 'animation: inherit' : 'animation: ${skip} 11s ease-in-out forwards;' }
           >
-            {items.map((value, index) => (
+            {items.map((value, index) => 
               this.renderCard(value, index)
-            ))}
+            )}
             {
               overButtons()
             }
@@ -247,10 +241,10 @@ export default class Game5 extends Component {
         )
       })
 
-      const onSortEnd = ({oldIndex, newIndex}) => {
-        const secretCards = [...this.state.secretCards]
+      const onSortEnd = ({ oldIndex, newIndex }) => {
+        const secretCards = [ ...this.state.secretCards ]
         
-        if (this.state.isOver) return
+        if (this.state.isOver) {return}
         if (oldIndex === newIndex) {
           if (secretCards[oldIndex].state === 3) {
             secretCards[oldIndex].state = 0
@@ -261,15 +255,15 @@ export default class Game5 extends Component {
         this.setState(() => ({
           secretCards: arrayMove(secretCards, oldIndex, newIndex),
           isShow: true
-        }));
+        }))
       }
 
       return (
         <div>
-          <SortableList items={ this.state.secretCards } onSortEnd={ onSortEnd } axis = 'xy' />
-          { this.state.isOver ? (
+          <SortableList items={ this.state.secretCards } onSortEnd={ onSortEnd } axis = "xy" />
+          { this.state.isOver ? 
             <ShowPoints>{ this.state.points }</ShowPoints>
-          ) : null }
+            : null }
           {/* <TimerLeft /> */}
         </div>
       )
@@ -277,7 +271,7 @@ export default class Game5 extends Component {
   }
 
   renderSecretCards() {
-    const sortSecretCards = [...this.state.sortSecretCards]
+    const sortSecretCards = [ ...this.state.sortSecretCards ]
 
     return sortSecretCards.map((item, index) => {
       return (
@@ -295,7 +289,7 @@ export default class Game5 extends Component {
                 return `scale(1, 1) rotate(-90deg)`
               }
             } }
-            src = { this.createLinkImg(item.src) } ></ModuleCardBack>
+            src = { item.src } ></ModuleCardBack>
         </ModuleCard>
       )
     })
@@ -325,7 +319,7 @@ export default class Game5 extends Component {
             <RulesItem>Чтобы повернуть картинку - кликните по ней. Чтобы переместить - перенесите мышкой.</RulesItem>
             <RulesItem>Ограничения по времени нету.</RulesItem>
             <CenterWrapper>
-              <ModuleButtonRun to = '#' onClick = { () => this.startGame() } >Старт</ModuleButtonRun>
+              <ModuleButtonRun to = "#" onClick = { () => this.startGame() } >Старт</ModuleButtonRun>
             </CenterWrapper>
           </Module>
         )

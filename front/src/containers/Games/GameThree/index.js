@@ -54,7 +54,7 @@ export default class Game3 extends Component {
       inputsValue: [ '', '', '', '', '', '' ],
       points: 0,
       isOver: false,
-      cardStatus: [false, false, false, false, false, false],
+      cardStatus: [ false, false, false, false, false, false ],
       timerOn: false,
       timeLeft: 20,
     }
@@ -62,11 +62,11 @@ export default class Game3 extends Component {
 
   componentWillMount() {
     const Timer = () => {
-      (this.state.timerOn) ? (
+      this.state.timerOn ? 
         this.setState({
           timeLeft: this.state.timeLeft - 1
         })
-      ) : null
+        : null
     }
 
     setInterval(Timer, 1000)
@@ -89,7 +89,7 @@ export default class Game3 extends Component {
     const valueToUpdate = e.target.value
 
     if (Number(valueToUpdate) === this.state.secretCards[indexInput]) {
-      var audio = new Audio(sound)
+      let audio = new Audio(sound)
       
       audio.play()
     }
@@ -100,8 +100,8 @@ export default class Game3 extends Component {
 
   checkInputValues() {
     const inputsValue = this.state.inputsValue
-    const secretCardsCopy = [...this.state.secretCards]
-    const secretCards = [...this.state.secretCards]
+    const secretCardsCopy = [ ...this.state.secretCards ]
+    const secretCards = [ ...this.state.secretCards ]
     var points = 0
     var cardsTrue = 0
     var inLine = false
@@ -165,7 +165,7 @@ export default class Game3 extends Component {
         return (
           <CardInputWrapper key = { index }>
             <CardInput
-              placeholder = 'Введите число'
+              placeholder = "Введите число"
               onChange = { (e) => { this.updateInputValueCards(e, index) } }
               cardState = { () => {
                 if (this.state.secretCards[index] === this.state.inputsValue[index]) {
@@ -183,7 +183,7 @@ export default class Game3 extends Component {
   
   isOver() {
     if (this.state.isOver) {
-      (this.state.timerOn) ? ( this.setState({ timerOn: false }) ) : null
+      this.state.timerOn ? this.setState({ timerOn: false }) : null
 
       return (
         <ModalOverGame>
@@ -191,11 +191,11 @@ export default class Game3 extends Component {
             <ModalOverGameTitle>Время закончилось</ModalOverGameTitle>
             <ModalOverGameLabel>Время: { this.state.timeLeft }</ModalOverGameLabel>
             <ModalOverGameLabel>Счёт: { this.state.points }</ModalOverGameLabel>
-            { this.props.data.auth === false ? (
-              <ModalOverButton to = '/games'>На главную</ModalOverButton>
-            ) : (
-              <ModalOverButton to = '/stats' onClick = { () => { this.SaveResult() } }>Сохранить</ModalOverButton>
-            ) }
+            { this.props.data.auth === false ? 
+              <ModalOverButton to = "/games">На главную</ModalOverButton>
+              : 
+              <ModalOverButton to = "/stats" onClick = { () => { this.SaveResult() } }>Сохранить</ModalOverButton>
+            }
           </ModalOverGameBlock>
         </ModalOverGame>
       )
@@ -209,17 +209,17 @@ export default class Game3 extends Component {
       points: this.state.points,
     }
 
-    SaveResultApi(data)
-      .then((response) => {
-        console.log(response.data)
-      })
+    // SaveResultApi(data)
+    //   .then((response) => {
+    //     console.log(response.data)
+    //   })
   }
 
   isPlay() {
     if (this.state.isUserPlay) {
-      (this.state.timerOn) ? (setTimeout(() => {
-        (!this.state.isOver) ? ( this.setState({ timerOn: false, isOver: true }) ) : null
-      }, 40000)) : null
+      this.state.timerOn ? setTimeout(() => {
+        !this.state.isOver ? this.setState({ timerOn: false, isOver: true }) : null
+      }, 40000) : null
 
       console.log('Игра началась')
       return (
@@ -269,7 +269,7 @@ export default class Game3 extends Component {
             <RulesItem>На запоминание картинки даётся 10 секунд.</RulesItem>
             <RulesItem>Далее нужно вписать числа в поля. На заполнение полей даётся 20 секунд (+20 дополнительно).</RulesItem>
             <CenterWrapper>
-              <ModuleButtonRun to = '#' onClick = { () => this.startGame() } >Старт</ModuleButtonRun>
+              <ModuleButtonRun to = "#" onClick = { () => this.startGame() } >Старт</ModuleButtonRun>
             </CenterWrapper>
           </Module>
         )

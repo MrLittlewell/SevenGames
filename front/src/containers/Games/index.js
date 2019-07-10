@@ -1,7 +1,7 @@
-import React, { Component } from 'react';
-import PropTypes from 'prop-types';
+import React, { Component } from 'react'
+import PropTypes from 'prop-types'
 
-import Tab from '../../components/SelectGame';
+import Tab from '../../components/SelectGame'
 import { 
   SelectGames,
   Wrapper,
@@ -17,21 +17,22 @@ import {
   Section,
   ModuleTitle,
   ModuleCardTitle,
-  PageTitle, } from './styled';
-import Game1 from './GameOne';
-import Game2 from './GameTwo';
-import Game3 from './GameThree';
-import Game4 from './GameFour';
-import Game5 from './GameFive';
-import Game6 from './GameSix';
-import Game7 from './GameSeven';
-
+  PageTitle, } from './styled'
+import Game1 from './GameOne'
+import Game2 from './GameTwo'
+import Game3 from './GameThree'
+import Game4 from './GameFour'
+import Game5 from './GameFive'
+import Game6 from './GameSix'
+import Game7 from './GameSeven'
+import SelectGame from '../../components/SelectGame'
 
 
 class Games extends Component {
   constructor(props) {
-    super();
+    super()
     this.state = {
+      SelectGame: true,
       GameOne: false,
       GameTwo: false,
       GameThree: false,
@@ -44,6 +45,7 @@ class Games extends Component {
   
   toggleOne = () => {
     this.setState({
+      SelectGame: false,
       GameOne: true,
       GameTwo: false,
       GameThree: false,
@@ -56,6 +58,7 @@ class Games extends Component {
 
   toggleTwo = () => {
     this.setState({
+      SelectGame: false,
       GameOne: false,
       GameTwo: true,
       GameThree: false,
@@ -65,8 +68,10 @@ class Games extends Component {
       GameSeven: false,
     })
   }
+
   toggleThree = () => {
     this.setState({
+      SelectGame: false,
       GameOne: false,
       GameTwo: false,
       GameThree: true,
@@ -76,8 +81,10 @@ class Games extends Component {
       GameSeven: false,
     })
   }
+
   toggleFour = () => {
     this.setState({
+      SelectGame: false,
       GameOne: false,
       GameTwo: false,
       GameThree: false,
@@ -87,8 +94,10 @@ class Games extends Component {
       GameSeven: false,
     })
   }
+
   toggleFive = () => {
     this.setState({
+      SelectGame: false,
       GameOne: false,
       GameTwo: false,
       GameThree: false,
@@ -98,8 +107,10 @@ class Games extends Component {
       GameSeven: false,
     })
   }
+
   toggleSix = () => {
     this.setState({
+      SelectGame: false,
       GameOne: false,
       GameTwo: false,
       GameThree: false,
@@ -109,8 +120,10 @@ class Games extends Component {
       GameSeven: false,
     })
   }
+
   toggleSeven = () => {
     this.setState({
+      SelectGame: false,
       GameOne: false,
       GameTwo: false,
       GameThree: false,
@@ -120,22 +133,24 @@ class Games extends Component {
       GameSeven: true,
     })
   }
+
   render() {
     return (
-       <Wrapper>
-         <GameArea>
-           {this.state.GameOne && <Game1/>}
-           {this.state.GameTwo && <Game2/>}
-           {this.state.GameThree && <Game3/>}
-           {this.state.GameFour && <Game4/>}
-           {this.state.GameFive && <Game5/>}
-           {this.state.GameSix && <Game6/>}
-           {this.state.GameSeven && <Game7/>}
-         </GameArea>
-         <SelectGames>
-         <PageTitle>Игры</PageTitle>
-           <Section>
-           <ModuleTitle>Оценка памяти</ModuleTitle>
+      <Wrapper>
+        <GameArea>
+          {this.state.SelectGame && <SelectGame/>}
+          {this.state.GameOne && <Game1/>}
+          {this.state.GameTwo && <Game2/>}
+          {this.state.GameThree && <Game3/>}
+          {this.state.GameFour && <Game4/>}
+          {this.state.GameFive && <Game5/>}
+          {this.state.GameSix && <Game6/>}
+          {this.state.GameSeven && <Game7/>}
+        </GameArea>
+        <SelectGames>
+          <PageTitle>Игры</PageTitle>
+          <Section>
+            <ModuleTitle>Оценка памяти</ModuleTitle>
             <ModuleCard onClick={this.toggleOne}>
               <ModuleCard1>
                 <ModuleCardTitle>Три слова</ModuleCardTitle>
@@ -143,30 +158,30 @@ class Games extends Component {
             </ModuleCard>
             <ModuleCard onClick={this.toggleTwo}>
               <ModuleCard2>
-              <ModuleCardTitle>Три образа</ModuleCardTitle>
+                <ModuleCardTitle>Три образа</ModuleCardTitle>
               </ModuleCard2>
             </ModuleCard>
             <ModuleCard onClick={this.toggleThree}>
               <ModuleCard3>
-              <ModuleCardTitle>Шесть цифр</ModuleCardTitle>
+                <ModuleCardTitle>Шесть цифр</ModuleCardTitle>
               </ModuleCard3>
             </ModuleCard>
-           </Section>
-           <Section>
-           <ModuleTitle>Оценка внимания</ModuleTitle>
+          </Section>
+          <Section>
+            <ModuleTitle>Оценка внимания</ModuleTitle>
             <ModuleCard onClick={this.toggleFour}>
               <ModuleCard4>
-              <ModuleCardTitle>Барабанные палочки</ModuleCardTitle>
+                <ModuleCardTitle>Барабанные палочки</ModuleCardTitle>
               </ModuleCard4>
             </ModuleCard>
             <ModuleCard onClick={this.toggleFive}>
               <ModuleCard5>
-               <ModuleCardTitle>Запомнить и воспроизвести</ModuleCardTitle>
+                <ModuleCardTitle>Запомнить и воспроизвести</ModuleCardTitle>
               </ModuleCard5>
             </ModuleCard>
-           </Section>
-           <Section>
-           <ModuleTitle>Оценка мышления</ModuleTitle>
+          </Section>
+          <Section>
+            <ModuleTitle>Оценка мышления</ModuleTitle>
             <ModuleCard onClick={this.toggleSix}>
               <ModuleCard6>
                 <ModuleCardTitle>Исключи лишнее</ModuleCardTitle>
@@ -177,11 +192,11 @@ class Games extends Component {
                 <ModuleCardTitle>Выделение существенных признаков</ModuleCardTitle>
               </ModuleCard7>
             </ModuleCard>
-           </Section>
-         </SelectGames>
+          </Section>
+        </SelectGames>
       </Wrapper>
-    );
+    )
   }
 }
 
-export default Games;
+export default Games

@@ -4,7 +4,6 @@ import { Link } from 'react-router-dom'
 import cardWrapperImg from '../../../img/card_bg/card_front2.png'
 
 
-
 const flip = keyframes`
   0% {
     transform: rotateY(0);

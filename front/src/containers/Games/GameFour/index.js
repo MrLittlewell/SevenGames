@@ -57,11 +57,11 @@ export default class Game4 extends Component {
 
   componentWillMount() {
     const Timer = () => {
-      (this.state.timerOn) ? (
+      this.state.timerOn ? 
         this.setState({
           timeLeft: this.state.timeLeft - 1
         })
-      ) : null
+        : null
     }
 
     setInterval(Timer, 1000)
@@ -83,10 +83,10 @@ export default class Game4 extends Component {
     if (this.state.drumPart === 6) {
       const inputValuesCopy = this.state.inputValues
       const secretCards = this.state.secretCards
-      const translateValues = [ 0, 0, 0, 0, 0, 0]
-      var truePoints = 0
+      const translateValues = [ 0, 0, 0, 0, 0, 0 ]
+      let truePoints = 0
 
-      this.state.timerOn ? ( this.setState({ timerOn: false }) ) : null
+      this.state.timerOn ? this.setState({ timerOn: false }) : null
 
       inputValuesCopy.map((item, index) => {
         if (item === 1) { translateValues[index] = 2 } else if (item === 2) { translateValues[index] = 3 } else if (item === 3) { translateValues[index] = 1 }
@@ -100,11 +100,11 @@ export default class Game4 extends Component {
 
       if (this.state.points === undefined) {
         console.log(this.state.points, truePoints, '222222222222')
-        if ((truePoints === 6) || (truePoints === 5)) {
+        if (truePoints === 6 || truePoints === 5) {
           this.setState({ points: 3 })
-        } else if ((truePoints === 4) || (truePoints === 3)) {
+        } else if (truePoints === 4 || truePoints === 3) {
           this.setState({ points: 2 })
-        } if ((truePoints === 2) || (truePoints === 1)) {
+        } if (truePoints === 2 || truePoints === 1) {
           this.setState({ points: 1 })
         } else if (truePoints === 0) {
           this.setState({ points: 0 })
@@ -116,11 +116,11 @@ export default class Game4 extends Component {
           <ModalOverGameBlock>
             <ModalOverGameTitle>Попытки закончились</ModalOverGameTitle>
             <ModalOverGameLabel>Счёт: { this.state.points }</ModalOverGameLabel>
-            { this.props.data.auth === false ? (
-              <ModalOverButton to = '/games'>На главную</ModalOverButton>
-            ) : (
-              <ModalOverButton to = '/stats' onClick = { () => { this.SaveResult() } }>Сохранить</ModalOverButton>
-            ) }
+            { this.props.data.auth === false ? 
+              <ModalOverButton to = "/games">На главную</ModalOverButton>
+              : 
+              <ModalOverButton to = "/stats" onClick = { () => { this.SaveResult() } }>Сохранить</ModalOverButton>
+            }
           </ModalOverGameBlock>
         </ModalOverGame>
       )
@@ -136,18 +136,18 @@ export default class Game4 extends Component {
 
     console.log(data)
 
-    SaveResultApi(data)
-      .then((response) => {
-        console.log(response.data)
-      })
+    // SaveResultApi(data)
+    //   .then((response) => {
+    //     console.log(response.data)
+    //   })
   }
 
   isStarted() {
     if (this.state.isUserPlay === false) {
-      var inputValues = [...this.state.inputValues]
+      let inputValues = [ ...this.state.inputValues ]
       const needClick = this.state.secretCards[this.state.drumPart]
 
-      if (this.state.isStarted && (this.state.drumPart < 6)) {
+      if (this.state.isStarted && this.state.drumPart < 6) {
         if (this.state.isUserClick) {
           setTimeout(() => { this.setState({
             drumPart: this.state.drumPart + 1,
@@ -163,9 +163,9 @@ export default class Game4 extends Component {
               var audio = new Audio(sound)
 
               audio.play()
-            } , secondsWait)
+            }, secondsWait)
           }
-          setTimeout(() => { this.setState({ isUserClick: true }) } , 4000)
+          setTimeout(() => { this.setState({ isUserClick: true }) }, 4000)
         }
 
         return (
@@ -174,7 +174,7 @@ export default class Game4 extends Component {
               {/* <DrumBox>{needClick}</DrumBox> */}
               <DrumBox
                 onClick = {
-                  (this.state.isUserClick) ? ( () => {
+                  this.state.isUserClick ? () => {
                     // var inputValues = [...this.state.inputValues]
                     var audio = new Audio(sound)
 
@@ -182,12 +182,12 @@ export default class Game4 extends Component {
                     audio.play()
                     // inputValues[this.state.drumPart]++
                     // this.setState({ inputValues: inputValues })
-                  } ) : null
+                  } : null
                 }
               ></DrumBox>
             </ModuleCards>
-            { (this.state.isUserClick) ? (<TimerLeft />) : null }
-            { (!this.state.isUserClick) ? (<Timer />) : null }
+            { this.state.isUserClick ? <TimerLeft /> : null }
+            { !this.state.isUserClick ? <Timer /> : null }
           </div>
         )
       } else {
@@ -200,7 +200,7 @@ export default class Game4 extends Component {
             <RulesItem>4. После 2 ударов нужно сделать 1 удар</RulesItem>
             <RulesItem>5. После 3 ударов нужно сделать 2 удара</RulesItem>
             <CenterWrapper>
-              <ModuleButtonRun to = '#' onClick = { () => this.startGame() } >Старт</ModuleButtonRun>
+              <ModuleButtonRun to = "#" onClick = { () => this.startGame() } >Старт</ModuleButtonRun>
             </CenterWrapper>
           </Module>
         )

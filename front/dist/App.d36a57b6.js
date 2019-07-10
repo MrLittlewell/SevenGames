@@ -32321,7 +32321,390 @@ function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(
 var AppWraper = _styledComponents.default.div(_templateObject());
 
 exports.AppWraper = AppWraper;
-},{"styled-components":"../node_modules/styled-components/dist/styled-components.browser.esm.js"}],"../node_modules/@babel/runtime/helpers/inheritsLoose.js":[function(require,module,exports) {
+},{"styled-components":"../node_modules/styled-components/dist/styled-components.browser.esm.js"}],"img/logo.gif":[function(require,module,exports) {
+module.exports = "/logo.969f1172.gif";
+},{}],"components/SelectGame/styled.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.MainWrapper = void 0;
+
+var _styledComponents = _interopRequireDefault(require("styled-components"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _templateObject() {
+  var data = _taggedTemplateLiteral(["\n    display: flex;\n    justify-content: center;\n    align-items: center;\n    background: white;\n    height: 100%;\n    flex-direction: column;\n    border-radius: 8px;\n"]);
+
+  _templateObject = function _templateObject() {
+    return data;
+  };
+
+  return data;
+}
+
+function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(0); } return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
+
+var MainWrapper = _styledComponents.default.div(_templateObject());
+
+exports.MainWrapper = MainWrapper;
+},{"styled-components":"../node_modules/styled-components/dist/styled-components.browser.esm.js"}],"components/SelectGame/index.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+
+var _react = _interopRequireWildcard(require("react"));
+
+var _logo = _interopRequireDefault(require("../../img/logo.gif"));
+
+var _styled = require("./styled");
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = Object.defineProperty && Object.getOwnPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : {}; if (desc.get || desc.set) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } } newObj.default = obj; return newObj; } }
+
+function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
+
+function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
+var SelectGame =
+/*#__PURE__*/
+function (_Component) {
+  _inherits(SelectGame, _Component);
+
+  function SelectGame() {
+    _classCallCheck(this, SelectGame);
+
+    return _possibleConstructorReturn(this, _getPrototypeOf(SelectGame).apply(this, arguments));
+  }
+
+  _createClass(SelectGame, [{
+    key: "render",
+    value: function render() {
+      return _react.default.createElement(_styled.MainWrapper, null, _react.default.createElement("img", {
+        src: _logo.default,
+        alt: "logo"
+      }), _react.default.createElement("h1", null, "\u0412\u044B\u0431\u0435\u0440\u0438 \u0438\u0433\u0440\u0443"));
+    }
+  }]);
+
+  return SelectGame;
+}(_react.Component);
+
+exports.default = SelectGame;
+},{"react":"../node_modules/react/index.js","../../img/logo.gif":"img/logo.gif","./styled":"components/SelectGame/styled.js"}],"img/card_bg/card_1.png":[function(require,module,exports) {
+module.exports = "/card_1.3c189e14.png";
+},{}],"img/card_bg/card_2.png":[function(require,module,exports) {
+module.exports = "/card_2.21af1e72.png";
+},{}],"img/card_bg/card_3.png":[function(require,module,exports) {
+module.exports = "/card_3.15016539.png";
+},{}],"img/card_bg/card_4.png":[function(require,module,exports) {
+module.exports = "/card_4.4e4cd375.png";
+},{}],"img/card_bg/card_5.png":[function(require,module,exports) {
+module.exports = "/card_5.0b2535fe.png";
+},{}],"img/card_bg/card_6.png":[function(require,module,exports) {
+module.exports = "/card_6.34e08764.png";
+},{}],"img/card_bg/card_7.png":[function(require,module,exports) {
+module.exports = "/card_7.cb5d78d7.png";
+},{}],"containers/Games/styled.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.PageTitle = exports.Section = exports.ModuleCardTitle = exports.ModuleCard7 = exports.ModuleCard6 = exports.ModuleCard5 = exports.ModuleCard4 = exports.ModuleCard3 = exports.ModuleCard2 = exports.ModuleCard1 = exports.ModuleCard = exports.ModuleCards = exports.ModuleButtonRun = exports.ModuleTitle = exports.Module = exports.WrapperModule = exports.SelectGames = exports.GameArea = exports.Wrapper = void 0;
+
+var _styledComponents = _interopRequireDefault(require("styled-components"));
+
+var _card_ = _interopRequireDefault(require("../../img/card_bg/card_1.png"));
+
+var _card_2 = _interopRequireDefault(require("../../img/card_bg/card_2.png"));
+
+var _card_3 = _interopRequireDefault(require("../../img/card_bg/card_3.png"));
+
+var _card_4 = _interopRequireDefault(require("../../img/card_bg/card_4.png"));
+
+var _card_5 = _interopRequireDefault(require("../../img/card_bg/card_5.png"));
+
+var _card_6 = _interopRequireDefault(require("../../img/card_bg/card_6.png"));
+
+var _card_7 = _interopRequireDefault(require("../../img/card_bg/card_7.png"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _templateObject19() {
+  var data = _taggedTemplateLiteral(["\n  font-size: 2em;\n  color: #3e3e3e;\n"]);
+
+  _templateObject19 = function _templateObject19() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject18() {
+  var data = _taggedTemplateLiteral(["\n  width 100%;\n"]);
+
+  _templateObject18 = function _templateObject18() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject17() {
+  var data = _taggedTemplateLiteral(["\n  width: 100%;\n  height: 100%;\n  background-color: rgba(0, 0, 0, 0.5);\n  text-align: center;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  color: white;\n  font-size: 1em;\n  font-weight: bold;\n"]);
+
+  _templateObject17 = function _templateObject17() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject16() {
+  var data = _taggedTemplateLiteral(["\n  background-image: url(", ")\n"]);
+
+  _templateObject16 = function _templateObject16() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject15() {
+  var data = _taggedTemplateLiteral(["\n  background-image: url(", ")\n"]);
+
+  _templateObject15 = function _templateObject15() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject14() {
+  var data = _taggedTemplateLiteral(["\n  background-image: url(", ")\n"]);
+
+  _templateObject14 = function _templateObject14() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject13() {
+  var data = _taggedTemplateLiteral(["\n  background-image: url(", ")\n"]);
+
+  _templateObject13 = function _templateObject13() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject12() {
+  var data = _taggedTemplateLiteral(["\n  background-image: url(", ")\n"]);
+
+  _templateObject12 = function _templateObject12() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject11() {
+  var data = _taggedTemplateLiteral(["\n  background-image: url(", ")\n"]);
+
+  _templateObject11 = function _templateObject11() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject10() {
+  var data = _taggedTemplateLiteral(["\n  background-image: url(", ")\n"]);
+
+  _templateObject10 = function _templateObject10() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject9() {
+  var data = _taggedTemplateLiteral(["\n  width: 100%;\n  height: 6em;\n  background-color: white;\n  border-radius: 4px;\n  background-size: contain;\n  overflow: hidden;\n  text-decoration: none;\n  transition: all 0.2s ease-in-out;\n  box-shadow: 0 0.1em 0.15em rgba(0,0,0,0.19), 0 0.2em 0.2em rgba(0,0,0,0.23);\n  &:hover {\n    box-shadow: 0 0.2em 0.15em 0.05em rgba(0,0,0,0.19), 0 0.2em 0.2em 0.05em rgba(0,0,0,0.23);\n  }\n  background-size: cover;\n  margin-bottom: 0.2em;\n"]);
+
+  _templateObject9 = function _templateObject9() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject8() {
+  var data = _taggedTemplateLiteral(["\n  display: flex;\n  flex-wrap: wrap;\n"]);
+
+  _templateObject8 = function _templateObject8() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject7() {
+  var data = _taggedTemplateLiteral(["\n  font-size: 1em;\n  color: white;\n  background-color: #589500;\n  width: 8em;\n  padding: 0.5em 0;\n  margin-top: 0.5em;\n  text-align: center;\n  border-radius: 10em;\n  cursor: pointer;\n  transition: all 0.2s ease-in-out;\n  box-shadow: 0 0.1em 0.15em rgba(0,0,0,0.19), 0 0.2em 0.2em rgba(0,0,0,0.23);\n  &:hover {\n    box-shadow: 0 0.2em 0.25em rgba(0,0,0,0.19), 0 0.3em 0.3em rgba(0,0,0,0.23);\n  }\n"]);
+
+  _templateObject7 = function _templateObject7() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject6() {
+  var data = _taggedTemplateLiteral(["\n  font-size: 1.3em;\n  color: #3e3e3e;\n  text-align: center;\n  font-weight: bold;\n"]);
+
+  _templateObject6 = function _templateObject6() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject5() {
+  var data = _taggedTemplateLiteral(["\n  padding: 0;\n"]);
+
+  _templateObject5 = function _templateObject5() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject4() {
+  var data = _taggedTemplateLiteral(["\n  height: 100%;\n  display: flex;\n  flex-direction: column;\n  justify-content: space-between;\n"]);
+
+  _templateObject4 = function _templateObject4() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject3() {
+  var data = _taggedTemplateLiteral(["\n    width: 15%;\n    height: 100%;\n    display: flex;\n    align-items: center;\n    flex-direction: column;\n    justify-content: space-between;\n    @media (max-width: 768px) {\n      width: 100%;\n    }\n"]);
+
+  _templateObject3 = function _templateObject3() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject2() {
+  var data = _taggedTemplateLiteral(["\n    width: 85%;\n    height: 100%;\n    border: 0.2em solid gray;\n    border-radius: 10px;\n    margin-right: 30px;\n    background-color: #b8c6db;\n    background-image: linear-gradient(315deg, #b8c6db 0%, #f5f7fa 74%);\n    @media (max-width: 768px) {\n      width: 100%;\n    }\n"]);
+
+  _templateObject2 = function _templateObject2() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject() {
+  var data = _taggedTemplateLiteral(["\n    width: 100%;\n    height: 100%;\n    display: flex;\n    justify-content: space-between;\n    padding: 30px;\n    box-sizing: border-box;\n    @media (max-width: 768px) {\n      flex-direction: column;\n    }\n"]);
+
+  _templateObject = function _templateObject() {
+    return data;
+  };
+
+  return data;
+}
+
+function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(0); } return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
+
+var Wrapper = _styledComponents.default.div(_templateObject());
+
+exports.Wrapper = Wrapper;
+
+var GameArea = _styledComponents.default.div(_templateObject2());
+
+exports.GameArea = GameArea;
+
+var SelectGames = _styledComponents.default.div(_templateObject3());
+
+exports.SelectGames = SelectGames;
+
+var WrapperModule = _styledComponents.default.div(_templateObject4());
+
+exports.WrapperModule = WrapperModule;
+
+var Module = _styledComponents.default.div(_templateObject5());
+
+exports.Module = Module;
+
+var ModuleTitle = _styledComponents.default.div(_templateObject6());
+
+exports.ModuleTitle = ModuleTitle;
+
+var ModuleButtonRun = _styledComponents.default.div(_templateObject7());
+
+exports.ModuleButtonRun = ModuleButtonRun;
+
+var ModuleCards = _styledComponents.default.div(_templateObject8());
+
+exports.ModuleCards = ModuleCards;
+
+var ModuleCard = _styledComponents.default.div(_templateObject9());
+
+exports.ModuleCard = ModuleCard;
+var ModuleCard1 = (0, _styledComponents.default)(ModuleCard)(_templateObject10(), _card_.default);
+exports.ModuleCard1 = ModuleCard1;
+var ModuleCard2 = (0, _styledComponents.default)(ModuleCard)(_templateObject11(), _card_2.default);
+exports.ModuleCard2 = ModuleCard2;
+var ModuleCard3 = (0, _styledComponents.default)(ModuleCard)(_templateObject12(), _card_3.default);
+exports.ModuleCard3 = ModuleCard3;
+var ModuleCard4 = (0, _styledComponents.default)(ModuleCard)(_templateObject13(), _card_4.default);
+exports.ModuleCard4 = ModuleCard4;
+var ModuleCard5 = (0, _styledComponents.default)(ModuleCard)(_templateObject14(), _card_5.default);
+exports.ModuleCard5 = ModuleCard5;
+var ModuleCard6 = (0, _styledComponents.default)(ModuleCard)(_templateObject15(), _card_6.default);
+exports.ModuleCard6 = ModuleCard6;
+var ModuleCard7 = (0, _styledComponents.default)(ModuleCard)(_templateObject16(), _card_7.default);
+exports.ModuleCard7 = ModuleCard7;
+
+var ModuleCardTitle = _styledComponents.default.span(_templateObject17());
+
+exports.ModuleCardTitle = ModuleCardTitle;
+
+var Section = _styledComponents.default.span(_templateObject18());
+
+exports.Section = Section;
+
+var PageTitle = _styledComponents.default.span(_templateObject19());
+
+exports.PageTitle = PageTitle;
+},{"styled-components":"../node_modules/styled-components/dist/styled-components.browser.esm.js","../../img/card_bg/card_1.png":"img/card_bg/card_1.png","../../img/card_bg/card_2.png":"img/card_bg/card_2.png","../../img/card_bg/card_3.png":"img/card_bg/card_3.png","../../img/card_bg/card_4.png":"img/card_bg/card_4.png","../../img/card_bg/card_5.png":"img/card_bg/card_5.png","../../img/card_bg/card_6.png":"img/card_bg/card_6.png","../../img/card_bg/card_7.png":"img/card_bg/card_7.png"}],"../node_modules/@babel/runtime/helpers/inheritsLoose.js":[function(require,module,exports) {
 function _inheritsLoose(subClass, superClass) {
   subClass.prototype = Object.create(superClass.prototype);
   subClass.prototype.constructor = subClass;
@@ -35140,8 +35523,6 @@ exports.RulesItem = exports.MobuleSubTitle = exports.ModalOverButton = exports.T
 
 var _styledComponents = _interopRequireWildcard(require("styled-components"));
 
-var _reactRouterDom = require("react-router-dom");
-
 var _card_front = _interopRequireDefault(require("../../../img/card_bg/card_front2.png"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
@@ -35529,7 +35910,7 @@ exports.MobuleSubTitle = MobuleSubTitle;
 var RulesItem = _styledComponents.default.div(_templateObject29());
 
 exports.RulesItem = RulesItem;
-},{"styled-components":"../node_modules/styled-components/dist/styled-components.browser.esm.js","react-router-dom":"../node_modules/react-router-dom/esm/react-router-dom.js","../../../img/card_bg/card_front2.png":"img/card_bg/card_front2.png"}],"containers/Games/GameOne/index.js":[function(require,module,exports) {
+},{"styled-components":"../node_modules/styled-components/dist/styled-components.browser.esm.js","../../../img/card_bg/card_front2.png":"img/card_bg/card_front2.png"}],"containers/Games/GameOne/index.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -36395,13 +36776,11 @@ function (_Component) {
       this.setState({
         isStarted: true
       });
-    }
-  }, {
-    key: "createLinkImg",
-    value: function createLinkImg(nameImg) {
-      var link = srcImg + '/img/game2_img/' + nameImg + '.png';
-      return link;
-    }
+    } // createLinkImg(nameImg) {
+    //   const link = srcImg + '/img/game2_img/' + nameImg + '.png'
+    //   return link
+    // }
+
   }, {
     key: "checkCard",
     value: function checkCard(item, key) {
@@ -37229,11 +37608,12 @@ function (_Component) {
       var data = {
         userId: this.props.data.userId,
         gameId: this.state.gameId,
-        points: this.state.points
+        points: this.state.points // SaveResultApi(data)
+        //   .then((response) => {
+        //     console.log(response.data)
+        //   })
+
       };
-      SaveResultApi(data).then(function (response) {
-        console.log(response.data);
-      });
     }
   }, {
     key: "isPlay",
@@ -37895,10 +38275,10 @@ function (_Component) {
         gameId: this.state.gameId,
         points: this.state.points
       };
-      console.log(data);
-      SaveResultApi(data).then(function (response) {
-        console.log(response.data);
-      });
+      console.log(data); // SaveResultApi(data)
+      //   .then((response) => {
+      //     console.log(response.data)
+      //   })
     }
   }, {
     key: "isStarted",
@@ -39809,7 +40189,24 @@ var global = arguments[3];
 
 }));
 
-},{"react":"../node_modules/react/index.js","prop-types":"../node_modules/prop-types/index.js","react-dom":"../node_modules/react-dom/index.js"}],"img/game5_img/butterfly.png":[function(require,module,exports) {
+},{"react":"../node_modules/react/index.js","prop-types":"../node_modules/prop-types/index.js","react-dom":"../node_modules/react-dom/index.js"}],"../node_modules/array-move/index.js":[function(require,module,exports) {
+'use strict';
+
+var arrayMoveMutate = function arrayMoveMutate(array, from, to) {
+  array.splice(to < 0 ? array.length + to : to, 0, array.splice(from, 1)[0]);
+};
+
+var arrayMove = function arrayMove(array, from, to) {
+  array = array.slice();
+  arrayMoveMutate(array, from, to);
+  return array;
+};
+
+module.exports = arrayMove; // TODO: Remove this for the next major release
+
+module.exports.default = arrayMove;
+module.exports.mutate = arrayMoveMutate;
+},{}],"img/game5_img/butterfly.png":[function(require,module,exports) {
 module.exports = "/butterfly.a7f33765.png";
 },{}],"img/game5_img/crab.png":[function(require,module,exports) {
 module.exports = "/crab.82520dd6.png";
@@ -40371,15 +40768,15 @@ exports.default = void 0;
 
 var _react = _interopRequireWildcard(require("react"));
 
-var _reactRedux = require("react-redux");
-
-var _reactRouterDom = require("react-router-dom");
-
 var _reactSortableHoc = require("react-sortable-hoc");
+
+var _arrayMove = _interopRequireDefault(require("array-move"));
 
 var _data2 = require("./data");
 
 var _contentStyled = require("./contentStyled.js");
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = Object.defineProperty && Object.getOwnPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : {}; if (desc.get || desc.set) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } } newObj.default = obj; return newObj; } }
 
@@ -40439,58 +40836,54 @@ function (_Component) {
   _createClass(Game5, [{
     key: "componentDidMount",
     value: function componentDidMount() {
-      var _this2 = this;
+      if (!this.state.secretCards === undefined) {
+        return;
+      }
 
-      GetGameData(this.state.gameId).then(function (response) {
-        console.log(response.data[0].data);
-        var data = JSON.parse(response.data[0].data);
-        if (!_this2.state.secretCards === undefined) return;
-        var sortSecretCards = []; // const data = [...this.state.data]
+      var sortSecretCards = []; // const data = [...this.state.data]
 
-        var secretCards = [];
+      var secretCards = [];
 
-        var compareRandom = function compareRandom(a, b) {
-          return Math.random() - 0.5;
-        };
+      var compareRandom = function compareRandom(a, b) {
+        return Math.random() - 0.5;
+      };
 
-        for (var i = 0; i < 6; i++) {
-          var randomCardNumber = _this2.randomNumber(data.length); // data.length - i = bug; See later
+      for (var i = 0; i < 6; i++) {
+        var randomCardNumber = this.randomNumber(_data2.data.length); // data.length - i = bug; See later
 
+        secretCards[i] = _toConsumableArray(_data2.data)[randomCardNumber]; // console.log(randomCardNumber, 'Original log', data.length, i)
 
-          secretCards[i] = _toConsumableArray(data)[randomCardNumber]; // console.log(randomCardNumber, 'Original log', data.length, i)
+        secretCards[i].state = this.randomNumber(4);
 
-          secretCards[i].state = _this2.randomNumber(4);
-          data.splice(randomCardNumber, 1);
+        _data2.data.splice(randomCardNumber, 1);
+      }
+
+      sortSecretCards = JSON.parse(JSON.stringify(secretCards)); // Сортировка по алфавиту
+
+      sortSecretCards.sort(function (a, b) {
+        if (a.name < b.name) {
+          return -1;
         }
 
-        sortSecretCards = JSON.parse(JSON.stringify(secretCards)); // Сортировка по алфавиту
-
-        sortSecretCards.sort(function (a, b) {
-          if (a.name < b.name) {
-            return -1;
-          }
-
-          if (a.name > b.name) {
-            return 1;
-          }
-
-          return 0;
-        });
-
-        for (var _i = 0; _i < 6; _i++) {
-          secretCards[_i].state = 0;
-          secretCards[_i].state = _this2.randomNumber(4);
-          sortSecretCards[_i].trueState = _this2.randomNumber(4);
-          console.log(sortSecretCards[_i], 'истинный', secretCards[_i]);
+        if (a.name > b.name) {
+          return 1;
         }
 
-        console.log(secretCards, 'secretCards');
-        console.log(sortSecretCards, 'sortSecretCards');
+        return 0;
+      });
 
-        _this2.setState({
-          secretCards: [].concat(secretCards),
-          sortSecretCards: _toConsumableArray(sortSecretCards)
-        });
+      for (var _i = 0; _i < 6; _i++) {
+        secretCards[_i].state = 0;
+        secretCards[_i].state = this.randomNumber(4);
+        sortSecretCards[_i].trueState = this.randomNumber(4);
+        console.log(sortSecretCards[_i], 'истинный', secretCards[_i]);
+      }
+
+      console.log(secretCards, 'secretCards');
+      console.log(sortSecretCards, 'sortSecretCards');
+      this.setState({
+        secretCards: [].concat(secretCards),
+        sortSecretCards: _toConsumableArray(sortSecretCards)
       });
     }
   }, {
@@ -40509,13 +40902,11 @@ function (_Component) {
       this.setState({
         isStarted: true
       });
-    }
-  }, {
-    key: "createLinkImg",
-    value: function createLinkImg(nameImg) {
-      var link = srcImg + '/img/game5_img/' + nameImg + '.png';
-      return link;
-    }
+    } // createLinkImg(nameImg) {
+    //   const link = srcImg + '/img/game5_img/' + nameImg + '.png'
+    //   return link
+    // }
+
   }, {
     key: "checkCard",
     value: function checkCard() {
@@ -40579,16 +40970,16 @@ function (_Component) {
   }, {
     key: "renderCard",
     value: function renderCard(item, index) {
-      var _this3 = this;
+      var _this2 = this;
 
       var SortableItem = (0, _reactSortableHoc.SortableElement)(function (_ref) {
         var item = _ref.item,
             index = _ref.index,
             indexCopy = _ref.indexCopy;
         return _react.default.createElement(_contentStyled.ModuleCardDND, null, _react.default.createElement(_contentStyled.ModuleCardDNDInner, {
-          src: _this3.createLinkImg(item.src),
+          src: item.src,
           isState: function isState() {
-            if (_this3.state.sortSecretCards[indexCopy].name === item.name && _this3.state.sortSecretCards[indexCopy].state === item.state) {
+            if (_this2.state.sortSecretCards[indexCopy].name === item.name && _this2.state.sortSecretCards[indexCopy].state === item.state) {
               return "#589500";
             } else {
               return "#dc4c4c";
@@ -40617,7 +41008,7 @@ function (_Component) {
   }, {
     key: "isOver",
     value: function isOver() {
-      var _this4 = this;
+      var _this3 = this;
 
       if (this.state.try === 0) {
         this.state.timerOn ? this.setState({
@@ -40626,7 +41017,7 @@ function (_Component) {
         return _react.default.createElement(_contentStyled.ModalOverGame, null, _react.default.createElement(_contentStyled.ModalOverGameBlock, null, _react.default.createElement(_contentStyled.ModalOverGameTitle, null, "\u041F\u043E\u043F\u044B\u0442\u043A\u0438 \u0437\u0430\u043A\u043E\u043D\u0447\u0438\u043B\u0438\u0441\u044C"), _react.default.createElement(_contentStyled.ModalOverGameLabel, null, "\u0412\u0440\u0435\u043C\u044F: ", this.state.timeLeft), _react.default.createElement(_contentStyled.ModalOverGameLabel, null, "\u0421\u0447\u0451\u0442: ", this.state.points), _react.default.createElement(_contentStyled.ModalOverButton, {
           to: "/stats",
           onClick: function onClick() {
-            _this4.SaveResult();
+            _this3.SaveResult();
           }
         }, "\u0421\u043E\u0445\u0440\u0430\u043D\u0438\u0442\u044C")));
       }
@@ -40637,33 +41028,34 @@ function (_Component) {
       var data = {
         userId: this.props.data.userId,
         gameId: this.state.gameId,
-        points: this.state.points
+        points: this.state.points // SaveResultApi(data)
+        //   .then((response) => {
+        //     console.log(response.data)
+        //   })
+
       };
-      SaveResultApi(data).then(function (response) {
-        console.log(response.data);
-      });
     }
   }, {
     key: "isPlay",
     value: function isPlay() {
-      var _this5 = this;
+      var _this4 = this;
 
       if (this.state.isUserPlay) {
         this.state.timerOn ? setTimeout(function () {
-          _this5.setState({
+          _this4.setState({
             timerOn: false
           });
         }, 10000) : null;
 
         var overButtons = function overButtons() {
-          if (!_this5.state.isOver) {
+          if (!_this4.state.isOver) {
             return _react.default.createElement(_contentStyled.ModuleButtonRun, {
               to: "#",
               onClick: function onClick() {
-                return _this5.checkCard();
+                return _this4.checkCard();
               }
             }, "\u0413\u043E\u0442\u043E\u0432\u043E!");
-          } else if (_this5.props.data.auth === false) {
+          } else if (_this4.props.data.auth === false) {
             return _react.default.createElement(_contentStyled.ModalOverButton, {
               to: "/games"
             }, "\u041D\u0430 \u0433\u043B\u0430\u0432\u043D\u0443\u044E");
@@ -40671,7 +41063,7 @@ function (_Component) {
             return _react.default.createElement(_contentStyled.ModalOverButton, {
               to: "/stats",
               onClick: function onClick() {
-                _this5.SaveResult();
+                _this4.SaveResult();
               }
             }, "\u0421\u043E\u0445\u0440\u0430\u043D\u0438\u0442\u044C");
           }
@@ -40680,9 +41072,9 @@ function (_Component) {
         var SortableList = (0, _reactSortableHoc.SortableContainer)(function (_ref2) {
           var items = _ref2.items;
           return _react.default.createElement(_contentStyled.ModuleCardsSkip, {
-            isShow: _this5.state.isShow ? 'animation: inherit' : 'animation: ${skip} 11s ease-in-out forwards;'
+            isShow: _this4.state.isShow ? 'animation: inherit' : 'animation: ${skip} 11s ease-in-out forwards;'
           }, items.map(function (value, index) {
-            return _this5.renderCard(value, index);
+            return _this4.renderCard(value, index);
           }), overButtons());
         });
 
@@ -40690,9 +41082,11 @@ function (_Component) {
           var oldIndex = _ref3.oldIndex,
               newIndex = _ref3.newIndex;
 
-          var secretCards = _toConsumableArray(_this5.state.secretCards);
+          var secretCards = _toConsumableArray(_this4.state.secretCards);
 
-          if (_this5.state.isOver) return;
+          if (_this4.state.isOver) {
+            return;
+          }
 
           if (oldIndex === newIndex) {
             if (secretCards[oldIndex].state === 3) {
@@ -40702,9 +41096,9 @@ function (_Component) {
             }
           }
 
-          _this5.setState(function () {
+          _this4.setState(function () {
             return {
-              secretCards: (0, _reactSortableHoc.arrayMove)(secretCards, oldIndex, newIndex),
+              secretCards: (0, _arrayMove.default)(secretCards, oldIndex, newIndex),
               isShow: true
             };
           });
@@ -40720,8 +41114,6 @@ function (_Component) {
   }, {
     key: "renderSecretCards",
     value: function renderSecretCards() {
-      var _this6 = this;
-
       var sortSecretCards = _toConsumableArray(this.state.sortSecretCards);
 
       return sortSecretCards.map(function (item, index) {
@@ -40739,20 +41131,20 @@ function (_Component) {
               return "scale(1, 1) rotate(-90deg)";
             }
           },
-          src: _this6.createLinkImg(item.src)
+          src: item.src
         }));
       });
     }
   }, {
     key: "isStarted",
     value: function isStarted() {
-      var _this7 = this;
+      var _this5 = this;
 
       if (this.state.isUserPlay === false) {
         if (this.state.isStarted) {
           var _data = this.state.secretCards;
           setTimeout(function () {
-            _this7.setState({
+            _this5.setState({
               isUserPlay: true,
               timerOn: true
             });
@@ -40762,7 +41154,7 @@ function (_Component) {
           return _react.default.createElement(_contentStyled.Module, null, _react.default.createElement(_contentStyled.MobuleSubTitle, null, "\u041E\u043F\u0438\u0441\u0430\u043D\u0438\u0435:"), _react.default.createElement(_contentStyled.RulesItem, null, "\u0417\u0430\u043F\u043E\u043C\u043D\u0438\u0442\u044C \u043F\u043E\u0440\u044F\u0434\u043E\u043A \u043A\u0430\u0440\u0442\u0438\u043D\u043E\u043A \u0438 \u0432 \u043A\u0430\u043A\u043E\u043C \u043D\u0430\u043F\u0440\u0430\u0432\u043B\u0435\u043D\u0438\u0438 \u0441\u043C\u043E\u0442\u0440\u0438\u0442 \u0441\u0443\u0449\u0435\u0441\u0442\u0432\u043E."), _react.default.createElement(_contentStyled.RulesItem, null, "\u041D\u0430 \u0437\u0430\u043F\u043E\u043C\u0438\u043D\u0430\u043D\u0438\u0435 \u043A\u0430\u0440\u0442\u0438\u043D\u043E\u043A \u0434\u0430\u0451\u0442\u0441\u044F 10 \u0441\u0435\u043A\u0443\u043D\u0434."), _react.default.createElement(_contentStyled.RulesItem, null, "\u0414\u0430\u043B\u0435\u0435 \u043D\u0443\u0436\u043D\u043E \u0440\u0430\u0441\u0441\u0442\u0430\u0432\u0438\u0442\u044C \u043A\u0430\u0440\u0442\u0438\u043D\u043A\u0438 \u0432 \u043F\u0440\u0430\u0432\u0438\u043B\u044C\u043D\u043E\u043C \u043F\u043E\u0440\u044F\u0434\u043A\u0435(\u043F\u043E\u0434\u0441\u043A\u0430\u0437\u043A\u0430 - \u0432 \u0430\u043B\u0444\u0430\u0432\u0438\u0442\u043D\u043E\u043C \u043F\u043E\u0440\u044F\u0434\u043A\u0435) \u0438 \u0443\u043A\u0430\u0437\u0430\u0442\u044C \u043F\u0440\u0430\u0432\u0438\u043B\u044C\u043D\u043E\u0435 \u043D\u0430\u043F\u0440\u0430\u0432\u043B\u0435\u043D\u0438\u0435 \u0433\u043E\u043B\u043E\u0432\u044B \u0441\u0443\u0449\u0435\u0441\u0442\u0432\u0430."), _react.default.createElement(_contentStyled.RulesItem, null, "\u0427\u0442\u043E\u0431\u044B \u043F\u043E\u0432\u0435\u0440\u043D\u0443\u0442\u044C \u043A\u0430\u0440\u0442\u0438\u043D\u043A\u0443 - \u043A\u043B\u0438\u043A\u043D\u0438\u0442\u0435 \u043F\u043E \u043D\u0435\u0439. \u0427\u0442\u043E\u0431\u044B \u043F\u0435\u0440\u0435\u043C\u0435\u0441\u0442\u0438\u0442\u044C - \u043F\u0435\u0440\u0435\u043D\u0435\u0441\u0438\u0442\u0435 \u043C\u044B\u0448\u043A\u043E\u0439."), _react.default.createElement(_contentStyled.RulesItem, null, "\u041E\u0433\u0440\u0430\u043D\u0438\u0447\u0435\u043D\u0438\u044F \u043F\u043E \u0432\u0440\u0435\u043C\u0435\u043D\u0438 \u043D\u0435\u0442\u0443."), _react.default.createElement(_contentStyled.CenterWrapper, null, _react.default.createElement(_contentStyled.ModuleButtonRun, {
             to: "#",
             onClick: function onClick() {
-              return _this7.startGame();
+              return _this5.startGame();
             }
           }, "\u0421\u0442\u0430\u0440\u0442")));
         }
@@ -40779,7 +41171,471 @@ function (_Component) {
 }(_react.Component);
 
 exports.default = Game5;
-},{"react":"../node_modules/react/index.js","react-redux":"../node_modules/react-redux/es/index.js","react-router-dom":"../node_modules/react-router-dom/esm/react-router-dom.js","react-sortable-hoc":"../node_modules/react-sortable-hoc/dist/react-sortable-hoc.umd.js","./data":"containers/Games/GameFive/data.js","./contentStyled.js":"containers/Games/GameFive/contentStyled.js"}],"containers/Games/GameSix/index.js":[function(require,module,exports) {
+},{"react":"../node_modules/react/index.js","react-sortable-hoc":"../node_modules/react-sortable-hoc/dist/react-sortable-hoc.umd.js","array-move":"../node_modules/array-move/index.js","./data":"containers/Games/GameFive/data.js","./contentStyled.js":"containers/Games/GameFive/contentStyled.js"}],"containers/Games/GameSix/data.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.data = void 0;
+var data = [{
+  words: ['дряхлый', 'старый', 'изношенный', 'маленький', 'ветхий'],
+  true: 'маленький'
+}, {
+  words: ['смелый', 'храбрый', 'отважный', 'злой', 'решительный'],
+  true: 'злой'
+}, {
+  words: ['Василий', 'Федор', 'Семен', 'Иванов', 'Порфирий'],
+  true: 'Иванов'
+}, {
+  words: ['молоко', 'сливки', 'сыр', 'сало', 'сметана'],
+  true: 'сало'
+}, {
+  words: ['скоро', 'быстро', 'поспешно', 'постепенно', 'торопливо'],
+  true: 'постепенно'
+}, {
+  words: ['глубокий', 'высокий', 'светлый', 'низкий', 'мелкий'],
+  true: 'светлый'
+}, {
+  words: ['лист', 'почка', 'кора', 'дерево', 'сук'],
+  true: 'дерево'
+}, {
+  words: ['дом', 'сарай', 'изба', 'хижина', 'здание'],
+  true: 'сарай'
+}, {
+  words: ['береза', 'сосна', 'дерево', 'дуб', 'ель'],
+  true: 'дерево'
+}, {
+  words: ['темный', 'светлый', 'голубой', 'ясный', 'тусклый'],
+  true: 'голубой'
+}, {
+  words: ['гнездо', 'нора', 'муравейник', 'курятник', 'берлога'],
+  true: 'курятник'
+}, {
+  words: ['неудача', 'крах', 'провал', 'поражение', 'волнение'],
+  true: 'волнение'
+}, {
+  words: ['молоток', 'гвоздь', 'клещи', 'топор', 'долото'],
+  true: 'гвоздь'
+}, {
+  words: ['минута', 'секунда', 'час', 'вечер', 'сутки'],
+  true: 'вечер'
+}, {
+  words: ['грабеж', 'кража', 'землетрясение', 'поджог', 'нападение'],
+  true: 'землетрясение'
+}, {
+  words: ['успех', 'победа', 'удача', 'спокойствие', 'выигрыш'],
+  true: 'спокойствие'
+}];
+exports.data = data;
+},{}],"containers/Games/GameSix/contentStyled.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.RulesItem = exports.MobuleSubTitle = exports.ModalOverButton = exports.TimerLeft = exports.ModalOverGameLabel = exports.ModalOverGameTitle = exports.ModalOverGameBlock = exports.ModalOverGame = exports.Timer = exports.ModuleButtonRun = exports.ModuleCardBack = exports.ModuleCardFront = exports.ModuleCardsWords = exports.ModuleCardSelect = exports.ModuleCard3 = exports.ModuleCard2 = exports.ModuleCard1 = exports.ModuleCard = exports.CenterWrapper = exports.ModuleCardsSelect = exports.ModuleCards = exports.ModuleTitle = exports.Module = exports.PageTitle = exports.PageWrapper = void 0;
+
+var _styledComponents = _interopRequireWildcard(require("styled-components"));
+
+var _card_front = _interopRequireDefault(require("../../../img/card_bg/card_front2.png"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = Object.defineProperty && Object.getOwnPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : {}; if (desc.get || desc.set) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } } newObj.default = obj; return newObj; } }
+
+function _templateObject30() {
+  var data = _taggedTemplateLiteral(["\n  font-size: 1em;\n  line-height: 1.5em;\n  margin-left: 1em;\n  color: #3e3e3e;\n"]);
+
+  _templateObject30 = function _templateObject30() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject29() {
+  var data = _taggedTemplateLiteral(["\n  font-size: 1.2em;\n  margin-top: 1em;\n  margin-bottom: 0.3em;\n  color: #3e3e3e;\n"]);
+
+  _templateObject29 = function _templateObject29() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject28() {
+  var data = _taggedTemplateLiteral(["\n  margin: 0 auto;\n  text-decoration: none;\n  color: white;\n"]);
+
+  _templateObject28 = function _templateObject28() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject27() {
+  var data = _taggedTemplateLiteral(["\n  animation-duration: 10s;\n"]);
+
+  _templateObject27 = function _templateObject27() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject26() {
+  var data = _taggedTemplateLiteral(["\n  display: block;\n  font-size: 1.15em;\n  line-height: 1.5em;\n"]);
+
+  _templateObject26 = function _templateObject26() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject25() {
+  var data = _taggedTemplateLiteral(["\n  display: block;\n  margin-bottom: 1em;\n  text-align: center;\n  font-size: 1.5em;\n  font-weight: bold;\n"]);
+
+  _templateObject25 = function _templateObject25() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject24() {
+  var data = _taggedTemplateLiteral(["\n  background-color: white;\n  border-radius: 4px;\n  width: 20em;\n  height: 20em;\n  padding: 1em;\n  box-sizing: border-box;\n"]);
+
+  _templateObject24 = function _templateObject24() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject23() {
+  var data = _taggedTemplateLiteral(["\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  position: absolute;\n  top: 0;\n  left: 0;\n  width: 100%;\n  height: 100vh;\n  animation: ", " 1s linear forwards;\n"]);
+
+  _templateObject23 = function _templateObject23() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject22() {
+  var data = _taggedTemplateLiteral(["\n  height: 0.5em;\n  margin: 1.5em auto;\n  animation: ", " 20s linear;\n"]);
+
+  _templateObject22 = function _templateObject22() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject21() {
+  var data = _taggedTemplateLiteral(["\n  display: block;\n  font-size: 1em;\n  line-height: 1em;\n  color: white;\n  background-color: #589500;\n  width: 8em;\n  height: 1em;\n  padding: 0.5em 0;\n  margin: 0.5em auto 0;\n  text-align: center;\n  border-radius: 10em;\n  cursor: pointer;\n  text-decoration: none;\n  transition: all 0.2s ease-in-out;\n  box-shadow: 0 0.1em 0.15em rgba(0,0,0,0.19), 0 0.2em 0.2em rgba(0,0,0,0.23);\n  &:hover {\n    box-shadow: 0 0.2em 0.25em rgba(0,0,0,0.19), 0 0.3em 0.3em rgba(0,0,0,0.23);\n  }\n"]);
+
+  _templateObject21 = function _templateObject21() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject20() {
+  var data = _taggedTemplateLiteral(["\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  font-weight: bold;\n  position: absolute;\n  width: 100%;\n  height: 100%;\n  border-radius: 4px;\n  backface-visibility: hidden;\n  transform: rotateY(180deg);\n  background-color: #fafafa;\n  text-transform: uppercase;\n  box-shadow: 0 0.1em 0.15em rgba(0,0,0,0.19), 0 0.2em 0.2em rgba(0,0,0,0.23);\n"]);
+
+  _templateObject20 = function _templateObject20() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject19() {
+  var data = _taggedTemplateLiteral(["\n  position: absolute;\n  width: 100%;\n  height: 100%;\n  border-radius: 4px;\n  backface-visibility: hidden;\n  background-image: url(", ");\n  background-size: cover;\n  background-position: center;\n  box-shadow: 0 0.1em 0.15em rgba(0,0,0,0.19), 0 0.2em 0.2em rgba(0,0,0,0.23);\n"]);
+
+  _templateObject19 = function _templateObject19() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject18() {
+  var data = _taggedTemplateLiteral(["\n  padding: 0 2em;\n  width: auto;\n  box-sizing: border-box;\n  height: 2.5em;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  background-color: white;\n  cursor: pointer;\n  font-weight: bold;\n  text-transform: uppercase;\n"]);
+
+  _templateObject18 = function _templateObject18() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject17() {
+  var data = _taggedTemplateLiteral(["\n  animation: ", " 0.4s ease-in-out forwards;\n  cursor: pointer;\n"]);
+
+  _templateObject17 = function _templateObject17() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject16() {
+  var data = _taggedTemplateLiteral(["\n  animation-delay: 9s;\n"]);
+
+  _templateObject16 = function _templateObject16() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject15() {
+  var data = _taggedTemplateLiteral(["\n  animation-delay: 5s;\n"]);
+
+  _templateObject15 = function _templateObject15() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject14() {
+  var data = _taggedTemplateLiteral(["\n  animation-delay: 1s;\n"]);
+
+  _templateObject14 = function _templateObject14() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject13() {
+  var data = _taggedTemplateLiteral(["\n  position: relative;\n  top: 0;\n  left: 0;\n  width: 12em;\n  height: 12em;\n  border-radius: 4px;\n  margin: 0.5em 0.5em;\n  transform-style: preserve-3d;\n  perspective: 500px;\n  // animation: ", " 4s ease-in-out;\n  box-shadow: 0 0.1em 0.15em rgba(0,0,0,0.19), 0 0.2em 0.2em rgba(0,0,0,0.23);\n"]);
+
+  _templateObject13 = function _templateObject13() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject12() {
+  var data = _taggedTemplateLiteral(["\n  width: 100%;\n  margin: 0 auto;\n  display: flex;\n  justify-content: center;\n  flex-wrap: wrap;\n  margin-top: 1em;\n"]);
+
+  _templateObject12 = function _templateObject12() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject11() {
+  var data = _taggedTemplateLiteral(["\n  animation: none;\n"]);
+
+  _templateObject11 = function _templateObject11() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject10() {
+  var data = _taggedTemplateLiteral(["\n  width: 100%;\n  height: auto;\n  margin: 0 auto;\n  display: flex;\n  flex-direction: row;\n  justify-content: center;\n  flex-wrap: wrap;\n  margin-top: 1em;\n  overflow: hidden;\n  animation: ", " 20s ease-in-out forwards;\n"]);
+
+  _templateObject10 = function _templateObject10() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject9() {
+  var data = _taggedTemplateLiteral(["\n  font-size: 1.5em;\n  color: #3e3e3e;\n"]);
+
+  _templateObject9 = function _templateObject9() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject8() {
+  var data = _taggedTemplateLiteral(["\n  padding: 1.5em;\n"]);
+
+  _templateObject8 = function _templateObject8() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject7() {
+  var data = _taggedTemplateLiteral(["\n  font-size: 2em;\n  color: #3e3e3e;\n"]);
+
+  _templateObject7 = function _templateObject7() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject6() {
+  var data = _taggedTemplateLiteral(["\n  display: flex;\n  flex-direction: column;\n  padding: 2em;\n  box-sizing: border-box;\n  position: relative;\n"]);
+
+  _templateObject6 = function _templateObject6() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject5() {
+  var data = _taggedTemplateLiteral(["\n  0% {\n    background-color: rgba(255, 255, 255, 0);\n  }\n  \n  100% {\n    background-color: rgba(0, 0, 0, 0.15);\n  }\n"]);
+
+  _templateObject5 = function _templateObject5() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject4() {
+  var data = _taggedTemplateLiteral(["\n  0% {\n    width: 70%;\n    background-color: #50af50;\n  }\n\n  100% {\n    width: 0%;\n    background-color: #e22828;\n  }\n"]);
+
+  _templateObject4 = function _templateObject4() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject3() {
+  var data = _taggedTemplateLiteral(["\n  0% {\n    opacity: 1;\n  }\n\n  95% {\n    opacity: 1;\n  }\n\n  100% {\n    opacity: 0;\n  }\n"]);
+
+  _templateObject3 = function _templateObject3() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject2() {
+  var data = _taggedTemplateLiteral(["\n  0% {\n    transform: rotateY(0);\n  }\n\n  100% {\n    transform: rotateY(180deg);\n  }\n"]);
+
+  _templateObject2 = function _templateObject2() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject() {
+  var data = _taggedTemplateLiteral(["\n  0% {\n    transform: rotateY(0);\n  }\n\n  20% {\n    transform: rotateY(180deg);\n  }\n\n  80% {\n    transform: rotateY(180deg);\n  }\n\n  100% {\n    transform: rotateY(0);\n  }\n"]);
+
+  _templateObject = function _templateObject() {
+    return data;
+  };
+
+  return data;
+}
+
+function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(0); } return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
+
+var flip = (0, _styledComponents.keyframes)(_templateObject());
+var flipConst = (0, _styledComponents.keyframes)(_templateObject2());
+var skip = (0, _styledComponents.keyframes)(_templateObject3());
+var timerKeyframes = (0, _styledComponents.keyframes)(_templateObject4());
+var showModalKeyframes = (0, _styledComponents.keyframes)(_templateObject5());
+
+var PageWrapper = _styledComponents.default.div(_templateObject6());
+
+exports.PageWrapper = PageWrapper;
+
+var PageTitle = _styledComponents.default.span(_templateObject7());
+
+exports.PageTitle = PageTitle;
+
+var Module = _styledComponents.default.div(_templateObject8());
+
+exports.Module = Module;
+
+var ModuleTitle = _styledComponents.default.div(_templateObject9());
+
+exports.ModuleTitle = ModuleTitle;
+
+var ModuleCards = _styledComponents.default.div(_templateObject10(), skip);
+
+exports.ModuleCards = ModuleCards;
+var ModuleCardsSelect = (0, _styledComponents.default)(ModuleCards)(_templateObject11());
+exports.ModuleCardsSelect = ModuleCardsSelect;
+
+var CenterWrapper = _styledComponents.default.div(_templateObject12());
+
+exports.CenterWrapper = CenterWrapper;
+
+var ModuleCard = _styledComponents.default.div(_templateObject13(), flip);
+
+exports.ModuleCard = ModuleCard;
+var ModuleCard1 = (0, _styledComponents.default)(ModuleCard)(_templateObject14());
+exports.ModuleCard1 = ModuleCard1;
+var ModuleCard2 = (0, _styledComponents.default)(ModuleCard)(_templateObject15());
+exports.ModuleCard2 = ModuleCard2;
+var ModuleCard3 = (0, _styledComponents.default)(ModuleCard)(_templateObject16());
+exports.ModuleCard3 = ModuleCard3;
+var ModuleCardSelect = (0, _styledComponents.default)(ModuleCard)(_templateObject17(), flipConst);
+exports.ModuleCardSelect = ModuleCardSelect;
+var ModuleCardsWords = (0, _styledComponents.default)(ModuleCard)(_templateObject18());
+exports.ModuleCardsWords = ModuleCardsWords;
+
+var ModuleCardFront = _styledComponents.default.div(_templateObject19(), _card_front.default);
+
+exports.ModuleCardFront = ModuleCardFront;
+
+var ModuleCardBack = _styledComponents.default.div(_templateObject20());
+
+exports.ModuleCardBack = ModuleCardBack;
+
+var ModuleButtonRun = _styledComponents.default.span(_templateObject21());
+
+exports.ModuleButtonRun = ModuleButtonRun;
+
+var Timer = _styledComponents.default.div(_templateObject22(), timerKeyframes);
+
+exports.Timer = Timer;
+
+var ModalOverGame = _styledComponents.default.div(_templateObject23(), showModalKeyframes);
+
+exports.ModalOverGame = ModalOverGame;
+
+var ModalOverGameBlock = _styledComponents.default.div(_templateObject24());
+
+exports.ModalOverGameBlock = ModalOverGameBlock;
+
+var ModalOverGameTitle = _styledComponents.default.span(_templateObject25());
+
+exports.ModalOverGameTitle = ModalOverGameTitle;
+
+var ModalOverGameLabel = _styledComponents.default.span(_templateObject26());
+
+exports.ModalOverGameLabel = ModalOverGameLabel;
+var TimerLeft = (0, _styledComponents.default)(Timer)(_templateObject27());
+exports.TimerLeft = TimerLeft;
+var ModalOverButton = (0, _styledComponents.default)(ModuleButtonRun)(_templateObject28());
+exports.ModalOverButton = ModalOverButton;
+
+var MobuleSubTitle = _styledComponents.default.div(_templateObject29());
+
+exports.MobuleSubTitle = MobuleSubTitle;
+
+var RulesItem = _styledComponents.default.div(_templateObject30());
+
+exports.RulesItem = RulesItem;
+},{"styled-components":"../node_modules/styled-components/dist/styled-components.browser.esm.js","../../../img/card_bg/card_front2.png":"img/card_bg/card_front2.png"}],"containers/Games/GameSix/index.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -40789,13 +41645,25 @@ exports.default = void 0;
 
 var _react = _interopRequireWildcard(require("react"));
 
-var _propTypes = _interopRequireDefault(require("prop-types"));
+var _correct = _interopRequireDefault(require("../../../audio/correct.mp3"));
+
+var _data = require("./data");
+
+var _contentStyled = require("./contentStyled.js");
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = Object.defineProperty && Object.getOwnPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : {}; if (desc.get || desc.set) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } } newObj.default = obj; return newObj; } }
 
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+function _toConsumableArray(arr) { return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _nonIterableSpread(); }
+
+function _nonIterableSpread() { throw new TypeError("Invalid attempt to spread non-iterable instance"); }
+
+function _iterableToArray(iter) { if (Symbol.iterator in Object(iter) || Object.prototype.toString.call(iter) === "[object Arguments]") return Array.from(iter); }
+
+function _arrayWithoutHoles(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = new Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
@@ -40818,26 +41686,713 @@ var Game6 =
 function (_Component) {
   _inherits(Game6, _Component);
 
-  function Game6() {
+  function Game6(props) {
+    var _this;
+
     _classCallCheck(this, Game6);
 
-    return _possibleConstructorReturn(this, _getPrototypeOf(Game6).apply(this, arguments));
+    _this = _possibleConstructorReturn(this, _getPrototypeOf(Game6).call(this, props));
+    _this.state = {
+      gameId: 6,
+      isStarted: false,
+      isUserPlay: false,
+      data: _data.data,
+      secretCards: false,
+      selectedCards: [],
+      activeLine: [true, true, true, true, true],
+      activeRow: [[true, true, true, true, true], [true, true, true, true, true], [true, true, true, true, true], [true, true, true, true, true], [true, true, true, true, true]],
+      try: 4,
+      timerOn: false,
+      timeLeft: 20,
+      isOver: false
+    };
+    return _this;
   }
 
   _createClass(Game6, [{
+    key: "componentDidMount",
+    value: function componentDidMount() {
+      // const data = [...this.state.data]
+      var secretCards = [];
+
+      var randomNumber = function randomNumber(length) {
+        return Math.floor(Math.random(length) * length);
+      };
+
+      if (!this.state.secretCards === undefined) {
+        return null;
+      }
+
+      for (var i = 0; i < 4; i++) {
+        var index = randomNumber(_data.data.length);
+        secretCards[i] = _data.data[index];
+
+        _data.data.splice(index, 1);
+      }
+
+      console.log(secretCards);
+      this.setState({
+        secretCards: secretCards
+      });
+    }
+  }, {
+    key: "randomNumber",
+    value: function randomNumber() {
+      return Math.floor(Math.random(15) * 15);
+    }
+  }, {
+    key: "startGame",
+    value: function startGame() {
+      this.setState({
+        isStarted: true,
+        timerOn: true
+      });
+    }
+  }, {
+    key: "checkCard",
+    value: function checkCard(item, key) {}
+  }, {
+    key: "isOver",
+    value: function isOver() {
+      var _this2 = this;
+
+      var secretCards = this.state.secretCards;
+      var selectedCards = this.state.selectedCards;
+      var trueCards = [];
+      var points = 0;
+      var cardPoints = 0;
+      secretCards.map(function (item, key) {
+        trueCards[key] = item.true;
+        item.true === selectedCards[key] ? cardPoints++ : null;
+      });
+
+      switch (cardPoints) {
+        case 4:
+          points = 3;
+          break;
+
+        case (3, 2):
+          points = 2;
+          break;
+
+        case 1:
+          points = 1;
+          break;
+
+        case 0:
+          points = 0;
+          break;
+      }
+
+      return _react.default.createElement(_contentStyled.ModalOverGame, null, _react.default.createElement(_contentStyled.ModalOverGameBlock, null, _react.default.createElement(_contentStyled.ModalOverGameTitle, null, "\u041F\u043E\u043F\u044B\u0442\u043A\u0438 \u0437\u0430\u043A\u043E\u043D\u0447\u0438\u043B\u0438\u0441\u044C"), _react.default.createElement(_contentStyled.ModalOverGameLabel, null, "\u0421\u0447\u0451\u0442: ", points), this.props.data.auth === false ? _react.default.createElement(_contentStyled.ModalOverButton, {
+        to: "/games"
+      }, "\u041D\u0430 \u0433\u043B\u0430\u0432\u043D\u0443\u044E") : _react.default.createElement(_contentStyled.ModalOverButton, {
+        to: "/stats",
+        onClick: function onClick() {
+          _this2.SaveResult(points);
+        }
+      }, "\u0421\u043E\u0445\u0440\u0430\u043D\u0438\u0442\u044C")));
+    }
+  }, {
+    key: "SaveResult",
+    value: function SaveResult(points) {
+      console.log(points);
+      var data = {
+        userId: this.props.data.userId,
+        gameId: this.state.gameId,
+        points: points // SaveResultApi(data)
+        //   .then((response) => {
+        //     console.log(response.data)
+        //   })
+
+      };
+    }
+  }, {
+    key: "deleteCard",
+    value: function deleteCard(index, subIndex, word) {
+      var activeRow = _toConsumableArray(this.state.activeRow);
+
+      var activeLine = _toConsumableArray(this.state.activeLine);
+
+      var selectedCards = _toConsumableArray(this.state.selectedCards);
+
+      activeLine[index] = false;
+      activeRow[index][subIndex] = false;
+      selectedCards[index] = word;
+      this.setState({
+        activeLine: activeLine,
+        activeRow: activeRow,
+        selectedCards: selectedCards
+      });
+    }
+  }, {
+    key: "renderCardsWords",
+    value: function renderCardsWords() {
+      var _this3 = this;
+
+      var secretCards = this.state.secretCards;
+
+      var renderElements = function renderElements(item, index) {
+        return item.words.map(function (word, subIndex) {
+          return _react.default.createElement(_contentStyled.ModuleCardsWords, {
+            key: subIndex,
+            style: !_this3.state.activeRow[index][subIndex] ? {
+              backgroundColor: '#dc4c4c'
+            } : null,
+            onClick: _this3.state.activeLine[index] ? function () {
+              _this3.deleteCard(index, subIndex, word);
+            } : null
+          }, word);
+        });
+      };
+
+      return secretCards.map(function (item, index) {
+        return _react.default.createElement(_contentStyled.ModuleCards, {
+          key: index
+        }, renderElements(item, index));
+      });
+    }
+  }, {
+    key: "isStarted",
+    value: function isStarted() {
+      var _this4 = this;
+
+      if (this.state.isOver === false) {
+        if (this.state.isStarted) {
+          setTimeout(function () {
+            _this4.setState({
+              isOver: true
+            });
+          }, 20000);
+          return _react.default.createElement("div", null, this.renderCardsWords(), _react.default.createElement(_contentStyled.Timer, null), _react.default.createElement(_contentStyled.ModuleButtonRun, {
+            to: "#",
+            onClick: function onClick() {
+              return _this4.setState({
+                isOver: true
+              });
+            }
+          }, "\u0413\u043E\u0442\u043E\u0432\u043E!"));
+        } else {
+          return _react.default.createElement(_contentStyled.Module, null, _react.default.createElement(_contentStyled.MobuleSubTitle, null, "\u041E\u043F\u0438\u0441\u0430\u043D\u0438\u0435:"), _react.default.createElement(_contentStyled.RulesItem, null, "\u0412\u044B\u0431\u0435\u0440\u0438\u0442\u0435 \u043B\u0438\u0448\u043D\u0435\u0435 \u0441\u043B\u043E\u0432\u043E \u0432 \u043A\u0430\u0436\u0434\u043E\u043C \u0440\u044F\u0434\u0443."), _react.default.createElement(_contentStyled.RulesItem, null, "\u0423 \u0432\u0430\u0441 \u0431\u0443\u0434\u0435\u0442 20 \u0441\u0435\u043A\u0443\u043D\u0434."), _react.default.createElement(_contentStyled.CenterWrapper, null, _react.default.createElement(_contentStyled.ModuleButtonRun, {
+            to: "#",
+            onClick: function onClick() {
+              return _this4.startGame();
+            }
+          }, "\u0421\u0442\u0430\u0440\u0442")));
+        }
+      }
+    }
+  }, {
     key: "render",
     value: function render() {
-      return _react.default.createElement("div", null, "6");
+      // console.log(this.state.secretCards, 'рендер')
+      return _react.default.createElement(_contentStyled.PageWrapper, null, _react.default.createElement(_contentStyled.PageTitle, null, "\u0418\u0433\u0440\u044B"), _react.default.createElement(_contentStyled.Module, null, _react.default.createElement(_contentStyled.ModuleTitle, null, "\u0418\u0441\u043A\u043B\u044E\u0447\u0438 \u043B\u0438\u0448\u043D\u0435\u0435"), this.isStarted(), this.state.isOver === true ? this.isOver() : null));
     }
   }]);
 
   return Game6;
 }(_react.Component);
 
-Game6.propTypes = {};
-var _default = Game6;
-exports.default = _default;
-},{"react":"../node_modules/react/index.js","prop-types":"../node_modules/prop-types/index.js"}],"containers/Games/GameSeven/index.js":[function(require,module,exports) {
+exports.default = Game6;
+},{"react":"../node_modules/react/index.js","../../../audio/correct.mp3":"audio/correct.mp3","./data":"containers/Games/GameSix/data.js","./contentStyled.js":"containers/Games/GameSix/contentStyled.js"}],"containers/Games/GameSeven/data.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.data = void 0;
+var data = [{
+  word: 'Сад',
+  signs: ['растения', 'садовник', 'собака', 'забор', 'земля']
+}, {
+  word: 'Сарай',
+  signs: ['сеновал', 'лошади', 'крыша', 'скот', 'стены']
+}, {
+  word: 'Деление',
+  signs: ['класс', 'делимое', 'карандаш', 'делитель', 'бумага']
+}, {
+  word: 'Кольцо',
+  signs: ['диаметр', 'алмаз', 'проба', 'округлость', 'печать']
+}, {
+  word: 'Игра',
+  signs: ['карты', 'игроки', 'штрафы', 'наказания', 'правила']
+}, {
+  word: 'Куб',
+  signs: ['углы', 'чертеж', 'сторона', 'камень', 'дерево']
+}, {
+  word: 'Река',
+  signs: ['берег', 'рыба', 'рыболов', 'тина', 'вода']
+}, {
+  word: 'Чтение',
+  signs: ['глаза', 'книга', 'картинка', 'печать', 'слово']
+}];
+exports.data = data;
+},{}],"img/card_bg/card_front.jpg":[function(require,module,exports) {
+module.exports = "/card_front.8c64343b.jpg";
+},{}],"containers/Games/GameSeven/contentStyled.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.RulesItem = exports.MobuleSubTitle = exports.KitListElement = exports.KitKeyWorld = exports.KitPart = exports.Kit = exports.ModalOverButton = exports.TimerLeft = exports.ModalOverGameLabel = exports.ModalOverGameTitle = exports.ModalOverGameBlock = exports.ModalOverGame = exports.Timer = exports.ModuleButtonRun = exports.ModuleCardBack = exports.ModuleCardFront = exports.ModuleCardsWords = exports.ModuleCardSelect = exports.ModuleCard3 = exports.ModuleCard2 = exports.ModuleCard1 = exports.ModuleCard = exports.CenterWrapper = exports.ModuleCardsSelect = exports.ModuleCards = exports.ModuleTitle = exports.Module = exports.PageTitle = exports.PageWrapper = void 0;
+
+var _styledComponents = _interopRequireWildcard(require("styled-components"));
+
+var _card_front = _interopRequireDefault(require("../../../img/card_bg/card_front.jpg"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = Object.defineProperty && Object.getOwnPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : {}; if (desc.get || desc.set) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } } newObj.default = obj; return newObj; } }
+
+function _templateObject34() {
+  var data = _taggedTemplateLiteral(["\n  font-size: 1em;\n  line-height: 1.5em;\n  margin-left: 1em;\n  color: #3e3e3e;\n"]);
+
+  _templateObject34 = function _templateObject34() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject33() {
+  var data = _taggedTemplateLiteral(["\n  font-size: 1.2em;\n  margin-top: 1em;\n  margin-bottom: 0.3em;\n  color: #3e3e3e;\n"]);
+
+  _templateObject33 = function _templateObject33() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject32() {
+  var data = _taggedTemplateLiteral(["\n  font-size: 1.1em;\n  margin: 0.4em;\n  padding: 0.3em;\n  background-color: #3e3e3e;\n  background-color: ", ";\n  color: white;\n  cursor: pointer;\n  border-radius: 4px;\n  transition: all 0.3s;\n  box-shadow: 0 0.1em 0.2em rgba(0,0,0,0.19), 0 0.1em 0.2em rgba(0,0,0,0.23);\n  &:hover {\n    // background-color: #545454;\n  }\n"]);
+
+  _templateObject32 = function _templateObject32() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject31() {
+  var data = _taggedTemplateLiteral(["\n  font-size: 2em;\n  font-weight: bold;\n  text-transform: uppercase;\n  color: #3e3e3e;\n"]);
+
+  _templateObject31 = function _templateObject31() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject30() {
+  var data = _taggedTemplateLiteral(["\n  width: 50%;\n  height: 100%;\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  justify-content: center;\n"]);
+
+  _templateObject30 = function _templateObject30() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject29() {
+  var data = _taggedTemplateLiteral(["\n  display: flex;\n  flex-direction: row;\n  width: 40em;\n  height: 15em;\n  background-color: white;\n  border-radius: 4px;\n  margin: 1em 0 2em;\n  box-shadow: 0 0.1em 1em rgba(0,0,0,0.19), 0 0.4em 0.5em rgba(0,0,0,0.23);\n  transition: all 0.3s cubic-bezier(.25,.8,.25,1);\n  &:hover {\n    box-shadow: 0 0.3em 1.5em rgba(0,0,0,0.19), 0 0.7em 0.9em rgba(0,0,0,0.23);\n    transform: scale(1.01);\n  }\n"]);
+
+  _templateObject29 = function _templateObject29() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject28() {
+  var data = _taggedTemplateLiteral(["\n  margin: 0 auto;\n  text-decoration: none;\n  color: white;\n"]);
+
+  _templateObject28 = function _templateObject28() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject27() {
+  var data = _taggedTemplateLiteral(["\n  animation-duration: 10s;\n"]);
+
+  _templateObject27 = function _templateObject27() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject26() {
+  var data = _taggedTemplateLiteral(["\n  display: block;\n  font-size: 1.15em;\n  line-height: 1.5em;\n"]);
+
+  _templateObject26 = function _templateObject26() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject25() {
+  var data = _taggedTemplateLiteral(["\n  display: block;\n  margin-bottom: 1em;\n  text-align: center;\n  font-size: 1.5em;\n  font-weight: bold;\n"]);
+
+  _templateObject25 = function _templateObject25() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject24() {
+  var data = _taggedTemplateLiteral(["\n  background-color: white;\n  border-radius: 4px;\n  width: 20em;\n  height: 20em;\n  padding: 1em;\n  box-sizing: border-box;\n"]);
+
+  _templateObject24 = function _templateObject24() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject23() {
+  var data = _taggedTemplateLiteral(["\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  position: absolute;\n  top: 0;\n  left: 0;\n  width: 100%;\n  height: 100vh;\n  animation: ", " 1s linear forwards;\n"]);
+
+  _templateObject23 = function _templateObject23() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject22() {
+  var data = _taggedTemplateLiteral(["\n  height: 0.5em;\n  margin: 1.5em auto;\n  animation: ", " 20s linear;\n"]);
+
+  _templateObject22 = function _templateObject22() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject21() {
+  var data = _taggedTemplateLiteral(["\n  display: block;\n  font-size: 1em;\n  line-height: 1em;\n  color: white;\n  background-color: #589500;\n  width: 8em;\n  height: 1em;\n  padding: 0.5em 0;\n  margin: 0.5em auto 0;\n  text-align: center;\n  border-radius: 10em;\n  cursor: pointer;\n  text-decoration: none;\n  transition: all 0.2s ease-in-out;\n  box-shadow: 0 0.1em 0.15em rgba(0,0,0,0.19), 0 0.2em 0.2em rgba(0,0,0,0.23);\n  &:hover {\n    box-shadow: 0 0.2em 0.25em rgba(0,0,0,0.19), 0 0.3em 0.3em rgba(0,0,0,0.23);\n  }\n"]);
+
+  _templateObject21 = function _templateObject21() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject20() {
+  var data = _taggedTemplateLiteral(["\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  font-weight: bold;\n  position: absolute;\n  width: 100%;\n  height: 100%;\n  border-radius: 4px;\n  backface-visibility: hidden;\n  transform: rotateY(180deg);\n  background-color: #fafafa;\n  text-transform: uppercase;\n  box-shadow: 0 0.1em 0.15em rgba(0,0,0,0.19), 0 0.2em 0.2em rgba(0,0,0,0.23);\n"]);
+
+  _templateObject20 = function _templateObject20() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject19() {
+  var data = _taggedTemplateLiteral(["\n  position: absolute;\n  width: 100%;\n  height: 100%;\n  border-radius: 4px;\n  backface-visibility: hidden;\n  background-image: url(", ");\n  background-size: cover;\n  background-position: center;\n  box-shadow: 0 0.1em 0.15em rgba(0,0,0,0.19), 0 0.2em 0.2em rgba(0,0,0,0.23);\n"]);
+
+  _templateObject19 = function _templateObject19() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject18() {
+  var data = _taggedTemplateLiteral(["\n  padding: 0 2em;\n  width: auto;\n  box-sizing: border-box;\n  height: 2.5em;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  cursor: pointer;\n  font-weight: bold;\n  text-transform: uppercase;\n"]);
+
+  _templateObject18 = function _templateObject18() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject17() {
+  var data = _taggedTemplateLiteral(["\n  animation: ", " 0.4s ease-in-out forwards;\n  cursor: pointer;\n"]);
+
+  _templateObject17 = function _templateObject17() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject16() {
+  var data = _taggedTemplateLiteral(["\n  animation-delay: 9s;\n"]);
+
+  _templateObject16 = function _templateObject16() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject15() {
+  var data = _taggedTemplateLiteral(["\n  animation-delay: 5s;\n"]);
+
+  _templateObject15 = function _templateObject15() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject14() {
+  var data = _taggedTemplateLiteral(["\n  animation-delay: 1s;\n"]);
+
+  _templateObject14 = function _templateObject14() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject13() {
+  var data = _taggedTemplateLiteral(["\n  position: relative;\n  top: 0;\n  left: 0;\n  width: 12em;\n  height: 12em;\n  border-radius: 4px;\n  margin: 0.5em 0.5em;\n  transform-style: preserve-3d;\n  perspective: 500px;\n  // animation: ", " 4s ease-in-out;\n  box-shadow: 0 0.1em 0.15em rgba(0,0,0,0.19), 0 0.2em 0.2em rgba(0,0,0,0.23);\n"]);
+
+  _templateObject13 = function _templateObject13() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject12() {
+  var data = _taggedTemplateLiteral(["\n  width: 100%;\n  margin: 0 auto;\n  display: flex;\n  justify-content: center;\n  flex-wrap: wrap;\n  margin-top: 1em;\n"]);
+
+  _templateObject12 = function _templateObject12() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject11() {
+  var data = _taggedTemplateLiteral(["\n  animation: none;\n"]);
+
+  _templateObject11 = function _templateObject11() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject10() {
+  var data = _taggedTemplateLiteral(["\n  width: 100%;\n  height: auto;\n  margin: 0 auto;\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  justify-content: center;\n  flex-wrap: wrap;\n  margin-top: 1em;\n  overflow: hidden;\n  animation: ", " 20s ease-in-out forwards;\n"]);
+
+  _templateObject10 = function _templateObject10() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject9() {
+  var data = _taggedTemplateLiteral(["\n  font-size: 1.5em;\n  color: #3e3e3e;\n"]);
+
+  _templateObject9 = function _templateObject9() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject8() {
+  var data = _taggedTemplateLiteral(["\n  padding: 1.5em;\n"]);
+
+  _templateObject8 = function _templateObject8() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject7() {
+  var data = _taggedTemplateLiteral(["\n  font-size: 2em;\n  color: #3e3e3e;\n"]);
+
+  _templateObject7 = function _templateObject7() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject6() {
+  var data = _taggedTemplateLiteral(["\n  display: flex;\n  flex-direction: column;\n  padding: 2em;\n  box-sizing: border-box;\n  position: relative;\n"]);
+
+  _templateObject6 = function _templateObject6() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject5() {
+  var data = _taggedTemplateLiteral(["\n  0% {\n    background-color: rgba(255, 255, 255, 0);\n  }\n  \n  100% {\n    background-color: rgba(0, 0, 0, 0.15);\n  }\n"]);
+
+  _templateObject5 = function _templateObject5() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject4() {
+  var data = _taggedTemplateLiteral(["\n  0% {\n    width: 70%;\n    background-color: #50af50;\n  }\n\n  100% {\n    width: 0%;\n    background-color: #e22828;\n  }\n"]);
+
+  _templateObject4 = function _templateObject4() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject3() {
+  var data = _taggedTemplateLiteral(["\n  0% {\n    opacity: 1;\n  }\n\n  95% {\n    opacity: 1;\n  }\n\n  100% {\n    opacity: 0;\n  }\n"]);
+
+  _templateObject3 = function _templateObject3() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject2() {
+  var data = _taggedTemplateLiteral(["\n  0% {\n    transform: rotateY(0);\n  }\n\n  100% {\n    transform: rotateY(180deg);\n  }\n"]);
+
+  _templateObject2 = function _templateObject2() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject() {
+  var data = _taggedTemplateLiteral(["\n  0% {\n    transform: rotateY(0);\n  }\n\n  20% {\n    transform: rotateY(180deg);\n  }\n\n  80% {\n    transform: rotateY(180deg);\n  }\n\n  100% {\n    transform: rotateY(0);\n  }\n"]);
+
+  _templateObject = function _templateObject() {
+    return data;
+  };
+
+  return data;
+}
+
+function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(0); } return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
+
+var flip = (0, _styledComponents.keyframes)(_templateObject());
+var flipConst = (0, _styledComponents.keyframes)(_templateObject2());
+var skip = (0, _styledComponents.keyframes)(_templateObject3());
+var timerKeyframes = (0, _styledComponents.keyframes)(_templateObject4());
+var showModalKeyframes = (0, _styledComponents.keyframes)(_templateObject5());
+
+var PageWrapper = _styledComponents.default.div(_templateObject6());
+
+exports.PageWrapper = PageWrapper;
+
+var PageTitle = _styledComponents.default.span(_templateObject7());
+
+exports.PageTitle = PageTitle;
+
+var Module = _styledComponents.default.div(_templateObject8());
+
+exports.Module = Module;
+
+var ModuleTitle = _styledComponents.default.div(_templateObject9());
+
+exports.ModuleTitle = ModuleTitle;
+
+var ModuleCards = _styledComponents.default.div(_templateObject10(), skip);
+
+exports.ModuleCards = ModuleCards;
+var ModuleCardsSelect = (0, _styledComponents.default)(ModuleCards)(_templateObject11());
+exports.ModuleCardsSelect = ModuleCardsSelect;
+
+var CenterWrapper = _styledComponents.default.div(_templateObject12());
+
+exports.CenterWrapper = CenterWrapper;
+
+var ModuleCard = _styledComponents.default.div(_templateObject13(), flip);
+
+exports.ModuleCard = ModuleCard;
+var ModuleCard1 = (0, _styledComponents.default)(ModuleCard)(_templateObject14());
+exports.ModuleCard1 = ModuleCard1;
+var ModuleCard2 = (0, _styledComponents.default)(ModuleCard)(_templateObject15());
+exports.ModuleCard2 = ModuleCard2;
+var ModuleCard3 = (0, _styledComponents.default)(ModuleCard)(_templateObject16());
+exports.ModuleCard3 = ModuleCard3;
+var ModuleCardSelect = (0, _styledComponents.default)(ModuleCard)(_templateObject17(), flipConst);
+exports.ModuleCardSelect = ModuleCardSelect;
+var ModuleCardsWords = (0, _styledComponents.default)(ModuleCard)(_templateObject18());
+exports.ModuleCardsWords = ModuleCardsWords;
+
+var ModuleCardFront = _styledComponents.default.div(_templateObject19(), _card_front.default);
+
+exports.ModuleCardFront = ModuleCardFront;
+
+var ModuleCardBack = _styledComponents.default.div(_templateObject20());
+
+exports.ModuleCardBack = ModuleCardBack;
+
+var ModuleButtonRun = _styledComponents.default.span(_templateObject21());
+
+exports.ModuleButtonRun = ModuleButtonRun;
+
+var Timer = _styledComponents.default.div(_templateObject22(), timerKeyframes);
+
+exports.Timer = Timer;
+
+var ModalOverGame = _styledComponents.default.div(_templateObject23(), showModalKeyframes);
+
+exports.ModalOverGame = ModalOverGame;
+
+var ModalOverGameBlock = _styledComponents.default.div(_templateObject24());
+
+exports.ModalOverGameBlock = ModalOverGameBlock;
+
+var ModalOverGameTitle = _styledComponents.default.span(_templateObject25());
+
+exports.ModalOverGameTitle = ModalOverGameTitle;
+
+var ModalOverGameLabel = _styledComponents.default.span(_templateObject26());
+
+exports.ModalOverGameLabel = ModalOverGameLabel;
+var TimerLeft = (0, _styledComponents.default)(Timer)(_templateObject27());
+exports.TimerLeft = TimerLeft;
+var ModalOverButton = (0, _styledComponents.default)(ModuleButtonRun)(_templateObject28());
+exports.ModalOverButton = ModalOverButton;
+
+var Kit = _styledComponents.default.div(_templateObject29());
+
+exports.Kit = Kit;
+
+var KitPart = _styledComponents.default.div(_templateObject30());
+
+exports.KitPart = KitPart;
+var KitKeyWorld = (0, _styledComponents.default)(KitPart)(_templateObject31());
+exports.KitKeyWorld = KitKeyWorld;
+
+var KitListElement = _styledComponents.default.div(_templateObject32(), function (props) {
+  return props.state;
+});
+
+exports.KitListElement = KitListElement;
+
+var MobuleSubTitle = _styledComponents.default.div(_templateObject33());
+
+exports.MobuleSubTitle = MobuleSubTitle;
+
+var RulesItem = _styledComponents.default.div(_templateObject34());
+
+exports.RulesItem = RulesItem;
+},{"styled-components":"../node_modules/styled-components/dist/styled-components.browser.esm.js","../../../img/card_bg/card_front.jpg":"img/card_bg/card_front.jpg"}],"containers/Games/GameSeven/index.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -40847,13 +42402,27 @@ exports.default = void 0;
 
 var _react = _interopRequireWildcard(require("react"));
 
-var _propTypes = _interopRequireDefault(require("prop-types"));
+var _reactRedux = require("react-redux");
+
+var _correct = _interopRequireDefault(require("../../../audio/correct.mp3"));
+
+var _data = require("./data");
+
+var _contentStyled = require("./contentStyled.js");
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = Object.defineProperty && Object.getOwnPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : {}; if (desc.get || desc.set) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } } newObj.default = obj; return newObj; } }
 
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+function _toConsumableArray(arr) { return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _nonIterableSpread(); }
+
+function _nonIterableSpread() { throw new TypeError("Invalid attempt to spread non-iterable instance"); }
+
+function _iterableToArray(iter) { if (Symbol.iterator in Object(iter) || Object.prototype.toString.call(iter) === "[object Arguments]") return Array.from(iter); }
+
+function _arrayWithoutHoles(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = new Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
@@ -40876,384 +42445,309 @@ var Game7 =
 function (_Component) {
   _inherits(Game7, _Component);
 
-  function Game7() {
+  function Game7(props) {
+    var _this;
+
     _classCallCheck(this, Game7);
 
-    return _possibleConstructorReturn(this, _getPrototypeOf(Game7).apply(this, arguments));
+    _this = _possibleConstructorReturn(this, _getPrototypeOf(Game7).call(this, props));
+    _this.state = {
+      gameId: 7,
+      isStarted: false,
+      isUserPlay: false,
+      data: _data.data,
+      secretCards: undefined,
+      selectedCards: [],
+      activeSign: [[true, true, true, true, true], [true, true, true, true, true]],
+      try: 4,
+      timerOn: false,
+      timeLeft: 15,
+      isOver: false
+    };
+    return _this;
   }
 
   _createClass(Game7, [{
+    key: "componentDidMount",
+    value: function componentDidMount() {
+      if (!this.state.secretCards === undefined) {
+        return;
+      } // const data = [...this.state.data]  // Копия data файла
+
+
+      var compareRandom = function compareRandom(a, b) {
+        return Math.random() - 0.5;
+      };
+
+      var secretCards = []; // Случайные ключевые карты для пользователя
+
+      var randomSigns = []; // Набор случайных признаков
+      // Выбор двух карт в secretCards и удаление их из data
+
+      for (var i = 0; i < 2; i++) {
+        var randomCarNumber = this.randomNumber(_data.data.length); // 8-i - уменьшение диапазона выбора карты, т.к. выбранная карта удаляется в data
+
+        secretCards[i] = _toConsumableArray(_data.data)[randomCarNumber]; // Выбор случайной карты из data
+
+        _data.data.splice(randomCarNumber, 1);
+      } // Создание набора случайных признаков из оставшихся карт
+
+
+      _data.data.map(function (item) {
+        var _randomSigns;
+
+        randomSigns = (_randomSigns = randomSigns).concat.apply(_randomSigns, _toConsumableArray(item.signs));
+      }); // Выбор слов-признаков, которые останутся (от 2 до 4)
+
+
+      for (var _i = 0; _i < 2; _i++) {
+        var amountSignsToDelete = this.getRandomInt(1, 3); // Количество слов-признаков, которые нужно удалить от 1 до 3
+
+        var signs = secretCards[_i].signs; // Делаю копию признаков, чтобы не мутировать их
+
+        secretCards[_i].selectedSigns = _toConsumableArray(signs);
+
+        for (var j = 0; j < amountSignsToDelete; j++) {
+          var amountSigns = secretCards[_i].selectedSigns.length;
+          var randomSignToDelete = this.randomNumber(amountSigns);
+
+          secretCards[_i].selectedSigns.splice(randomSignToDelete, 1);
+        } // Дополнение выбранных слов-признаков случайными словами-признаками
+
+
+        var selectedSigns = secretCards[_i].selectedSigns;
+        secretCards[_i].stuffSigns = _toConsumableArray(selectedSigns);
+
+        for (var _j = selectedSigns.length; _j < 5; _j++) {
+          var randomStuffSign = this.randomNumber(randomSigns.length);
+          secretCards[_i].stuffSigns[_j] = randomSigns[randomStuffSign];
+        } // Перемешка массива выбранных слов со случайными
+
+
+        secretCards[_i].stuffSigns.sort(compareRandom); // Свойство для сохранения выбранных значений пользователем
+
+
+        secretCards[_i].userSelect = [];
+      }
+
+      console.log(_data.data);
+      console.log(secretCards);
+      console.log(randomSigns);
+      this.setState({
+        secretCards: secretCards
+      });
+    }
+  }, {
+    key: "randomNumber",
+    value: function randomNumber(number) {
+      return Math.floor(Math.random(number) * number);
+    }
+  }, {
+    key: "getRandomInt",
+    value: function getRandomInt(min, max) {
+      return Math.floor(Math.random() * (max - min + 1)) + min;
+    }
+  }, {
+    key: "startGame",
+    value: function startGame() {
+      this.setState({
+        isStarted: true
+      });
+    }
+  }, {
+    key: "isOver",
+    value: function isOver() {
+      var _this2 = this;
+
+      var secretCards = _toConsumableArray(this.state.secretCards);
+
+      var points = 0;
+      var amountTrueSelected = 0;
+      var amountFalseSelected = 0;
+      var maxPoints = 0;
+      var bufferCounterErrors = 0;
+      var answers = [];
+      var userSelectPoints = [{
+        points: 0,
+        wrong: 0,
+        isTrue: false
+      }, {
+        points: 0,
+        wrong: 0,
+        isTrue: false
+      }];
+      secretCards.map(function (item, kitId) {
+        var trueSigns = item.selectedSigns;
+        var userSelect = item.userSelect;
+        answers = answers.concat(trueSigns);
+        maxPoints = maxPoints + trueSigns.length;
+        trueSigns.map(function (trueItem, trueItemId) {
+          userSelect.map(function (userItem, userItemId) {
+            if (trueItem === userItem) {
+              amountTrueSelected++;
+            }
+          });
+        });
+        userSelect.map(function (userItem) {
+          var counterWrongCompare = 0;
+          trueSigns.map(function (trueItem) {
+            if (!(userItem === trueItem)) {
+              counterWrongCompare++;
+            }
+          });
+
+          if (counterWrongCompare === trueSigns.length) {
+            amountFalseSelected++;
+          }
+
+          counterWrongCompare = 0;
+        });
+      });
+      console.log(maxPoints, amountFalseSelected);
+
+      if (answers.length === amountTrueSelected && amountFalseSelected === 0) {
+        points = 3;
+      } else if (answers.length - 2 <= amountTrueSelected && amountFalseSelected === 0) {
+        points = 2;
+      } else if (answers.length - 2 <= amountTrueSelected && amountFalseSelected !== 0) {
+        points = 1;
+      } else if (answers.length - 2 > amountTrueSelected && amountFalseSelected !== 0) {
+        points = 0;
+      } else {
+        points = 0;
+      }
+
+      console.log(userSelectPoints);
+      return _react.default.createElement(_contentStyled.ModalOverGame, null, _react.default.createElement(_contentStyled.ModalOverGameBlock, null, _react.default.createElement(_contentStyled.ModalOverGameTitle, null, "\u041F\u043E\u043F\u044B\u0442\u043A\u0438 \u0437\u0430\u043A\u043E\u043D\u0447\u0438\u043B\u0438\u0441\u044C"), _react.default.createElement(_contentStyled.ModalOverGameLabel, null, "\u0421\u0447\u0451\u0442: ", points), this.props.data.auth === false ? _react.default.createElement(_contentStyled.ModalOverButton, {
+        to: "/games"
+      }, "\u041D\u0430 \u0433\u043B\u0430\u0432\u043D\u0443\u044E") : _react.default.createElement(_contentStyled.ModalOverButton, {
+        to: "/stats",
+        onClick: function onClick() {
+          _this2.SaveResult(points);
+        }
+      }, "\u0421\u043E\u0445\u0440\u0430\u043D\u0438\u0442\u044C")));
+    }
+  }, {
+    key: "SaveResult",
+    value: function SaveResult(points) {
+      console.log(points);
+      var data = {
+        userId: this.props.data.userId,
+        gameId: this.state.gameId,
+        points: points // SaveResultApi(data)
+        //   .then((response) => {
+        //     console.log(response.data)
+        //   })
+
+      };
+    }
+  }, {
+    key: "selectSign",
+    value: function selectSign(item, index, subIndex) {
+      var activeSign = _toConsumableArray(this.state.activeSign);
+
+      var secretCards = _toConsumableArray(this.state.secretCards);
+
+      secretCards[index].userSelect.push(item);
+      activeSign[index][subIndex] = false;
+      this.setState({
+        activeSign: activeSign
+      });
+    }
+  }, {
+    key: "renderCardsWords",
+    value: function renderCardsWords() {
+      var _this3 = this;
+
+      var kits = this.state.secretCards;
+      console.log(kits);
+
+      var kitsListSigns = function kitsListSigns(signs, index) {
+        return signs.map(function (item, subIndex) {
+          return _react.default.createElement(_contentStyled.KitListElement, {
+            key: subIndex,
+            style: _this3.state.activeSign[index][subIndex] ? null : {
+              color: '#3e3e3e'
+            },
+            state: function state() {
+              if (_this3.state.activeSign[index][subIndex] === false) {
+                var stateSign = false;
+                console.log(kits[index].selectedSigns.length);
+
+                for (var i = 0; i < kits[index].selectedSigns.length; i++) {
+                  console.log(item, kits[index].selectedSigns[i]);
+
+                  if (item === kits[index].selectedSigns[i]) {
+                    stateSign = true;
+                  }
+                }
+
+                if (stateSign) {
+                  return "#589500";
+                } else {
+                  return "#dc4c4c";
+                }
+              }
+            },
+            onClick: function onClick() {
+              _this3.state.activeSign[index][subIndex] ? _this3.selectSign(item, index, subIndex) : null;
+            }
+          }, item);
+        });
+      };
+
+      var renderKit = function renderKit() {
+        return kits.map(function (kit, index) {
+          return _react.default.createElement(_contentStyled.Kit, {
+            key: index
+          }, _react.default.createElement(_contentStyled.KitKeyWorld, null, kit.word), _react.default.createElement(_contentStyled.KitPart, null, kitsListSigns(kit.stuffSigns, index)));
+        });
+      };
+
+      return _react.default.createElement(_contentStyled.ModuleCards, null, renderKit());
+    }
+  }, {
+    key: "isStarted",
+    value: function isStarted() {
+      var _this4 = this;
+
+      if (this.state.isOver === false) {
+        if (this.state.isStarted) {
+          setTimeout(function () {
+            _this4.setState({
+              isOver: true
+            });
+          }, 20000);
+          return _react.default.createElement("div", null, this.renderCardsWords(), _react.default.createElement(_contentStyled.Timer, null), _react.default.createElement(_contentStyled.ModuleButtonRun, {
+            to: "#",
+            onClick: function onClick() {
+              return _this4.setState({
+                isOver: true
+              });
+            }
+          }, "\u0413\u043E\u0442\u043E\u0432\u043E!"));
+        } else {
+          return _react.default.createElement(_contentStyled.Module, null, _react.default.createElement(_contentStyled.MobuleSubTitle, null, "\u041E\u043F\u0438\u0441\u0430\u043D\u0438\u0435:"), _react.default.createElement(_contentStyled.RulesItem, null, "\u0412\u044B\u0431\u0435\u0440\u0438\u0442\u0435 \u043B\u0438\u0448\u043D\u0435\u0435 \u0441\u043B\u043E\u0432\u043E \u0432 \u043A\u0430\u0436\u0434\u043E\u043C \u0440\u044F\u0434\u0443."), _react.default.createElement(_contentStyled.RulesItem, null, "\u0423 \u0432\u0430\u0441 \u0431\u0443\u0434\u0435\u0442 20 \u0441\u0435\u043A\u0443\u043D\u0434."), _react.default.createElement(_contentStyled.CenterWrapper, null, _react.default.createElement(_contentStyled.ModuleButtonRun, {
+            to: "#",
+            onClick: function onClick() {
+              return _this4.startGame();
+            }
+          }, "\u0421\u0442\u0430\u0440\u0442")));
+        }
+      }
+    }
+  }, {
     key: "render",
     value: function render() {
-      return _react.default.createElement("div", null, "7");
+      return _react.default.createElement(_contentStyled.PageWrapper, null, _react.default.createElement(_contentStyled.PageTitle, null, "\u0418\u0433\u0440\u044B"), _react.default.createElement(_contentStyled.Module, null, _react.default.createElement(_contentStyled.ModuleTitle, null, "\u0412\u044B\u0434\u0435\u043B\u0435\u043D\u0438\u0435 \u0441\u0443\u0449\u0435\u0441\u0442\u0432\u0435\u043D\u043D\u044B\u0445 \u043F\u0440\u0438\u0437\u043D\u0430\u043A\u043E\u0432"), this.isStarted(), this.state.isOver === true ? this.isOver() : null));
     }
   }]);
 
   return Game7;
 }(_react.Component);
 
-Game7.propTypes = {};
-var _default = Game7;
-exports.default = _default;
-},{"react":"../node_modules/react/index.js","prop-types":"../node_modules/prop-types/index.js"}],"components/SelectGame/styled.js":[function(require,module,exports) {
-"use strict";
-
-var _styledComponents = _interopRequireDefault(require("styled-components"));
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-},{"styled-components":"../node_modules/styled-components/dist/styled-components.browser.esm.js"}],"components/SelectGame/index.js":[function(require,module,exports) {
-"use strict";
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.default = void 0;
-
-var _react = _interopRequireWildcard(require("react"));
-
-var _propTypes = _interopRequireDefault(require("prop-types"));
-
-var _styled = require("./styled");
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = Object.defineProperty && Object.getOwnPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : {}; if (desc.get || desc.set) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } } newObj.default = obj; return newObj; } }
-
-function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
-
-function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
-
-function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
-
-function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
-
-function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
-
-function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
-
-var Select =
-/*#__PURE__*/
-function (_Component) {
-  _inherits(Select, _Component);
-
-  function Select() {
-    _classCallCheck(this, Select);
-
-    return _possibleConstructorReturn(this, _getPrototypeOf(Select).apply(this, arguments));
-  }
-
-  _createClass(Select, [{
-    key: "render",
-    value: function render() {
-      return _react.default.createElement("div", null, "1");
-    }
-  }]);
-
-  return Select;
-}(_react.Component);
-
-var _default = Select;
-exports.default = _default;
-},{"react":"../node_modules/react/index.js","prop-types":"../node_modules/prop-types/index.js","./styled":"components/SelectGame/styled.js"}],"img/card_bg/card_1.png":[function(require,module,exports) {
-module.exports = "/card_1.3c189e14.png";
-},{}],"img/card_bg/card_2.png":[function(require,module,exports) {
-module.exports = "/card_2.21af1e72.png";
-},{}],"img/card_bg/card_3.png":[function(require,module,exports) {
-module.exports = "/card_3.15016539.png";
-},{}],"img/card_bg/card_4.png":[function(require,module,exports) {
-module.exports = "/card_4.4e4cd375.png";
-},{}],"img/card_bg/card_5.png":[function(require,module,exports) {
-module.exports = "/card_5.0b2535fe.png";
-},{}],"img/card_bg/card_6.png":[function(require,module,exports) {
-module.exports = "/card_6.34e08764.png";
-},{}],"img/card_bg/card_7.png":[function(require,module,exports) {
-module.exports = "/card_7.cb5d78d7.png";
-},{}],"containers/Games/styled.js":[function(require,module,exports) {
-"use strict";
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.PageTitle = exports.Section = exports.ModuleCardTitle = exports.ModuleCard7 = exports.ModuleCard6 = exports.ModuleCard5 = exports.ModuleCard4 = exports.ModuleCard3 = exports.ModuleCard2 = exports.ModuleCard1 = exports.ModuleCard = exports.ModuleCards = exports.ModuleButtonRun = exports.ModuleTitle = exports.Module = exports.WrapperModule = exports.SelectGames = exports.GameArea = exports.Wrapper = void 0;
-
-var _styledComponents = _interopRequireDefault(require("styled-components"));
-
-var _card_ = _interopRequireDefault(require("../../img/card_bg/card_1.png"));
-
-var _card_2 = _interopRequireDefault(require("../../img/card_bg/card_2.png"));
-
-var _card_3 = _interopRequireDefault(require("../../img/card_bg/card_3.png"));
-
-var _card_4 = _interopRequireDefault(require("../../img/card_bg/card_4.png"));
-
-var _card_5 = _interopRequireDefault(require("../../img/card_bg/card_5.png"));
-
-var _card_6 = _interopRequireDefault(require("../../img/card_bg/card_6.png"));
-
-var _card_7 = _interopRequireDefault(require("../../img/card_bg/card_7.png"));
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function _templateObject19() {
-  var data = _taggedTemplateLiteral(["\n  font-size: 2em;\n  color: #3e3e3e;\n"]);
-
-  _templateObject19 = function _templateObject19() {
-    return data;
-  };
-
-  return data;
-}
-
-function _templateObject18() {
-  var data = _taggedTemplateLiteral(["\n  width 100%;\n"]);
-
-  _templateObject18 = function _templateObject18() {
-    return data;
-  };
-
-  return data;
-}
-
-function _templateObject17() {
-  var data = _taggedTemplateLiteral(["\n  width: 100%;\n  height: 100%;\n  background-color: rgba(0, 0, 0, 0.5);\n  text-align: center;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  color: white;\n  font-size: 1em;\n  font-weight: bold;\n"]);
-
-  _templateObject17 = function _templateObject17() {
-    return data;
-  };
-
-  return data;
-}
-
-function _templateObject16() {
-  var data = _taggedTemplateLiteral(["\n  background-image: url(", ")\n"]);
-
-  _templateObject16 = function _templateObject16() {
-    return data;
-  };
-
-  return data;
-}
-
-function _templateObject15() {
-  var data = _taggedTemplateLiteral(["\n  background-image: url(", ")\n"]);
-
-  _templateObject15 = function _templateObject15() {
-    return data;
-  };
-
-  return data;
-}
-
-function _templateObject14() {
-  var data = _taggedTemplateLiteral(["\n  background-image: url(", ")\n"]);
-
-  _templateObject14 = function _templateObject14() {
-    return data;
-  };
-
-  return data;
-}
-
-function _templateObject13() {
-  var data = _taggedTemplateLiteral(["\n  background-image: url(", ")\n"]);
-
-  _templateObject13 = function _templateObject13() {
-    return data;
-  };
-
-  return data;
-}
-
-function _templateObject12() {
-  var data = _taggedTemplateLiteral(["\n  background-image: url(", ")\n"]);
-
-  _templateObject12 = function _templateObject12() {
-    return data;
-  };
-
-  return data;
-}
-
-function _templateObject11() {
-  var data = _taggedTemplateLiteral(["\n  background-image: url(", ")\n"]);
-
-  _templateObject11 = function _templateObject11() {
-    return data;
-  };
-
-  return data;
-}
-
-function _templateObject10() {
-  var data = _taggedTemplateLiteral(["\n  background-image: url(", ")\n"]);
-
-  _templateObject10 = function _templateObject10() {
-    return data;
-  };
-
-  return data;
-}
-
-function _templateObject9() {
-  var data = _taggedTemplateLiteral(["\n  width: 100%;\n  height: 6em;\n  background-color: white;\n  border-radius: 4px;\n  background-size: contain;\n  overflow: hidden;\n  text-decoration: none;\n  transition: all 0.2s ease-in-out;\n  box-shadow: 0 0.1em 0.15em rgba(0,0,0,0.19), 0 0.2em 0.2em rgba(0,0,0,0.23);\n  &:hover {\n    box-shadow: 0 0.2em 0.15em 0.05em rgba(0,0,0,0.19), 0 0.2em 0.2em 0.05em rgba(0,0,0,0.23);\n  }\n  background-size: cover;\n  margin-bottom: 0.2em;\n"]);
-
-  _templateObject9 = function _templateObject9() {
-    return data;
-  };
-
-  return data;
-}
-
-function _templateObject8() {
-  var data = _taggedTemplateLiteral(["\n  display: flex;\n  flex-wrap: wrap;\n"]);
-
-  _templateObject8 = function _templateObject8() {
-    return data;
-  };
-
-  return data;
-}
-
-function _templateObject7() {
-  var data = _taggedTemplateLiteral(["\n  font-size: 1em;\n  color: white;\n  background-color: #589500;\n  width: 8em;\n  padding: 0.5em 0;\n  margin-top: 0.5em;\n  text-align: center;\n  border-radius: 10em;\n  cursor: pointer;\n  transition: all 0.2s ease-in-out;\n  box-shadow: 0 0.1em 0.15em rgba(0,0,0,0.19), 0 0.2em 0.2em rgba(0,0,0,0.23);\n  &:hover {\n    box-shadow: 0 0.2em 0.25em rgba(0,0,0,0.19), 0 0.3em 0.3em rgba(0,0,0,0.23);\n  }\n"]);
-
-  _templateObject7 = function _templateObject7() {
-    return data;
-  };
-
-  return data;
-}
-
-function _templateObject6() {
-  var data = _taggedTemplateLiteral(["\n  font-size: 1.3em;\n  color: #3e3e3e;\n  text-align: center;\n  font-weight: bold;\n"]);
-
-  _templateObject6 = function _templateObject6() {
-    return data;
-  };
-
-  return data;
-}
-
-function _templateObject5() {
-  var data = _taggedTemplateLiteral(["\n  padding: 0;\n"]);
-
-  _templateObject5 = function _templateObject5() {
-    return data;
-  };
-
-  return data;
-}
-
-function _templateObject4() {
-  var data = _taggedTemplateLiteral(["\n  height: 100%;\n  display: flex;\n  flex-direction: column;\n  justify-content: space-between;\n"]);
-
-  _templateObject4 = function _templateObject4() {
-    return data;
-  };
-
-  return data;
-}
-
-function _templateObject3() {
-  var data = _taggedTemplateLiteral(["\n    width: 15%;\n    height: 100%;\n    display: flex;\n    align-items: center;\n    flex-direction: column;\n    justify-content: space-between;\n    @media (max-width: 768px) {\n      width: 100%;\n    }\n"]);
-
-  _templateObject3 = function _templateObject3() {
-    return data;
-  };
-
-  return data;
-}
-
-function _templateObject2() {
-  var data = _taggedTemplateLiteral(["\n    width: 85%;\n    height: 100%;\n    border: 0.2em solid gray;\n    border-radius: 10px;\n    margin-right: 30px;\n    background-color: #b8c6db;\n    background-image: linear-gradient(315deg, #b8c6db 0%, #f5f7fa 74%);\n    @media (max-width: 768px) {\n      width: 100%;\n    }\n"]);
-
-  _templateObject2 = function _templateObject2() {
-    return data;
-  };
-
-  return data;
-}
-
-function _templateObject() {
-  var data = _taggedTemplateLiteral(["\n    width: 100%;\n    height: 100%;\n    display: flex;\n    justify-content: space-between;\n    padding: 30px;\n    box-sizing: border-box;\n    @media (max-width: 768px) {\n      flex-direction: column;\n    }\n"]);
-
-  _templateObject = function _templateObject() {
-    return data;
-  };
-
-  return data;
-}
-
-function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(0); } return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
-
-var Wrapper = _styledComponents.default.div(_templateObject());
-
-exports.Wrapper = Wrapper;
-
-var GameArea = _styledComponents.default.div(_templateObject2());
-
-exports.GameArea = GameArea;
-
-var SelectGames = _styledComponents.default.div(_templateObject3());
-
-exports.SelectGames = SelectGames;
-
-var WrapperModule = _styledComponents.default.div(_templateObject4());
-
-exports.WrapperModule = WrapperModule;
-
-var Module = _styledComponents.default.div(_templateObject5());
-
-exports.Module = Module;
-
-var ModuleTitle = _styledComponents.default.div(_templateObject6());
-
-exports.ModuleTitle = ModuleTitle;
-
-var ModuleButtonRun = _styledComponents.default.div(_templateObject7());
-
-exports.ModuleButtonRun = ModuleButtonRun;
-
-var ModuleCards = _styledComponents.default.div(_templateObject8());
-
-exports.ModuleCards = ModuleCards;
-
-var ModuleCard = _styledComponents.default.div(_templateObject9());
-
-exports.ModuleCard = ModuleCard;
-var ModuleCard1 = (0, _styledComponents.default)(ModuleCard)(_templateObject10(), _card_.default);
-exports.ModuleCard1 = ModuleCard1;
-var ModuleCard2 = (0, _styledComponents.default)(ModuleCard)(_templateObject11(), _card_2.default);
-exports.ModuleCard2 = ModuleCard2;
-var ModuleCard3 = (0, _styledComponents.default)(ModuleCard)(_templateObject12(), _card_3.default);
-exports.ModuleCard3 = ModuleCard3;
-var ModuleCard4 = (0, _styledComponents.default)(ModuleCard)(_templateObject13(), _card_4.default);
-exports.ModuleCard4 = ModuleCard4;
-var ModuleCard5 = (0, _styledComponents.default)(ModuleCard)(_templateObject14(), _card_5.default);
-exports.ModuleCard5 = ModuleCard5;
-var ModuleCard6 = (0, _styledComponents.default)(ModuleCard)(_templateObject15(), _card_6.default);
-exports.ModuleCard6 = ModuleCard6;
-var ModuleCard7 = (0, _styledComponents.default)(ModuleCard)(_templateObject16(), _card_7.default);
-exports.ModuleCard7 = ModuleCard7;
-
-var ModuleCardTitle = _styledComponents.default.span(_templateObject17());
-
-exports.ModuleCardTitle = ModuleCardTitle;
-
-var Section = _styledComponents.default.span(_templateObject18());
-
-exports.Section = Section;
-
-var PageTitle = _styledComponents.default.span(_templateObject19());
-
-exports.PageTitle = PageTitle;
-},{"styled-components":"../node_modules/styled-components/dist/styled-components.browser.esm.js","../../img/card_bg/card_1.png":"img/card_bg/card_1.png","../../img/card_bg/card_2.png":"img/card_bg/card_2.png","../../img/card_bg/card_3.png":"img/card_bg/card_3.png","../../img/card_bg/card_4.png":"img/card_bg/card_4.png","../../img/card_bg/card_5.png":"img/card_bg/card_5.png","../../img/card_bg/card_6.png":"img/card_bg/card_6.png","../../img/card_bg/card_7.png":"img/card_bg/card_7.png"}],"containers/Games/index.js":[function(require,module,exports) {
+exports.default = Game7;
+},{"react":"../node_modules/react/index.js","react-redux":"../node_modules/react-redux/es/index.js","../../../audio/correct.mp3":"audio/correct.mp3","./data":"containers/Games/GameSeven/data.js","./contentStyled.js":"containers/Games/GameSeven/contentStyled.js"}],"containers/Games/index.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -41321,6 +42815,7 @@ function (_Component) {
 
     _defineProperty(_assertThisInitialized(_this), "toggleOne", function () {
       _this.setState({
+        SelectGame: false,
         GameOne: true,
         GameTwo: false,
         GameThree: false,
@@ -41333,6 +42828,7 @@ function (_Component) {
 
     _defineProperty(_assertThisInitialized(_this), "toggleTwo", function () {
       _this.setState({
+        SelectGame: false,
         GameOne: false,
         GameTwo: true,
         GameThree: false,
@@ -41345,6 +42841,7 @@ function (_Component) {
 
     _defineProperty(_assertThisInitialized(_this), "toggleThree", function () {
       _this.setState({
+        SelectGame: false,
         GameOne: false,
         GameTwo: false,
         GameThree: true,
@@ -41357,6 +42854,7 @@ function (_Component) {
 
     _defineProperty(_assertThisInitialized(_this), "toggleFour", function () {
       _this.setState({
+        SelectGame: false,
         GameOne: false,
         GameTwo: false,
         GameThree: false,
@@ -41369,6 +42867,7 @@ function (_Component) {
 
     _defineProperty(_assertThisInitialized(_this), "toggleFive", function () {
       _this.setState({
+        SelectGame: false,
         GameOne: false,
         GameTwo: false,
         GameThree: false,
@@ -41381,6 +42880,7 @@ function (_Component) {
 
     _defineProperty(_assertThisInitialized(_this), "toggleSix", function () {
       _this.setState({
+        SelectGame: false,
         GameOne: false,
         GameTwo: false,
         GameThree: false,
@@ -41393,6 +42893,7 @@ function (_Component) {
 
     _defineProperty(_assertThisInitialized(_this), "toggleSeven", function () {
       _this.setState({
+        SelectGame: false,
         GameOne: false,
         GameTwo: false,
         GameThree: false,
@@ -41404,6 +42905,7 @@ function (_Component) {
     });
 
     _this.state = {
+      SelectGame: true,
       GameOne: false,
       GameTwo: false,
       GameThree: false,
@@ -41418,7 +42920,7 @@ function (_Component) {
   _createClass(Games, [{
     key: "render",
     value: function render() {
-      return _react.default.createElement(_styled.Wrapper, null, _react.default.createElement(_styled.GameArea, null, this.state.GameOne && _react.default.createElement(_GameOne.default, null), this.state.GameTwo && _react.default.createElement(_GameTwo.default, null), this.state.GameThree && _react.default.createElement(_GameThree.default, null), this.state.GameFour && _react.default.createElement(_GameFour.default, null), this.state.GameFive && _react.default.createElement(_GameFive.default, null), this.state.GameSix && _react.default.createElement(_GameSix.default, null), this.state.GameSeven && _react.default.createElement(_GameSeven.default, null)), _react.default.createElement(_styled.SelectGames, null, _react.default.createElement(_styled.PageTitle, null, "\u0418\u0433\u0440\u044B"), _react.default.createElement(_styled.Section, null, _react.default.createElement(_styled.ModuleTitle, null, "\u041E\u0446\u0435\u043D\u043A\u0430 \u043F\u0430\u043C\u044F\u0442\u0438"), _react.default.createElement(_styled.ModuleCard, {
+      return _react.default.createElement(_styled.Wrapper, null, _react.default.createElement(_styled.GameArea, null, this.state.SelectGame && _react.default.createElement(_SelectGame.default, null), this.state.GameOne && _react.default.createElement(_GameOne.default, null), this.state.GameTwo && _react.default.createElement(_GameTwo.default, null), this.state.GameThree && _react.default.createElement(_GameThree.default, null), this.state.GameFour && _react.default.createElement(_GameFour.default, null), this.state.GameFive && _react.default.createElement(_GameFive.default, null), this.state.GameSix && _react.default.createElement(_GameSix.default, null), this.state.GameSeven && _react.default.createElement(_GameSeven.default, null)), _react.default.createElement(_styled.SelectGames, null, _react.default.createElement(_styled.PageTitle, null, "\u0418\u0433\u0440\u044B"), _react.default.createElement(_styled.Section, null, _react.default.createElement(_styled.ModuleTitle, null, "\u041E\u0446\u0435\u043D\u043A\u0430 \u043F\u0430\u043C\u044F\u0442\u0438"), _react.default.createElement(_styled.ModuleCard, {
         onClick: this.toggleOne
       }, _react.default.createElement(_styled.ModuleCard1, null, _react.default.createElement(_styled.ModuleCardTitle, null, "\u0422\u0440\u0438 \u0441\u043B\u043E\u0432\u0430"))), _react.default.createElement(_styled.ModuleCard, {
         onClick: this.toggleTwo
@@ -41454,20 +42956,6 @@ var _react = _interopRequireWildcard(require("react"));
 var _propTypes = _interopRequireDefault(require("prop-types"));
 
 var _styled = require("./styled");
-
-var _GameOne = _interopRequireDefault(require("../Games/GameOne"));
-
-var _GameTwo = _interopRequireDefault(require("../Games/GameTwo"));
-
-var _GameThree = _interopRequireDefault(require("../Games/GameThree"));
-
-var _GameFour = _interopRequireDefault(require("../Games/GameFour"));
-
-var _GameFive = _interopRequireDefault(require("../Games/GameFive"));
-
-var _GameSix = _interopRequireDefault(require("../Games/GameSix"));
-
-var _GameSeven = _interopRequireDefault(require("../Games/GameSeven"));
 
 var _Games = _interopRequireDefault(require("../Games"));
 
@@ -41517,7 +43005,7 @@ function (_Component) {
 Home.propTypes = {};
 var _default = Home;
 exports.default = _default;
-},{"react":"../node_modules/react/index.js","prop-types":"../node_modules/prop-types/index.js","./styled":"containers/Home/styled.js","../Games/GameOne":"containers/Games/GameOne/index.js","../Games/GameTwo":"containers/Games/GameTwo/index.js","../Games/GameThree":"containers/Games/GameThree/index.js","../Games/GameFour":"containers/Games/GameFour/index.js","../Games/GameFive":"containers/Games/GameFive/index.js","../Games/GameSix":"containers/Games/GameSix/index.js","../Games/GameSeven":"containers/Games/GameSeven/index.js","../Games":"containers/Games/index.js"}],"containers/Home/index.js":[function(require,module,exports) {
+},{"react":"../node_modules/react/index.js","prop-types":"../node_modules/prop-types/index.js","./styled":"containers/Home/styled.js","../Games":"containers/Games/index.js"}],"containers/Home/index.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -41588,7 +43076,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "39455" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "32839" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

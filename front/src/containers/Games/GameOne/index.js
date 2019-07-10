@@ -47,7 +47,7 @@ export default class Game1 extends Component {
       randomCards: true,
       points: 0,
       try: 3,
-      cardStatus: [true, true, true, true, true, true, true, true, true,],
+      cardStatus: [ true, true, true, true, true, true, true, true, true, ],
       timerOn: false,
       timeLeft: 10,
     }
@@ -55,11 +55,11 @@ export default class Game1 extends Component {
 
   componentDidMount() {
     const Timer = () => {
-      (this.state.timerOn) ? (
+      this.state.timerOn ? 
         this.setState({
           timeLeft: this.state.timeLeft - 1
         })
-      ) : null
+        : null
     }
 
     setInterval(Timer, 1000)
@@ -80,9 +80,9 @@ export default class Game1 extends Component {
     if (this.state.randomCards === true) {
       const randomCards = () => {
         const sortRandom = (a, b) => {
-          return Math.random() - 0.5;
+          return Math.random() - 0.5
         }
-        var nineCards = [...secretCards]
+        var nineCards = [ ...secretCards ]
         var allCards = []
   
         // allCards = allCards.concat(data.card1).concat(data.card2).concat(data.card3)
@@ -128,13 +128,13 @@ export default class Game1 extends Component {
   }
 
   checkCard(item, key) {
-    const cardStatus = [...this.state.cardStatus]
+    const cardStatus = [ ...this.state.cardStatus ]
 
     cardStatus[key] = false
 
-    if ((item === this.state.secretCards[0]) || (item === this.state.secretCards[1]) || (item === this.state.secretCards[2])) {
+    if (item === this.state.secretCards[0] || item === this.state.secretCards[1] || item === this.state.secretCards[2]) {
       console.log('Правильно!')
-      var audio = new Audio(sound)
+      let audio = new Audio(sound)
       
       audio.play()
       
@@ -157,8 +157,8 @@ export default class Game1 extends Component {
       return (
         <ModuleCardSelect
           key = { key }
-          style = { (this.state.cardStatus[key]) ? null : { opacity: '0.5' } }
-          onClick = { () => {  (this.state.cardStatus[key]) ? (this.checkCard(item, key)) : null } }
+          style = { this.state.cardStatus[key] ? null : { opacity: '0.5' } }
+          onClick = { () => { this.state.cardStatus[key] ? this.checkCard(item, key) : null } }
         >
           <ModuleCardFront></ModuleCardFront>
           <ModuleCardBack>{ item }</ModuleCardBack>
@@ -169,7 +169,7 @@ export default class Game1 extends Component {
   
   isOver() {
     if (this.state.try === 0) {
-      (this.state.timerOn) ? ( this.setState({ timerOn: false }) ) : null
+      this.state.timerOn ? this.setState({ timerOn: false }) : null
 
       return (
         <ModalOverGame>
@@ -177,11 +177,11 @@ export default class Game1 extends Component {
             <ModalOverGameTitle>Попытки закончились</ModalOverGameTitle>
             <ModalOverGameLabel>Время: { this.state.timeLeft }</ModalOverGameLabel>
             <ModalOverGameLabel>Счёт: { this.state.points }</ModalOverGameLabel>
-            { this.props.data.auth === false ? (
-              <ModalOverButton to = '/games'>На главную</ModalOverButton>
-            ) : (
-              <ModalOverButton to = '/stats' onClick = { () => { this.SaveResult() } }>Сохранить</ModalOverButton>
-            ) }
+            { this.props.data.auth === false ? 
+              <ModalOverButton to = "/games">На главную</ModalOverButton>
+              : 
+              <ModalOverButton to = "/stats" onClick = { () => { this.SaveResult() } }>Сохранить</ModalOverButton>
+            }
           </ModalOverGameBlock>
         </ModalOverGame>
       )
@@ -250,7 +250,7 @@ export default class Game1 extends Component {
             <RulesItem>На запоминание слова даётся 3 секунды.</RulesItem>
             <RulesItem>Потом нужно выбрать правильные слова среди появившихся девяти карточек.</RulesItem>
             <CenterWrapper>
-              <ModuleButtonRun to = '#' onClick = { () => this.startGame() } >Старт</ModuleButtonRun>
+              <ModuleButtonRun to = "#" onClick = { () => this.startGame() } >Старт</ModuleButtonRun>
             </CenterWrapper>
           </Module>
         )
