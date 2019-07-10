@@ -3,8 +3,8 @@ import { connect } from 'react-redux'
 
 import sound from '../../../audio/correct.mp3'
 import { data } from './data'
+import exit from '../../../img/icons/exit.svg'
 
-// import { SaveResultApi, GetGameData } from '../../../../api'
 import {
   PageWrapper,
   PageTitle,
@@ -34,7 +34,8 @@ import {
   KitPart,
   KitListElement,
   MobuleSubTitle,
-  RulesItem
+  RulesItem,
+  Exit
 } from './contentStyled.js'
 
 
@@ -182,11 +183,7 @@ export default class Game7 extends Component {
         <ModalOverGameBlock>
           <ModalOverGameTitle>Попытки закончились</ModalOverGameTitle>
           <ModalOverGameLabel>Счёт: { points }</ModalOverGameLabel>
-          { this.props.data.auth === false ? 
-            <ModalOverButton to = "/games">На главную</ModalOverButton>
-            : 
-            <ModalOverButton to = "/stats" onClick = { () => { this.SaveResult(points) } }>Сохранить</ModalOverButton>
-          }
+          <ModalOverButton onClick={() => {this.props.toMainmenu()}}>На главную</ModalOverButton>
         </ModalOverGameBlock>
       </ModalOverGame>
     )
@@ -292,6 +289,7 @@ export default class Game7 extends Component {
   render() {
     return (
       <PageWrapper>
+        <Exit><img src={exit} onClick={() => {this.props.toMainmenu()}}/></Exit>
         <PageTitle>Игры</PageTitle>
         <Module>
           <ModuleTitle>Выделение существенных признаков</ModuleTitle>

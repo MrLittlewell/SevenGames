@@ -264,3 +264,9 @@ export const DrumBox = styled.div`
   box-shadow: 0 0.1em 0.15em rgba(0,0,0,0.19), 0 0.2em 0.2em rgba(0,0,0,0.23);
   animation: ${showDrumKeyframes} 0.4s ease-out forwards;
 `
+export const Exit = styled.span`
+  position: absolute;
+  z-index: 10;
+  width: 30px;
+  right: 20px;
+`

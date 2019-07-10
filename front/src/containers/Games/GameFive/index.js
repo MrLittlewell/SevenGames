@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+
 // const arrayMove = require('array-move')
 
 import {
@@ -7,6 +8,7 @@ import {
 } from 'react-sortable-hoc'
 import arrayMove from 'array-move'
 import { data } from './data'
+import exit from '../../../img/icons/exit.svg'
 import {
   PageWrapper,
   PageTitle,
@@ -35,7 +37,8 @@ import {
   ModuleCardsSkip,
   ShowPoints,
   MobuleSubTitle,
-  RulesItem
+  RulesItem,
+  Exit,
 } from './contentStyled.js'
 
 
@@ -191,7 +194,7 @@ export default class Game5 extends Component {
             <ModalOverGameTitle>Попытки закончились</ModalOverGameTitle>
             <ModalOverGameLabel>Время: { this.state.timeLeft }</ModalOverGameLabel>
             <ModalOverGameLabel>Счёт: { this.state.points }</ModalOverGameLabel>
-            <ModalOverButton to = "/stats" onClick = { () => { this.SaveResult() } }>Сохранить</ModalOverButton>
+            <ModalOverButton to = "/">На главную</ModalOverButton>
           </ModalOverGameBlock>
         </ModalOverGame>
       )
@@ -217,7 +220,7 @@ export default class Game5 extends Component {
       const overButtons = () => {
         if (!this.state.isOver) {
           return <ModuleButtonRun to = "#" onClick = { () => this.checkCard() } >Готово!</ModuleButtonRun>
-        } else if (this.props.data.auth === false) {
+        } else if (this.state.isOver === true) {
           return <ModalOverButton to = "/games">На главную</ModalOverButton>
         } else {
           return <ModalOverButton to = "/stats" onClick = { () => { this.SaveResult() } }>Сохранить</ModalOverButton>
@@ -330,6 +333,7 @@ export default class Game5 extends Component {
   render() {
     return (
       <PageWrapper>
+        <Exit><img src={exit} onClick={() => {this.props.toMainmenu()}}/></Exit>
         <PageTitle>Игры</PageTitle>
         <Module>
           <ModuleTitle>Запомнить и воспроизвести</ModuleTitle>

@@ -2,8 +2,8 @@ import React, { Component } from 'react'
 
 import { imgs_bg } from './imgs_bg'
 import sound from '../../../audio/correct.mp3'
+import exit from '../../../img/icons/exit.svg'
 
-// import { SaveResultApi, GetGameData } from '../../../../api'
 import {
   PageWrapper,
   PageTitle,
@@ -28,7 +28,8 @@ import {
   ModalOverGameLabel,
   ModalOverButton,
   MobuleSubTitle,
-  RulesItem
+  RulesItem,
+  Exit,
 } from './contentStyled.js'
 
 // const cardValues = {
@@ -199,11 +200,7 @@ export default class Game2 extends Component {
             <ModalOverGameTitle>Попытки закончились</ModalOverGameTitle>
             <ModalOverGameLabel>Время: { this.state.timeLeft }</ModalOverGameLabel>
             <ModalOverGameLabel>Счёт: { this.state.points }</ModalOverGameLabel>
-            { this.props.data.auth === false ? 
-              <ModalOverButton to = "/games">На главную</ModalOverButton>
-              : 
-              <ModalOverButton to = "/stats" onClick = { () => { this.SaveResult() } }>Сохранить</ModalOverButton>
-            }
+            <ModalOverButton onClick={() => {this.props.toMainmenu()}}>На главную</ModalOverButton>
           </ModalOverGameBlock>
         </ModalOverGame>
       )
@@ -284,6 +281,7 @@ export default class Game2 extends Component {
     console.log(this.state.randomCards)
     return (
       <PageWrapper>
+        <Exit><img src={exit} onClick={() => {this.props.toMainmenu()}}/></Exit>
         <PageTitle>Игры</PageTitle>
         <Module>
           <ModuleTitle>Три образа</ModuleTitle>

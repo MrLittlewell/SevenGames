@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 
 import sound from '../../../audio/correct.mp3'
+import exit from '../../../img/icons/exit.svg'
 import { data } from './data'
 
 import {
@@ -28,7 +29,8 @@ import {
   ModalOverButton,
   ModuleCardsWords,
   MobuleSubTitle,
-  RulesItem
+  RulesItem,
+  Exit
 } from './contentStyled.js'
 
 
@@ -117,11 +119,7 @@ export default class Game6 extends Component {
         <ModalOverGameBlock>
           <ModalOverGameTitle>Попытки закончились</ModalOverGameTitle>
           <ModalOverGameLabel>Счёт: { points }</ModalOverGameLabel>
-          { this.props.data.auth === false ? 
-            <ModalOverButton to = "/games">На главную</ModalOverButton>
-            : 
-            <ModalOverButton to = "/stats" onClick = { () => { this.SaveResult(points) } }>Сохранить</ModalOverButton>
-          }
+          <ModalOverButton onClick={() => {this.props.toMainmenu()}}>На главную</ModalOverButton>
         </ModalOverGameBlock>
       </ModalOverGame>
     )
@@ -209,6 +207,7 @@ export default class Game6 extends Component {
     // console.log(this.state.secretCards, 'рендер')
     return (
       <PageWrapper>
+        <Exit><img src={exit} onClick={() => {this.props.toMainmenu()}}/></Exit>
         <PageTitle>Игры</PageTitle>
         <Module>
           <ModuleTitle>Исключи лишнее</ModuleTitle>

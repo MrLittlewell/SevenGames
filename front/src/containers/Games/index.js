@@ -134,69 +134,82 @@ class Games extends Component {
     })
   }
 
-  render() {
-    return (
-      <Wrapper>
-        <GameArea>
-          {this.state.SelectGame && <SelectGame/>}
-          {this.state.GameOne && <Game1/>}
-          {this.state.GameTwo && <Game2/>}
-          {this.state.GameThree && <Game3/>}
-          {this.state.GameFour && <Game4/>}
-          {this.state.GameFive && <Game5/>}
-          {this.state.GameSix && <Game6/>}
-          {this.state.GameSeven && <Game7/>}
-        </GameArea>
-        <SelectGames>
-          <PageTitle>Игры</PageTitle>
-          <Section>
-            <ModuleTitle>Оценка памяти</ModuleTitle>
-            <ModuleCard onClick={this.toggleOne}>
-              <ModuleCard1>
-                <ModuleCardTitle>Три слова</ModuleCardTitle>
-              </ModuleCard1>
-            </ModuleCard>
-            <ModuleCard onClick={this.toggleTwo}>
-              <ModuleCard2>
-                <ModuleCardTitle>Три образа</ModuleCardTitle>
-              </ModuleCard2>
-            </ModuleCard>
-            <ModuleCard onClick={this.toggleThree}>
-              <ModuleCard3>
-                <ModuleCardTitle>Шесть цифр</ModuleCardTitle>
-              </ModuleCard3>
-            </ModuleCard>
-          </Section>
-          <Section>
-            <ModuleTitle>Оценка внимания</ModuleTitle>
-            <ModuleCard onClick={this.toggleFour}>
-              <ModuleCard4>
-                <ModuleCardTitle>Барабанные палочки</ModuleCardTitle>
-              </ModuleCard4>
-            </ModuleCard>
-            <ModuleCard onClick={this.toggleFive}>
-              <ModuleCard5>
-                <ModuleCardTitle>Запомнить и воспроизвести</ModuleCardTitle>
-              </ModuleCard5>
-            </ModuleCard>
-          </Section>
-          <Section>
-            <ModuleTitle>Оценка мышления</ModuleTitle>
-            <ModuleCard onClick={this.toggleSix}>
-              <ModuleCard6>
-                <ModuleCardTitle>Исключи лишнее</ModuleCardTitle>
-              </ModuleCard6>
-            </ModuleCard>
-            <ModuleCard onClick={this.toggleSeven}>
-              <ModuleCard7>
-                <ModuleCardTitle>Выделение существенных признаков</ModuleCardTitle>
-              </ModuleCard7>
-            </ModuleCard>
-          </Section>
-        </SelectGames>
-      </Wrapper>
-    )
-  }
+   toMainmenu = () => {
+     this.setState({
+       SelectGame: true,
+       GameOne: false,
+       GameTwo: false,
+       GameThree: false,
+       GameFour: false,
+       GameFive: false,
+       GameSix: false,
+       GameSeven: false,
+     })
+   }
+
+   render() {
+     return (
+       <Wrapper>
+         <GameArea>
+           {this.state.SelectGame && <SelectGame />}
+           {this.state.GameOne && <Game1 toMainmenu={this.toMainmenu}/>}
+           {this.state.GameTwo && <Game2 toMainmenu={this.toMainmenu}/>}
+           {this.state.GameThree && <Game3 toMainmenu={this.toMainmenu}/>}
+           {this.state.GameFour && <Game4 toMainmenu={this.toMainmenu}/>}
+           {this.state.GameFive && <Game5 toMainmenu={this.toMainmenu}/>}
+           {this.state.GameSix && <Game6 toMainmenu={this.toMainmenu}/>}
+           {this.state.GameSeven && <Game7 toMainmenu={this.toMainmenu}/>}
+         </GameArea>
+         <SelectGames>
+           <PageTitle>Игры</PageTitle>
+           <Section>
+             <ModuleTitle>Оценка памяти</ModuleTitle>
+             <ModuleCard onClick={this.toggleOne}>
+               <ModuleCard1>
+                 <ModuleCardTitle>Три слова</ModuleCardTitle>
+               </ModuleCard1>
+             </ModuleCard>
+             <ModuleCard onClick={this.toggleTwo}>
+               <ModuleCard2>
+                 <ModuleCardTitle>Три образа</ModuleCardTitle>
+               </ModuleCard2>
+             </ModuleCard>
+             <ModuleCard onClick={this.toggleThree}>
+               <ModuleCard3>
+                 <ModuleCardTitle>Шесть цифр</ModuleCardTitle>
+               </ModuleCard3>
+             </ModuleCard>
+           </Section>
+           <Section>
+             <ModuleTitle>Оценка внимания</ModuleTitle>
+             <ModuleCard onClick={this.toggleFour}>
+               <ModuleCard4>
+                 <ModuleCardTitle>Барабанные палочки</ModuleCardTitle>
+               </ModuleCard4>
+             </ModuleCard>
+             <ModuleCard onClick={this.toggleFive}>
+               <ModuleCard5>
+                 <ModuleCardTitle>Запомнить и воспроизвести</ModuleCardTitle>
+               </ModuleCard5>
+             </ModuleCard>
+           </Section>
+           <Section>
+             <ModuleTitle>Оценка мышления</ModuleTitle>
+             <ModuleCard onClick={this.toggleSix}>
+               <ModuleCard6>
+                 <ModuleCardTitle>Исключи лишнее</ModuleCardTitle>
+               </ModuleCard6>
+             </ModuleCard>
+             <ModuleCard onClick={this.toggleSeven}>
+               <ModuleCard7>
+                 <ModuleCardTitle>Выделение существенных признаков</ModuleCardTitle>
+               </ModuleCard7>
+             </ModuleCard>
+           </Section>
+         </SelectGames>
+       </Wrapper>
+     )
+   }
 }
 
 export default Games

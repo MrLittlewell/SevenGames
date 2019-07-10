@@ -271,3 +271,9 @@ export const RulesItem = styled.div`
   margin-left: 1em;
   color: #3e3e3e;
 `
+export const Exit = styled.span`
+  position: absolute;
+  z-index: 10;
+  width: 30px;
+  right: 20px;
+`

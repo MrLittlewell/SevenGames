@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 
 import sound from '../../../audio/drum.mp3'
+import exit from '../../../img/icons/exit.svg'
 
 import {
   PageWrapper,
@@ -26,6 +27,7 @@ import {
   MobuleSubTitle,
   RulesItem,
   DrumBox,
+  Exit,
 } from './contentStyled.js'
 
 
@@ -116,11 +118,7 @@ export default class Game4 extends Component {
           <ModalOverGameBlock>
             <ModalOverGameTitle>Попытки закончились</ModalOverGameTitle>
             <ModalOverGameLabel>Счёт: { this.state.points }</ModalOverGameLabel>
-            { this.props.data.auth === false ? 
-              <ModalOverButton to = "/games">На главную</ModalOverButton>
-              : 
-              <ModalOverButton to = "/stats" onClick = { () => { this.SaveResult() } }>Сохранить</ModalOverButton>
-            }
+            <ModalOverButton to = "/games">На главную</ModalOverButton>
           </ModalOverGameBlock>
         </ModalOverGame>
       )
@@ -212,6 +210,7 @@ export default class Game4 extends Component {
     console.log(this.state.inputValues, 'рендер', this.state.drumPart)
     return (
       <PageWrapper>
+        <Exit><img src={exit} onClick={() => {this.props.toMainmenu()}}/></Exit>
         <PageTitle>Игры</PageTitle>
         <Module>
           <ModuleTitle>Барабанные палочки</ModuleTitle>

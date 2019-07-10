@@ -62,7 +62,13 @@ const showModalKeyframes = keyframes`
     background-color: rgba(0, 0, 0, 0.15);
   }
 `
-
+export const Exit = styled.span`
+  position: absolute;
+  z-index: 10;
+  width: 30px;
+  right: 20px;
+  cursor: pointer;
+`
 export const PageWrapper = styled.div`
   display: flex;
   flex-direction: column;
