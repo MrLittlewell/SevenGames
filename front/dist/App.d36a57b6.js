@@ -38288,6 +38288,8 @@ function (_Component) {
   }, {
     key: "isOver",
     value: function isOver() {
+      var _this3 = this;
+
       if (this.state.drumPart === 6) {
         var inputValuesCopy = this.state.inputValues;
         var secretCards = this.state.secretCards;
@@ -38316,7 +38318,7 @@ function (_Component) {
         }
 
         if (this.state.points === undefined) {
-          console.log(this.state.points, truePoints, '222222222222');
+          console.log(this.state.points, truePoints, '');
 
           if (truePoints === 6 || truePoints === 5) {
             this.setState({
@@ -38340,7 +38342,9 @@ function (_Component) {
         }
 
         return _react.default.createElement(_contentStyled.ModalOverGame, null, _react.default.createElement(_contentStyled.ModalOverGameBlock, null, _react.default.createElement(_contentStyled.ModalOverGameTitle, null, "\u041F\u043E\u043F\u044B\u0442\u043A\u0438 \u0437\u0430\u043A\u043E\u043D\u0447\u0438\u043B\u0438\u0441\u044C"), _react.default.createElement(_contentStyled.ModalOverGameLabel, null, "\u0421\u0447\u0451\u0442: ", this.state.points), _react.default.createElement(_contentStyled.ModalOverButton, {
-          to: "/games"
+          onClick: function onClick() {
+            _this3.props.toMainmenu();
+          }
         }, "\u041D\u0430 \u0433\u043B\u0430\u0432\u043D\u0443\u044E")));
       }
     }
@@ -38360,7 +38364,7 @@ function (_Component) {
   }, {
     key: "isStarted",
     value: function isStarted() {
-      var _this3 = this;
+      var _this4 = this;
 
       if (this.state.isUserPlay === false) {
         var inputValues = _toConsumableArray(this.state.inputValues);
@@ -38370,8 +38374,8 @@ function (_Component) {
         if (this.state.isStarted && this.state.drumPart < 6) {
           if (this.state.isUserClick) {
             setTimeout(function () {
-              _this3.setState({
-                drumPart: _this3.state.drumPart + 1,
+              _this4.setState({
+                drumPart: _this4.state.drumPart + 1,
                 isUserClick: false,
                 inputValues: inputValues
               });
@@ -38387,7 +38391,7 @@ function (_Component) {
             }
 
             setTimeout(function () {
-              _this3.setState({
+              _this4.setState({
                 isUserClick: true
               });
             }, 4000);
@@ -38397,7 +38401,7 @@ function (_Component) {
             onClick: this.state.isUserClick ? function () {
               // var inputValues = [...this.state.inputValues]
               var audio = new Audio(_drum.default);
-              inputValues[_this3.state.drumPart]++;
+              inputValues[_this4.state.drumPart]++;
               audio.play(); // inputValues[this.state.drumPart]++
               // this.setState({ inputValues: inputValues })
             } : null
@@ -38406,7 +38410,7 @@ function (_Component) {
           return _react.default.createElement(_contentStyled.Module, null, _react.default.createElement(_contentStyled.MobuleSubTitle, null, "\u041F\u0440\u0430\u0432\u0438\u043B\u0430:"), _react.default.createElement(_contentStyled.RulesItem, null, "1. \u0411\u0430\u0440\u0430\u0431\u0430\u043D \u0443\u0434\u0430\u0440\u044F\u0435\u0442 6 \u0440\u0430\u0437"), _react.default.createElement(_contentStyled.RulesItem, null, "2. \u041F\u043E\u0441\u043B\u0435 \u043A\u0430\u0436\u0434\u043E\u0433\u043E \u0443\u0434\u0430\u0440\u0430 \u0443 \u0432\u0430\u0441 \u0431\u0443\u0434\u0435\u0442 5 \u0441\u0435\u043A\u0443\u043D\u0434, \u0447\u0442\u043E\u0431\u044B \u0443\u0434\u0430\u0440\u0438\u0442\u044C \u043D\u0435\u043E\u0431\u0445\u043E\u0434\u0438\u043C\u043E\u0435 \u043A\u043E\u043B\u0438\u0447\u0435\u0441\u0442\u0432\u043E \u0440\u0430\u0437"), _react.default.createElement(_contentStyled.RulesItem, null, "3. \u041F\u043E\u0441\u043B\u0435 1 \u0443\u0434\u0430\u0440\u0430 \u043D\u0443\u0436\u043D\u043E \u0441\u0434\u0435\u043B\u0430\u0442\u044C 3 \u0443\u0434\u0430\u0440\u0430"), _react.default.createElement(_contentStyled.RulesItem, null, "4. \u041F\u043E\u0441\u043B\u0435 2 \u0443\u0434\u0430\u0440\u043E\u0432 \u043D\u0443\u0436\u043D\u043E \u0441\u0434\u0435\u043B\u0430\u0442\u044C 1 \u0443\u0434\u0430\u0440"), _react.default.createElement(_contentStyled.RulesItem, null, "5. \u041F\u043E\u0441\u043B\u0435 3 \u0443\u0434\u0430\u0440\u043E\u0432 \u043D\u0443\u0436\u043D\u043E \u0441\u0434\u0435\u043B\u0430\u0442\u044C 2 \u0443\u0434\u0430\u0440\u0430"), _react.default.createElement(_contentStyled.CenterWrapper, null, _react.default.createElement(_contentStyled.ModuleButtonRun, {
             to: "#",
             onClick: function onClick() {
-              return _this3.startGame();
+              return _this4.startGame();
             }
           }, "\u0421\u0442\u0430\u0440\u0442")));
         }
@@ -38415,13 +38419,13 @@ function (_Component) {
   }, {
     key: "render",
     value: function render() {
-      var _this4 = this;
+      var _this5 = this;
 
       console.log(this.state.inputValues, 'рендер', this.state.drumPart);
       return _react.default.createElement(_contentStyled.PageWrapper, null, _react.default.createElement(_contentStyled.Exit, null, _react.default.createElement("img", {
         src: _exit.default,
         onClick: function onClick() {
-          _this4.props.toMainmenu();
+          _this5.props.toMainmenu();
         }
       })), _react.default.createElement(_contentStyled.PageTitle, null, "\u0418\u0433\u0440\u044B"), _react.default.createElement(_contentStyled.Module, null, _react.default.createElement(_contentStyled.ModuleTitle, null, "\u0411\u0430\u0440\u0430\u0431\u0430\u043D\u043D\u044B\u0435 \u043F\u0430\u043B\u043E\u0447\u043A\u0438"), this.isStarted(), this.isOver()));
     }
@@ -41108,12 +41112,16 @@ function (_Component) {
   }, {
     key: "isOver",
     value: function isOver() {
+      var _this3 = this;
+
       if (this.state.try === 0) {
         this.state.timerOn ? this.setState({
           timerOn: false
         }) : null;
         return _react.default.createElement(_contentStyled.ModalOverGame, null, _react.default.createElement(_contentStyled.ModalOverGameBlock, null, _react.default.createElement(_contentStyled.ModalOverGameTitle, null, "\u041F\u043E\u043F\u044B\u0442\u043A\u0438 \u0437\u0430\u043A\u043E\u043D\u0447\u0438\u043B\u0438\u0441\u044C"), _react.default.createElement(_contentStyled.ModalOverGameLabel, null, "\u0412\u0440\u0435\u043C\u044F: ", this.state.timeLeft), _react.default.createElement(_contentStyled.ModalOverGameLabel, null, "\u0421\u0447\u0451\u0442: ", this.state.points), _react.default.createElement(_contentStyled.ModalOverButton, {
-          to: "/"
+          onClick: function onClick() {
+            _this3.props.toMainmenu();
+          }
         }, "\u041D\u0430 \u0433\u043B\u0430\u0432\u043D\u0443\u044E")));
       }
     }
@@ -41133,24 +41141,24 @@ function (_Component) {
   }, {
     key: "isPlay",
     value: function isPlay() {
-      var _this3 = this;
+      var _this4 = this;
 
       if (this.state.isUserPlay) {
         this.state.timerOn ? setTimeout(function () {
-          _this3.setState({
+          _this4.setState({
             timerOn: false
           });
         }, 10000) : null;
 
         var overButtons = function overButtons() {
-          if (!_this3.state.isOver) {
+          if (!_this4.state.isOver) {
             return _react.default.createElement(_contentStyled.ModuleButtonRun, {
               to: "#",
               onClick: function onClick() {
-                return _this3.checkCard();
+                return _this4.checkCard();
               }
             }, "\u0413\u043E\u0442\u043E\u0432\u043E!");
-          } else if (_this3.state.isOver === true) {
+          } else if (_this4.state.isOver === true) {
             return _react.default.createElement(_contentStyled.ModalOverButton, {
               to: "/games"
             }, "\u041D\u0430 \u0433\u043B\u0430\u0432\u043D\u0443\u044E");
@@ -41158,7 +41166,7 @@ function (_Component) {
             return _react.default.createElement(_contentStyled.ModalOverButton, {
               to: "/stats",
               onClick: function onClick() {
-                _this3.SaveResult();
+                _this4.SaveResult();
               }
             }, "\u0421\u043E\u0445\u0440\u0430\u043D\u0438\u0442\u044C");
           }
@@ -41167,9 +41175,9 @@ function (_Component) {
         var SortableList = (0, _reactSortableHoc.SortableContainer)(function (_ref2) {
           var items = _ref2.items;
           return _react.default.createElement(_contentStyled.ModuleCardsSkip, {
-            isShow: _this3.state.isShow ? 'animation: inherit' : 'animation: ${skip} 11s ease-in-out forwards;'
+            isShow: _this4.state.isShow ? 'animation: inherit' : 'animation: ${skip} 11s ease-in-out forwards;'
           }, items.map(function (value, index) {
-            return _this3.renderCard(value, index);
+            return _this4.renderCard(value, index);
           }), overButtons());
         });
 
@@ -41177,9 +41185,9 @@ function (_Component) {
           var oldIndex = _ref3.oldIndex,
               newIndex = _ref3.newIndex;
 
-          var secretCards = _toConsumableArray(_this3.state.secretCards);
+          var secretCards = _toConsumableArray(_this4.state.secretCards);
 
-          if (_this3.state.isOver) {
+          if (_this4.state.isOver) {
             return;
           }
 
@@ -41191,7 +41199,7 @@ function (_Component) {
             }
           }
 
-          _this3.setState(function () {
+          _this4.setState(function () {
             return {
               secretCards: (0, _arrayMove.default)(secretCards, oldIndex, newIndex),
               isShow: true
@@ -41233,13 +41241,13 @@ function (_Component) {
   }, {
     key: "isStarted",
     value: function isStarted() {
-      var _this4 = this;
+      var _this5 = this;
 
       if (this.state.isUserPlay === false) {
         if (this.state.isStarted) {
           var _data = this.state.secretCards;
           setTimeout(function () {
-            _this4.setState({
+            _this5.setState({
               isUserPlay: true,
               timerOn: true
             });
@@ -41249,7 +41257,7 @@ function (_Component) {
           return _react.default.createElement(_contentStyled.Module, null, _react.default.createElement(_contentStyled.MobuleSubTitle, null, "\u041E\u043F\u0438\u0441\u0430\u043D\u0438\u0435:"), _react.default.createElement(_contentStyled.RulesItem, null, "\u0417\u0430\u043F\u043E\u043C\u043D\u0438\u0442\u044C \u043F\u043E\u0440\u044F\u0434\u043E\u043A \u043A\u0430\u0440\u0442\u0438\u043D\u043E\u043A \u0438 \u0432 \u043A\u0430\u043A\u043E\u043C \u043D\u0430\u043F\u0440\u0430\u0432\u043B\u0435\u043D\u0438\u0438 \u0441\u043C\u043E\u0442\u0440\u0438\u0442 \u0441\u0443\u0449\u0435\u0441\u0442\u0432\u043E."), _react.default.createElement(_contentStyled.RulesItem, null, "\u041D\u0430 \u0437\u0430\u043F\u043E\u043C\u0438\u043D\u0430\u043D\u0438\u0435 \u043A\u0430\u0440\u0442\u0438\u043D\u043E\u043A \u0434\u0430\u0451\u0442\u0441\u044F 10 \u0441\u0435\u043A\u0443\u043D\u0434."), _react.default.createElement(_contentStyled.RulesItem, null, "\u0414\u0430\u043B\u0435\u0435 \u043D\u0443\u0436\u043D\u043E \u0440\u0430\u0441\u0441\u0442\u0430\u0432\u0438\u0442\u044C \u043A\u0430\u0440\u0442\u0438\u043D\u043A\u0438 \u0432 \u043F\u0440\u0430\u0432\u0438\u043B\u044C\u043D\u043E\u043C \u043F\u043E\u0440\u044F\u0434\u043A\u0435(\u043F\u043E\u0434\u0441\u043A\u0430\u0437\u043A\u0430 - \u0432 \u0430\u043B\u0444\u0430\u0432\u0438\u0442\u043D\u043E\u043C \u043F\u043E\u0440\u044F\u0434\u043A\u0435) \u0438 \u0443\u043A\u0430\u0437\u0430\u0442\u044C \u043F\u0440\u0430\u0432\u0438\u043B\u044C\u043D\u043E\u0435 \u043D\u0430\u043F\u0440\u0430\u0432\u043B\u0435\u043D\u0438\u0435 \u0433\u043E\u043B\u043E\u0432\u044B \u0441\u0443\u0449\u0435\u0441\u0442\u0432\u0430."), _react.default.createElement(_contentStyled.RulesItem, null, "\u0427\u0442\u043E\u0431\u044B \u043F\u043E\u0432\u0435\u0440\u043D\u0443\u0442\u044C \u043A\u0430\u0440\u0442\u0438\u043D\u043A\u0443 - \u043A\u043B\u0438\u043A\u043D\u0438\u0442\u0435 \u043F\u043E \u043D\u0435\u0439. \u0427\u0442\u043E\u0431\u044B \u043F\u0435\u0440\u0435\u043C\u0435\u0441\u0442\u0438\u0442\u044C - \u043F\u0435\u0440\u0435\u043D\u0435\u0441\u0438\u0442\u0435 \u043C\u044B\u0448\u043A\u043E\u0439."), _react.default.createElement(_contentStyled.RulesItem, null, "\u041E\u0433\u0440\u0430\u043D\u0438\u0447\u0435\u043D\u0438\u044F \u043F\u043E \u0432\u0440\u0435\u043C\u0435\u043D\u0438 \u043D\u0435\u0442\u0443."), _react.default.createElement(_contentStyled.CenterWrapper, null, _react.default.createElement(_contentStyled.ModuleButtonRun, {
             to: "#",
             onClick: function onClick() {
-              return _this4.startGame();
+              return _this5.startGame();
             }
           }, "\u0421\u0442\u0430\u0440\u0442")));
         }
@@ -41258,12 +41266,12 @@ function (_Component) {
   }, {
     key: "render",
     value: function render() {
-      var _this5 = this;
+      var _this6 = this;
 
       return _react.default.createElement(_contentStyled.PageWrapper, null, _react.default.createElement(_contentStyled.Exit, null, _react.default.createElement("img", {
         src: _exit.default,
         onClick: function onClick() {
-          _this5.props.toMainmenu();
+          _this6.props.toMainmenu();
         }
       })), _react.default.createElement(_contentStyled.PageTitle, null, "\u0418\u0433\u0440\u044B"), _react.default.createElement(_contentStyled.Module, null, _react.default.createElement(_contentStyled.ModuleTitle, null, "\u0417\u0430\u043F\u043E\u043C\u043D\u0438\u0442\u044C \u0438 \u0432\u043E\u0441\u043F\u0440\u043E\u0438\u0437\u0432\u0435\u0441\u0442\u0438"), this.isStarted(), this.isPlay(), this.isOver()));
     }

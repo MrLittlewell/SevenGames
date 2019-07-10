@@ -101,7 +101,7 @@ export default class Game4 extends Component {
       }
 
       if (this.state.points === undefined) {
-        console.log(this.state.points, truePoints, '222222222222')
+        console.log(this.state.points, truePoints, '')
         if (truePoints === 6 || truePoints === 5) {
           this.setState({ points: 3 })
         } else if (truePoints === 4 || truePoints === 3) {
@@ -118,7 +118,7 @@ export default class Game4 extends Component {
           <ModalOverGameBlock>
             <ModalOverGameTitle>Попытки закончились</ModalOverGameTitle>
             <ModalOverGameLabel>Счёт: { this.state.points }</ModalOverGameLabel>
-            <ModalOverButton to = "/games">На главную</ModalOverButton>
+            <ModalOverButton onClick={() => {this.props.toMainmenu()}}>На главную</ModalOverButton>
           </ModalOverGameBlock>
         </ModalOverGame>
       )
