@@ -221,7 +221,7 @@ export default class Game5 extends Component {
         if (!this.state.isOver) {
           return <ModuleButtonRun to = "#" onClick = { () => this.checkCard() } >Готово!</ModuleButtonRun>
         } else if (this.state.isOver === true) {
-          return <ModalOverButton to = "/games">На главную</ModalOverButton>
+          return <ModalOverButton onClick={() => {this.props.toMainmenu()}}>На главную</ModalOverButton>
         } else {
           return <ModalOverButton to = "/stats" onClick = { () => { this.SaveResult() } }>Сохранить</ModalOverButton>
         }

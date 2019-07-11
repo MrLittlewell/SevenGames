@@ -76,7 +76,7 @@ export const PageTitle = styled.span`
   color: #3e3e3e;
 `
 export const Module = styled.div`
-  padding: 1.5em;
+  padding: 1em;
 `
 export const ModuleTitle = styled.div`
   font-size: 1.5em;
@@ -203,6 +203,9 @@ export const ModalOverGameBlock = styled.div`
   height: 20em;
   padding: 1em;
   box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 `
 export const ModalOverGameTitle = styled.span`
   display: block;

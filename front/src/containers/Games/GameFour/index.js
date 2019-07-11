@@ -116,8 +116,10 @@ export default class Game4 extends Component {
       return (
         <ModalOverGame>
           <ModalOverGameBlock>
-            <ModalOverGameTitle>Попытки закончились</ModalOverGameTitle>
-            <ModalOverGameLabel>Счёт: { this.state.points }</ModalOverGameLabel>
+            <div>
+              <ModalOverGameTitle>Попытки закончились</ModalOverGameTitle>
+              <ModalOverGameLabel>Счёт: { this.state.points }</ModalOverGameLabel>
+            </div>
             <ModalOverButton onClick={() => {this.props.toMainmenu()}}>На главную</ModalOverButton>
           </ModalOverGameBlock>
         </ModalOverGame>
@@ -131,8 +133,6 @@ export default class Game4 extends Component {
       gameId: this.state.gameId,
       points: this.state.points,
     }
-
-    console.log(data)
 
     // SaveResultApi(data)
     //   .then((response) => {

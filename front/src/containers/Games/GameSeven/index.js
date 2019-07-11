@@ -181,8 +181,10 @@ export default class Game7 extends Component {
     return (
       <ModalOverGame>
         <ModalOverGameBlock>
-          <ModalOverGameTitle>Попытки закончились</ModalOverGameTitle>
-          <ModalOverGameLabel>Счёт: { points }</ModalOverGameLabel>
+          <div>
+            <ModalOverGameTitle>Попытки закончились</ModalOverGameTitle>
+            <ModalOverGameLabel>Счёт: { points }</ModalOverGameLabel>
+          </div>
           <ModalOverButton onClick={() => {this.props.toMainmenu()}}>На главную</ModalOverButton>
         </ModalOverGameBlock>
       </ModalOverGame>

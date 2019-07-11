@@ -184,7 +184,7 @@ export default class Game3 extends Component {
   }
   
   isOver() {
-    if (this.state.isOver) {
+    if (this.state.isOver === true) {
       this.state.timerOn ? this.setState({ timerOn: false }) : null
 
       return (
@@ -217,7 +217,7 @@ export default class Game3 extends Component {
     if (this.state.isUserPlay) {
       this.state.timerOn ? setTimeout(() => {
         !this.state.isOver ? this.setState({ timerOn: false, isOver: true }) : null
-      }, 40000) : null
+      }, 20000) : null
 
       console.log('Игра началась')
       return (

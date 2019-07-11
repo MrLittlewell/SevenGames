@@ -172,15 +172,18 @@ class Game1 extends Component {
   }
   
   isOver() {
-    if (this.state.try === 0) {
+    if (this.state.try === 0 || this.state.isOver === true) {
       this.state.timerOn ? this.setState({ timerOn: false }) : null
 
       return (
         <ModalOverGame>
           <ModalOverGameBlock>
-            <ModalOverGameTitle>Попытки закончились</ModalOverGameTitle>
-            <ModalOverGameLabel>Время: { this.state.timeLeft }</ModalOverGameLabel>
-            <ModalOverGameLabel>Счёт: { this.state.points }</ModalOverGameLabel>
+            <div>
+              <ModalOverGameTitle>Время или попытки закончились</ModalOverGameTitle>
+              <ModalOverGameLabel>Время: { this.state.timeLeft }</ModalOverGameLabel>
+              <ModalOverGameLabel>Счёт: { this.state.points }</ModalOverGameLabel>
+              <ModalOverGameLabel>Попытки: { this.state.try }</ModalOverGameLabel>
+            </div>
             <ModalOverButton onClick={() => {this.props.toMainmenu()}}>На главную</ModalOverButton>
           </ModalOverGameBlock>
         </ModalOverGame>
@@ -203,7 +206,9 @@ class Game1 extends Component {
 
   isPlay() {
     if (this.state.isUserPlay) {
-      // (this.state.timerOn) ? (setTimeout(() => { this.setState({ timerOn: false }) }, 10000)) : null
+      this.state.timerOn ? setTimeout(() => {
+        !this.state.isOver ? this.setState({ timerOn: false, isOver: true }) : null
+      }, 10000) : null
       console.log('Игра началась')
       return (
         <div>
@@ -259,7 +264,6 @@ class Game1 extends Component {
   }
 
   render() {
-    // console.log(this.props.data.userId, 'рендер')
     return (
       <PageWrapper>
         <Exit><img src={exit} onClick={() => {this.props.toMainmenu()}}/></Exit>

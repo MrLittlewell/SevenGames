@@ -32622,7 +32622,7 @@ function _templateObject3() {
 }
 
 function _templateObject2() {
-  var data = _taggedTemplateLiteral(["\n    width: 85%;\n    height: 100%;\n    border: 0.2em solid gray;\n    border-radius: 10px;\n    margin-right: 30px;\n    background-color: #b8c6db;\n    background-image: linear-gradient(315deg, #b8c6db 0%, #f5f7fa 74%);\n    @media (max-width: 768px) {\n      width: 100%;\n    }\n"]);
+  var data = _taggedTemplateLiteral(["\n    width: 85%;\n    height: 100%;\n    border: 0.2em solid gray;\n    border-radius: 10px;\n    margin-right: 30px;\n    background-color: #b8c6db;\n    overflow: hidden;\n    background-image: linear-gradient(315deg, #b8c6db 0%, #f5f7fa 74%);\n    @media (max-width: 768px) {\n      width: 100%;\n    }\n"]);
 
   _templateObject2 = function _templateObject2() {
     return data;
@@ -35592,7 +35592,7 @@ function _templateObject25() {
 }
 
 function _templateObject24() {
-  var data = _taggedTemplateLiteral(["\n  background-color: white;\n  border-radius: 4px;\n  width: 20em;\n  height: 20em;\n  padding: 1em;\n  box-sizing: border-box;\n"]);
+  var data = _taggedTemplateLiteral(["\n  background-color: white;\n  border-radius: 4px;\n  width: 20em;\n  height: 20em;\n  padding: 1em;\n  box-sizing: border-box;\n  display: flex;\n  flex-direction: column;\n  justify-content: space-between;\n"]);
 
   _templateObject24 = function _templateObject24() {
     return data;
@@ -35742,7 +35742,7 @@ function _templateObject10() {
 }
 
 function _templateObject9() {
-  var data = _taggedTemplateLiteral(["\n  padding: 1.5em;\n"]);
+  var data = _taggedTemplateLiteral(["\n  padding: 1em;\n"]);
 
   _templateObject9 = function _templateObject9() {
     return data;
@@ -36117,11 +36117,11 @@ function (_Component) {
     value: function isOver() {
       var _this4 = this;
 
-      if (this.state.try === 0) {
+      if (this.state.try === 0 || this.state.isOver === true) {
         this.state.timerOn ? this.setState({
           timerOn: false
         }) : null;
-        return _react.default.createElement(_contentStyled.ModalOverGame, null, _react.default.createElement(_contentStyled.ModalOverGameBlock, null, _react.default.createElement(_contentStyled.ModalOverGameTitle, null, "\u041F\u043E\u043F\u044B\u0442\u043A\u0438 \u0437\u0430\u043A\u043E\u043D\u0447\u0438\u043B\u0438\u0441\u044C"), _react.default.createElement(_contentStyled.ModalOverGameLabel, null, "\u0412\u0440\u0435\u043C\u044F: ", this.state.timeLeft), _react.default.createElement(_contentStyled.ModalOverGameLabel, null, "\u0421\u0447\u0451\u0442: ", this.state.points), _react.default.createElement(_contentStyled.ModalOverButton, {
+        return _react.default.createElement(_contentStyled.ModalOverGame, null, _react.default.createElement(_contentStyled.ModalOverGameBlock, null, _react.default.createElement("div", null, _react.default.createElement(_contentStyled.ModalOverGameTitle, null, "\u0412\u0440\u0435\u043C\u044F \u0438\u043B\u0438 \u043F\u043E\u043F\u044B\u0442\u043A\u0438 \u0437\u0430\u043A\u043E\u043D\u0447\u0438\u043B\u0438\u0441\u044C"), _react.default.createElement(_contentStyled.ModalOverGameLabel, null, "\u0412\u0440\u0435\u043C\u044F: ", this.state.timeLeft), _react.default.createElement(_contentStyled.ModalOverGameLabel, null, "\u0421\u0447\u0451\u0442: ", this.state.points), _react.default.createElement(_contentStyled.ModalOverGameLabel, null, "\u041F\u043E\u043F\u044B\u0442\u043A\u0438: ", this.state.try)), _react.default.createElement(_contentStyled.ModalOverButton, {
           onClick: function onClick() {
             _this4.props.toMainmenu();
           }
@@ -36142,8 +36142,15 @@ function (_Component) {
   }, {
     key: "isPlay",
     value: function isPlay() {
+      var _this5 = this;
+
       if (this.state.isUserPlay) {
-        // (this.state.timerOn) ? (setTimeout(() => { this.setState({ timerOn: false }) }, 10000)) : null
+        this.state.timerOn ? setTimeout(function () {
+          !_this5.state.isOver ? _this5.setState({
+            timerOn: false,
+            isOver: true
+          }) : null;
+        }, 10000) : null;
         console.log('Игра началась');
         return _react.default.createElement("div", null, _react.default.createElement(_contentStyled.ModuleCardsSelect, null, this.renderCard()), _react.default.createElement("div", null, "\u041F\u043E\u043F\u044B\u0442\u043E\u043A: ", this.state.try), _react.default.createElement("div", null, "\u0412\u0430\u0448 \u0441\u0447\u0451\u0442: ", this.state.points), _react.default.createElement("div", null, "\u0412\u0440\u0435\u043C\u044F: ", this.state.timeLeft), _react.default.createElement(_contentStyled.TimerLeft, null));
       }
@@ -36151,12 +36158,12 @@ function (_Component) {
   }, {
     key: "isStarted",
     value: function isStarted() {
-      var _this5 = this;
+      var _this6 = this;
 
       if (this.state.isUserPlay === false) {
         if (this.state.isStarted) {
           setTimeout(function () {
-            _this5.setState({
+            _this6.setState({
               isUserPlay: true,
               timerOn: true
             });
@@ -36166,7 +36173,7 @@ function (_Component) {
           return _react.default.createElement(_contentStyled.Module, null, _react.default.createElement(_contentStyled.MobuleSubTitle, null, "\u041E\u043F\u0438\u0441\u0430\u043D\u0438\u0435:"), _react.default.createElement(_contentStyled.RulesItem, null, "\u041D\u0443\u0436\u043D\u043E \u0437\u0430\u043F\u043E\u043C\u043D\u0438\u0442\u044C \u0441\u043B\u043E\u0432\u0430 \u043D\u0430 \u0442\u0440\u0451\u0445 \u043A\u0430\u0440\u0442\u043E\u0447\u043A\u0430\u0445."), _react.default.createElement(_contentStyled.RulesItem, null, "\u041D\u0430 \u0437\u0430\u043F\u043E\u043C\u0438\u043D\u0430\u043D\u0438\u0435 \u0441\u043B\u043E\u0432\u0430 \u0434\u0430\u0451\u0442\u0441\u044F 3 \u0441\u0435\u043A\u0443\u043D\u0434\u044B."), _react.default.createElement(_contentStyled.RulesItem, null, "\u041F\u043E\u0442\u043E\u043C \u043D\u0443\u0436\u043D\u043E \u0432\u044B\u0431\u0440\u0430\u0442\u044C \u043F\u0440\u0430\u0432\u0438\u043B\u044C\u043D\u044B\u0435 \u0441\u043B\u043E\u0432\u0430 \u0441\u0440\u0435\u0434\u0438 \u043F\u043E\u044F\u0432\u0438\u0432\u0448\u0438\u0445\u0441\u044F \u0434\u0435\u0432\u044F\u0442\u0438 \u043A\u0430\u0440\u0442\u043E\u0447\u0435\u043A."), _react.default.createElement(_contentStyled.CenterWrapper, null, _react.default.createElement(_contentStyled.ModuleButtonRun, {
             to: "#",
             onClick: function onClick() {
-              return _this5.startGame();
+              return _this6.startGame();
             }
           }, "\u0421\u0442\u0430\u0440\u0442")));
         }
@@ -36175,13 +36182,12 @@ function (_Component) {
   }, {
     key: "render",
     value: function render() {
-      var _this6 = this;
+      var _this7 = this;
 
-      // console.log(this.props.data.userId, 'рендер')
       return _react.default.createElement(_contentStyled.PageWrapper, null, _react.default.createElement(_contentStyled.Exit, null, _react.default.createElement("img", {
         src: _exit.default,
         onClick: function onClick() {
-          _this6.props.toMainmenu();
+          _this7.props.toMainmenu();
         }
       })), _react.default.createElement(_contentStyled.PageTitle, null, "\u0418\u0433\u0440\u044B"), _react.default.createElement(_contentStyled.Module, null, _react.default.createElement(_contentStyled.ModuleTitle, null, "\u0422\u0440\u0438 \u0441\u043B\u043E\u0432\u0430"), this.isStarted(), this.isPlay(), this.isOver()));
     }
@@ -36344,7 +36350,7 @@ function _templateObject24() {
 }
 
 function _templateObject23() {
-  var data = _taggedTemplateLiteral(["\n  background-color: white;\n  border-radius: 4px;\n  width: 20em;\n  height: 20em;\n  padding: 1em;\n  box-sizing: border-box;\n"]);
+  var data = _taggedTemplateLiteral(["\n  background-color: white;\n  border-radius: 4px;\n  width: 20em;\n  height: 20em;\n  padding: 1em;\n  box-sizing: border-box;\n  display: flex;\n  flex-direction: column;\n  justify-content: space-between;\n"]);
 
   _templateObject23 = function _templateObject23() {
     return data;
@@ -36494,7 +36500,7 @@ function _templateObject9() {
 }
 
 function _templateObject8() {
-  var data = _taggedTemplateLiteral(["\n  padding: 1.5em;\n"]);
+  var data = _taggedTemplateLiteral(["\n  padding: 1em;\n"]);
 
   _templateObject8 = function _templateObject8() {
     return data;
@@ -36873,11 +36879,11 @@ function (_Component) {
     value: function isOver() {
       var _this4 = this;
 
-      if (this.state.try === 0) {
+      if (this.state.try === 0 || this.state.isOver === true) {
         this.state.timerOn ? this.setState({
           timerOn: false
         }) : null;
-        return _react.default.createElement(_contentStyled.ModalOverGame, null, _react.default.createElement(_contentStyled.ModalOverGameBlock, null, _react.default.createElement(_contentStyled.ModalOverGameTitle, null, "\u041F\u043E\u043F\u044B\u0442\u043A\u0438 \u0437\u0430\u043A\u043E\u043D\u0447\u0438\u043B\u0438\u0441\u044C"), _react.default.createElement(_contentStyled.ModalOverGameLabel, null, "\u0412\u0440\u0435\u043C\u044F: ", this.state.timeLeft), _react.default.createElement(_contentStyled.ModalOverGameLabel, null, "\u0421\u0447\u0451\u0442: ", this.state.points), _react.default.createElement(_contentStyled.ModalOverButton, {
+        return _react.default.createElement(_contentStyled.ModalOverGame, null, _react.default.createElement(_contentStyled.ModalOverGameBlock, null, _react.default.createElement("div", null, _react.default.createElement(_contentStyled.ModalOverGameTitle, null, "\u0412\u0440\u0435\u043C\u044F \u0438\u043B\u0438 \u043F\u043E\u043F\u044B\u0442\u043A\u0438 \u0437\u0430\u043A\u043E\u043D\u0447\u0438\u043B\u0438\u0441\u044C"), _react.default.createElement(_contentStyled.ModalOverGameLabel, null, "\u0412\u0440\u0435\u043C\u044F: ", this.state.timeLeft), _react.default.createElement(_contentStyled.ModalOverGameLabel, null, "\u0421\u0447\u0451\u0442: ", this.state.points), _react.default.createElement(_contentStyled.ModalOverGameLabel, null, "\u043F\u043E\u043F\u044B\u0442\u043A\u0438: ", this.state.try)), _react.default.createElement(_contentStyled.ModalOverButton, {
           onClick: function onClick() {
             _this4.props.toMainmenu();
           }
@@ -36898,8 +36904,15 @@ function (_Component) {
   }, {
     key: "isPlay",
     value: function isPlay() {
+      var _this5 = this;
+
       if (this.state.isUserPlay) {
-        // (this.state.timerOn) ? (setTimeout(() => { this.setState({ timerOn: false }) }, 10000)) : null
+        this.state.timerOn ? setTimeout(function () {
+          !_this5.state.isOver ? _this5.setState({
+            timerOn: false,
+            isOver: true
+          }) : null;
+        }, 10000) : null;
         console.log('Игра началась');
         return _react.default.createElement("div", null, _react.default.createElement(_contentStyled.ModuleCardsSelect, null, this.renderCard()), _react.default.createElement("div", null, "\u041F\u043E\u043F\u044B\u0442\u043E\u043A: ", this.state.try), _react.default.createElement("div", null, "\u0412\u0430\u0448 \u0441\u0447\u0451\u0442: ", this.state.points), _react.default.createElement("div", null, "\u0412\u0440\u0435\u043C\u044F: ", this.state.timeLeft), _react.default.createElement(_contentStyled.TimerLeft, null));
       }
@@ -36907,12 +36920,12 @@ function (_Component) {
   }, {
     key: "isStarted",
     value: function isStarted() {
-      var _this5 = this;
+      var _this6 = this;
 
       if (this.state.isUserPlay === false) {
         if (this.state.isStarted) {
           setTimeout(function () {
-            _this5.setState({
+            _this6.setState({
               isUserPlay: true,
               timerOn: true
             });
@@ -36928,7 +36941,7 @@ function (_Component) {
           return _react.default.createElement(_contentStyled.Module, null, _react.default.createElement(_contentStyled.MobuleSubTitle, null, "\u041E\u043F\u0438\u0441\u0430\u043D\u0438\u0435:"), _react.default.createElement(_contentStyled.RulesItem, null, "\u041D\u0443\u0436\u043D\u043E \u0437\u0430\u043F\u043E\u043C\u043D\u0438\u0442\u044C \u043A\u0430\u0440\u0442\u0438\u043D\u043A\u0438 \u043D\u0430 \u0442\u0440\u0451\u0445 \u043A\u0430\u0440\u0442\u043E\u0447\u043A\u0430\u0445."), _react.default.createElement(_contentStyled.RulesItem, null, "\u041D\u0430 \u0437\u0430\u043F\u043E\u043C\u0438\u043D\u0430\u043D\u0438\u0435 \u043A\u0430\u0440\u0442\u0438\u043D\u043A\u0438 \u0434\u0430\u0451\u0442\u0441\u044F 3 \u0441\u0435\u043A\u0443\u043D\u0434\u044B."), _react.default.createElement(_contentStyled.RulesItem, null, "\u041F\u043E\u0442\u043E\u043C \u043D\u0443\u0436\u043D\u043E \u0432\u044B\u0431\u0440\u0430\u0442\u044C \u043F\u0440\u0430\u0432\u0438\u043B\u044C\u043D\u044B\u0435 \u043A\u0430\u0440\u0442\u0438\u043D\u043A\u0438 \u0441\u0440\u0435\u0434\u0438 \u043F\u043E\u044F\u0432\u0438\u0432\u0448\u0438\u0445\u0441\u044F \u0434\u0435\u0432\u044F\u0442\u0438 \u043A\u0430\u0440\u0442\u043E\u0447\u0435\u043A."), _react.default.createElement(_contentStyled.CenterWrapper, null, _react.default.createElement(_contentStyled.ModuleButtonRun, {
             to: "#",
             onClick: function onClick() {
-              return _this5.startGame();
+              return _this6.startGame();
             }
           }, "\u0421\u0442\u0430\u0440\u0442")));
         }
@@ -36937,13 +36950,13 @@ function (_Component) {
   }, {
     key: "render",
     value: function render() {
-      var _this6 = this;
+      var _this7 = this;
 
       console.log(this.state.randomCards);
       return _react.default.createElement(_contentStyled.PageWrapper, null, _react.default.createElement(_contentStyled.Exit, null, _react.default.createElement("img", {
         src: _exit.default,
         onClick: function onClick() {
-          _this6.props.toMainmenu();
+          _this7.props.toMainmenu();
         }
       })), _react.default.createElement(_contentStyled.PageTitle, null, "\u0418\u0433\u0440\u044B"), _react.default.createElement(_contentStyled.Module, null, _react.default.createElement(_contentStyled.ModuleTitle, null, "\u0422\u0440\u0438 \u043E\u0431\u0440\u0430\u0437\u0430"), this.isStarted(), this.isPlay(), this.isOver()));
     }
@@ -37652,7 +37665,7 @@ function (_Component) {
     value: function isOver() {
       var _this4 = this;
 
-      if (this.state.isOver) {
+      if (this.state.isOver === true) {
         this.state.timerOn ? this.setState({
           timerOn: false
         }) : null;
@@ -37687,7 +37700,7 @@ function (_Component) {
             timerOn: false,
             isOver: true
           }) : null;
-        }, 40000) : null;
+        }, 20000) : null;
         console.log('Игра началась');
         return _react.default.createElement("div", null, _react.default.createElement(_contentStyled.ModuleCardsSelect, null, this.renderCard()), _react.default.createElement("div", null, "\u0412\u0430\u0448 \u0441\u0447\u0451\u0442: ", this.state.points), _react.default.createElement("div", null, "\u0412\u0440\u0435\u043C\u044F: ", this.state.timeLeft), _react.default.createElement(_contentStyled.TimerLeft, null), _react.default.createElement(_contentStyled.CompleteGame, {
           onClick: function onClick() {
@@ -37850,7 +37863,7 @@ function _templateObject24() {
 }
 
 function _templateObject23() {
-  var data = _taggedTemplateLiteral(["\n  background-color: white;\n  border-radius: 4px;\n  width: 20em;\n  height: 20em;\n  padding: 1em;\n  box-sizing: border-box;\n"]);
+  var data = _taggedTemplateLiteral(["\n  background-color: white;\n  border-radius: 4px;\n  width: 20em;\n  height: 20em;\n  padding: 1em;\n  box-sizing: border-box;\n  display: flex;\n  flex-direction: column;\n  justify-content: space-between;\n"]);
 
   _templateObject23 = function _templateObject23() {
     return data;
@@ -38341,7 +38354,7 @@ function (_Component) {
           }
         }
 
-        return _react.default.createElement(_contentStyled.ModalOverGame, null, _react.default.createElement(_contentStyled.ModalOverGameBlock, null, _react.default.createElement(_contentStyled.ModalOverGameTitle, null, "\u041F\u043E\u043F\u044B\u0442\u043A\u0438 \u0437\u0430\u043A\u043E\u043D\u0447\u0438\u043B\u0438\u0441\u044C"), _react.default.createElement(_contentStyled.ModalOverGameLabel, null, "\u0421\u0447\u0451\u0442: ", this.state.points), _react.default.createElement(_contentStyled.ModalOverButton, {
+        return _react.default.createElement(_contentStyled.ModalOverGame, null, _react.default.createElement(_contentStyled.ModalOverGameBlock, null, _react.default.createElement("div", null, _react.default.createElement(_contentStyled.ModalOverGameTitle, null, "\u041F\u043E\u043F\u044B\u0442\u043A\u0438 \u0437\u0430\u043A\u043E\u043D\u0447\u0438\u043B\u0438\u0441\u044C"), _react.default.createElement(_contentStyled.ModalOverGameLabel, null, "\u0421\u0447\u0451\u0442: ", this.state.points)), _react.default.createElement(_contentStyled.ModalOverButton, {
           onClick: function onClick() {
             _this3.props.toMainmenu();
           }
@@ -38354,12 +38367,12 @@ function (_Component) {
       var data = {
         userId: this.props.data.userId,
         gameId: this.state.gameId,
-        points: this.state.points
+        points: this.state.points // SaveResultApi(data)
+        //   .then((response) => {
+        //     console.log(response.data)
+        //   })
+
       };
-      console.log(data); // SaveResultApi(data)
-      //   .then((response) => {
-      //     console.log(response.data)
-      //   })
     }
   }, {
     key: "isStarted",
@@ -40482,7 +40495,7 @@ function _templateObject27() {
 }
 
 function _templateObject26() {
-  var data = _taggedTemplateLiteral(["\n  background-color: white;\n  border-radius: 4px;\n  width: 20em;\n  height: 20em;\n  padding: 1em;\n  box-sizing: border-box;\n"]);
+  var data = _taggedTemplateLiteral(["\n  background-color: white;\n  border-radius: 4px;\n  width: 20em;\n  height: 20em;\n  padding: 1em;\n  box-sizing: border-box;\n  display: flex;\n  flex-direction: column;\n  justify-content: space-between;\n"]);
 
   _templateObject26 = function _templateObject26() {
     return data;
@@ -41160,7 +41173,9 @@ function (_Component) {
             }, "\u0413\u043E\u0442\u043E\u0432\u043E!");
           } else if (_this4.state.isOver === true) {
             return _react.default.createElement(_contentStyled.ModalOverButton, {
-              to: "/games"
+              onClick: function onClick() {
+                _this4.props.toMainmenu();
+              }
             }, "\u041D\u0430 \u0433\u043B\u0430\u0432\u043D\u0443\u044E");
           } else {
             return _react.default.createElement(_contentStyled.ModalOverButton, {
@@ -41425,7 +41440,7 @@ function _templateObject25() {
 }
 
 function _templateObject24() {
-  var data = _taggedTemplateLiteral(["\n  background-color: white;\n  border-radius: 4px;\n  width: 20em;\n  height: 20em;\n  padding: 1em;\n  box-sizing: border-box;\n"]);
+  var data = _taggedTemplateLiteral(["\n  background-color: white;\n  border-radius: 4px;\n  width: 20em;\n  height: 20em;\n  padding: 1em;\n  box-sizing: border-box;\n  display: flex;\n  flex-direction: column;\n  justify-content: space-between;\n"]);
 
   _templateObject24 = function _templateObject24() {
     return data;
@@ -41838,7 +41853,10 @@ function (_Component) {
   _createClass(Game6, [{
     key: "componentDidMount",
     value: function componentDidMount() {
-      // const data = [...this.state.data]
+      var _this2 = this;
+
+      var data = _toConsumableArray(this.state.data);
+
       var secretCards = [];
 
       var randomNumber = function randomNumber(length) {
@@ -41850,16 +41868,23 @@ function (_Component) {
       }
 
       for (var i = 0; i < 4; i++) {
-        var index = randomNumber(_data.data.length);
-        secretCards[i] = _data.data[index];
-
-        _data.data.splice(index, 1);
+        var index = randomNumber(data.length);
+        secretCards[i] = data[index];
+        data.splice(index, 1);
       }
 
       console.log(secretCards);
       this.setState({
         secretCards: secretCards
       });
+
+      var Timer = function Timer() {
+        _this2.state.timerOn ? _this2.setState({
+          timeLeft: _this2.state.timeLeft - 1
+        }) : null;
+      };
+
+      setInterval(Timer, 1000);
     }
   }, {
     key: "randomNumber",
@@ -41880,7 +41905,7 @@ function (_Component) {
   }, {
     key: "isOver",
     value: function isOver() {
-      var _this2 = this;
+      var _this3 = this;
 
       var secretCards = this.state.secretCards;
       var selectedCards = this.state.selectedCards;
@@ -41910,9 +41935,9 @@ function (_Component) {
           break;
       }
 
-      return _react.default.createElement(_contentStyled.ModalOverGame, null, _react.default.createElement(_contentStyled.ModalOverGameBlock, null, _react.default.createElement(_contentStyled.ModalOverGameTitle, null, "\u041F\u043E\u043F\u044B\u0442\u043A\u0438 \u0437\u0430\u043A\u043E\u043D\u0447\u0438\u043B\u0438\u0441\u044C"), _react.default.createElement(_contentStyled.ModalOverGameLabel, null, "\u0421\u0447\u0451\u0442: ", points), _react.default.createElement(_contentStyled.ModalOverButton, {
+      return _react.default.createElement(_contentStyled.ModalOverGame, null, _react.default.createElement(_contentStyled.ModalOverGameBlock, null, _react.default.createElement("div", null, _react.default.createElement(_contentStyled.ModalOverGameTitle, null, "\u041F\u043E\u043F\u044B\u0442\u043A\u0438 \u0437\u0430\u043A\u043E\u043D\u0447\u0438\u043B\u0438\u0441\u044C"), _react.default.createElement(_contentStyled.ModalOverGameLabel, null, "\u0421\u0447\u0451\u0442: ", points)), _react.default.createElement(_contentStyled.ModalOverButton, {
         onClick: function onClick() {
-          _this2.props.toMainmenu();
+          _this3.props.toMainmenu();
         }
       }, "\u041D\u0430 \u0433\u043B\u0430\u0432\u043D\u0443\u044E")));
     }
@@ -41951,19 +41976,20 @@ function (_Component) {
   }, {
     key: "renderCardsWords",
     value: function renderCardsWords() {
-      var _this3 = this;
+      var _this4 = this;
 
       var secretCards = this.state.secretCards;
 
       var renderElements = function renderElements(item, index) {
         return item.words.map(function (word, subIndex) {
+          console.log(item.true);
           return _react.default.createElement(_contentStyled.ModuleCardsWords, {
             key: subIndex,
-            style: !_this3.state.activeRow[index][subIndex] ? {
-              backgroundColor: '#dc4c4c'
+            style: !_this4.state.activeRow[index][subIndex] ? {
+              backgroundColor: '#69b02e'
             } : null,
-            onClick: _this3.state.activeLine[index] ? function () {
-              _this3.deleteCard(index, subIndex, word);
+            onClick: _this4.state.activeLine[index] ? function () {
+              _this4.deleteCard(index, subIndex, word);
             } : null
           }, word);
         });
@@ -41978,19 +42004,19 @@ function (_Component) {
   }, {
     key: "isStarted",
     value: function isStarted() {
-      var _this4 = this;
+      var _this5 = this;
 
       if (this.state.isOver === false) {
         if (this.state.isStarted) {
           setTimeout(function () {
-            _this4.setState({
+            _this5.setState({
               isOver: true
             });
           }, 20000);
-          return _react.default.createElement("div", null, this.renderCardsWords(), _react.default.createElement(_contentStyled.Timer, null), _react.default.createElement(_contentStyled.ModuleButtonRun, {
+          return _react.default.createElement("div", null, this.renderCardsWords(), _react.default.createElement("div", null, "\u0412\u0440\u0435\u043C\u044F: ", this.state.timeLeft), _react.default.createElement(_contentStyled.Timer, null), _react.default.createElement(_contentStyled.ModuleButtonRun, {
             to: "#",
             onClick: function onClick() {
-              return _this4.setState({
+              return _this5.setState({
                 isOver: true
               });
             }
@@ -41999,7 +42025,7 @@ function (_Component) {
           return _react.default.createElement(_contentStyled.Module, null, _react.default.createElement(_contentStyled.MobuleSubTitle, null, "\u041E\u043F\u0438\u0441\u0430\u043D\u0438\u0435:"), _react.default.createElement(_contentStyled.RulesItem, null, "\u0412\u044B\u0431\u0435\u0440\u0438\u0442\u0435 \u043B\u0438\u0448\u043D\u0435\u0435 \u0441\u043B\u043E\u0432\u043E \u0432 \u043A\u0430\u0436\u0434\u043E\u043C \u0440\u044F\u0434\u0443."), _react.default.createElement(_contentStyled.RulesItem, null, "\u0423 \u0432\u0430\u0441 \u0431\u0443\u0434\u0435\u0442 20 \u0441\u0435\u043A\u0443\u043D\u0434."), _react.default.createElement(_contentStyled.CenterWrapper, null, _react.default.createElement(_contentStyled.ModuleButtonRun, {
             to: "#",
             onClick: function onClick() {
-              return _this4.startGame();
+              return _this5.startGame();
             }
           }, "\u0421\u0442\u0430\u0440\u0442")));
         }
@@ -42008,13 +42034,13 @@ function (_Component) {
   }, {
     key: "render",
     value: function render() {
-      var _this5 = this;
+      var _this6 = this;
 
       // console.log(this.state.secretCards, 'рендер')
       return _react.default.createElement(_contentStyled.PageWrapper, null, _react.default.createElement(_contentStyled.Exit, null, _react.default.createElement("img", {
         src: _exit.default,
         onClick: function onClick() {
-          _this5.props.toMainmenu();
+          _this6.props.toMainmenu();
         }
       })), _react.default.createElement(_contentStyled.PageTitle, null, "\u0418\u0433\u0440\u044B"), _react.default.createElement(_contentStyled.Module, null, _react.default.createElement(_contentStyled.ModuleTitle, null, "\u0418\u0441\u043A\u043B\u044E\u0447\u0438 \u043B\u0438\u0448\u043D\u0435\u0435"), this.isStarted(), this.state.isOver === true ? this.isOver() : null));
     }
@@ -42186,7 +42212,7 @@ function _templateObject25() {
 }
 
 function _templateObject24() {
-  var data = _taggedTemplateLiteral(["\n  background-color: white;\n  border-radius: 4px;\n  width: 20em;\n  height: 20em;\n  padding: 1em;\n  box-sizing: border-box;\n"]);
+  var data = _taggedTemplateLiteral(["\n  background-color: white;\n  border-radius: 4px;\n  width: 20em;\n  height: 20em;\n  padding: 1em;\n  box-sizing: border-box;\n  display: flex;\n  flex-direction: column;\n  justify-content: space-between;\n"]);
 
   _templateObject24 = function _templateObject24() {
     return data;
@@ -42764,7 +42790,7 @@ function (_Component) {
       }
 
       console.log(userSelectPoints);
-      return _react.default.createElement(_contentStyled.ModalOverGame, null, _react.default.createElement(_contentStyled.ModalOverGameBlock, null, _react.default.createElement(_contentStyled.ModalOverGameTitle, null, "\u041F\u043E\u043F\u044B\u0442\u043A\u0438 \u0437\u0430\u043A\u043E\u043D\u0447\u0438\u043B\u0438\u0441\u044C"), _react.default.createElement(_contentStyled.ModalOverGameLabel, null, "\u0421\u0447\u0451\u0442: ", points), _react.default.createElement(_contentStyled.ModalOverButton, {
+      return _react.default.createElement(_contentStyled.ModalOverGame, null, _react.default.createElement(_contentStyled.ModalOverGameBlock, null, _react.default.createElement("div", null, _react.default.createElement(_contentStyled.ModalOverGameTitle, null, "\u041F\u043E\u043F\u044B\u0442\u043A\u0438 \u0437\u0430\u043A\u043E\u043D\u0447\u0438\u043B\u0438\u0441\u044C"), _react.default.createElement(_contentStyled.ModalOverGameLabel, null, "\u0421\u0447\u0451\u0442: ", points)), _react.default.createElement(_contentStyled.ModalOverButton, {
         onClick: function onClick() {
           _this2.props.toMainmenu();
         }
@@ -43253,7 +43279,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "32785" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "35493" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

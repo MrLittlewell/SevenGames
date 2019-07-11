@@ -191,15 +191,18 @@ export default class Game2 extends Component {
   }
   
   isOver() {
-    if (this.state.try === 0) {
+    if (this.state.try === 0 || this.state.isOver === true) {
       this.state.timerOn ? this.setState({ timerOn: false }) : null
 
       return (
         <ModalOverGame>
           <ModalOverGameBlock>
-            <ModalOverGameTitle>Попытки закончились</ModalOverGameTitle>
-            <ModalOverGameLabel>Время: { this.state.timeLeft }</ModalOverGameLabel>
-            <ModalOverGameLabel>Счёт: { this.state.points }</ModalOverGameLabel>
+            <div>
+              <ModalOverGameTitle>Время или попытки закончились</ModalOverGameTitle>
+              <ModalOverGameLabel>Время: { this.state.timeLeft }</ModalOverGameLabel>
+              <ModalOverGameLabel>Счёт: { this.state.points }</ModalOverGameLabel>
+              <ModalOverGameLabel>попытки: { this.state.try }</ModalOverGameLabel>
+            </div>
             <ModalOverButton onClick={() => {this.props.toMainmenu()}}>На главную</ModalOverButton>
           </ModalOverGameBlock>
         </ModalOverGame>
@@ -222,7 +225,9 @@ export default class Game2 extends Component {
 
   isPlay() {
     if (this.state.isUserPlay) {
-      // (this.state.timerOn) ? (setTimeout(() => { this.setState({ timerOn: false }) }, 10000)) : null
+      this.state.timerOn ? setTimeout(() => {
+        !this.state.isOver ? this.setState({ timerOn: false, isOver: true }) : null
+      }, 10000) : null
       console.log('Игра началась')
       return (
         <div>

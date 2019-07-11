@@ -55,7 +55,7 @@ export default class Game6 extends Component {
   }
 
   componentDidMount() {
-    // const data = [...this.state.data]
+    const data = [ ...this.state.data ]
     const secretCards = []
     const randomNumber = (length) => {
       return (
@@ -73,6 +73,16 @@ export default class Game6 extends Component {
     this.setState({
       secretCards: secretCards
     })
+
+    const Timer = () => {
+      this.state.timerOn ? 
+        this.setState({
+          timeLeft: this.state.timeLeft - 1
+        })
+        : null
+    }
+
+    setInterval(Timer, 1000)
   }
 
   randomNumber() {
@@ -117,8 +127,10 @@ export default class Game6 extends Component {
     return (
       <ModalOverGame>
         <ModalOverGameBlock>
-          <ModalOverGameTitle>Попытки закончились</ModalOverGameTitle>
-          <ModalOverGameLabel>Счёт: { points }</ModalOverGameLabel>
+          <div>
+            <ModalOverGameTitle>Попытки закончились</ModalOverGameTitle>
+            <ModalOverGameLabel>Счёт: { points }</ModalOverGameLabel>
+          </div>
           <ModalOverButton onClick={() => {this.props.toMainmenu()}}>На главную</ModalOverButton>
         </ModalOverGameBlock>
       </ModalOverGame>
@@ -154,14 +166,16 @@ export default class Game6 extends Component {
     })
   }
 
+
   renderCardsWords() {
     const secretCards = this.state.secretCards
     const renderElements = (item, index) => {
       return item.words.map((word, subIndex) => {
+        console.log(item.true)
         return (
           <ModuleCardsWords
             key = { subIndex }
-            style = { !this.state.activeRow[index][subIndex] ? { backgroundColor: '#dc4c4c' } : null }
+            style = { !this.state.activeRow[index][subIndex] ? { backgroundColor: '#69b02e' } : null }
             onClick = { this.state.activeLine[index] ? () => { this.deleteCard(index, subIndex, word) } : null }
           >{ word }</ModuleCardsWords>
         )
@@ -184,6 +198,7 @@ export default class Game6 extends Component {
         return (
           <div>
             { this.renderCardsWords() }
+            <div>Время: { this.state.timeLeft }</div>
             <Timer />
             <ModuleButtonRun to = "#" onClick = { () => this.setState({ isOver: true }) } >Готово!</ModuleButtonRun>
           </div>
