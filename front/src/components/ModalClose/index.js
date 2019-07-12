@@ -6,7 +6,6 @@ import {
   ModalOverGameTitle,
   ButtonBox,
 } from './styled.js'
-import PropTypes from 'prop-types'
 
 
 export default class ModalClose extends Component {

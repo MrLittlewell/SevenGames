@@ -58,7 +58,7 @@ export default class Game3 extends Component {
       isOver: false,
       cardStatus: [ false, false, false, false, false, false ],
       timerOn: false,
-      timeLeft: 20,
+      timeLeft: 40,
     }
   }
 
@@ -259,7 +259,7 @@ export default class Game3 extends Component {
             <ModuleCards>
               { this.renderSecretCards() }
             </ModuleCards>
-            <Timer />
+            <Timer></Timer>
           </div>
         )
       } else {

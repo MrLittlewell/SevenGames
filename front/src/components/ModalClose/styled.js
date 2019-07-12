@@ -9,7 +9,7 @@ const showModalKeyframes = keyframes`
     background-color: rgba(0, 0, 0, 0.15);
   }
 `
-export const ModuleButtonRun = styled.div`
+export const ModuleButtonRun = styled.span`
   font-size: 1em;
   color: white;
   background-color: #589500;
