@@ -120,7 +120,7 @@ export default class Game4 extends Component {
               <ModalOverGameTitle>Попытки закончились</ModalOverGameTitle>
               <ModalOverGameLabel>Счёт: { this.state.points }</ModalOverGameLabel>
             </div>
-            <ModalOverButton onClick={() => {this.props.toMainmenu()}}>На главную</ModalOverButton>
+            <ModalOverButton onClick={() => {this.props.toMenu()}}>На главную</ModalOverButton>
           </ModalOverGameBlock>
         </ModalOverGame>
       )

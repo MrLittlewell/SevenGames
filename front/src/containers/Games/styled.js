@@ -1,4 +1,14 @@
-import styled from 'styled-components'
+import styled, { keyframes } from 'styled-components'
+
+const showModalKeyframes = keyframes`
+  0% {
+    background-color: rgba(255, 255, 255, 0);
+  }
+  
+  100% {
+    background-color: rgba(0, 0, 0, 0.15);
+  }
+`
 
 export const Wrapper = styled.div`
     width: 100%;

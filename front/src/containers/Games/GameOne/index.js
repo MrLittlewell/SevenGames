@@ -35,9 +35,8 @@ import {
   Exit
 } from './contentStyled.js'
 
-const mapping = data.map(item => item)
 
-class Game1 extends Component {
+export default class Game1 extends Component {
   constructor(props) {
     super(props) 
 
@@ -184,7 +183,7 @@ class Game1 extends Component {
               <ModalOverGameLabel>Счёт: { this.state.points }</ModalOverGameLabel>
               <ModalOverGameLabel>Попытки: { this.state.try }</ModalOverGameLabel>
             </div>
-            <ModalOverButton onClick={() => {this.props.toMainmenu()}}>На главную</ModalOverButton>
+            <ModalOverButton onClick={() => {this.props.toMenu()}}>На главную</ModalOverButton>
           </ModalOverGameBlock>
         </ModalOverGame>
       )
@@ -266,10 +265,11 @@ class Game1 extends Component {
   render() {
     return (
       <PageWrapper>
-        <Exit><img src={exit} onClick={() => {this.props.toMainmenu()}}/></Exit>
+        <Exit><img src={exit} onClick={ () => this.props.toMainmenu() }/></Exit>
         <PageTitle>Игры</PageTitle>
         <Module>
           <ModuleTitle>Три слова</ModuleTitle>
+          {/* { this.props.toMainmenu() } */}
           { this.isStarted() }
           { this.isPlay() }
           { this.isOver() }
@@ -279,9 +279,3 @@ class Game1 extends Component {
   }
 
 }
-
-Game1.propTypes = {
-  toMainmenu: PropTypes.func,
-}
-
-export default Game1

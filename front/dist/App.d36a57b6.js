@@ -32433,7 +32433,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.PageTitle = exports.Section = exports.ModuleCardTitle = exports.ModuleCard7 = exports.ModuleCard6 = exports.ModuleCard5 = exports.ModuleCard4 = exports.ModuleCard3 = exports.ModuleCard2 = exports.ModuleCard1 = exports.ModuleCard = exports.ModuleCards = exports.ModuleButtonRun = exports.ModuleTitle = exports.Module = exports.WrapperModule = exports.SelectGames = exports.GameArea = exports.Wrapper = void 0;
 
-var _styledComponents = _interopRequireDefault(require("styled-components"));
+var _styledComponents = _interopRequireWildcard(require("styled-components"));
 
 var _card_ = _interopRequireDefault(require("../../img/card_bg/card_1.png"));
 
@@ -32451,8 +32451,20 @@ var _card_7 = _interopRequireDefault(require("../../img/card_bg/card_7.png"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-function _templateObject19() {
+function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = Object.defineProperty && Object.getOwnPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : {}; if (desc.get || desc.set) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } } newObj.default = obj; return newObj; } }
+
+function _templateObject20() {
   var data = _taggedTemplateLiteral(["\n  font-size: 2em;\n  color: #3e3e3e;\n"]);
+
+  _templateObject20 = function _templateObject20() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject19() {
+  var data = _taggedTemplateLiteral(["\n  width 100%;\n"]);
 
   _templateObject19 = function _templateObject19() {
     return data;
@@ -32462,7 +32474,7 @@ function _templateObject19() {
 }
 
 function _templateObject18() {
-  var data = _taggedTemplateLiteral(["\n  width 100%;\n"]);
+  var data = _taggedTemplateLiteral(["\n  width: 100%;\n  height: 100%;\n  background-color: rgba(0, 0, 0, 0.5);\n  text-align: center;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  color: white;\n  font-size: 1em;\n  font-weight: bold;\n"]);
 
   _templateObject18 = function _templateObject18() {
     return data;
@@ -32472,7 +32484,7 @@ function _templateObject18() {
 }
 
 function _templateObject17() {
-  var data = _taggedTemplateLiteral(["\n  width: 100%;\n  height: 100%;\n  background-color: rgba(0, 0, 0, 0.5);\n  text-align: center;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  color: white;\n  font-size: 1em;\n  font-weight: bold;\n"]);
+  var data = _taggedTemplateLiteral(["\n  background-image: url(", ")\n"]);
 
   _templateObject17 = function _templateObject17() {
     return data;
@@ -32542,7 +32554,7 @@ function _templateObject11() {
 }
 
 function _templateObject10() {
-  var data = _taggedTemplateLiteral(["\n  background-image: url(", ")\n"]);
+  var data = _taggedTemplateLiteral(["\n  width: 100%;\n  height: 6em;\n  background-color: white;\n  border-radius: 4px;\n  background-size: contain;\n  overflow: hidden;\n  text-decoration: none;\n  transition: all 0.2s ease-in-out;\n  box-shadow: 0 0.1em 0.15em rgba(0,0,0,0.19), 0 0.2em 0.2em rgba(0,0,0,0.23);\n  &:hover {\n    box-shadow: 0 0.2em 0.15em 0.05em rgba(0,0,0,0.19), 0 0.2em 0.2em 0.05em rgba(0,0,0,0.23);\n  }\n  background-size: cover;\n  margin-bottom: 0.2em;\n"]);
 
   _templateObject10 = function _templateObject10() {
     return data;
@@ -32552,7 +32564,7 @@ function _templateObject10() {
 }
 
 function _templateObject9() {
-  var data = _taggedTemplateLiteral(["\n  width: 100%;\n  height: 6em;\n  background-color: white;\n  border-radius: 4px;\n  background-size: contain;\n  overflow: hidden;\n  text-decoration: none;\n  transition: all 0.2s ease-in-out;\n  box-shadow: 0 0.1em 0.15em rgba(0,0,0,0.19), 0 0.2em 0.2em rgba(0,0,0,0.23);\n  &:hover {\n    box-shadow: 0 0.2em 0.15em 0.05em rgba(0,0,0,0.19), 0 0.2em 0.2em 0.05em rgba(0,0,0,0.23);\n  }\n  background-size: cover;\n  margin-bottom: 0.2em;\n"]);
+  var data = _taggedTemplateLiteral(["\n  display: flex;\n  flex-wrap: wrap;\n"]);
 
   _templateObject9 = function _templateObject9() {
     return data;
@@ -32562,7 +32574,7 @@ function _templateObject9() {
 }
 
 function _templateObject8() {
-  var data = _taggedTemplateLiteral(["\n  display: flex;\n  flex-wrap: wrap;\n"]);
+  var data = _taggedTemplateLiteral(["\n  font-size: 1em;\n  color: white;\n  background-color: #589500;\n  width: 8em;\n  padding: 0.5em 0;\n  margin-top: 0.5em;\n  text-align: center;\n  border-radius: 10em;\n  cursor: pointer;\n  transition: all 0.2s ease-in-out;\n  box-shadow: 0 0.1em 0.15em rgba(0,0,0,0.19), 0 0.2em 0.2em rgba(0,0,0,0.23);\n  &:hover {\n    box-shadow: 0 0.2em 0.25em rgba(0,0,0,0.19), 0 0.3em 0.3em rgba(0,0,0,0.23);\n  }\n"]);
 
   _templateObject8 = function _templateObject8() {
     return data;
@@ -32572,7 +32584,7 @@ function _templateObject8() {
 }
 
 function _templateObject7() {
-  var data = _taggedTemplateLiteral(["\n  font-size: 1em;\n  color: white;\n  background-color: #589500;\n  width: 8em;\n  padding: 0.5em 0;\n  margin-top: 0.5em;\n  text-align: center;\n  border-radius: 10em;\n  cursor: pointer;\n  transition: all 0.2s ease-in-out;\n  box-shadow: 0 0.1em 0.15em rgba(0,0,0,0.19), 0 0.2em 0.2em rgba(0,0,0,0.23);\n  &:hover {\n    box-shadow: 0 0.2em 0.25em rgba(0,0,0,0.19), 0 0.3em 0.3em rgba(0,0,0,0.23);\n  }\n"]);
+  var data = _taggedTemplateLiteral(["\n  font-size: 1.3em;\n  color: #3e3e3e;\n  text-align: center;\n  font-weight: bold;\n"]);
 
   _templateObject7 = function _templateObject7() {
     return data;
@@ -32582,7 +32594,7 @@ function _templateObject7() {
 }
 
 function _templateObject6() {
-  var data = _taggedTemplateLiteral(["\n  font-size: 1.3em;\n  color: #3e3e3e;\n  text-align: center;\n  font-weight: bold;\n"]);
+  var data = _taggedTemplateLiteral(["\n  padding: 0;\n"]);
 
   _templateObject6 = function _templateObject6() {
     return data;
@@ -32592,7 +32604,7 @@ function _templateObject6() {
 }
 
 function _templateObject5() {
-  var data = _taggedTemplateLiteral(["\n  padding: 0;\n"]);
+  var data = _taggedTemplateLiteral(["\n  height: 100%;\n  display: flex;\n  flex-direction: column;\n  justify-content: space-between;\n"]);
 
   _templateObject5 = function _templateObject5() {
     return data;
@@ -32602,7 +32614,7 @@ function _templateObject5() {
 }
 
 function _templateObject4() {
-  var data = _taggedTemplateLiteral(["\n  height: 100%;\n  display: flex;\n  flex-direction: column;\n  justify-content: space-between;\n"]);
+  var data = _taggedTemplateLiteral(["\n    width: 15%;\n    height: 100%;\n    display: flex;\n    align-items: center;\n    flex-direction: column;\n    justify-content: space-between;\n    @media (max-width: 768px) {\n      width: 100%;\n    }\n"]);
 
   _templateObject4 = function _templateObject4() {
     return data;
@@ -32612,7 +32624,7 @@ function _templateObject4() {
 }
 
 function _templateObject3() {
-  var data = _taggedTemplateLiteral(["\n    width: 15%;\n    height: 100%;\n    display: flex;\n    align-items: center;\n    flex-direction: column;\n    justify-content: space-between;\n    @media (max-width: 768px) {\n      width: 100%;\n    }\n"]);
+  var data = _taggedTemplateLiteral(["\n    width: 85%;\n    height: 100%;\n    border: 0.2em solid gray;\n    border-radius: 10px;\n    margin-right: 30px;\n    background-color: #b8c6db;\n    overflow: hidden;\n    background-image: linear-gradient(315deg, #b8c6db 0%, #f5f7fa 74%);\n    @media (max-width: 768px) {\n      width: 100%;\n    }\n"]);
 
   _templateObject3 = function _templateObject3() {
     return data;
@@ -32622,7 +32634,7 @@ function _templateObject3() {
 }
 
 function _templateObject2() {
-  var data = _taggedTemplateLiteral(["\n    width: 85%;\n    height: 100%;\n    border: 0.2em solid gray;\n    border-radius: 10px;\n    margin-right: 30px;\n    background-color: #b8c6db;\n    overflow: hidden;\n    background-image: linear-gradient(315deg, #b8c6db 0%, #f5f7fa 74%);\n    @media (max-width: 768px) {\n      width: 100%;\n    }\n"]);
+  var data = _taggedTemplateLiteral(["\n    width: 100%;\n    height: 100%;\n    display: flex;\n    justify-content: space-between;\n    padding: 30px;\n    box-sizing: border-box;\n    @media (max-width: 768px) {\n      flex-direction: column;\n    }\n"]);
 
   _templateObject2 = function _templateObject2() {
     return data;
@@ -32632,7 +32644,7 @@ function _templateObject2() {
 }
 
 function _templateObject() {
-  var data = _taggedTemplateLiteral(["\n    width: 100%;\n    height: 100%;\n    display: flex;\n    justify-content: space-between;\n    padding: 30px;\n    box-sizing: border-box;\n    @media (max-width: 768px) {\n      flex-direction: column;\n    }\n"]);
+  var data = _taggedTemplateLiteral(["\n  0% {\n    background-color: rgba(255, 255, 255, 0);\n  }\n  \n  100% {\n    background-color: rgba(0, 0, 0, 0.15);\n  }\n"]);
 
   _templateObject = function _templateObject() {
     return data;
@@ -32643,65 +32655,67 @@ function _templateObject() {
 
 function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(0); } return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
 
-var Wrapper = _styledComponents.default.div(_templateObject());
+var showModalKeyframes = (0, _styledComponents.keyframes)(_templateObject());
+
+var Wrapper = _styledComponents.default.div(_templateObject2());
 
 exports.Wrapper = Wrapper;
 
-var GameArea = _styledComponents.default.div(_templateObject2());
+var GameArea = _styledComponents.default.div(_templateObject3());
 
 exports.GameArea = GameArea;
 
-var SelectGames = _styledComponents.default.div(_templateObject3());
+var SelectGames = _styledComponents.default.div(_templateObject4());
 
 exports.SelectGames = SelectGames;
 
-var WrapperModule = _styledComponents.default.div(_templateObject4());
+var WrapperModule = _styledComponents.default.div(_templateObject5());
 
 exports.WrapperModule = WrapperModule;
 
-var Module = _styledComponents.default.div(_templateObject5());
+var Module = _styledComponents.default.div(_templateObject6());
 
 exports.Module = Module;
 
-var ModuleTitle = _styledComponents.default.div(_templateObject6());
+var ModuleTitle = _styledComponents.default.div(_templateObject7());
 
 exports.ModuleTitle = ModuleTitle;
 
-var ModuleButtonRun = _styledComponents.default.div(_templateObject7());
+var ModuleButtonRun = _styledComponents.default.div(_templateObject8());
 
 exports.ModuleButtonRun = ModuleButtonRun;
 
-var ModuleCards = _styledComponents.default.div(_templateObject8());
+var ModuleCards = _styledComponents.default.div(_templateObject9());
 
 exports.ModuleCards = ModuleCards;
 
-var ModuleCard = _styledComponents.default.div(_templateObject9());
+var ModuleCard = _styledComponents.default.div(_templateObject10());
 
 exports.ModuleCard = ModuleCard;
-var ModuleCard1 = (0, _styledComponents.default)(ModuleCard)(_templateObject10(), _card_.default);
+var ModuleCard1 = (0, _styledComponents.default)(ModuleCard)(_templateObject11(), _card_.default);
 exports.ModuleCard1 = ModuleCard1;
-var ModuleCard2 = (0, _styledComponents.default)(ModuleCard)(_templateObject11(), _card_2.default);
+var ModuleCard2 = (0, _styledComponents.default)(ModuleCard)(_templateObject12(), _card_2.default);
 exports.ModuleCard2 = ModuleCard2;
-var ModuleCard3 = (0, _styledComponents.default)(ModuleCard)(_templateObject12(), _card_3.default);
+var ModuleCard3 = (0, _styledComponents.default)(ModuleCard)(_templateObject13(), _card_3.default);
 exports.ModuleCard3 = ModuleCard3;
-var ModuleCard4 = (0, _styledComponents.default)(ModuleCard)(_templateObject13(), _card_4.default);
+var ModuleCard4 = (0, _styledComponents.default)(ModuleCard)(_templateObject14(), _card_4.default);
 exports.ModuleCard4 = ModuleCard4;
-var ModuleCard5 = (0, _styledComponents.default)(ModuleCard)(_templateObject14(), _card_5.default);
+var ModuleCard5 = (0, _styledComponents.default)(ModuleCard)(_templateObject15(), _card_5.default);
 exports.ModuleCard5 = ModuleCard5;
-var ModuleCard6 = (0, _styledComponents.default)(ModuleCard)(_templateObject15(), _card_6.default);
+var ModuleCard6 = (0, _styledComponents.default)(ModuleCard)(_templateObject16(), _card_6.default);
 exports.ModuleCard6 = ModuleCard6;
-var ModuleCard7 = (0, _styledComponents.default)(ModuleCard)(_templateObject16(), _card_7.default);
+var ModuleCard7 = (0, _styledComponents.default)(ModuleCard)(_templateObject17(), _card_7.default);
 exports.ModuleCard7 = ModuleCard7;
 
-var ModuleCardTitle = _styledComponents.default.span(_templateObject17());
+var ModuleCardTitle = _styledComponents.default.span(_templateObject18());
 
 exports.ModuleCardTitle = ModuleCardTitle;
 
-var Section = _styledComponents.default.span(_templateObject18());
+var Section = _styledComponents.default.span(_templateObject19());
 
 exports.Section = Section;
 
-var PageTitle = _styledComponents.default.span(_templateObject19());
+var PageTitle = _styledComponents.default.span(_templateObject20());
 
 exports.PageTitle = PageTitle;
 },{"styled-components":"../node_modules/styled-components/dist/styled-components.browser.esm.js","../../img/card_bg/card_1.png":"img/card_bg/card_1.png","../../img/card_bg/card_2.png":"img/card_bg/card_2.png","../../img/card_bg/card_3.png":"img/card_bg/card_3.png","../../img/card_bg/card_4.png":"img/card_bg/card_4.png","../../img/card_bg/card_5.png":"img/card_bg/card_5.png","../../img/card_bg/card_6.png":"img/card_bg/card_6.png","../../img/card_bg/card_7.png":"img/card_bg/card_7.png"}],"../node_modules/@babel/runtime/helpers/inheritsLoose.js":[function(require,module,exports) {
@@ -35980,10 +35994,6 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 
 function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
 
-var mapping = _data.data.map(function (item) {
-  return item;
-});
-
 var Game1 =
 /*#__PURE__*/
 function (_Component) {
@@ -36123,7 +36133,7 @@ function (_Component) {
         }) : null;
         return _react.default.createElement(_contentStyled.ModalOverGame, null, _react.default.createElement(_contentStyled.ModalOverGameBlock, null, _react.default.createElement("div", null, _react.default.createElement(_contentStyled.ModalOverGameTitle, null, "\u0412\u0440\u0435\u043C\u044F \u0438\u043B\u0438 \u043F\u043E\u043F\u044B\u0442\u043A\u0438 \u0437\u0430\u043A\u043E\u043D\u0447\u0438\u043B\u0438\u0441\u044C"), _react.default.createElement(_contentStyled.ModalOverGameLabel, null, "\u0412\u0440\u0435\u043C\u044F: ", this.state.timeLeft), _react.default.createElement(_contentStyled.ModalOverGameLabel, null, "\u0421\u0447\u0451\u0442: ", this.state.points), _react.default.createElement(_contentStyled.ModalOverGameLabel, null, "\u041F\u043E\u043F\u044B\u0442\u043A\u0438: ", this.state.try)), _react.default.createElement(_contentStyled.ModalOverButton, {
           onClick: function onClick() {
-            _this4.props.toMainmenu();
+            _this4.props.toMenu();
           }
         }, "\u041D\u0430 \u0433\u043B\u0430\u0432\u043D\u0443\u044E")));
       }
@@ -36187,7 +36197,7 @@ function (_Component) {
       return _react.default.createElement(_contentStyled.PageWrapper, null, _react.default.createElement(_contentStyled.Exit, null, _react.default.createElement("img", {
         src: _exit.default,
         onClick: function onClick() {
-          _this7.props.toMainmenu();
+          return _this7.props.toMainmenu();
         }
       })), _react.default.createElement(_contentStyled.PageTitle, null, "\u0418\u0433\u0440\u044B"), _react.default.createElement(_contentStyled.Module, null, _react.default.createElement(_contentStyled.ModuleTitle, null, "\u0422\u0440\u0438 \u0441\u043B\u043E\u0432\u0430"), this.isStarted(), this.isPlay(), this.isOver()));
     }
@@ -36196,11 +36206,7 @@ function (_Component) {
   return Game1;
 }(_react.Component);
 
-Game1.propTypes = {
-  toMainmenu: _propTypes.default.func
-};
-var _default = Game1;
-exports.default = _default;
+exports.default = Game1;
 },{"react":"../node_modules/react/index.js","prop-types":"../node_modules/prop-types/index.js","react-redux":"../node_modules/react-redux/es/index.js","react-router-dom":"../node_modules/react-router-dom/esm/react-router-dom.js","../../../audio/correct.mp3":"audio/correct.mp3","../../../img/icons/exit.svg":"img/icons/exit.svg","./data":"containers/Games/GameOne/data.js","./contentStyled.js":"containers/Games/GameOne/contentStyled.js"}],"img/game2_img/backpack.png":[function(require,module,exports) {
 module.exports = "/backpack.a35740e7.png";
 },{}],"img/game2_img/book.png":[function(require,module,exports) {
@@ -36885,7 +36891,7 @@ function (_Component) {
         }) : null;
         return _react.default.createElement(_contentStyled.ModalOverGame, null, _react.default.createElement(_contentStyled.ModalOverGameBlock, null, _react.default.createElement("div", null, _react.default.createElement(_contentStyled.ModalOverGameTitle, null, "\u0412\u0440\u0435\u043C\u044F \u0438\u043B\u0438 \u043F\u043E\u043F\u044B\u0442\u043A\u0438 \u0437\u0430\u043A\u043E\u043D\u0447\u0438\u043B\u0438\u0441\u044C"), _react.default.createElement(_contentStyled.ModalOverGameLabel, null, "\u0412\u0440\u0435\u043C\u044F: ", this.state.timeLeft), _react.default.createElement(_contentStyled.ModalOverGameLabel, null, "\u0421\u0447\u0451\u0442: ", this.state.points), _react.default.createElement(_contentStyled.ModalOverGameLabel, null, "\u043F\u043E\u043F\u044B\u0442\u043A\u0438: ", this.state.try)), _react.default.createElement(_contentStyled.ModalOverButton, {
           onClick: function onClick() {
-            _this4.props.toMainmenu();
+            _this4.props.toMenu();
           }
         }, "\u041D\u0430 \u0433\u043B\u0430\u0432\u043D\u0443\u044E")));
       }
@@ -37085,7 +37091,7 @@ function _templateObject27() {
 }
 
 function _templateObject26() {
-  var data = _taggedTemplateLiteral(["\n  background-color: white;\n  border-radius: 4px;\n  width: 20em;\n  height: 20em;\n  padding: 1em;\n  box-sizing: border-box;\n"]);
+  var data = _taggedTemplateLiteral(["\n  background-color: white;\n  border-radius: 4px;\n  width: 20em;\n  height: 20em;\n  padding: 1em;\n  box-sizing: border-box;\n  display: flex;\n  flex-direction: column;\n  justify-content: space-between;\n"]);
 
   _templateObject26 = function _templateObject26() {
     return data;
@@ -37547,7 +37553,7 @@ function (_Component) {
   }, {
     key: "randomNumber",
     value: function randomNumber() {
-      return Math.floor(Math.random(99) * 99);
+      return Math.floor(Math.random(999) * 999);
     }
   }, {
     key: "startGame",
@@ -37669,9 +37675,9 @@ function (_Component) {
         this.state.timerOn ? this.setState({
           timerOn: false
         }) : null;
-        return _react.default.createElement(_contentStyled.ModalOverGame, null, _react.default.createElement(_contentStyled.ModalOverGameBlock, null, _react.default.createElement(_contentStyled.ModalOverGameTitle, null, "\u0412\u0440\u0435\u043C\u044F \u0437\u0430\u043A\u043E\u043D\u0447\u0438\u043B\u043E\u0441\u044C"), _react.default.createElement(_contentStyled.ModalOverGameLabel, null, "\u0412\u0440\u0435\u043C\u044F: ", this.state.timeLeft), _react.default.createElement(_contentStyled.ModalOverGameLabel, null, "\u0421\u0447\u0451\u0442: ", this.state.points), _react.default.createElement(_contentStyled.ModalOverButton, {
+        return _react.default.createElement(_contentStyled.ModalOverGame, null, _react.default.createElement(_contentStyled.ModalOverGameBlock, null, _react.default.createElement("div", null, _react.default.createElement(_contentStyled.ModalOverGameTitle, null, "\u0412\u0440\u0435\u043C\u044F \u0437\u0430\u043A\u043E\u043D\u0447\u0438\u043B\u043E\u0441\u044C"), _react.default.createElement(_contentStyled.ModalOverGameLabel, null, "\u0412\u0440\u0435\u043C\u044F: ", this.state.timeLeft), _react.default.createElement(_contentStyled.ModalOverGameLabel, null, "\u0421\u0447\u0451\u0442: ", this.state.points)), _react.default.createElement(_contentStyled.ModalOverButton, {
           onClick: function onClick() {
-            _this4.props.toMainmenu();
+            _this4.props.toMenu();
           }
         }, "\u041D\u0430 \u0433\u043B\u0430\u0432\u043D\u0443\u044E")));
       }
@@ -38356,7 +38362,7 @@ function (_Component) {
 
         return _react.default.createElement(_contentStyled.ModalOverGame, null, _react.default.createElement(_contentStyled.ModalOverGameBlock, null, _react.default.createElement("div", null, _react.default.createElement(_contentStyled.ModalOverGameTitle, null, "\u041F\u043E\u043F\u044B\u0442\u043A\u0438 \u0437\u0430\u043A\u043E\u043D\u0447\u0438\u043B\u0438\u0441\u044C"), _react.default.createElement(_contentStyled.ModalOverGameLabel, null, "\u0421\u0447\u0451\u0442: ", this.state.points)), _react.default.createElement(_contentStyled.ModalOverButton, {
           onClick: function onClick() {
-            _this3.props.toMainmenu();
+            _this3.props.toMenu();
           }
         }, "\u041D\u0430 \u0433\u043B\u0430\u0432\u043D\u0443\u044E")));
       }
@@ -41133,7 +41139,7 @@ function (_Component) {
         }) : null;
         return _react.default.createElement(_contentStyled.ModalOverGame, null, _react.default.createElement(_contentStyled.ModalOverGameBlock, null, _react.default.createElement(_contentStyled.ModalOverGameTitle, null, "\u041F\u043E\u043F\u044B\u0442\u043A\u0438 \u0437\u0430\u043A\u043E\u043D\u0447\u0438\u043B\u0438\u0441\u044C"), _react.default.createElement(_contentStyled.ModalOverGameLabel, null, "\u0412\u0440\u0435\u043C\u044F: ", this.state.timeLeft), _react.default.createElement(_contentStyled.ModalOverGameLabel, null, "\u0421\u0447\u0451\u0442: ", this.state.points), _react.default.createElement(_contentStyled.ModalOverButton, {
           onClick: function onClick() {
-            _this3.props.toMainmenu();
+            _this3.props.toMenu();
           }
         }, "\u041D\u0430 \u0433\u043B\u0430\u0432\u043D\u0443\u044E")));
       }
@@ -41937,7 +41943,7 @@ function (_Component) {
 
       return _react.default.createElement(_contentStyled.ModalOverGame, null, _react.default.createElement(_contentStyled.ModalOverGameBlock, null, _react.default.createElement("div", null, _react.default.createElement(_contentStyled.ModalOverGameTitle, null, "\u041F\u043E\u043F\u044B\u0442\u043A\u0438 \u0437\u0430\u043A\u043E\u043D\u0447\u0438\u043B\u0438\u0441\u044C"), _react.default.createElement(_contentStyled.ModalOverGameLabel, null, "\u0421\u0447\u0451\u0442: ", points)), _react.default.createElement(_contentStyled.ModalOverButton, {
         onClick: function onClick() {
-          _this3.props.toMainmenu();
+          _this3.props.toMenu();
         }
       }, "\u041D\u0430 \u0433\u043B\u0430\u0432\u043D\u0443\u044E")));
     }
@@ -42792,7 +42798,7 @@ function (_Component) {
       console.log(userSelectPoints);
       return _react.default.createElement(_contentStyled.ModalOverGame, null, _react.default.createElement(_contentStyled.ModalOverGameBlock, null, _react.default.createElement("div", null, _react.default.createElement(_contentStyled.ModalOverGameTitle, null, "\u041F\u043E\u043F\u044B\u0442\u043A\u0438 \u0437\u0430\u043A\u043E\u043D\u0447\u0438\u043B\u0438\u0441\u044C"), _react.default.createElement(_contentStyled.ModalOverGameLabel, null, "\u0421\u0447\u0451\u0442: ", points)), _react.default.createElement(_contentStyled.ModalOverButton, {
         onClick: function onClick() {
-          _this2.props.toMainmenu();
+          _this2.props.toMenu();
         }
       }, "\u041D\u0430 \u0433\u043B\u0430\u0432\u043D\u0443\u044E")));
     }
@@ -42923,7 +42929,200 @@ function (_Component) {
 }(_react.Component);
 
 exports.default = Game7;
-},{"react":"../node_modules/react/index.js","react-redux":"../node_modules/react-redux/es/index.js","../../../audio/correct.mp3":"audio/correct.mp3","./data":"containers/Games/GameSeven/data.js","../../../img/icons/exit.svg":"img/icons/exit.svg","./contentStyled.js":"containers/Games/GameSeven/contentStyled.js"}],"containers/Games/index.js":[function(require,module,exports) {
+},{"react":"../node_modules/react/index.js","react-redux":"../node_modules/react-redux/es/index.js","../../../audio/correct.mp3":"audio/correct.mp3","./data":"containers/Games/GameSeven/data.js","../../../img/icons/exit.svg":"img/icons/exit.svg","./contentStyled.js":"containers/Games/GameSeven/contentStyled.js"}],"components/ModalClose/styled.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.ButtonBox = exports.ModalOverButton = exports.ModalOverGameLabel = exports.ModalOverGameTitle = exports.ModalOverGameBlock = exports.ModalOverGame = exports.ModuleButtonRun = void 0;
+
+var _styledComponents = _interopRequireWildcard(require("styled-components"));
+
+function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = Object.defineProperty && Object.getOwnPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : {}; if (desc.get || desc.set) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } } newObj.default = obj; return newObj; } }
+
+function _templateObject8() {
+  var data = _taggedTemplateLiteral(["\ndisplay: flex;\n"]);
+
+  _templateObject8 = function _templateObject8() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject7() {
+  var data = _taggedTemplateLiteral(["\nmargin: 0 auto;\ntext-decoration: none;\ncolor: white;\n"]);
+
+  _templateObject7 = function _templateObject7() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject6() {
+  var data = _taggedTemplateLiteral(["\ndisplay: block;\nfont-size: 1.15em;\nline-height: 1.5em;\n"]);
+
+  _templateObject6 = function _templateObject6() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject5() {
+  var data = _taggedTemplateLiteral(["\ndisplay: block;\nmargin-bottom: 1em;\ntext-align: center;\nfont-size: 1.5em;\nfont-weight: bold;\n"]);
+
+  _templateObject5 = function _templateObject5() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject4() {
+  var data = _taggedTemplateLiteral(["\nbackground-color: white;\nborder-radius: 10px;\nwidth: 20em;\nheight: auto;\npadding: 1em;\nbox-sizing: border-box;\ndisplay: flex;\nflex-direction: column;\njustify-content: space-between;\n"]);
+
+  _templateObject4 = function _templateObject4() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject3() {
+  var data = _taggedTemplateLiteral(["\ndisplay: flex;\nalign-items: center;\njustify-content: center;\nposition: absolute;\ntop: 0;\nleft: 0;\nwidth: 100%;\nheight: 100vh;\nanimation: ", " 1s linear forwards;\n"]);
+
+  _templateObject3 = function _templateObject3() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject2() {
+  var data = _taggedTemplateLiteral(["\n  font-size: 1em;\n  color: white;\n  background-color: #589500;\n  width: 8em;\n  padding: 0.5em 0;\n  margin-top: 0.5em;\n  text-align: center;\n  border-radius: 10em;\n  cursor: pointer;\n  transition: all 0.2s ease-in-out;\n  box-shadow: 0 0.1em 0.15em rgba(0,0,0,0.19), 0 0.2em 0.2em rgba(0,0,0,0.23);\n  &:hover {\n    box-shadow: 0 0.2em 0.25em rgba(0,0,0,0.19), 0 0.3em 0.3em rgba(0,0,0,0.23);\n  }\n"]);
+
+  _templateObject2 = function _templateObject2() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject() {
+  var data = _taggedTemplateLiteral(["\n  0% {\n    background-color: rgba(255, 255, 255, 0);\n  }\n  \n  100% {\n    background-color: rgba(0, 0, 0, 0.15);\n  }\n"]);
+
+  _templateObject = function _templateObject() {
+    return data;
+  };
+
+  return data;
+}
+
+function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(0); } return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
+
+var showModalKeyframes = (0, _styledComponents.keyframes)(_templateObject());
+
+var ModuleButtonRun = _styledComponents.default.div(_templateObject2());
+
+exports.ModuleButtonRun = ModuleButtonRun;
+
+var ModalOverGame = _styledComponents.default.div(_templateObject3(), showModalKeyframes);
+
+exports.ModalOverGame = ModalOverGame;
+
+var ModalOverGameBlock = _styledComponents.default.div(_templateObject4());
+
+exports.ModalOverGameBlock = ModalOverGameBlock;
+
+var ModalOverGameTitle = _styledComponents.default.span(_templateObject5());
+
+exports.ModalOverGameTitle = ModalOverGameTitle;
+
+var ModalOverGameLabel = _styledComponents.default.span(_templateObject6());
+
+exports.ModalOverGameLabel = ModalOverGameLabel;
+var ModalOverButton = (0, _styledComponents.default)(ModuleButtonRun)(_templateObject7());
+exports.ModalOverButton = ModalOverButton;
+
+var ButtonBox = _styledComponents.default.div(_templateObject8());
+
+exports.ButtonBox = ButtonBox;
+},{"styled-components":"../node_modules/styled-components/dist/styled-components.browser.esm.js"}],"components/ModalClose/index.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+
+var _react = _interopRequireWildcard(require("react"));
+
+var _styled = require("./styled.js");
+
+var _propTypes = _interopRequireDefault(require("prop-types"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = Object.defineProperty && Object.getOwnPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : {}; if (desc.get || desc.set) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } } newObj.default = obj; return newObj; } }
+
+function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
+
+function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
+var ModalClose =
+/*#__PURE__*/
+function (_Component) {
+  _inherits(ModalClose, _Component);
+
+  function ModalClose(props) {
+    _classCallCheck(this, ModalClose);
+
+    return _possibleConstructorReturn(this, _getPrototypeOf(ModalClose).call(this, props));
+  }
+
+  _createClass(ModalClose, [{
+    key: "render",
+    value: function render() {
+      var _this = this;
+
+      return _react.default.createElement(_styled.ModalOverGame, {
+        onClick: function onClick() {
+          return _this.props.backToGame();
+        }
+      }, _react.default.createElement(_styled.ModalOverGameBlock, null, _react.default.createElement("div", null, _react.default.createElement(_styled.ModalOverGameTitle, null, "\u0417\u0430\u043A\u043E\u043D\u0447\u0438\u0442\u044C \u0438\u0433\u0440\u0443?")), _react.default.createElement(_styled.ButtonBox, null, _react.default.createElement(_styled.ModalOverButton, {
+        onClick: function onClick() {
+          return _this.props.toMenu();
+        }
+      }, "\u041D\u0430 \u0433\u043B\u0430\u0432\u043D\u0443\u044E"), _react.default.createElement(_styled.ModalOverButton, {
+        onClick: function onClick() {
+          return _this.props.backToGame();
+        }
+      }, "\u0412\u0435\u0440\u043D\u0443\u0442\u044C\u0441\u044F"))));
+    }
+  }]);
+
+  return ModalClose;
+}(_react.Component);
+
+exports.default = ModalClose;
+},{"react":"../node_modules/react/index.js","./styled.js":"components/ModalClose/styled.js","prop-types":"../node_modules/prop-types/index.js"}],"containers/Games/index.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -42952,6 +43151,8 @@ var _GameFive = _interopRequireDefault(require("./GameFive"));
 var _GameSix = _interopRequireDefault(require("./GameSix"));
 
 var _GameSeven = _interopRequireDefault(require("./GameSeven"));
+
+var _ModalClose = _interopRequireDefault(require("../../components/ModalClose"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -43080,7 +43281,7 @@ function (_Component) {
       });
     });
 
-    _defineProperty(_assertThisInitialized(_this), "toMainmenu", function () {
+    _defineProperty(_assertThisInitialized(_this), "toMenu", function () {
       _this.setState({
         SelectGame: true,
         GameOne: false,
@@ -43089,7 +43290,20 @@ function (_Component) {
         GameFour: false,
         GameFive: false,
         GameSix: false,
-        GameSeven: false
+        GameSeven: false,
+        ModalClose: false
+      });
+    });
+
+    _defineProperty(_assertThisInitialized(_this), "backToGame", function () {
+      _this.setState({
+        ModalClose: false
+      });
+    });
+
+    _defineProperty(_assertThisInitialized(_this), "toMainmenu", function () {
+      _this.setState({
+        ModalClose: true
       });
     });
 
@@ -43101,7 +43315,8 @@ function (_Component) {
       GameFour: false,
       GameFive: false,
       GameSix: false,
-      GameSeven: false
+      GameSeven: false,
+      ModalClose: false
     };
     return _this;
   }
@@ -43110,33 +43325,43 @@ function (_Component) {
     key: "render",
     value: function render() {
       return _react.default.createElement(_styled.Wrapper, null, _react.default.createElement(_styled.GameArea, null, this.state.SelectGame && _react.default.createElement(_SelectGame.default, null), this.state.GameOne && _react.default.createElement(_GameOne.default, {
-        toMainmenu: this.toMainmenu
+        toMainmenu: this.toMainmenu,
+        toMenu: this.toMenu
       }), this.state.GameTwo && _react.default.createElement(_GameTwo.default, {
-        toMainmenu: this.toMainmenu
+        toMainmenu: this.toMainmenu,
+        toMenu: this.toMenu
       }), this.state.GameThree && _react.default.createElement(_GameThree.default, {
-        toMainmenu: this.toMainmenu
+        toMainmenu: this.toMainmenu,
+        toMenu: this.toMenu
       }), this.state.GameFour && _react.default.createElement(_GameFour.default, {
-        toMainmenu: this.toMainmenu
+        toMainmenu: this.toMainmenu,
+        toMenu: this.toMenu
       }), this.state.GameFive && _react.default.createElement(_GameFive.default, {
-        toMainmenu: this.toMainmenu
+        toMainmenu: this.toMainmenu,
+        toMenu: this.toMenu
       }), this.state.GameSix && _react.default.createElement(_GameSix.default, {
-        toMainmenu: this.toMainmenu
+        toMainmenu: this.toMainmenu,
+        toMenu: this.toMenu
       }), this.state.GameSeven && _react.default.createElement(_GameSeven.default, {
-        toMainmenu: this.toMainmenu
+        toMainmenu: this.toMainmenu,
+        toMenu: this.toMenu
+      }), this.state.ModalClose && _react.default.createElement(_ModalClose.default, {
+        toMenu: this.toMenu,
+        backToGame: this.backToGame
       })), _react.default.createElement(_styled.SelectGames, null, _react.default.createElement(_styled.PageTitle, null, "\u0418\u0433\u0440\u044B"), _react.default.createElement(_styled.Section, null, _react.default.createElement(_styled.ModuleTitle, null, "\u041E\u0446\u0435\u043D\u043A\u0430 \u043F\u0430\u043C\u044F\u0442\u0438"), _react.default.createElement(_styled.ModuleCard, {
-        onClick: this.toggleOne
+        onClick: this.state.SelectGame === true ? this.toggleOne : ''
       }, _react.default.createElement(_styled.ModuleCard1, null, _react.default.createElement(_styled.ModuleCardTitle, null, "\u0422\u0440\u0438 \u0441\u043B\u043E\u0432\u0430"))), _react.default.createElement(_styled.ModuleCard, {
-        onClick: this.toggleTwo
+        onClick: this.state.SelectGame === true ? this.toggleTwo : ''
       }, _react.default.createElement(_styled.ModuleCard2, null, _react.default.createElement(_styled.ModuleCardTitle, null, "\u0422\u0440\u0438 \u043E\u0431\u0440\u0430\u0437\u0430"))), _react.default.createElement(_styled.ModuleCard, {
-        onClick: this.toggleThree
+        onClick: this.state.SelectGame === true ? this.toggleThree : ''
       }, _react.default.createElement(_styled.ModuleCard3, null, _react.default.createElement(_styled.ModuleCardTitle, null, "\u0428\u0435\u0441\u0442\u044C \u0446\u0438\u0444\u0440")))), _react.default.createElement(_styled.Section, null, _react.default.createElement(_styled.ModuleTitle, null, "\u041E\u0446\u0435\u043D\u043A\u0430 \u0432\u043D\u0438\u043C\u0430\u043D\u0438\u044F"), _react.default.createElement(_styled.ModuleCard, {
-        onClick: this.toggleFour
+        onClick: this.state.SelectGame === true ? this.toggleFour : ''
       }, _react.default.createElement(_styled.ModuleCard4, null, _react.default.createElement(_styled.ModuleCardTitle, null, "\u0411\u0430\u0440\u0430\u0431\u0430\u043D\u043D\u044B\u0435 \u043F\u0430\u043B\u043E\u0447\u043A\u0438"))), _react.default.createElement(_styled.ModuleCard, {
-        onClick: this.toggleFive
+        onClick: this.state.SelectGame === true ? this.toggleFive : ''
       }, _react.default.createElement(_styled.ModuleCard5, null, _react.default.createElement(_styled.ModuleCardTitle, null, "\u0417\u0430\u043F\u043E\u043C\u043D\u0438\u0442\u044C \u0438 \u0432\u043E\u0441\u043F\u0440\u043E\u0438\u0437\u0432\u0435\u0441\u0442\u0438")))), _react.default.createElement(_styled.Section, null, _react.default.createElement(_styled.ModuleTitle, null, "\u041E\u0446\u0435\u043D\u043A\u0430 \u043C\u044B\u0448\u043B\u0435\u043D\u0438\u044F"), _react.default.createElement(_styled.ModuleCard, {
-        onClick: this.toggleSix
+        onClick: this.state.SelectGame === true ? this.toggleSix : ''
       }, _react.default.createElement(_styled.ModuleCard6, null, _react.default.createElement(_styled.ModuleCardTitle, null, "\u0418\u0441\u043A\u043B\u044E\u0447\u0438 \u043B\u0438\u0448\u043D\u0435\u0435"))), _react.default.createElement(_styled.ModuleCard, {
-        onClick: this.toggleSeven
+        onClick: this.state.SelectGame === true ? this.toggleSeven : ''
       }, _react.default.createElement(_styled.ModuleCard7, null, _react.default.createElement(_styled.ModuleCardTitle, null, "\u0412\u044B\u0434\u0435\u043B\u0435\u043D\u0438\u0435 \u0441\u0443\u0449\u0435\u0441\u0442\u0432\u0435\u043D\u043D\u044B\u0445 \u043F\u0440\u0438\u0437\u043D\u0430\u043A\u043E\u0432"))))));
     }
   }]);
@@ -43146,7 +43371,7 @@ function (_Component) {
 
 var _default = Games;
 exports.default = _default;
-},{"react":"../node_modules/react/index.js","prop-types":"../node_modules/prop-types/index.js","../../components/SelectGame":"components/SelectGame/index.js","./styled":"containers/Games/styled.js","./GameOne":"containers/Games/GameOne/index.js","./GameTwo":"containers/Games/GameTwo/index.js","./GameThree":"containers/Games/GameThree/index.js","./GameFour":"containers/Games/GameFour/index.js","./GameFive":"containers/Games/GameFive/index.js","./GameSix":"containers/Games/GameSix/index.js","./GameSeven":"containers/Games/GameSeven/index.js"}],"containers/Home/Home.js":[function(require,module,exports) {
+},{"react":"../node_modules/react/index.js","prop-types":"../node_modules/prop-types/index.js","../../components/SelectGame":"components/SelectGame/index.js","./styled":"containers/Games/styled.js","./GameOne":"containers/Games/GameOne/index.js","./GameTwo":"containers/Games/GameTwo/index.js","./GameThree":"containers/Games/GameThree/index.js","./GameFour":"containers/Games/GameFour/index.js","./GameFive":"containers/Games/GameFive/index.js","./GameSix":"containers/Games/GameSix/index.js","./GameSeven":"containers/Games/GameSeven/index.js","../../components/ModalClose":"components/ModalClose/index.js"}],"containers/Home/Home.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -43279,7 +43504,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "35493" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "43363" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

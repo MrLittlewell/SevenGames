@@ -76,7 +76,7 @@ export default class Game3 extends Component {
 
   randomNumber() {
     return (
-      Math.floor(Math.random(99) * 99)
+      Math.floor(Math.random(999) * 999)
     )
   }
 
@@ -190,10 +190,13 @@ export default class Game3 extends Component {
       return (
         <ModalOverGame>
           <ModalOverGameBlock>
-            <ModalOverGameTitle>Время закончилось</ModalOverGameTitle>
-            <ModalOverGameLabel>Время: { this.state.timeLeft }</ModalOverGameLabel>
-            <ModalOverGameLabel>Счёт: { this.state.points }</ModalOverGameLabel>
-            <ModalOverButton onClick={() => {this.props.toMainmenu()}}>На главную</ModalOverButton>
+            <div>
+              <ModalOverGameTitle>Время закончилось</ModalOverGameTitle>
+              <ModalOverGameLabel>Время: { this.state.timeLeft }</ModalOverGameLabel>
+              <ModalOverGameLabel>Счёт: { this.state.points }</ModalOverGameLabel>
+            </div>
+            <ModalOverButton onClick={() => {this.props.toMenu()}}>На главную</ModalOverButton>
+            
           </ModalOverGameBlock>
         </ModalOverGame>
       )

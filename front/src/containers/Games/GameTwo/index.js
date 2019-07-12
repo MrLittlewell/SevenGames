@@ -203,7 +203,7 @@ export default class Game2 extends Component {
               <ModalOverGameLabel>Счёт: { this.state.points }</ModalOverGameLabel>
               <ModalOverGameLabel>попытки: { this.state.try }</ModalOverGameLabel>
             </div>
-            <ModalOverButton onClick={() => {this.props.toMainmenu()}}>На главную</ModalOverButton>
+            <ModalOverButton onClick={() => {this.props.toMenu()}}>На главную</ModalOverButton>
           </ModalOverGameBlock>
         </ModalOverGame>
       )
