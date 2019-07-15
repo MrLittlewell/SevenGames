@@ -32321,97 +32321,7 @@ function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(
 var AppWraper = _styledComponents.default.div(_templateObject());
 
 exports.AppWraper = AppWraper;
-},{"styled-components":"../node_modules/styled-components/dist/styled-components.browser.esm.js"}],"img/logo.gif":[function(require,module,exports) {
-module.exports = "/logo.969f1172.gif";
-},{}],"components/SelectGame/styled.js":[function(require,module,exports) {
-"use strict";
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.MainWrapper = void 0;
-
-var _styledComponents = _interopRequireDefault(require("styled-components"));
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function _templateObject() {
-  var data = _taggedTemplateLiteral(["\n    display: flex;\n    justify-content: center;\n    align-items: center;\n    background: white;\n    height: 100%;\n    flex-direction: column;\n    border-radius: 8px;\n"]);
-
-  _templateObject = function _templateObject() {
-    return data;
-  };
-
-  return data;
-}
-
-function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(0); } return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
-
-var MainWrapper = _styledComponents.default.div(_templateObject());
-
-exports.MainWrapper = MainWrapper;
-},{"styled-components":"../node_modules/styled-components/dist/styled-components.browser.esm.js"}],"components/SelectGame/index.js":[function(require,module,exports) {
-"use strict";
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.default = void 0;
-
-var _react = _interopRequireWildcard(require("react"));
-
-var _logo = _interopRequireDefault(require("../../img/logo.gif"));
-
-var _styled = require("./styled");
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = Object.defineProperty && Object.getOwnPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : {}; if (desc.get || desc.set) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } } newObj.default = obj; return newObj; } }
-
-function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
-
-function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
-
-function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
-
-function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
-
-function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
-
-function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
-
-var SelectGame =
-/*#__PURE__*/
-function (_Component) {
-  _inherits(SelectGame, _Component);
-
-  function SelectGame() {
-    _classCallCheck(this, SelectGame);
-
-    return _possibleConstructorReturn(this, _getPrototypeOf(SelectGame).apply(this, arguments));
-  }
-
-  _createClass(SelectGame, [{
-    key: "render",
-    value: function render() {
-      return _react.default.createElement(_styled.MainWrapper, null, _react.default.createElement("img", {
-        src: _logo.default,
-        alt: "logo"
-      }), _react.default.createElement("h1", null, "\u0412\u044B\u0431\u0435\u0440\u0438 \u0438\u0433\u0440\u0443"));
-    }
-  }]);
-
-  return SelectGame;
-}(_react.Component);
-
-exports.default = SelectGame;
-},{"react":"../node_modules/react/index.js","../../img/logo.gif":"img/logo.gif","./styled":"components/SelectGame/styled.js"}],"img/card_bg/card_1.png":[function(require,module,exports) {
+},{"styled-components":"../node_modules/styled-components/dist/styled-components.browser.esm.js"}],"img/card_bg/card_1.png":[function(require,module,exports) {
 module.exports = "/card_1.3c189e14.png";
 },{}],"img/card_bg/card_2.png":[function(require,module,exports) {
 module.exports = "/card_2.21af1e72.png";
@@ -36033,7 +35943,7 @@ function (_Component) {
       };
 
       setInterval(Timer, 1000);
-      var secretCards = [_data.data[this.randomNumber(_data.data.length)], _data.data[this.randomNumber(_data.data.length)], _data.data[this.randomNumber(_data.data.length)], _data.data[this.randomNumber(_data.data.length)], _data.data[this.randomNumber(_data.data.length)], _data.data[this.randomNumber(_data.data.length)], _data.data[this.randomNumber(_data.data.length)], _data.data[this.randomNumber(_data.data.length)], _data.data[this.randomNumber(_data.data.length)]];
+      var secretCards = [this.randomNumber(_data.data), this.randomNumber(_data.data), this.randomNumber(_data.data)];
       console.log(_data.data, secretCards);
 
       if (this.state.randomCards === true) {
@@ -36043,18 +35953,20 @@ function (_Component) {
           };
 
           var nineCards = [].concat(secretCards);
-          var allCards = []; // allCards = allCards.concat(data.card1).concat(data.card2).concat(data.card3)
-
+          var allCards = [];
+          allCards = allCards.concat(_data.data[0]).concat(_data.data[1]).concat(_data.data[2]);
           nineCards.map(function (item) {
-            for (var i = 0; i <= allCards.length; i++) {
+            for (var i = 0; i < allCards.length; i++) {
               if (allCards[i] === item) {
                 allCards.splice(i, 1);
               }
             }
-          }); // for (let i = 0; i < 6; i++) {
-          //   let random = Math.floor(Math.random(allCards.length) * allCards.length)
-          //   nineCards.push(allCards[random])
-          // }
+          });
+
+          for (var i = 0; i < 6; i++) {
+            var random = Math.floor(Math.random(allCards.length) * allCards.length);
+            nineCards.push(allCards[random]);
+          }
 
           nineCards.sort(sortRandom);
           return nineCards;
@@ -36069,10 +35981,17 @@ function (_Component) {
     }
   }, {
     key: "randomNumber",
-    value: function randomNumber(number) {
-      return (// Math.floor(Math.random(number) * number)
-        Math.floor(Math.random() * _data.data.length)
-      );
+    value: function randomNumber(array) {
+      var copy = array.slice(0);
+
+      if (copy.length < 1) {
+        copy = array.slice(0);
+      }
+
+      var index = Math.floor(Math.random() * copy.length);
+      var item = copy[index];
+      copy.splice(index, 1);
+      return item;
     }
   }, {
     key: "startGame",
@@ -42929,7 +42848,97 @@ function (_Component) {
 }(_react.Component);
 
 exports.default = Game7;
-},{"react":"../node_modules/react/index.js","react-redux":"../node_modules/react-redux/es/index.js","../../../audio/correct.mp3":"audio/correct.mp3","./data":"containers/Games/GameSeven/data.js","../../../img/icons/exit.svg":"img/icons/exit.svg","./contentStyled.js":"containers/Games/GameSeven/contentStyled.js"}],"components/ModalClose/styled.js":[function(require,module,exports) {
+},{"react":"../node_modules/react/index.js","react-redux":"../node_modules/react-redux/es/index.js","../../../audio/correct.mp3":"audio/correct.mp3","./data":"containers/Games/GameSeven/data.js","../../../img/icons/exit.svg":"img/icons/exit.svg","./contentStyled.js":"containers/Games/GameSeven/contentStyled.js"}],"img/logo.gif":[function(require,module,exports) {
+module.exports = "/logo.969f1172.gif";
+},{}],"components/SelectGame/styled.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.MainWrapper = void 0;
+
+var _styledComponents = _interopRequireDefault(require("styled-components"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _templateObject() {
+  var data = _taggedTemplateLiteral(["\n    display: flex;\n    justify-content: center;\n    align-items: center;\n    background: white;\n    height: 100%;\n    flex-direction: column;\n    border-radius: 8px;\n"]);
+
+  _templateObject = function _templateObject() {
+    return data;
+  };
+
+  return data;
+}
+
+function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(0); } return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
+
+var MainWrapper = _styledComponents.default.div(_templateObject());
+
+exports.MainWrapper = MainWrapper;
+},{"styled-components":"../node_modules/styled-components/dist/styled-components.browser.esm.js"}],"components/SelectGame/index.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+
+var _react = _interopRequireWildcard(require("react"));
+
+var _logo = _interopRequireDefault(require("../../img/logo.gif"));
+
+var _styled = require("./styled");
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = Object.defineProperty && Object.getOwnPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : {}; if (desc.get || desc.set) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } } newObj.default = obj; return newObj; } }
+
+function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
+
+function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
+var SelectGame =
+/*#__PURE__*/
+function (_Component) {
+  _inherits(SelectGame, _Component);
+
+  function SelectGame() {
+    _classCallCheck(this, SelectGame);
+
+    return _possibleConstructorReturn(this, _getPrototypeOf(SelectGame).apply(this, arguments));
+  }
+
+  _createClass(SelectGame, [{
+    key: "render",
+    value: function render() {
+      return _react.default.createElement(_styled.MainWrapper, null, _react.default.createElement("img", {
+        src: _logo.default,
+        alt: "logo"
+      }), _react.default.createElement("h1", null, "\u0412\u044B\u0431\u0435\u0440\u0438 \u0438\u0433\u0440\u0443"));
+    }
+  }]);
+
+  return SelectGame;
+}(_react.Component);
+
+exports.default = SelectGame;
+},{"react":"../node_modules/react/index.js","../../img/logo.gif":"img/logo.gif","./styled":"components/SelectGame/styled.js"}],"components/ModalClose/styled.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -43128,10 +43137,6 @@ exports.default = void 0;
 
 var _react = _interopRequireWildcard(require("react"));
 
-var _propTypes = _interopRequireDefault(require("prop-types"));
-
-var _SelectGame = _interopRequireDefault(require("../../components/SelectGame"));
-
 var _styled = require("./styled");
 
 var _GameOne = _interopRequireDefault(require("./GameOne"));
@@ -43147,6 +43152,8 @@ var _GameFive = _interopRequireDefault(require("./GameFive"));
 var _GameSix = _interopRequireDefault(require("./GameSix"));
 
 var _GameSeven = _interopRequireDefault(require("./GameSeven"));
+
+var _SelectGame = _interopRequireDefault(require("../../components/SelectGame"));
 
 var _ModalClose = _interopRequireDefault(require("../../components/ModalClose"));
 
@@ -43345,19 +43352,26 @@ function (_Component) {
         toMenu: this.toMenu,
         backToGame: this.backToGame
       })), _react.default.createElement(_styled.SelectGames, null, _react.default.createElement(_styled.PageTitle, null, "\u0418\u0433\u0440\u044B"), _react.default.createElement(_styled.Section, null, _react.default.createElement(_styled.ModuleTitle, null, "\u041E\u0446\u0435\u043D\u043A\u0430 \u043F\u0430\u043C\u044F\u0442\u0438"), _react.default.createElement(_styled.ModuleCard, {
-        onClick: this.state.SelectGame === true ? this.toggleOne : ''
+        role: "button",
+        onClick: this.state.SelectGame === true ? this.toggleOne : function () {}
       }, _react.default.createElement(_styled.ModuleCard1, null, _react.default.createElement(_styled.ModuleCardTitle, null, "\u0422\u0440\u0438 \u0441\u043B\u043E\u0432\u0430"))), _react.default.createElement(_styled.ModuleCard, {
-        onClick: this.state.SelectGame === true ? this.toggleTwo : ''
+        role: "button",
+        onClick: this.state.SelectGame === true ? this.toggleTwo : function () {}
       }, _react.default.createElement(_styled.ModuleCard2, null, _react.default.createElement(_styled.ModuleCardTitle, null, "\u0422\u0440\u0438 \u043E\u0431\u0440\u0430\u0437\u0430"))), _react.default.createElement(_styled.ModuleCard, {
-        onClick: this.state.SelectGame === true ? this.toggleThree : ''
+        role: "button",
+        onClick: this.state.SelectGame === true ? this.toggleThree : function () {}
       }, _react.default.createElement(_styled.ModuleCard3, null, _react.default.createElement(_styled.ModuleCardTitle, null, "\u0428\u0435\u0441\u0442\u044C \u0446\u0438\u0444\u0440")))), _react.default.createElement(_styled.Section, null, _react.default.createElement(_styled.ModuleTitle, null, "\u041E\u0446\u0435\u043D\u043A\u0430 \u0432\u043D\u0438\u043C\u0430\u043D\u0438\u044F"), _react.default.createElement(_styled.ModuleCard, {
-        onClick: this.state.SelectGame === true ? this.toggleFour : ''
+        role: "button",
+        onClick: this.state.SelectGame === true ? this.toggleFour : function () {}
       }, _react.default.createElement(_styled.ModuleCard4, null, _react.default.createElement(_styled.ModuleCardTitle, null, "\u0411\u0430\u0440\u0430\u0431\u0430\u043D\u043D\u044B\u0435 \u043F\u0430\u043B\u043E\u0447\u043A\u0438"))), _react.default.createElement(_styled.ModuleCard, {
-        onClick: this.state.SelectGame === true ? this.toggleFive : ''
+        role: "button",
+        onClick: this.state.SelectGame === true ? this.toggleFive : function () {}
       }, _react.default.createElement(_styled.ModuleCard5, null, _react.default.createElement(_styled.ModuleCardTitle, null, "\u0417\u0430\u043F\u043E\u043C\u043D\u0438\u0442\u044C \u0438 \u0432\u043E\u0441\u043F\u0440\u043E\u0438\u0437\u0432\u0435\u0441\u0442\u0438")))), _react.default.createElement(_styled.Section, null, _react.default.createElement(_styled.ModuleTitle, null, "\u041E\u0446\u0435\u043D\u043A\u0430 \u043C\u044B\u0448\u043B\u0435\u043D\u0438\u044F"), _react.default.createElement(_styled.ModuleCard, {
-        onClick: this.state.SelectGame === true ? this.toggleSix : ''
+        role: "button",
+        onClick: this.state.SelectGame === true ? this.toggleSix : function () {}
       }, _react.default.createElement(_styled.ModuleCard6, null, _react.default.createElement(_styled.ModuleCardTitle, null, "\u0418\u0441\u043A\u043B\u044E\u0447\u0438 \u043B\u0438\u0448\u043D\u0435\u0435"))), _react.default.createElement(_styled.ModuleCard, {
-        onClick: this.state.SelectGame === true ? this.toggleSeven : ''
+        role: "button",
+        onClick: this.state.SelectGame === true ? this.toggleSeven : function () {}
       }, _react.default.createElement(_styled.ModuleCard7, null, _react.default.createElement(_styled.ModuleCardTitle, null, "\u0412\u044B\u0434\u0435\u043B\u0435\u043D\u0438\u0435 \u0441\u0443\u0449\u0435\u0441\u0442\u0432\u0435\u043D\u043D\u044B\u0445 \u043F\u0440\u0438\u0437\u043D\u0430\u043A\u043E\u0432"))))));
     }
   }]);
@@ -43367,7 +43381,7 @@ function (_Component) {
 
 var _default = Games;
 exports.default = _default;
-},{"react":"../node_modules/react/index.js","prop-types":"../node_modules/prop-types/index.js","../../components/SelectGame":"components/SelectGame/index.js","./styled":"containers/Games/styled.js","./GameOne":"containers/Games/GameOne/index.js","./GameTwo":"containers/Games/GameTwo/index.js","./GameThree":"containers/Games/GameThree/index.js","./GameFour":"containers/Games/GameFour/index.js","./GameFive":"containers/Games/GameFive/index.js","./GameSix":"containers/Games/GameSix/index.js","./GameSeven":"containers/Games/GameSeven/index.js","../../components/ModalClose":"components/ModalClose/index.js"}],"containers/Home/Home.js":[function(require,module,exports) {
+},{"react":"../node_modules/react/index.js","./styled":"containers/Games/styled.js","./GameOne":"containers/Games/GameOne/index.js","./GameTwo":"containers/Games/GameTwo/index.js","./GameThree":"containers/Games/GameThree/index.js","./GameFour":"containers/Games/GameFour/index.js","./GameFive":"containers/Games/GameFive/index.js","./GameSix":"containers/Games/GameSix/index.js","./GameSeven":"containers/Games/GameSeven/index.js","../../components/SelectGame":"components/SelectGame/index.js","../../components/ModalClose":"components/ModalClose/index.js"}],"containers/Home/Home.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -43500,7 +43514,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "43363" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "45549" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

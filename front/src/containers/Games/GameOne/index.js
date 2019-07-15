@@ -68,15 +68,9 @@ export default class Game1 extends Component {
     setInterval(Timer, 1000)
     
     const secretCards = [
-      data[this.randomNumber(data.length)],
-      data[this.randomNumber(data.length)],
-      data[this.randomNumber(data.length)],
-      data[this.randomNumber(data.length)],
-      data[this.randomNumber(data.length)],
-      data[this.randomNumber(data.length)],
-      data[this.randomNumber(data.length)],
-      data[this.randomNumber(data.length)],
-      data[this.randomNumber(data.length)],
+      this.randomNumber(data),
+      this.randomNumber(data),
+      this.randomNumber(data),
     ]
 
     console.log(data, secretCards)
@@ -88,20 +82,20 @@ export default class Game1 extends Component {
         var nineCards = [ ...secretCards ]
         var allCards = []
   
-        // allCards = allCards.concat(data.card1).concat(data.card2).concat(data.card3)
+        allCards = allCards.concat(data[0]).concat(data[1]).concat(data[2])
   
         nineCards.map((item) => {
-          for (let i = 0; i <= allCards.length; i++) {
+          for (let i = 0; i < allCards.length; i++) {
             if (allCards[i] === item) {
               allCards.splice(i, 1)
             }
           }
         })
   
-        // for (let i = 0; i < 6; i++) {
-        //   let random = Math.floor(Math.random(allCards.length) * allCards.length)
-        //   nineCards.push(allCards[random])
-        // }
+        for (let i = 0; i < 6; i++) {
+          let random = Math.floor(Math.random(allCards.length) * allCards.length)
+          nineCards.push(allCards[random])
+        }
   
         nineCards.sort(sortRandom)
   
@@ -117,10 +111,14 @@ export default class Game1 extends Component {
         
   }
 
-  randomNumber(number) {
-    return (
-      // Math.floor(Math.random(number) * number)
-      Math.floor(Math.random() * data.length)
+  randomNumber(array) {
+    let copy = array.slice(0)
+    if (copy.length < 1) { copy = array.slice(0) }
+    let index = Math.floor(Math.random() * copy.length)
+    let item = copy[index]
+    copy.splice(index, 1)
+    return(
+      item
     )
   }
 
