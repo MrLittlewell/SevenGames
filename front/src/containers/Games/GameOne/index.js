@@ -44,7 +44,7 @@ export default class Game1 extends Component {
 
     this.state = {
       gameId: 1,
-      gameLevel: 1,
+      gameLevel: 1, // настройки свич кейс
       isStarted: false,
       isUserPlay: false,
       values: undefined,
@@ -73,9 +73,9 @@ export default class Game1 extends Component {
       data[this.randomNumber(data.length)],
       data[this.randomNumber(data.length)],
       data[this.randomNumber(data.length)],
-      this.state.gameLevel === 2 && data[this.randomNumber(data.length)],
-      this.state.gameLevel === 3 && data[this.randomNumber(data.length)],
-      this.state.gameLevel === 4 && data[this.randomNumber(data.length)],
+      this.state.gameLevel >= 2 && data[this.randomNumber(data.length)],
+      this.state.gameLevel >= 3 && data[this.randomNumber(data.length)],
+      this.state.gameLevel >= 4 && data[this.randomNumber(data.length)],
       this.state.gameLevel === 5 && data[this.randomNumber(data.length)],
     ]
 
@@ -97,8 +97,32 @@ export default class Game1 extends Component {
             }
           }
         })
-      
-        for (let i = 0; i < 6; i++) {
+        
+        let levelCards = this.state.gameLevel
+        switch(this.levelCards)
+        {
+            case 1:
+                6;
+                break;
+            case 2:
+                5;
+                break;
+            case 3:
+                4;
+                break;
+            case 4:
+                6;
+                break;
+            case 5:
+                5;
+                break;
+            default:
+                6;
+                break;
+        }
+
+        console.log(levelCards)
+        for (let i = 0; i < levelCards; i++) {
           let random = Math.floor(Math.random(allCards.length) * allCards.length)
           nineCards.push(allCards[random])
         }
@@ -134,10 +158,18 @@ export default class Game1 extends Component {
 
   nextLevel() {
     this.setState({
-      gameLevel: this.state.gameLevel + 1
+      isStarted: false,
+      isUserPlay: false,
+      values: undefined,
+      secretCards: true,
+      isOver: false,
+      gameLevel: this.state.gameLevel + 1,
+      try: this.state.try + 1,
+      points : 0,
+      timeLeft: this.state.timeLeft + 3,
     })
-    this.startGame()
     console.log(this.state.gameLevel)
+    
   }
 
   checkCard(item, key) {
@@ -187,7 +219,7 @@ export default class Game1 extends Component {
         <ModalOverGame>
           <ModalOverGameBlock>
             <div>
-              <ModalOverGameTitle>Время или попытки закончились</ModalOverGameTitle>
+              <ModalOverGameTitle>{this.state.points === 3 ? 'Уровень пройден' : 'Время или попытки закончились'}</ModalOverGameTitle>
               <ModalOverGameLabel>Время: { this.state.timeLeft }</ModalOverGameLabel>
               <ModalOverGameLabel>Счёт: { this.state.points }</ModalOverGameLabel>
               <ModalOverGameLabel>Попытки: { this.state.try }</ModalOverGameLabel>
@@ -254,15 +286,15 @@ export default class Game1 extends Component {
                 <ModuleCardFront></ModuleCardFront>
                 <ModuleCardBack>{ this.state.secretCards[2] }</ModuleCardBack>
               </ModuleCard3>
-              {this.state.gameLevel === 2 && <ModuleCard3>
+              {this.state.gameLevel >= 2 && <ModuleCard3>
                 <ModuleCardFront></ModuleCardFront>
                 <ModuleCardBack>{ this.state.secretCards[3] }</ModuleCardBack>
               </ModuleCard3>}
-              {this.state.gameLevel === 3 && <ModuleCard3>
+              {this.state.gameLevel >= 3 && <ModuleCard3>
                 <ModuleCardFront></ModuleCardFront>
                 <ModuleCardBack>{ this.state.secretCards[4] }</ModuleCardBack>
               </ModuleCard3> }
-              {this.state.gameLevel === 4 && <ModuleCard3>
+              {this.state.gameLevel >= 4 && <ModuleCard3>
                 <ModuleCardFront></ModuleCardFront>
                 <ModuleCardBack>{ this.state.secretCards[5] }</ModuleCardBack>
               </ModuleCard3> }
