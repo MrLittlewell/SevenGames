@@ -244,3 +244,6 @@ export const RulesItem = styled.div`
   margin-left: 1em;
   color: #3e3e3e;
 `
+export const ButtonsArea = styled.div`
+  display: flex;
+`

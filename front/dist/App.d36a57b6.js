@@ -35445,7 +35445,7 @@ module.exports = "/card_front2.f3775314.png";
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.RulesItem = exports.MobuleSubTitle = exports.ModalOverButton = exports.TimerLeft = exports.ModalOverGameLabel = exports.ModalOverGameTitle = exports.ModalOverGameBlock = exports.ModalOverGame = exports.Timer = exports.ModuleButtonRun = exports.ModuleCardBack = exports.ModuleCardFront = exports.ModuleCardSelect = exports.ModuleCard3 = exports.ModuleCard2 = exports.ModuleCard1 = exports.ModuleCard = exports.CenterWrapper = exports.ModuleCardsSelect = exports.ModuleCards = exports.ModuleTitle = exports.Module = exports.PageTitle = exports.PageWrapper = exports.Exit = void 0;
+exports.ButtonsArea = exports.RulesItem = exports.MobuleSubTitle = exports.ModalOverButton = exports.TimerLeft = exports.ModalOverGameLabel = exports.ModalOverGameTitle = exports.ModalOverGameBlock = exports.ModalOverGame = exports.Timer = exports.ModuleButtonRun = exports.ModuleCardBack = exports.ModuleCardFront = exports.ModuleCardSelect = exports.ModuleCard3 = exports.ModuleCard2 = exports.ModuleCard1 = exports.ModuleCard = exports.CenterWrapper = exports.ModuleCardsSelect = exports.ModuleCards = exports.ModuleTitle = exports.Module = exports.PageTitle = exports.PageWrapper = exports.Exit = void 0;
 
 var _styledComponents = _interopRequireWildcard(require("styled-components"));
 
@@ -35454,6 +35454,16 @@ var _card_front = _interopRequireDefault(require("../../../img/card_bg/card_fron
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = Object.defineProperty && Object.getOwnPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : {}; if (desc.get || desc.set) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } } newObj.default = obj; return newObj; } }
+
+function _templateObject31() {
+  var data = _taggedTemplateLiteral(["\n  display: flex;\n"]);
+
+  _templateObject31 = function _templateObject31() {
+    return data;
+  };
+
+  return data;
+}
 
 function _templateObject30() {
   var data = _taggedTemplateLiteral(["\n  font-size: 1em;\n  line-height: 1.5em;\n  margin-left: 1em;\n  color: #3e3e3e;\n"]);
@@ -35850,6 +35860,10 @@ exports.MobuleSubTitle = MobuleSubTitle;
 var RulesItem = _styledComponents.default.div(_templateObject30());
 
 exports.RulesItem = RulesItem;
+
+var ButtonsArea = _styledComponents.default.div(_templateObject31());
+
+exports.ButtonsArea = ButtonsArea;
 },{"styled-components":"../node_modules/styled-components/dist/styled-components.browser.esm.js","../../../img/card_bg/card_front2.png":"img/card_bg/card_front2.png"}],"containers/Games/GameOne/index.js":[function(require,module,exports) {
 "use strict";
 
@@ -35917,6 +35931,7 @@ function (_Component) {
     _this = _possibleConstructorReturn(this, _getPrototypeOf(Game1).call(this, props));
     _this.state = {
       gameId: 1,
+      gameLevel: 1,
       isStarted: false,
       isUserPlay: false,
       values: undefined,
@@ -35943,7 +35958,7 @@ function (_Component) {
       };
 
       setInterval(Timer, 1000);
-      var secretCards = [this.randomNumber(_data.data), this.randomNumber(_data.data), this.randomNumber(_data.data)];
+      var secretCards = [_data.data[this.randomNumber(_data.data.length)], _data.data[this.randomNumber(_data.data.length)], _data.data[this.randomNumber(_data.data.length)], this.state.gameLevel === 2 && _data.data[this.randomNumber(_data.data.length)], this.state.gameLevel === 3 && _data.data[this.randomNumber(_data.data.length)], this.state.gameLevel === 4 && _data.data[this.randomNumber(_data.data.length)], this.state.gameLevel === 5 && _data.data[this.randomNumber(_data.data.length)]];
       console.log(_data.data, secretCards);
 
       if (this.state.randomCards === true) {
@@ -35953,10 +35968,12 @@ function (_Component) {
           };
 
           var nineCards = [].concat(secretCards);
-          var allCards = [];
+
+          var allCards = _toConsumableArray(_data.data);
+
           allCards = allCards.concat(_data.data[0]).concat(_data.data[1]).concat(_data.data[2]);
           nineCards.map(function (item) {
-            for (var i = 0; i < allCards.length; i++) {
+            for (var i = 0; i <= allCards.length; i++) {
               if (allCards[i] === item) {
                 allCards.splice(i, 1);
               }
@@ -35969,7 +35986,10 @@ function (_Component) {
           }
 
           nineCards.sort(sortRandom);
-          return nineCards;
+          var nineCardsNew = nineCards.filter(function (item) {
+            return item !== false;
+          });
+          return nineCardsNew;
         };
 
         this.setState({
@@ -35981,17 +36001,8 @@ function (_Component) {
     }
   }, {
     key: "randomNumber",
-    value: function randomNumber(array) {
-      var copy = array.slice(0);
-
-      if (copy.length < 1) {
-        copy = array.slice(0);
-      }
-
-      var index = Math.floor(Math.random() * copy.length);
-      var item = copy[index];
-      copy.splice(index, 1);
-      return item;
+    value: function randomNumber(number) {
+      return Math.floor(Math.random(number) * number);
     }
   }, {
     key: "startGame",
@@ -35999,6 +36010,15 @@ function (_Component) {
       this.setState({
         isStarted: true
       });
+    }
+  }, {
+    key: "nextLevel",
+    value: function nextLevel() {
+      this.setState({
+        gameLevel: this.state.gameLevel + 1
+      });
+      this.startGame();
+      console.log(this.state.gameLevel);
     }
   }, {
     key: "checkCard",
@@ -36050,11 +36070,15 @@ function (_Component) {
         this.state.timerOn ? this.setState({
           timerOn: false
         }) : null;
-        return _react.default.createElement(_contentStyled.ModalOverGame, null, _react.default.createElement(_contentStyled.ModalOverGameBlock, null, _react.default.createElement("div", null, _react.default.createElement(_contentStyled.ModalOverGameTitle, null, "\u0412\u0440\u0435\u043C\u044F \u0438\u043B\u0438 \u043F\u043E\u043F\u044B\u0442\u043A\u0438 \u0437\u0430\u043A\u043E\u043D\u0447\u0438\u043B\u0438\u0441\u044C"), _react.default.createElement(_contentStyled.ModalOverGameLabel, null, "\u0412\u0440\u0435\u043C\u044F: ", this.state.timeLeft), _react.default.createElement(_contentStyled.ModalOverGameLabel, null, "\u0421\u0447\u0451\u0442: ", this.state.points), _react.default.createElement(_contentStyled.ModalOverGameLabel, null, "\u041F\u043E\u043F\u044B\u0442\u043A\u0438: ", this.state.try)), _react.default.createElement(_contentStyled.ModalOverButton, {
+        return _react.default.createElement(_contentStyled.ModalOverGame, null, _react.default.createElement(_contentStyled.ModalOverGameBlock, null, _react.default.createElement("div", null, _react.default.createElement(_contentStyled.ModalOverGameTitle, null, "\u0412\u0440\u0435\u043C\u044F \u0438\u043B\u0438 \u043F\u043E\u043F\u044B\u0442\u043A\u0438 \u0437\u0430\u043A\u043E\u043D\u0447\u0438\u043B\u0438\u0441\u044C"), _react.default.createElement(_contentStyled.ModalOverGameLabel, null, "\u0412\u0440\u0435\u043C\u044F: ", this.state.timeLeft), _react.default.createElement(_contentStyled.ModalOverGameLabel, null, "\u0421\u0447\u0451\u0442: ", this.state.points), _react.default.createElement(_contentStyled.ModalOverGameLabel, null, "\u041F\u043E\u043F\u044B\u0442\u043A\u0438: ", this.state.try)), _react.default.createElement(_contentStyled.ButtonsArea, null, _react.default.createElement(_contentStyled.ModalOverButton, {
           onClick: function onClick() {
             _this4.props.toMenu();
           }
-        }, "\u041D\u0430 \u0433\u043B\u0430\u0432\u043D\u0443\u044E")));
+        }, "\u041D\u0430 \u0433\u043B\u0430\u0432\u043D\u0443\u044E"), this.state.points === 3 ? _react.default.createElement(_contentStyled.ModalOverButton, {
+          onClick: function onClick() {
+            _this4.nextLevel();
+          }
+        }, "\u041D\u043E\u0432\u044B\u0439 \u0443\u0440\u043E\u0432\u0435\u043D\u044C!") : '')));
       }
     } // SaveResult() {
     //   let data = {
@@ -36097,7 +36121,7 @@ function (_Component) {
               timerOn: true
             });
           }, 15000);
-          return _react.default.createElement("div", null, _react.default.createElement(_contentStyled.ModuleCards, null, _react.default.createElement(_contentStyled.ModuleCard1, null, _react.default.createElement(_contentStyled.ModuleCardFront, null), _react.default.createElement(_contentStyled.ModuleCardBack, null, this.state.secretCards[0])), _react.default.createElement(_contentStyled.ModuleCard2, null, _react.default.createElement(_contentStyled.ModuleCardFront, null), _react.default.createElement(_contentStyled.ModuleCardBack, null, this.state.secretCards[1])), _react.default.createElement(_contentStyled.ModuleCard3, null, _react.default.createElement(_contentStyled.ModuleCardFront, null), _react.default.createElement(_contentStyled.ModuleCardBack, null, this.state.secretCards[2]))), _react.default.createElement(_contentStyled.Timer, null));
+          return _react.default.createElement("div", null, _react.default.createElement(_contentStyled.ModuleCards, null, _react.default.createElement(_contentStyled.ModuleCard1, null, _react.default.createElement(_contentStyled.ModuleCardFront, null), _react.default.createElement(_contentStyled.ModuleCardBack, null, this.state.secretCards[0])), _react.default.createElement(_contentStyled.ModuleCard2, null, _react.default.createElement(_contentStyled.ModuleCardFront, null), _react.default.createElement(_contentStyled.ModuleCardBack, null, this.state.secretCards[1])), _react.default.createElement(_contentStyled.ModuleCard3, null, _react.default.createElement(_contentStyled.ModuleCardFront, null), _react.default.createElement(_contentStyled.ModuleCardBack, null, this.state.secretCards[2])), this.state.gameLevel === 2 && _react.default.createElement(_contentStyled.ModuleCard3, null, _react.default.createElement(_contentStyled.ModuleCardFront, null), _react.default.createElement(_contentStyled.ModuleCardBack, null, this.state.secretCards[3])), this.state.gameLevel === 3 && _react.default.createElement(_contentStyled.ModuleCard3, null, _react.default.createElement(_contentStyled.ModuleCardFront, null), _react.default.createElement(_contentStyled.ModuleCardBack, null, this.state.secretCards[4])), this.state.gameLevel === 4 && _react.default.createElement(_contentStyled.ModuleCard3, null, _react.default.createElement(_contentStyled.ModuleCardFront, null), _react.default.createElement(_contentStyled.ModuleCardBack, null, this.state.secretCards[5])), this.state.gameLevel === 5 && _react.default.createElement(_contentStyled.ModuleCard3, null, _react.default.createElement(_contentStyled.ModuleCardFront, null), _react.default.createElement(_contentStyled.ModuleCardBack, null, this.state.secretCards[6]))), _react.default.createElement(_contentStyled.Timer, null));
         } else {
           return _react.default.createElement(_contentStyled.Module, null, _react.default.createElement(_contentStyled.MobuleSubTitle, null, "\u041E\u043F\u0438\u0441\u0430\u043D\u0438\u0435:"), _react.default.createElement(_contentStyled.RulesItem, null, "\u041D\u0443\u0436\u043D\u043E \u0437\u0430\u043F\u043E\u043C\u043D\u0438\u0442\u044C \u0441\u043B\u043E\u0432\u0430 \u043D\u0430 \u0442\u0440\u0451\u0445 \u043A\u0430\u0440\u0442\u043E\u0447\u043A\u0430\u0445."), _react.default.createElement(_contentStyled.RulesItem, null, "\u041D\u0430 \u0437\u0430\u043F\u043E\u043C\u0438\u043D\u0430\u043D\u0438\u0435 \u0441\u043B\u043E\u0432\u0430 \u0434\u0430\u0451\u0442\u0441\u044F 3 \u0441\u0435\u043A\u0443\u043D\u0434\u044B."), _react.default.createElement(_contentStyled.RulesItem, null, "\u041F\u043E\u0442\u043E\u043C \u043D\u0443\u0436\u043D\u043E \u0432\u044B\u0431\u0440\u0430\u0442\u044C \u043F\u0440\u0430\u0432\u0438\u043B\u044C\u043D\u044B\u0435 \u0441\u043B\u043E\u0432\u0430 \u0441\u0440\u0435\u0434\u0438 \u043F\u043E\u044F\u0432\u0438\u0432\u0448\u0438\u0445\u0441\u044F \u0434\u0435\u0432\u044F\u0442\u0438 \u043A\u0430\u0440\u0442\u043E\u0447\u0435\u043A."), _react.default.createElement(_contentStyled.CenterWrapper, null, _react.default.createElement(_contentStyled.ModuleButtonRun, {
             to: "#",
@@ -43514,7 +43538,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "45549" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "43577" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
