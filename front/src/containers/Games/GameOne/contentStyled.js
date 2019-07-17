@@ -86,6 +86,9 @@ export const Module = styled.div`
 export const ModuleTitle = styled.div`
   font-size: 1.5em;
   color: #3e3e3e;
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
 `
 export const ModuleCards = styled.div`
   width: 40em;
@@ -97,6 +100,7 @@ export const ModuleCards = styled.div`
   margin-top: 1em;
   overflow: hidden;
   animation: ${skip} 14s ease-in-out forwards;
+  animation: none;
 `
 export const ModuleCardsSelect = styled(ModuleCards)`
   animation: none;
@@ -114,7 +118,7 @@ export const ModuleCard = styled.div`
   top: 0;
   left: 0;
   width: 12em;
-  height: 12em;
+  height: 8em;
   border-radius: 4px;
   margin: 0.5em 0.5em;
   transform-style: preserve-3d;
@@ -126,10 +130,22 @@ export const ModuleCard1 = styled(ModuleCard)`
   animation-delay: 1s;
 `
 export const ModuleCard2 = styled(ModuleCard)`
-  animation-delay: 5s;
+  animation-delay: 4s;
 `
 export const ModuleCard3 = styled(ModuleCard)`
-  animation-delay: 9s;
+  animation-delay: 7s;
+`
+export const ModuleCard4 = styled(ModuleCard)`
+  animation-delay: 10s;
+`
+export const ModuleCard5 = styled(ModuleCard)`
+  animation-delay: 13s;
+`
+export const ModuleCard6 = styled(ModuleCard)`
+  animation-delay: 16s;
+`
+export const ModuleCard7 = styled(ModuleCard)`
+  animation-delay: 19s;
 `
 export const ModuleCardSelect = styled(ModuleCard)`
   animation: ${flipConst} 0.4s ease-in-out forwards;
@@ -188,7 +204,7 @@ export const ModuleButtonRun = styled.span`
 export const Timer = styled.div`
   height: 0.5em;
   margin: 0 auto;
-  animation: ${timerKeyframes} 14s linear;
+  animation: ${timerKeyframes} ${props => props.gameLevel} linear;
 `
 export const ModalOverGame = styled.div`
   display: flex;
@@ -224,6 +240,7 @@ export const ModalOverGameLabel = styled.span`
   font-size: 1.15em;
   line-height: 1.5em;
 `
+
 export const TimerLeft = styled(Timer)`
   animation-duration: 10s;
 `
@@ -246,4 +263,8 @@ export const RulesItem = styled.div`
 `
 export const ButtonsArea = styled.div`
   display: flex;
+`
+export const RoundTime = styled.div`
+  color: #589500;
+  font-size: 2em;
 `
