@@ -71,27 +71,46 @@ export default class Game1 extends Component {
     }
 
     setInterval(Timer, 1000)
+
     
+  }
+
+
+  randomNumber = () => {
+    var copy = data.slice(0)
+    if (copy.length < 1) { copy = data.slice(0); }
+    var index = Math.floor(Math.random() * copy.length);
+    var item = copy[index];
+    copy.splice(index, 1);
+    return( 
+      item
+    //  Math.floor(Math.random() * number)
+    )
+  }
+
+  startGame = () => { 
+
     const secretCards = [
-      data[this.randomNumber(data.length)],
-      data[this.randomNumber(data.length)],
-      data[this.randomNumber(data.length)],
-      this.state.gameLevel >= 2 && data[this.randomNumber(data.length)],
-      this.state.gameLevel >= 3 && data[this.randomNumber(data.length)],
-      this.state.gameLevel >= 4 && data[this.randomNumber(data.length)],
-      this.state.gameLevel === 5 && data[this.randomNumber(data.length)],
+      this.randomNumber([data]),
+      this.randomNumber([data]),
+      this.randomNumber([data]),
+      // data[this.randomNumber(data)],
+      // data[this.randomNumber(data)],
+      this.state.gameLevel >= 2 && this.randomNumber([data]),
+      this.state.gameLevel >= 3 && this.randomNumber([data]),
+      this.state.gameLevel >= 4 && this.randomNumber([data]),
+      this.state.gameLevel === 5 && this.randomNumber([data]),
     ]
 
-    console.log(data, secretCards)
     if (this.state.randomCards === true) {
       const randomCards = () => {
         const sortRandom = (data, secretCards) => {
-          return Math.random() - 0.5
+          return Math.random() - 1
         }
-        var nineCards = [ ...secretCards ]
-        var allCards = [ ...data ]
+        let nineCards = [ ...secretCards ]
+        let allCards = [ ...data ]
       
-        allCards = allCards.concat(data[0]).concat(data[1]).concat(data[2]).concat(data[3]).concat(data[4]).concat(data[5]).concat(data[6])
+        allCards = allCards.concat(nineCards[0]).concat(nineCards[1]).concat(nineCards[2]).concat(nineCards[3]).concat(nineCards[4]).concat(nineCards[5]).concat(nineCards[6])
       
         nineCards.map((item) => {
           for (let i = 0; i <= allCards.length; i++) {
@@ -123,40 +142,26 @@ export default class Game1 extends Component {
           levelCards = 6
           break
         }
-
-        console.log(levelCards)
         for (let i = 0; i < levelCards; i++) {
-          let random = Math.floor(Math.random(allCards.length) * allCards.length)
+          let random = Math.floor(Math.random(nineCards.length) * allCards.length)
           nineCards.push(allCards[random])
         }
-      
         nineCards.sort(sortRandom)
         
         let nineCardsNew = nineCards.filter(item => item !== false)
         
         return nineCardsNew
       }
-      
-      
       this.setState({
         randomCards: randomCards(),
         secretCards: secretCards,
         values: data,
       })
-    }
-        
-  }
+      }
+    
+    console.log(secretCards)
 
-
-  randomNumber(number) {
-    return (
-      Math.floor(Math.random(number) * number)
-    )
-  }
-
-  startGame = () => { 
     let tryToCheck = this.state.gameLevel
-
     switch(tryToCheck) {
     case 1:
       tryToCheck = 3
@@ -202,9 +207,10 @@ export default class Game1 extends Component {
       isStarted: true,
       try: tryToCheck,
       timeLeft: timeToPLay,
+      secretCards: secretCards,
+
       
     })
-    console.log(this.state.try, this.state.timeLeft)
   }
 
   nextLevel = () => {
@@ -260,7 +266,7 @@ export default class Game1 extends Component {
       gameLevel: this.state.gameLevel + 1,
       points : 0,
       cardStatus: [ true, true, true, true, true, true, true, true, true, true, true, true, ],
-      secretCards: undefined,
+      secretCards: this.secretCards,
       timerOn: false,
     })  
   }
@@ -310,8 +316,8 @@ export default class Game1 extends Component {
   }
   
   isOver() {
-    if (this.state.try === 0 || this.state.isOver === true) {
-      // this.state.timerOn === 0 ? this.setState({ timerOn: false }) : null
+    if (this.state.try === 0 || this.state.isOver === true || this.state.points >= 3) {
+      this.state.timerOn ? this.setState({ timerOn: false }) : null
       return (
         <ModalOverGame>
           {this.state.points === 3 ? <ModalOverGameBlock>
@@ -376,7 +382,7 @@ export default class Game1 extends Component {
         break
       }
       this.state.timerOn === true ? setTimeout(() => {
-        !this.state.isOver ? this.setState({ timerOn: false, isOver: true }) : null
+        this.state.isOver || this.state.timeLeft === 0 ? this.setState({ timerOn: false, isOver: true }) : null
       }, timeToPLay) : null
       console.log('Игра началась')
       return (
@@ -417,7 +423,7 @@ export default class Game1 extends Component {
         break
       }     
       if (this.state.isStarted) {
-        setTimeout(() => {this.setState({ isUserPlay: true, timerOn: true, })}, timeToPLay)
+        setTimeout(() => {this.setState({ isUserPlay: true, timerOn: false, })}, timeToPLay)
         return (
           <div>
             <ModuleCards>

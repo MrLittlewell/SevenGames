@@ -32,6 +32,7 @@ export const GameArea = styled.div`
     background-image: linear-gradient(315deg, #b8c6db 0%, #f5f7fa 74%);
     @media (max-width: 768px) {
       width: 100%;
+      min-height: 550px;
     }
 `
 export const SelectGames = styled.div`
