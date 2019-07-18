@@ -49,7 +49,7 @@ export default class Game1 extends Component {
 
     this.state = {
       gameId: 1,
-      gameLevel: 2,
+      gameLevel: 1,
       isStarted: false,
       isUserPlay: false,
       values: undefined,
@@ -149,10 +149,12 @@ export default class Game1 extends Component {
           let random = Math.floor(Math.random(allCards.length) * allCards.length)
           nineCards.push(allCards[random])
         }
-        allCards.sort(sortRandom)
+        
         
         let nineCardsNew = nineCards.filter(item => item !== false)
         console.log(nineCardsNew)
+
+        nineCardsNew.sort(sortRandom)
         return nineCardsNew
       }
       this.setState({
@@ -205,8 +207,30 @@ export default class Game1 extends Component {
     default:
       timeToPLay = 10
       break
-    }     
+    }   
+    let levelPoints = this.state.gameLevel
+    let currentPoints = this.state.points
+    switch(levelPoints) {
+      case 1:
+        levelPoints = currentPoints
+        break
+      case 2:
+        levelPoints = -1
+        break
+      case 3:
+        levelPoints = -2
+        break
+      case 4:
+        levelPoints = -3
+        break
+      case 5:
+        levelPoints = -4
+        break
+      default:
+        levelPoints = currentPoints
+      }  
     this.setState({
+      points: levelPoints,
       isStarted: true,
       try: tryToCheck,
       timeLeft: timeToPLay,
@@ -290,34 +314,9 @@ export default class Game1 extends Component {
       console.log('Правильно!')
       let audio = new Audio(sound)
       audio.play()
-      /* ДОДЕЛАТЬ */
-      let levelPoints = this.state.gameLevel
-      let currentPoints = this.state.points
-      switch(levelPoints) {
-      case 1:
-        levelPoints = currentPoints + 1
-        break
-      case 2:
-        levelPoints = -1
-        break
-      case 3:
-        levelPoints = -2
-        levelPoints = currentPoints + 1
-        break
-      case 4:
-        levelPoints = -3
-        levelPoints = currentPoints + 1
-        break
-      case 5:
-        levelPoints = -4
-        levelPoints = currentPoints + 1
-        break
-      default:
-        levelPoints = currentPoints + 1
-      }
-
+      
       this.setState({
-        points: levelPoints,
+        points: this.state.points + 1,
         try: this.state.try - 1,
         cardStatus: cardStatus
       })
@@ -363,7 +362,7 @@ export default class Game1 extends Component {
               <div>
                 <ModalOverGameTitle>Время или попытки закончились</ModalOverGameTitle>
                 <ModalOverGameLabel>Время: { this.state.timeLeft }</ModalOverGameLabel>
-                <ModalOverGameLabel>Счёт: { this.state.points }</ModalOverGameLabel>
+                <ModalOverGameLabel>Счёт: { this.state.points <= 0 ? 0 : this.state.points}</ModalOverGameLabel>
                 <ModalOverGameLabel>Попытки: { this.state.try }</ModalOverGameLabel>
               </div>
               <ButtonsArea>
@@ -421,7 +420,7 @@ export default class Game1 extends Component {
             { this.renderCard() }
           </ModuleCardsSelect>
           <BottomStats>Попыток: { this.state.try }</BottomStats>
-          <BottomStats>Ваш счёт: { this.state.points }</BottomStats>
+          <BottomStats>Ваш счёт: { this.state.points <= 0 ? 0 : this.state.points }</BottomStats>
           <BottomStats>Время: { this.state.timeLeft }</BottomStats>
         </div>
       )
@@ -516,7 +515,10 @@ export default class Game1 extends Component {
         <Exit><img src={exit} onClick={ () => this.props.toMainmenu() }/></Exit>
         <PageTitle>Игры</PageTitle>
         <Module>
-          <ModuleTitle>Три слова {this.state.isUserPlay && <RoundTime>{ this.state.timeLeft }</RoundTime>}<div>Уровень: {this.state.gameLevel}</div></ModuleTitle>
+          <ModuleTitle>Три слова {this.state.isUserPlay &&
+             <RoundTime>{ this.state.timeLeft }</RoundTime>}
+             <div>Уровень: {this.state.gameLevel}</div>
+          </ModuleTitle>
           { this.isStarted() }
           { this.isPlay() }
           { this.isOver() }
