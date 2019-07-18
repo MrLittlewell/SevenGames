@@ -19,6 +19,7 @@ export const Wrapper = styled.div`
     box-sizing: border-box;
     @media (max-width: 768px) {
       flex-direction: column;
+      padding: 10px;
     }
 `
 export const GameArea = styled.div`

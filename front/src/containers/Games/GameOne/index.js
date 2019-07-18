@@ -36,7 +36,9 @@ import {
   RulesItem,
   Exit,
   ButtonsArea,
-  RoundTime
+  RoundTime,
+  ModalOverLevel,
+  BottomStats
 } from './contentStyled.js'
 
 
@@ -46,13 +48,13 @@ export default class Game1 extends Component {
 
 
     this.state = {
-      gameId: 2,
-      gameLevel: 1,
+      gameId: 1,
+      gameLevel: 2,
       isStarted: false,
       isUserPlay: false,
       values: undefined,
-      secretCards: undefined,
-      randomCards: true,
+      secretCards: true,
+      randomCards: false,
       points: 0,
       try: 3,
       cardStatus: [ true, true, true, true, true, true, true, true, true, true, true, true, ],
@@ -78,10 +80,10 @@ export default class Game1 extends Component {
 
   randomNumber = () => {
     var copy = data.slice(0)
-    if (copy.length < 1) { copy = data.slice(0); }
-    var index = Math.floor(Math.random() * copy.length);
-    var item = copy[index];
-    copy.splice(index, 1);
+    if (copy.length < 1) { copy = data.slice(0) }
+    let index = Math.floor(Math.random() * copy.length)
+    let item = copy[index]
+    copy.splice(index, 1)
     return( 
       item
     //  Math.floor(Math.random() * number)
@@ -91,27 +93,28 @@ export default class Game1 extends Component {
   startGame = () => { 
 
     const secretCards = [
-      this.randomNumber([data]),
-      this.randomNumber([data]),
-      this.randomNumber([data]),
+      this.randomNumber([ data ]),
+      this.randomNumber([ data ]),
+      this.randomNumber([ data ]),
       // data[this.randomNumber(data)],
       // data[this.randomNumber(data)],
-      this.state.gameLevel >= 2 && this.randomNumber([data]),
-      this.state.gameLevel >= 3 && this.randomNumber([data]),
-      this.state.gameLevel >= 4 && this.randomNumber([data]),
-      this.state.gameLevel === 5 && this.randomNumber([data]),
+      this.state.gameLevel >= 2 && this.randomNumber([ data ]),
+      this.state.gameLevel >= 3 && this.randomNumber([ data ]),
+      this.state.gameLevel >= 4 && this.randomNumber([ data ]),
+      this.state.gameLevel === 5 && this.randomNumber([ data ]),
     ]
 
-    if (this.state.randomCards === true) {
+    if (this.state.randomCards === false) {
       const randomCards = () => {
-        const sortRandom = (data, secretCards) => {
-          return Math.random() - 1
+        const sortRandom = (a, b) => {
+          return Math.random() - 0.5
         }
         let nineCards = [ ...secretCards ]
-        let allCards = [ ...data ]
-      
-        allCards = allCards.concat(nineCards[0]).concat(nineCards[1]).concat(nineCards[2]).concat(nineCards[3]).concat(nineCards[4]).concat(nineCards[5]).concat(nineCards[6])
-      
+        let allCards = data
+
+        allCards = allCards.concat(secretCards)
+
+            
         nineCards.map((item) => {
           for (let i = 0; i <= allCards.length; i++) {
             if (allCards[i] === item) {
@@ -143,13 +146,13 @@ export default class Game1 extends Component {
           break
         }
         for (let i = 0; i < levelCards; i++) {
-          let random = Math.floor(Math.random(nineCards.length) * allCards.length)
+          let random = Math.floor(Math.random(allCards.length) * allCards.length)
           nineCards.push(allCards[random])
         }
-        nineCards.sort(sortRandom)
+        allCards.sort(sortRandom)
         
         let nineCardsNew = nineCards.filter(item => item !== false)
-        
+        console.log(nineCardsNew)
         return nineCardsNew
       }
       this.setState({
@@ -157,7 +160,7 @@ export default class Game1 extends Component {
         secretCards: secretCards,
         values: data,
       })
-      }
+    }
     
     console.log(secretCards)
 
@@ -268,6 +271,7 @@ export default class Game1 extends Component {
       cardStatus: [ true, true, true, true, true, true, true, true, true, true, true, true, ],
       secretCards: this.secretCards,
       timerOn: false,
+      randomCards: false
     })  
   }
 
@@ -286,9 +290,34 @@ export default class Game1 extends Component {
       console.log('Правильно!')
       let audio = new Audio(sound)
       audio.play()
-          
+      /* ДОДЕЛАТЬ */
+      let levelPoints = this.state.gameLevel
+      let currentPoints = this.state.points
+      switch(levelPoints) {
+      case 1:
+        levelPoints = currentPoints + 1
+        break
+      case 2:
+        levelPoints = -1
+        break
+      case 3:
+        levelPoints = -2
+        levelPoints = currentPoints + 1
+        break
+      case 4:
+        levelPoints = -3
+        levelPoints = currentPoints + 1
+        break
+      case 5:
+        levelPoints = -4
+        levelPoints = currentPoints + 1
+        break
+      default:
+        levelPoints = currentPoints + 1
+      }
+
       this.setState({
-        points: this.state.points + 1,
+        points: levelPoints,
         try: this.state.try - 1,
         cardStatus: cardStatus
       })
@@ -320,15 +349,16 @@ export default class Game1 extends Component {
       this.state.timerOn ? this.setState({ timerOn: false }) : null
       return (
         <ModalOverGame>
-          {this.state.points === 3 ? <ModalOverGameBlock>
+          {this.state.points === 3 ? <ModalOverLevel>
             <div>
-              <ModalOverGameTitle>Уровень пройден</ModalOverGameTitle>
-              <ModalOverGameLabel>Счёт: { this.state.points }</ModalOverGameLabel>
+              <ModalOverGameTitle>Уровень {this.state.gameLevel} пройден</ModalOverGameTitle>
             </div>
             <ButtonsArea>
-              {this.state.points >= 3 && this.state.gameLevel <= 5 ? <ModalOverButton onClick={() => {this.nextLevel()}}>Новый уровень!</ModalOverButton> : ''}
+              {this.state.points >= 3 && this.state.gameLevel < 5 ?
+                <ModalOverButton onClick={() => {this.nextLevel()}}>Уровень {this.state.gameLevel + 1}</ModalOverButton> :
+                <ModalOverButton onClick={() => {this.props.toMenu()}}>На главную</ModalOverButton>}
             </ButtonsArea>
-          </ModalOverGameBlock> :
+          </ModalOverLevel> :
             <ModalOverGameBlock>
               <div>
                 <ModalOverGameTitle>Время или попытки закончились</ModalOverGameTitle>
@@ -390,9 +420,9 @@ export default class Game1 extends Component {
           <ModuleCardsSelect>
             { this.renderCard() }
           </ModuleCardsSelect>
-          <div>Попыток: { this.state.try }</div>
-          <div>Ваш счёт: { this.state.points }</div>
-          <div>Время: { this.state.timeLeft }</div>
+          <BottomStats>Попыток: { this.state.try }</BottomStats>
+          <BottomStats>Ваш счёт: { this.state.points }</BottomStats>
+          <BottomStats>Время: { this.state.timeLeft }</BottomStats>
         </div>
       )
     }
@@ -465,10 +495,12 @@ export default class Game1 extends Component {
       } else {
         return (
           <Module>
-            <MobuleSubTitle>Описание:</MobuleSubTitle>
-            <RulesItem>Нужно запомнить слова на трёх карточках.</RulesItem>
-            <RulesItem>На запоминание слова даётся 3 секунды.</RulesItem>
-            <RulesItem>Потом нужно выбрать правильные слова среди появившихся девяти карточек.</RulesItem>
+            <div>
+              <MobuleSubTitle>Описание:</MobuleSubTitle>
+              <RulesItem>Нужно запомнить слова на трёх карточках.</RulesItem>
+              <RulesItem>На запоминание слова даётся 3 секунды.</RulesItem>
+              <RulesItem>Потом нужно выбрать правильные слова среди появившихся {this.state.gameLevel >= 4 ? 'двенадцати' : 'девяти'} карточек.</RulesItem>
+            </div>
             <CenterWrapper>
               <ModuleButtonRun to = "#" onClick = { () => this.startGame() } >Старт</ModuleButtonRun>
             </CenterWrapper>
@@ -484,7 +516,7 @@ export default class Game1 extends Component {
         <Exit><img src={exit} onClick={ () => this.props.toMainmenu() }/></Exit>
         <PageTitle>Игры</PageTitle>
         <Module>
-          <ModuleTitle>Три слова {this.state.isUserPlay && <RoundTime>{ this.state.timeLeft }</RoundTime>}<div></div></ModuleTitle>
+          <ModuleTitle>Три слова {this.state.isUserPlay && <RoundTime>{ this.state.timeLeft }</RoundTime>}<div>Уровень: {this.state.gameLevel}</div></ModuleTitle>
           { this.isStarted() }
           { this.isPlay() }
           { this.isOver() }

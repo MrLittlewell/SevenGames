@@ -86,7 +86,7 @@ export const PageTitle = styled.span`
 export const Module = styled.div`
   padding: 1em;
   @media (max-width: 768px) {
-    padding: 0.5em;
+    padding: 0;
   }
 `
 export const ModuleTitle = styled.div`
@@ -95,6 +95,9 @@ export const ModuleTitle = styled.div`
   display: flex;
   width: 100%;
   justify-content: space-between;
+  @media (max-width: 768px) {
+    font-size: 0.9em;
+  }
 `
 export const ModuleCards = styled.div`
   width: 40em;
@@ -109,6 +112,7 @@ export const ModuleCards = styled.div`
   animation: none;
   @media (max-width: 768px) {
     width: 100%;
+    margin-top: 5em;
   }
 `
 export const ModuleCardsSelect = styled(ModuleCards)`
@@ -135,8 +139,9 @@ export const ModuleCard = styled.div`
   animation: ${flip} 4s ease-in-out;
   box-shadow: 0 0.1em 0.15em rgba(0,0,0,0.19), 0 0.2em 0.2em rgba(0,0,0,0.23);
   @media (max-width: 768px) {
-    width: 4em;
+    width: 5.6em;
     height: 4em;
+    margin: 0.2em 0.1em;
   }
 `
 export const ModuleCard1 = styled(ModuleCard)`
@@ -284,4 +289,20 @@ export const ButtonsArea = styled.div`
 export const RoundTime = styled.div`
   color: #589500;
   font-size: 2em;
+`
+export const ModalOverLevel = styled.div`
+  background-color: white;
+  border-radius: 4px;
+  width: 20em;
+  height: 10em;
+  padding: 1em;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+`
+export const BottomStats = styled.div`
+@media (max-width: 768px) {
+  font-size: 11px;
+}
 `
