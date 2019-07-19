@@ -93,27 +93,26 @@ export default class Game1 extends Component {
   startGame = () => { 
 
     const secretCards = [
-      this.randomNumber([ data ]),
-      this.randomNumber([ data ]),
-      this.randomNumber([ data ]),
+      this.randomNumber(data),
+      this.randomNumber(data),
+      this.randomNumber(data),
       // data[this.randomNumber(data)],
       // data[this.randomNumber(data)],
-      this.state.gameLevel >= 2 && this.randomNumber([ data ]),
-      this.state.gameLevel >= 3 && this.randomNumber([ data ]),
-      this.state.gameLevel >= 4 && this.randomNumber([ data ]),
-      this.state.gameLevel === 5 && this.randomNumber([ data ]),
+      this.state.gameLevel >= 2 && this.randomNumber(data),
+      this.state.gameLevel >= 3 && this.randomNumber(data),
+      this.state.gameLevel >= 4 && this.randomNumber(data),
+      this.state.gameLevel === 5 && this.randomNumber(data),
     ]
 
     if (this.state.randomCards === false) {
       const randomCards = () => {
-        const sortRandom = (a, b) => {
+        const sortRandom = () => {
           return Math.random() - 0.5
         }
         let nineCards = [ ...secretCards ]
         let allCards = data
 
         allCards = allCards.concat(secretCards)
-
             
         nineCards.map((item) => {
           for (let i = 0; i <= allCards.length; i++) {
@@ -146,10 +145,9 @@ export default class Game1 extends Component {
           break
         }
         for (let i = 0; i < levelCards; i++) {
-          let random = Math.floor(Math.random(allCards.length) * allCards.length)
+          let random = Math.floor(Math.random() * allCards.length)
           nineCards.push(allCards[random])
         }
-        
         
         let nineCardsNew = nineCards.filter(item => item !== false)
         console.log(nineCardsNew)
@@ -211,24 +209,24 @@ export default class Game1 extends Component {
     let levelPoints = this.state.gameLevel
     let currentPoints = this.state.points
     switch(levelPoints) {
-      case 1:
-        levelPoints = currentPoints
-        break
-      case 2:
-        levelPoints = -1
-        break
-      case 3:
-        levelPoints = -2
-        break
-      case 4:
-        levelPoints = -3
-        break
-      case 5:
-        levelPoints = -4
-        break
-      default:
-        levelPoints = currentPoints
-      }  
+    case 1:
+      levelPoints = currentPoints
+      break
+    case 2:
+      levelPoints = -1
+      break
+    case 3:
+      levelPoints = -2
+      break
+    case 4:
+      levelPoints = -3
+      break
+    case 5:
+      levelPoints = -4
+      break
+    default:
+      levelPoints = currentPoints
+    }  
     this.setState({
       points: levelPoints,
       isStarted: true,
@@ -350,7 +348,9 @@ export default class Game1 extends Component {
         <ModalOverGame>
           {this.state.points === 3 ? <ModalOverLevel>
             <div>
-              <ModalOverGameTitle>Уровень {this.state.gameLevel} пройден</ModalOverGameTitle>
+              {this.state.gameLevel === 5 ?
+                <ModalOverGameTitle>Поздравляем, Вы завершили игру<br/>"Три слова"</ModalOverGameTitle> :
+                <ModalOverGameTitle>Уровень {this.state.gameLevel} пройден</ModalOverGameTitle>}
             </div>
             <ButtonsArea>
               {this.state.points >= 3 && this.state.gameLevel < 5 ?
@@ -452,7 +452,7 @@ export default class Game1 extends Component {
         break
       }     
       if (this.state.isStarted) {
-        setTimeout(() => {this.setState({ isUserPlay: true, timerOn: false, })}, timeToPLay)
+        setTimeout(() => {this.setState({ isUserPlay: true, timerOn: true, })}, timeToPLay)
         return (
           <div>
             <ModuleCards>
@@ -517,7 +517,7 @@ export default class Game1 extends Component {
         <Module>
           <ModuleTitle>Три слова {this.state.isUserPlay &&
              <RoundTime>{ this.state.timeLeft }</RoundTime>}
-             <div>Уровень: {this.state.gameLevel}</div>
+          <div>Уровень: {this.state.gameLevel}</div>
           </ModuleTitle>
           { this.isStarted() }
           { this.isPlay() }

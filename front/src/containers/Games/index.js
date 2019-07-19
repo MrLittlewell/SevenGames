@@ -180,17 +180,17 @@ class Games extends Component {
              <ModuleTitle>Оценка памяти</ModuleTitle>
              <ModuleCard role="button" onClick={this.state.SelectGame === true ? this.toggleOne : () => {}} >
                <ModuleCard1>
-                 <ModuleCardTitle>Три слова</ModuleCardTitle>
+                 <ModuleCardTitle>Слова</ModuleCardTitle>
                </ModuleCard1>
              </ModuleCard>
              <ModuleCard role="button" onClick={this.state.SelectGame === true ? this.toggleTwo : () => {}}>
                <ModuleCard2>
-                 <ModuleCardTitle>Три образа</ModuleCardTitle>
+                 <ModuleCardTitle>Образы</ModuleCardTitle>
                </ModuleCard2>
              </ModuleCard>
              <ModuleCard role="button" onClick={this.state.SelectGame === true ? this.toggleThree : () => {}}>
                <ModuleCard3>
-                 <ModuleCardTitle>Шесть цифр</ModuleCardTitle>
+                 <ModuleCardTitle>Цифры</ModuleCardTitle>
                </ModuleCard3>
              </ModuleCard>
            </Section>
