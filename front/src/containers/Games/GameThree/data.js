@@ -12,6 +12,13 @@ export const data = [ randomNumber(),
   randomNumber(),
   randomNumber(),
   randomNumber(),
+  randomNumber(),
+  randomNumber(),
+  randomNumber(),
+  randomNumber(),
+  randomNumber(),
+  randomNumber(),
+  randomNumber(),
 ]
 
 

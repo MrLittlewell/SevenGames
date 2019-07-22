@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import { connect } from 'react-redux'
 
 import sound from '../../../audio/drum.mp3'
 import exit from '../../../img/icons/exit.svg'

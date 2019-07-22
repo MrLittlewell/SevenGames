@@ -20,6 +20,7 @@ export const Wrapper = styled.div`
     @media (max-width: 768px) {
       flex-direction: column;
       padding: 10px;
+      align-items: center;
     }
 `
 export const GameArea = styled.div`
@@ -34,6 +35,7 @@ export const GameArea = styled.div`
     @media (max-width: 768px) {
       width: 100%;
       min-height: 550px;
+      margin-right: 0;
     }
 `
 export const SelectGames = styled.div`
